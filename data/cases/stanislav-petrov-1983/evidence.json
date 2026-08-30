@@ -1,0 +1,93 @@
+{
+  "case_id": "stanislav-petrov-1983",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "I Had A Funny Feeling in My Gut",
+      "author_or_institution": "David Hoffman, The Washington Post",
+      "date": "February 10, 1999",
+      "citation": "Hoffman, D. (1999, February 10). I Had A Funny Feeling in My Gut. The Washington Post. https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/soviet10.htm",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "One of the first major Western published accounts based on a direct interview with Petrov; source for his stated reasoning (doctrine expecting a mass launch, not five missiles), his estimate of roughly 50-50 odds, and post-incident career consequences (reprimand over logbook procedure, later reassignment).",
+      "note": "Widely cited as the account that first brought the incident to broad Western attention."
+    },
+    {
+      "id": "src-02",
+      "title": "Stanislav Petrov: The man who may have saved the world",
+      "author_or_institution": "Pavel Aksenov, BBC News",
+      "date": "September 26, 2013",
+      "citation": "https://www.bbc.com/news/world-europe-24280831",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Direct 2013 BBC interview quotes from Petrov describing the alert, his hesitation, and his reasoning ('a decision that would have plunged the world into a whirlpool of nuclear war would have needed more than just one piece of unreliable computer data').",
+      "note": "Primary interview-based journalism; used for exact quotes attributed to Petrov."
+    },
+    {
+      "id": "src-03",
+      "title": "False Alarm, Nuclear Danger",
+      "author_or_institution": "Geoffrey Forden, Pavel Podvig, and Theodore A. Postol",
+      "date": "March 2000",
+      "citation": "Forden, G., Podvig, P., & Postol, T. A. (2000). False Alarm, Nuclear Danger. IEEE Spectrum, 37(3), 31-45.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Technical reconstruction of the Oko satellite system's operation, the escalation from one to five reported missiles, the identification of Malmstrom Air Force Base, Montana as the indicated launch site, and the sunlight-on-high-altitude-clouds mechanism behind the false alarm, based on interviews with Russian technical specialists and satellite engineers.",
+      "note": "Authored by arms-control researchers (MIT, Center for Arms Control Studies at MIPT); the most technically detailed account of the satellite malfunction mechanism."
+    },
+    {
+      "id": "src-04",
+      "title": "Stanislav Petrov",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/biography/Stanislav-Petrov",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General biographical chronology cross-check: Petrov's rank, his duty that night as a substitute for the regular officer, career consequences after the incident, and the North Dakota location attribution used in the source-disagreement note.",
+      "note": "Used for general chronology cross-check only, not as sole citation for load-bearing claims."
+    },
+    {
+      "id": "src-05",
+      "title": "1983 Soviet nuclear false alarm incident",
+      "author_or_institution": "Wikipedia contributors",
+      "date": "Accessed 2026",
+      "citation": "https://en.wikipedia.org/wiki/1983_Soviet_nuclear_false_alarm_incident",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Used only for orientation and to identify primary/academic sources (Hoffman 1999, Forden/Podvig/Postol 2000, BBC 2013) cited independently above; not used as the sole citation for any load-bearing claim.",
+      "note": "Discovery/orientation use only, per project research standard."
+    },
+    {
+      "id": "src-06",
+      "title": "How the world reached the brink of nuclear war not once but twice in 1983",
+      "author_or_institution": "Sergey Radchenko / The Conversation (academic-affiliated analysis)",
+      "date": "October 24, 2016",
+      "citation": "Radchenko, S. (2016, October 24). How the world reached the brink of nuclear war not once but twice in 1983. The Conversation. https://theconversation.com/how-the-world-reached-the-brink-of-nuclear-war-not-once-but-twice-in-1983-68998",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Context on the elevated Soviet threat perception in autumn 1983, including the September 1, 1983 Korean Air Lines Flight 007 shootdown and Operation RYaN, and the connection (and distinction) between the Petrov incident and the later Able Archer 83 NATO exercise.",
+      "note": "Author is a Cold War historian (Cardiff University / SAIS); published via The Conversation, an outlet that carries academic bylines and editorial fact-checking."
+    },
+    {
+      "id": "src-07",
+      "title": "The Man Who Helped Avert Nuclear Armageddon",
+      "author_or_institution": "HISTORY (A&E Television Networks)",
+      "date": "Updated September 2023 (originally 2020)",
+      "citation": "https://www.history.com/articles/nuclear-attack-warning-cold-war-petrov",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check on the incident timeline and Petrov's later public recognition (e.g., the 2013 Dresden Prize, UN-affiliated recognitions) in the years before his 2017 death.",
+      "note": "Secondary specialist-history journalism; used for cross-checking, not as sole source for a load-bearing claim."
+    },
+    {
+      "id": "src-08",
+      "title": "The Man Who \"Saved the World\" Dies at 77",
+      "author_or_institution": "Arms Control Association (Arms Control Today)",
+      "date": "October 2017",
+      "citation": "https://www.armscontrol.org/act/2017-10/news-briefs/man-who-saved-world-dies-77",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Obituary-based confirmation of Petrov's death in May 2017 (reported publicly in September 2017), and summary of his standing among arms-control specialists.",
+      "note": "Published by a specialist nonpartisan arms-control research and advocacy organization."
+    }
+  ]
+}

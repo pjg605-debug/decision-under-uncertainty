@@ -1,0 +1,111 @@
+{
+  "id": "tetraethyl-lead-1924",
+  "title": "Tetraethyl Lead: Continue or Halt Leaded Gasoline After the Bayway Deaths (Late 1924)",
+  "case_type": ["industry", "science"],
+  "fame_level": "medium",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "era": "Early automotive/industrial chemistry era, 1921-1926",
+  "location": "Standard Oil's Bayway refinery, Linden, New Jersey; Ethyl Corporation / General Motors / DuPont corporate offices; U.S. Public Health Service, Washington, D.C.",
+  "actors": [
+    { "name": "Thomas Midgley Jr.", "role": "General Motors research engineer; co-discoverer of tetraethyl lead's anti-knock effect, and separately tested ethanol-gasoline blends as an alternative" },
+    { "name": "Charles F. Kettering", "role": "Head of General Motors Research Corporation, Midgley's supervisor, and a leading proponent of developing tetraethyl lead as a proprietary GM product" },
+    { "name": "Frank Howard", "role": "Standard Oil of New Jersey vice president; defended tetraethyl lead's safety at the May 1925 Public Health Service conference" },
+    { "name": "Yandell Henderson", "role": "Yale University physiologist; prominent contemporaneous public critic warning of population-level lead exposure risk from automobile exhaust" },
+    { "name": "Alice Hamilton", "role": "Pioneering industrial toxicologist, Harvard Medical School; urged caution and further study at the May 1925 conference" },
+    { "name": "Hugh S. Cumming", "role": "U.S. Surgeon General; convened the May 1925 Public Health Service conference and oversaw the subsequent investigative committee" }
+  ],
+  "t0": {
+    "definition": "The corporate and regulatory decision point in the weeks following the October 1924 deaths and mass poisonings of Standard Oil workers at the Bayway, New Jersey refinery (itself preceded by fatal tetraethyl-lead poisonings at General Motors' Dayton, Ohio plant and DuPont's Deepwater, New Jersey plant), at which the Ethyl Corporation (the joint General Motors-Standard Oil venture, manufactured by DuPont) and public health authorities had to decide whether to continue commercial production and marketing of tetraethyl-lead gasoline or halt it in favor of a known, non-patentable alternative such as ethanol-gasoline blends.",
+    "date": "Late October-November 1924 (immediate aftermath of the Bayway deaths and New Jersey's shutdown of the plant), with the decision converging through a temporary voluntary production halt, the U.S. Public Health Service conference of May 20, 1925, and the PHS investigative committee's finding in January 1926.",
+    "location": "Standard Oil Bayway refinery, Linden, New Jersey; Ethyl Corporation, General Motors, and DuPont corporate offices; U.S. Public Health Service conference, Washington, D.C."
+  },
+  "stakes": "Whether a newly commercialized, patent-protected industrial additive already documented to cause severe, sometimes fatal poisoning among its own production workers should continue to be manufactured and sold for burning in millions of automobile engines nationwide — spreading lead-laden exhaust across the general population — when a known, non-toxic, technically effective but non-monopolizable alternative (ethanol blends) already existed.",
+  "known_at_t0": [
+    { "statement": "Between roughly September 26 and October 30, 1924, six named Standard Oil workers at the Bayway, New Jersey refinery died after severe tetraethyl-lead poisoning (hallucinations, violent mania, some requiring long-term institutionalization), with dozens more workers hospitalized or affected; some contemporaneous and later summaries cite five confirmed Bayway deaths rather than six (see source_disagreements).", "evidence_class": "FACT" },
+    { "statement": "Fatal tetraethyl-lead poisonings had already occurred earlier at DuPont's Deepwater, New Jersey plant (beginning September 1923) and at General Motors' pilot-scale production plant in Dayton, Ohio, before the Bayway incident.", "evidence_class": "FACT" },
+    { "statement": "New Jersey state authorities shut down tetraethyl-lead production at the Bayway plant in October 1924 and barred Standard Oil from resuming it without explicit state permission.", "evidence_class": "FACT" },
+    { "statement": "Yale physiologist Yandell Henderson and other public health scientists publicly warned at the time that even highly diluted tetraethyl lead, once burned and dispersed as automobile exhaust across a growing national vehicle fleet, could expose the general population to cumulative low-dose lead intake over years — a distinct concern from the acute worker poisonings already documented.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "General Motors' own engineers, including Thomas Midgley, had already researched and demonstrated ethanol-gasoline blends as an effective anti-knock alternative, with no evidence of acute toxicity comparable to tetraethyl lead.", "evidence_class": "FACT" },
+    { "statement": "Industry representatives argued that acute worker poisoning was a controllable occupational-hazard problem addressable through engineering and handling precautions, and that the population-level exhaust-exposure risk raised by critics like Henderson was unproven; historians examining internal industry records have concluded that tetraethyl lead's commercial appeal rested substantially on its patent protection, since ethanol could be produced and sold by any distiller and could not be similarly monopolized.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "In initial public statements after the Bayway deaths, a Standard Oil spokesman reportedly attributed the stricken workers' symptoms to overwork rather than to tetraethyl-lead poisoning — a characterization publicly disputed by outside physicians and health officials at the time.", "evidence_class": "FACT" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The full scope of population-wide environmental lead exposure, and its dose-response relationship to childhood neurological and cognitive harm, was not scientifically established until decades later; the ultra-clean isotope geochemistry techniques needed to detect and quantify it at a population level were developed by geochemist Clair Patterson only from the late 1950s into the 1960s.", "evidence_class": "FACT" },
+    { "statement": "Clair Patterson's 1965 research, which demonstrated that industrial lead — chiefly from gasoline exhaust — accounted for the overwhelming majority of measured environmental and human-body lead levels (far more than natural background sources), was more than four decades away and unavailable to 1924-1926 decision-makers.", "evidence_class": "FACT" },
+    { "statement": "The specific outcome of the U.S. Public Health Service's May 1925 conference and its January 1926 investigative committee finding of 'no good grounds' to prohibit tetraethyl lead had not yet occurred and could not have been known in advance at the October/November 1924 decision point, though the process itself was set in motion during this period.", "evidence_class": "FACT" },
+    { "statement": "Later historians (notably Gerald Markowitz and David Rosner) have concluded that the 1925-1926 Public Health Service review process was substantively constrained by limited independent research capacity and reliance on industry-supplied data — a characterization of the review's limitations that is clearer in retrospective historical analysis than it may have appeared to all contemporaries at the time.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Continue producing and marketing tetraethyl-lead gasoline",
+      "description": "Continue manufacturing and marketing tetraethyl-lead gasoline through the Ethyl Corporation, arguing that acute worker poisoning could be controlled through improved industrial hygiene and handling precautions, and that the unproven, diffuse population-level exhaust risk did not justify abandoning a technically superior, patent-protected product.",
+      "upside": "Preserves an effective, differentiated, patent-protected anti-knock additive that competitors could not freely replicate, protecting Ethyl Corporation's, General Motors', and Standard Oil's commercial position while continuing to solve the genuine engineering problem of engine knock.",
+      "downside": "Continued exposing production workers to a substance already proven to cause severe acute poisoning and death, and, per contemporaneous scientific warnings, risked long-term, difficult-to-reverse population-wide low-dose lead exposure from millions of vehicles' exhaust.",
+      "why_it_made_sense": "The acute deaths, while genuinely tragic, were framed by industry as a controllable occupational-safety problem fixable through engineering controls and handling procedures rather than proof the diluted, in-use product was unsafe; the population-level low-dose risk raised by critics was, at the time, a contested scientific hypothesis rather than an established fact.",
+      "risk_carried": "If the contemporaneous population-level warnings from scientists like Henderson were correct, continuing production would expose hundreds of millions of people over decades to a cumulative neurotoxin with no practical way to reverse the exposure once it was dispersed through the environment."
+    },
+    {
+      "id": "option_b",
+      "label": "Halt tetraethyl lead and switch to non-patentable alternatives like ethanol blends",
+      "description": "Halt tetraethyl-lead production and marketing, and shift the industry's anti-knock strategy to ethanol-gasoline blends or other alternatives already tested and shown to lack tetraethyl lead's acute toxicity.",
+      "upside": "Eliminates the already-demonstrated, severe acute poisoning risk to workers immediately and forecloses the population-level exposure risk public health scientists were already warning about, using a technically workable alternative GM's own engineers had already validated.",
+      "downside": "Ethanol could be distilled and sold by any producer, so it could not be patented or exclusively controlled — adopting it would forgo Ethyl Corporation's, GM's, and Standard Oil's proprietary commercial advantage, and large-scale alcohol production in the mid-1920s carried its own regulatory complications under Prohibition.",
+      "why_it_made_sense": "The human cost of tetraethyl-lead production was not hypothetical — it had already killed named workers across three separate plants — and a known, non-toxic, technically effective substitute already existed; choosing it would have removed both the demonstrated acute risk and the warned-of chronic risk, at the cost of forgoing a monopoly position.",
+      "risk_carried": "Abandoning tetraethyl lead meant giving up a superior anti-knock performance margin and the exclusive commercial position it provided in favor of a product any competitor could also produce — a real business cost that industry decision-makers were not willing to accept without a fight."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_a",
+    "decided_by": "Ethyl Corporation and its parent/partner companies (General Motors, Standard Oil of New Jersey, with DuPont as manufacturer), with the outcome subsequently ratified by the U.S. Public Health Service's investigative committee",
+    "decided_when": "Production was temporarily and voluntarily halted following the October 1924 Bayway deaths, continuing through the U.S. Public Health Service's May 20, 1925 conference in Washington, D.C.; the PHS review committee's finding in January 1926 that there were 'no good grounds' to prohibit tetraethyl lead allowed commercial production and marketing to resume, confirming the industry's preferred path.",
+    "stated_basis": "Industry representatives, including Standard Oil's Frank Howard, argued at the May 1925 conference that the dilution ratio used in gasoline made population-level exposure negligible, that worker safety could be secured through handling precautions, and that no proven alternative matched tetraethyl lead's anti-knock performance and exclusive controllability; the PHS committee's subsequent finding likewise concluded there was no demonstrated danger from ordinary use, while recommending continued study and stronger worker protections.",
+    "constraints": "Ethyl Corporation held patent rights to tetraethyl lead, giving its owners a strong commercial incentive to preserve the product; the PHS review operated with limited independent research funding and testing capacity and drew significantly on data supplied by the industry itself; Prohibition-era legal and political complications around large-scale ethanol production also weighed against that alternative being pursued at scale."
+  },
+  "decision_quality": {
+    "rating": "WEAK",
+    "justification": "Genuine, documented contemporaneous warnings from independent scientists (Henderson, Hamilton) about population-level exposure were substantially set aside in favor of a commercial and patent-protection rationale; the review process ultimately used to clear the product for continued sale was thin on independent data and significantly shaped by industry input; and a known, already-validated non-toxic alternative (ethanol blends) existed and was not seriously pursued at scale. This was not a reasonable process that happened to encounter bad luck — real, credible warnings were available and were substantially discounted for reasons that included protecting an exclusive, profitable product."
+  },
+  "outcome_quality": {
+    "rating": "BAD",
+    "justification": "Leaded gasoline remained the U.S. industry standard for roughly the next half-century. Later epidemiological and geochemical research (beginning with Clair Patterson's work in the 1960s) established that automobile exhaust was the dominant source of a population-wide lead exposure now linked by extensive subsequent epidemiology to neurological and cognitive harm, particularly in children — a harm whose full scope was not scientifically established until long after the 1924-1926 decision."
+  },
+  "outcome": {
+    "immediate": "Following the temporary production halt and the May 1925 Public Health Service conference, the PHS investigative committee reported in January 1926 that it found no sufficient grounds to prohibit tetraethyl lead when properly diluted and handled, recommending continued study and worker protections; commercial production and sale resumed, and leaded gasoline became the dominant U.S. anti-knock solution.",
+    "long_term": "Leaded gasoline remained the standard U.S. automotive fuel additive for roughly the next fifty years. Clair Patterson's research from the 1960s established that gasoline lead was the dominant source of environmental and human lead exposure, contributing to the 1970 Clean Air Act, the introduction of unleaded gasoline for new U.S. cars beginning in 1975, and a full U.S. ban on leaded gasoline for on-road vehicles in 1996. A large body of subsequent epidemiology links population-wide lead exposure, especially in children, to measurable IQ and neurodevelopmental harm.",
+    "causal_directness": "CONTRIBUTING"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Exact death toll directly attributable to tetraethyl lead before and during 1924",
+      "description": "Detailed historical timelines list six named victims who died at the Bayway, New Jersey plant between late September and October 1924, while some general summaries round this to five; combined totals across the Dayton, Deepwater, and Bayway plants are reported variously (roughly 7 to 11-17 depending on cutoff date and which plants/years are counted, and whether later deaths through 1925 are included). This case uses the minimal common ground: several workers died at multiple plants in 1923-1924, with the Bayway plant alone confirmedly killing five to six workers in October 1924."
+    },
+    {
+      "topic": "How independent and rigorous the 1925-1926 Public Health Service investigation actually was",
+      "description": "Contemporaneous Public Health Service statements framed the investigation as a genuine, if resource-constrained, independent inquiry; later historical analysis, notably by Gerald Markowitz and David Rosner, is considerably more critical, characterizing the review as substantively shaped by industry-supplied data and inadequate independent testing capacity. Sources do not agree on how much weight to give industry influence versus honest scientific limitation."
+    }
+  ],
+  "has_progressive_version": true,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 52,
+      "rationale": "The known_at_t0 facts do support a genuine two-sided read on paper (occupational deaths could plausibly be framed as a fixable handling/engineering problem; the population-level exhaust risk was scientifically unproven at the time, and a validated substitute existed but sacrificed patent exclusivity). But a modern viewer's strong prior knowledge that 'leaded gasoline turned out to be a public-health disaster' will bias real-world guessing well before any in-story reveal, in a way the T0 framing itself cannot fully neutralize — a structural fairness problem distinct from whether the information given is balanced."
+    },
+    "dilemma_balance": {
+      "score": 42,
+      "rationale": "Once framed as 'a known-safe alternative exists, but the toxic option is more profitable because it's patentable, and workers have already died' — the corporate rationale, while real and not fabricated, reads as self-interested rather than persuasively safety-based to most audiences. It is more evenly matched than it might first appear (occupational-hazard framing was a genuinely common industrial-era argument), but noticeably less balanced than Apollo 13 and somewhat less balanced than Cuban Missile Crisis."
+    },
+    "context_compression": {
+      "score": 85,
+      "rationale": "Compresses cleanly: 'workers have already died making this product; a safe alternative exists; but the toxic one is the only one you can patent and sell exclusively' is graspable in seconds with zero prior chemistry or history knowledge."
+    },
+    "reveal_payoff": {
+      "score": 72,
+      "rationale": "Strong payoff on scale and mechanism: the reveal that this single, contestable 1924-1926 decision effectively set U.S. fuel policy for roughly the next half-century, and that the true scope of population-wide harm required Clair Patterson's isotope-geochemistry breakthrough decades later to even be measurable, gives real intellectual weight independent of whether the initial guess was 'obvious.'"
+    }
+  },
+  "production_verdict": {
+    "status": "WEAK",
+    "reasoning": "Historically well-documented and valuable precisely as a profit-over-safety cautionary case, and the long-term reveal (Clair Patterson, ~50 years of exposure) has genuine payoff. But as a guessing-game dilemma it is compromised on two fronts: the corporate 'continue' rationale reads as commercially self-interested rather than a strong safety argument even in T0 framing, and modern audiences carry overwhelming prior knowledge that leaded gasoline was harmful, which will bias guesses regardless of how neutrally the setup is written. Recommend using this case for its hindsight/reveal value and as an honest WEAK-decision/BAD-outcome lesson, not as a finely balanced A/B guess."
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "case_id": "molotov-ribbentrop-1939",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "The Alliance That Failed: Moscow and the Triple Alliance Negotiations, 1939",
+      "author_or_institution": "Geoffrey Roberts",
+      "date": "1996",
+      "citation": "Roberts, G. (1996). 'The Alliance That Failed: Moscow and the Triple Alliance Negotiations, 1939.' European History Quarterly, 26(3), pp. 383-414.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "British and French military delegations were sent to Moscow by slow merchant ship, arrived without full negotiating powers, and Voroshilov's August 14 question about Polish/Romanian transit rights went unanswered by the Western side, precipitating the talks' collapse."
+    },
+    {
+      "id": "src-02",
+      "title": "The Soviet Union and the Origins of the Second World War: Russo-German Relations and the Road to War, 1933-1941",
+      "author_or_institution": "Geoffrey Roberts",
+      "date": "1995",
+      "citation": "Roberts, G. (1995). The Soviet Union and the Origins of the Second World War: Russo-German Relations and the Road to War, 1933-1941. Macmillan.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Analytical framing of the August 1939 pact as a pragmatic Soviet response to the failure of collective-security diplomacy with Britain and France, intended to secure a buffer and time for rearmament rather than as ideological alignment with Germany."
+    },
+    {
+      "id": "src-03",
+      "title": "Telegram from Ambassador Laurence A. Steinhardt to the Secretary of State, August 23, 1939",
+      "author_or_institution": "United States Department of State, Foreign Relations of the United States, 1939, Volume I",
+      "date": "August 23, 1939",
+      "citation": "https://history.state.gov/historicaldocuments/frus1939v01/d296",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "Contemporaneous diplomatic reporting, the same day the pact was signed, that Poland's refusal to accept Soviet military assistance was the acknowledged cause of the Anglo-Franco-Soviet talks' failure, and that a Soviet-German agreement was already understood as imminent."
+    },
+    {
+      "id": "src-04",
+      "title": "Secret Additional Protocol to the Treaty of Nonaggression Between Germany and the U.S.S.R.",
+      "author_or_institution": "The Avalon Project, Yale Law School (hosting the German Foreign Office/Nuremberg document text)",
+      "date": "Signed August 23, 1939; hosted document, ongoing archive",
+      "citation": "https://avalon.law.yale.edu/20th_century/sesupp.asp",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "Full text of the secret protocol assigning Finland, Estonia, Latvia, and Bessarabia to the Soviet sphere of influence and setting the Narew-Vistula-San line as the German-Soviet demarcation in Poland."
+    },
+    {
+      "id": "src-05",
+      "title": "Memorandum by Karl Schnurre on the German-Soviet Credit Agreement of August 19, 1939",
+      "author_or_institution": "The Avalon Project, Yale Law School (German Foreign Office document)",
+      "date": "Memorandum dated August 29, 1939, describing the August 19, 1939 agreement",
+      "citation": "https://avalon.law.yale.edu/20th_century/ns059.asp",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "Terms of the German-Soviet commercial credit agreement (200 million Reichsmarks) signed August 19, 1939, four days before the non-aggression pact, and its role as an economic precursor to the political agreement."
+    },
+    {
+      "id": "src-06",
+      "title": "Nomonhan, 1939: The Red Army's Victory That Shaped World War II",
+      "author_or_institution": "Stuart D. Goldman",
+      "date": "2012",
+      "citation": "Goldman, S. D. (2012). Nomonhan, 1939: The Red Army's Victory That Shaped World War II. Naval Institute Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Scale and timing of the Khalkhin Gol (Nomonhan) undeclared border war between Soviet and Japanese forces, including Zhukov's decisive August 20-31, 1939 offensive, as a live two-front consideration for Soviet decision-makers in August 1939."
+    },
+    {
+      "id": "src-07",
+      "title": "The Forgotten Soviet-Japanese War of 1939",
+      "author_or_institution": "Stuart D. Goldman, The Diplomat",
+      "date": "August 2012",
+      "citation": "https://thediplomat.com/2012/08/the-forgotten-soviet-japanese-war-of-1939/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Corroborating summary of Khalkhin Gol's scale, timing, and its overlap with the German-Soviet pact negotiations, and Japan's shocked reaction to the pact's announcement."
+    },
+    {
+      "id": "src-08",
+      "title": "German-Soviet Pact",
+      "author_or_institution": "United States Holocaust Memorial Museum, Holocaust Encyclopedia",
+      "date": "Continually updated reference entry",
+      "citation": "https://encyclopedia.ushmm.org/content/en/article/german-soviet-pact",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check of the pact's signature, secret protocol terms, and its collapse with the German invasion of the USSR on June 22, 1941."
+    },
+    {
+      "id": "src-09",
+      "title": "German-Soviet Nonaggression Pact",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/German-Soviet-Nonaggression-Pact",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: signing date and negotiators, ten-year term of the pact, and its role in enabling the German invasion of Poland."
+    },
+    {
+      "id": "src-10",
+      "title": "What Stalin Knew: The Enigma of Barbarossa",
+      "author_or_institution": "David E. Murphy",
+      "date": "2005",
+      "citation": "Murphy, D. E. (2005). What Stalin Knew: The Enigma of Barbarossa. Yale University Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Documentation of the extensive intelligence warnings Stalin received before June 22, 1941 and his refusal to act on them, supporting the outcome-quality assessment that the additional time bought by the pact was not used to prepare for the eventual German invasion."
+    }
+  ]
+}

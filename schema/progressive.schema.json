@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "progressive.schema.json",
+  "title": "ProgressiveInformationVersion",
+  "type": "object",
+  "required": ["case_id", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": { "type": "string" },
+    "steps": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["stage", "content"],
+        "additionalProperties": false,
+        "properties": {
+          "stage": {
+            "enum": ["context", "initial_choice", "new_information", "keep_or_change", "actual_decision", "outcome"]
+          },
+          "content": { "type": "string" },
+          "when_received": { "type": "string" }
+        }
+      }
+    }
+  }
+}

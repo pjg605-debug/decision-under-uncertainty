@@ -1,0 +1,75 @@
+{
+  "case_id": "mawson-far-eastern-party-1912",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "The Home of the Blizzard: Being the Story of the Australasian Antarctic Expedition, 1911-1914",
+      "author_or_institution": "Douglas Mawson",
+      "date": "1915",
+      "citation": "Mawson, D. (1915). The Home of the Blizzard. William Heinemann. Chapters 12-13 (full text): https://www.antarctica.gov.au/about-antarctica/history/exploration-and-expeditions/australasian-antarctic-expedition/home-of-the-blizzard-book/chapter12/ and /chapter13/",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Mawson's own account of Ninnis's fall, the supplies lost, and his and Mertz's stated reasoning for choosing the plateau route over a descent to the frozen sea; also the account of dog consumption, Mertz's decline and death, and Mawson's solo crevasse fall and return to base."
+    },
+    {
+      "id": "src-02",
+      "title": "Mawson and Mertz: a re-evaluation of their ill-fated mapping journey during the 1911-1914 Australasian Antarctic Expedition",
+      "author_or_institution": "Denise Carrington-Smith",
+      "date": "2005",
+      "citation": "Carrington-Smith, D. (2005). Medical Journal of Australia, 183(11), pp. 638-641.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Re-evaluation of Mertz's cause of death, arguing against the hypervitaminosis-A hypothesis in favor of severe malnutrition and psychological trauma; basis for the source_disagreement entry on cause of death."
+    },
+    {
+      "id": "src-03",
+      "title": "Hypervitaminosis A hypothesis (original)",
+      "author_or_institution": "J. B. Cleland and R. V. Southcott",
+      "date": "1969",
+      "citation": "Cleland, J. B., & Southcott, R. V. (1969). 'Hypervitaminosis A in the Antarctic in the Days of the Old Explorers.' Medical Journal of Australia, 1, pp. 1250-1256.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Original scientific hypothesis attributing Xavier Mertz's death to vitamin A poisoning from consuming husky liver; the other side of the documented source_disagreement on cause of death."
+    },
+    {
+      "id": "src-04",
+      "title": "Mawson's fatal journey / Catastrophe (Home of the Blizzard interpretive site)",
+      "author_or_institution": "Australian Antarctic Division / Australian Antarctic Program",
+      "date": "Ongoing institutional history site",
+      "citation": "https://mawsonshuts.antarctica.gov.au/cape-denison/mawsons-fatal-journey/catastrophe/",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Government archival cross-check of the timeline of Ninnis's fall, the supplies lost, and Mawson's subsequent solo journey and near-miss return relative to the Aurora's departure."
+    },
+    {
+      "id": "src-05",
+      "title": "Far Eastern Party",
+      "author_or_institution": "English Wikipedia (used for discovery/orientation only; underlying facts cross-checked against Home of the Blizzard and the MJA articles)",
+      "date": "Accessed 2026",
+      "citation": "https://en.wikipedia.org/wiki/Far_Eastern_Party",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Orientation on party composition, dates, and overall sequence of events, used only to identify primary and academic sources rather than as a standalone citation for load-bearing claims."
+    },
+    {
+      "id": "src-06",
+      "title": "The Most Terrible Polar Exploration Ever: Douglas Mawson's Antarctic Journey",
+      "author_or_institution": "Smithsonian Magazine",
+      "date": "2013",
+      "citation": "https://www.smithsonianmag.com/history/the-most-terrible-polar-exploration-ever-douglas-mawsons-antarctic-journey-82192685/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Corroborating narrative detail on the deadline pressure created by the Aurora's necessary departure date and the scale of Mawson's solo trek."
+    },
+    {
+      "id": "src-07",
+      "title": "Douglas Mawson",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/biography/Douglas-Mawson",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General biographical and chronological cross-check on Mawson's role as expedition leader and the dates of the Far Eastern Party's sledging journey."
+    }
+  ]
+}

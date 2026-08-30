@@ -1,0 +1,109 @@
+{
+  "id": "whaleship-essex-1820",
+  "title": "The Whaleship Essex: Nearer Islands or the Longer Route to South America (November 1820)",
+  "case_type": ["survival", "exploration"],
+  "fame_level": "medium",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "era": "Age of American whaling, November 1820",
+  "location": "South Pacific Ocean, approximately 2,000 nautical miles west of South America",
+  "actors": [
+    { "name": "George Pollard Jr.", "role": "Captain of the Essex, final decision-maker" },
+    { "name": "Owen Chase", "role": "First mate; argued against sailing for the nearer Pacific islands" },
+    { "name": "Matthew Joy", "role": "Second mate; sided with Chase against the nearer islands" },
+    { "name": "Thomas Nickerson", "role": "Cabin boy, age 14; later wrote a manuscript account of the voyage" },
+    { "name": "Owen Coffin", "role": "Crewman, Captain Pollard's first cousin; died in the casting of lots" }
+  ],
+  "t0": {
+    "definition": "The moment, immediately after the whaleship Essex was rammed twice by a sperm whale and sank on November 20, 1820, when Captain George Pollard Jr. and the 20 surviving crew, now divided among three small open whaleboats with salvaged food and water, had to choose a destination for their voyage to safety.",
+    "date": "November 20-22, 1820 (the sinking occurred November 20; the destination was debated and settled over the following one to two days before the boats got underway)",
+    "location": "South Pacific Ocean, roughly 2,000 nautical miles west of the coast of South America and roughly 1,200-1,500 nautical miles east of the Marquesas and Society Islands"
+  },
+  "stakes": "Twenty men in three open whaleboats, with limited food and water and no reliable way to be found, had to choose a destination that would determine whether they survived at all; the wrong call on distance, wind, or provisioning could be fatal regardless of which direction avoided which danger.",
+  "known_at_t0": [
+    { "statement": "The Marquesas and Society Islands lay roughly 1,200-1,500 nautical miles to the west-southwest, reachable in an estimated two to three weeks by sailing with the prevailing trade winds and westward currents.", "evidence_class": "FACT" },
+    { "statement": "The coast of South America (near Chile/Peru) lay more than 3,000 nautical miles away, and reaching it required sailing against the prevailing trade winds for a much longer voyage of many weeks, with the added hope of intercepting more southerly westerlies partway through.", "evidence_class": "FACT" },
+    { "statement": "The officers (Chase and second mate Matthew Joy in particular) believed, based on secondhand rumor and outdated or garbled reports from earlier Pacific voyagers, that the nearer Pacific islands were inhabited by cannibals, and argued against sailing there on this basis.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Captain Pollard's own later account states plainly that fear of being 'devoured by cannibals' was the crew's stated reason for rejecting the nearer islands.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "Some island groups in the Pacific, including Fiji and parts of the Marquesas, did have real, documented histories of ritual or wartime cannibalism recorded by earlier European visitors and traders; this gave the crew's fear a basis in fact, even though it was not specific, current, or reliable knowledge about the particular islands nearest to their position.", "evidence_class": "FACT" },
+    { "statement": "By 1820, American and European trading and whaling vessels had in fact visited the Marquesas and Society Islands repeatedly without violent incident, though this was not something the Essex's officers could verify from their position at sea.", "evidence_class": "FACT" },
+    { "statement": "The three whaleboats were open, undecked craft roughly 25 feet long, holding salvaged hardtack, water, and a small quantity of Galapagos tortoises; the crew had no way to resupply at sea beyond what they carried and whatever fish or rain they could catch.", "evidence_class": "FACT" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The much longer voyage toward South America would exhaust the crew's food and water long before landfall, leading to starvation, the deaths of several crew members, and eventually cannibalism of the dead and, in one case, the killing of a crewmate chosen by drawing lots for food -- none of which could have been foreseen as the specific consequence of choosing the longer route.", "evidence_class": "FACT" },
+    { "statement": "The islands the crew feared were largely uninhabited or would have posed no violent threat to the crew; the specific outcome that the 'safe' route would prove catastrophic while the 'feared' route would likely have been survivable was not knowable at T0.", "evidence_class": "INFERENCE" },
+    { "statement": "Only 8 of the 20 original crew would ultimately survive, rescued over a period stretching to February and April 1821.", "evidence_class": "FACT" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Sail for the nearer Marquesas or Society Islands",
+      "description": "Head west-southwest with the trade winds toward the Marquesas or Society Islands, roughly 1,200-1,500 nautical miles away, an estimated two-to-three-week voyage.",
+      "upside": "Much shorter distance, favorable following winds and currents, meaning less time exposed in open boats and a much lower requirement for food and water to survive the passage.",
+      "downside": "Risk, based on rumor rather than firsthand knowledge, that the islands were inhabited by hostile or cannibalistic peoples.",
+      "why_it_made_sense": "The distance and wind advantage were large and well understood; a two-to-three-week voyage with favorable winds was a far smaller logistical gamble than a multi-thousand-mile beat against the wind, purely in terms of the food and water the boats could carry.",
+      "risk_carried": "If the specific islands reached did turn out to be dangerous, the risk was to physical safety on arrival rather than to survival during the voyage itself."
+    },
+    {
+      "id": "option_b",
+      "label": "Sail the longer route toward South America",
+      "description": "Sail south to pick up more favorable winds and then east, covering over 3,000 nautical miles against the prevailing trade winds, to reach the South American coast.",
+      "upside": "Avoided any risk of encountering the feared island populations; South America was familiar, inhabited by people the crew expected to be non-hostile, and offered a real prospect of rescue by other ships along a known shipping route.",
+      "downside": "A vastly longer voyage sailing against or across prevailing winds, requiring far more food and water than the boats carried or could realistically catch or ration for the distance and time involved.",
+      "why_it_made_sense": "Given the crew's belief that the nearer islands carried a real risk of violent death, choosing a longer but 'known-safe' destination was a reasonable trade of logistical risk (distance, supply) for a risk they rated as more frightening (violence, cannibalism), especially since starvation at sea was a familiar and, they may have assumed, survivable hazard that other whalemen had weathered before.",
+      "risk_carried": "The voyage's food and water requirements were not something the crew could renegotiate once underway; a multi-thousand-mile beat against the wind left far less margin for delay, becalming, or miscalculation before supplies ran out."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "Captain George Pollard Jr., after first mate Owen Chase and second mate Matthew Joy argued against Pollard's initial preference for the nearer islands",
+    "decided_when": "Decided in the one to two days following the sinking on November 20, 1820, before the three boats got underway",
+    "stated_basis": "Pollard later stated the crew's fear of being 'devoured by cannibals' as the reason for rejecting the nearer islands; Chase and Joy pressed this view over Pollard's own initial inclination to sail for the Marquesas or Society Islands, and Pollard deferred to his officers.",
+    "constraints": "Three separate, open, oar-and-sail whaleboats with only the food, water, and navigational instruments salvaged before the Essex went down; no means of resupply at sea beyond rainfall, fish, and the small number of Galapagos tortoises aboard; the boats could and did become separated during the voyage."
+  },
+  "decision_quality": {
+    "rating": "WEAK",
+    "justification": "The decision rested on rumor and secondhand, outdated report about specific islands the crew had never visited, while the far more certain and quantifiable risk -- that a voyage several times longer, sailed largely against the wind, would exceed the food and water the boats could carry -- was well within the officers' own navigational and provisioning knowledge and should have been weighable in fairly concrete terms. Weighing an unverified, general fear of Pacific islanders against a foreseeable and calculable supply shortfall is not a symmetrical trade-off, and the record indicates Pollard himself initially favored the nearer islands before being overruled by his mates."
+  },
+  "outcome_quality": {
+    "rating": "BAD",
+    "justification": "The longer route did in fact exhaust the boats' food and water well before landfall. Several crew members died of starvation and exposure; survivors resorted to eating the flesh of dead crewmates, and, in the case of one boat, drew lots to select and kill a living crewmate (Owen Coffin) for food. Only 8 of the original 20 crew survived, rescued between February and April 1821. The islands the crew feared caused no violence to the three men who did land on and remain at Henderson Island, who survived on birds, eggs, and shellfish until their own rescue."
+  },
+  "outcome": {
+    "immediate": "The three boats became separated during the voyage. One boat was never found. Survivors on the other two boats ran out of food within weeks, and multiple crew members died; the dead were eaten by survivors, and on Pollard's boat the crew drew lots, resulting in the shooting of Owen Coffin, Pollard's first cousin, by Charles Ramsdell. Three crew members who chose to remain on the uninhabited Henderson Island survived independently on the island's birds, eggs, and shellfish.",
+    "long_term": "Eight of the twenty original crew survived: five were rescued from the two whaleboats (three aboard Chase's boat on February 18, 1821, off the coast of Chile, and two aboard Pollard's boat on February 23, 1821), and three more were rescued from Henderson Island on April 9, 1821. Owen Chase's 1821 published narrative of the ordeal is understood to have been a documented influence on Herman Melville's writing of Moby-Dick.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "How firmly Pollard himself initially favored the nearer islands",
+      "description": "Owen Chase's 1821 published narrative and Thomas Nickerson's later manuscript both describe Pollard's preference for the Society/Marquesas Islands being overruled by his officers, but the two accounts differ somewhat in how much initiative and certainty they attribute to Pollard versus to Chase in the actual debate, and were written from different vantage points (Chase's account published soon after the events and widely read; Nickerson's account written decades later and only rediscovered in the 20th century)."
+    },
+    {
+      "topic": "Exact number of days deliberated and precise wording of the cannibalism fear",
+      "description": "Secondary accounts vary slightly on how many days elapsed between the sinking and the boats' departure, and the exact phrasing attributed to Pollard regarding cannibal fear differs between his own later verbal recollections (recorded by others) and the officers' written narratives; the underlying substance of the decision is not in dispute."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 78,
+      "rationale": "A viewer given only the T0 facts (distance and wind to each destination, the crew's belief -- not confirmed knowledge -- that the nearer islands held cannibals) has everything needed to reason toward either choice; nothing needed for a defensible answer is withheld until the reveal. The unresolved question of exactly how founded the cannibal rumor was is presented honestly as belief rather than settled fact, which keeps the choice genuinely open rather than pre-loaded toward one answer."
+    },
+    "dilemma_balance": {
+      "score": 80,
+      "rationale": "This is a clean, evenly matched gut-vs-math dilemma: visceral fear of violence at the hands of unknown people versus an abstract, harder-to-feel logistics problem (food and water over a much longer distance). Both pulls are genuinely strong and relatable, which is why a reasonable person could go either way without either option reading as a strawman."
+    },
+    "context_compression": {
+      "score": 90,
+      "rationale": "The setup needs almost no historical background: a ship sank, you're in a small boat, one direction is closer but rumored dangerous, the other is farther but 'known safe.' This compresses to a single sentence and lands immediately for a zero-context viewer."
+    },
+    "reveal_payoff": {
+      "score": 88,
+      "rationale": "The reveal is a strong, well-documented irony -- the feared danger (violence from islanders) never materialized (the three men who stayed on Henderson Island survived unharmed), while the 'safe' choice produced a far worse and more certain fate (starvation, cannibalism among the crew itself, and the killing of a crewmate by lot). This lands as genuine, non-manufactured payoff directly traceable to primary accounts."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Strong primary sourcing (Chase's 1821 narrative, Nickerson's manuscript), a precise and undisputed T0, a genuinely balanced and easily compressed dilemma, and an honest, well-documented ironic payoff that doesn't require sensationalizing the cannibalism beyond the sourced facts. This is a solid candidate for flagship dilemma-format content."
+  }
+}

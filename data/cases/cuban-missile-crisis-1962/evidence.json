@@ -1,0 +1,85 @@
+{
+  "case_id": "cuban-missile-crisis-1962",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "The Cuban Missile Crisis, 1962 (primary source collection: ExComm meeting recordings and transcripts)",
+      "author_or_institution": "John F. Kennedy Presidential Library and Museum",
+      "date": "Recordings made Oct 1962; archive maintained ongoing",
+      "citation": "https://www.jfklibrary.org/learn/about-jfk/jfk-in-history/the-cuban-missile-crisis",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Timeline of U-2 photo discovery (Oct 14-16), ExComm formation and deliberation, and the Oct 22 public announcement."
+    },
+    {
+      "id": "src-02",
+      "title": "The Cuban Missile Crisis, 1962 — Briefing Book (declassified ExComm transcripts, CIA and DoD documents)",
+      "author_or_institution": "National Security Archive, George Washington University",
+      "date": "Archive compiled from documents dated 1962; ongoing curation",
+      "citation": "https://nsarchive.gwu.edu/briefing-book/cuban-missile-crisis",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "Details of the Oct 16-20 ExComm option debate (air strike vs. blockade), Joint Chiefs' position, and OAS/Rio Treaty legal framing of the quarantine."
+    },
+    {
+      "id": "src-03",
+      "title": "Essence of Decision: Explaining the Cuban Missile Crisis (2nd ed.)",
+      "author_or_institution": "Graham T. Allison and Philip Zelikow",
+      "date": "1999",
+      "citation": "Allison, G. & Zelikow, P. (1999). Essence of Decision: Explaining the Cuban Missile Crisis (2nd ed.). Longman.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Analytical framing of the ExComm decision process as a model case of graduated, reversible crisis response; assessment of decision quality independent of outcome."
+    },
+    {
+      "id": "src-04",
+      "title": "The Cuban Missile Crisis in American Memory: Myth versus Reality",
+      "author_or_institution": "Sheldon M. Stern",
+      "date": "2012",
+      "citation": "Stern, S. M. (2012). The Cuban Missile Crisis in American Memory: Myth versus Reality. Stanford University Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Re-analysis of the ExComm tape recordings showing disagreement among participant memoirs about how unified the group was and when key figures shifted position; basis for the SOURCE_DISAGREEMENT entry on ExComm unanimity."
+    },
+    {
+      "id": "src-05",
+      "title": "Thirteen Days: A Memoir of the Cuban Missile Crisis",
+      "author_or_institution": "Robert F. Kennedy",
+      "date": "1969",
+      "citation": "Kennedy, R. F. (1969). Thirteen Days: A Memoir of the Cuban Missile Crisis. W. W. Norton & Company.",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Robert Kennedy's own account of arguing against a surprise air strike as morally comparable to a 'Pearl Harbor in reverse.'"
+    },
+    {
+      "id": "src-06",
+      "title": "CORONA and Cuba: U-2 and Photographic Intelligence in the Missile Crisis (declassified intelligence assessments)",
+      "author_or_institution": "Central Intelligence Agency, Freedom of Information Act Electronic Reading Room",
+      "date": "Documents dated 1962; declassified later",
+      "citation": "https://www.cia.gov/readingroom/collection/cuban-missile-crisis",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Contemporary CIA estimates of Soviet troop levels (~8,000-10,000) and of missile-site readiness timelines, later shown to significantly understate actual Soviet troop strength (~42,000)."
+    },
+    {
+      "id": "src-07",
+      "title": "One Minute to Midnight: Kennedy, Khrushchev, and Castro on the Brink of Nuclear War",
+      "author_or_institution": "Michael Dobbs",
+      "date": "2008",
+      "citation": "Dobbs, M. (2008). One Minute to Midnight. Alfred A. Knopf.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Account of the October 27 B-59 submarine incident and Vasili Arkhipov's refusal to authorize a nuclear torpedo launch, based on interviews with surviving Soviet submarine officers and declassified Soviet naval records."
+    },
+    {
+      "id": "src-08",
+      "title": "Cuban missile crisis",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/Cuban-missile-crisis",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: resolution terms (missile withdrawal, non-invasion pledge, secret Jupiter-missile-in-Turkey withdrawal) and long-term consequences (hotline, 1963 Partial Test Ban Treaty)."
+    }
+  ]
+}

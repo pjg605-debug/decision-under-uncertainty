@@ -1,0 +1,106 @@
+{
+  "id": "apollo-13-free-return-1970",
+  "title": "Apollo 13: Direct Abort vs. Free-Return After the Oxygen Tank Explosion (April 1970)",
+  "case_type": ["exploration", "science", "survival"],
+  "fame_level": "well_known",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "era": "Apollo program, April 1970",
+  "location": "Apollo 13 spacecraft (Command/Service Module Odyssey and Lunar Module Aquarius) in translunar space; NASA Mission Control Center, Houston, Texas",
+  "actors": [
+    { "name": "James Lovell", "role": "Apollo 13 Commander" },
+    { "name": "Jack Swigert", "role": "Command Module Pilot" },
+    { "name": "Fred Haise", "role": "Lunar Module Pilot" },
+    { "name": "Eugene ('Gene') Kranz", "role": "NASA Flight Director, lead of the 'White Team,' directed the shift to a Moon-loop return and ordered the LM-lifeboat contingency plan drawn up" },
+    { "name": "Sy Liebergot", "role": "EECOM (Electrical, Environmental, and Consumables Manager) flight controller on duty; first flagged the oxygen tank instrument anomaly" }
+  ],
+  "t0": {
+    "definition": "The approximately one-hour window immediately after Mission Control and the crew confirmed the oxygen tank failure was a real, worsening loss of oxygen and electrical power (not an instrumentation glitch) and had abandoned the planned lunar landing, during which Flight Director Gene Kranz's team and the crew had to choose the abort trajectory: an immediate direct-abort burn using the Service Module's main engine (SPS), or a slower free-return trajectory around the Moon powered by the Lunar Module's descent engine.",
+    "date": "Night of April 13-14, 1970. Oxygen tank explosion at approximately 9:08 PM EST April 13 (55 hours 54-55 minutes ground elapsed time); the trajectory decision converged within about an hour; the free-return course-correction burn using the LM descent engine was executed later, at 61 hours 29 minutes ground elapsed time.",
+    "location": "Apollo 13 spacecraft, roughly 200,000 miles from Earth on the outbound translunar coast; NASA Mission Control Center, Houston"
+  },
+  "stakes": "With the Service Module critically damaged and consumables suddenly scarce, the crew's survival depended on choosing a return path that would actually get them home; choosing wrong — either by firing a possibly-compromised engine, or by committing to a much longer trip the Lunar Module's systems were never designed to sustain for three men — could strand or kill the crew hundreds of thousands of miles from Earth.",
+  "known_at_t0": [
+    { "statement": "An oxygen tank in the Service Module had failed catastrophically: Lovell reported oxygen tank 2 reading zero and visible venting into space, and telemetry showed oxygen tank 1 also depleting, with an estimate of less than two hours of remaining fuel-cell power generation.", "evidence_class": "FACT" },
+    { "statement": "The Service Module's main engine (the Service Propulsion System, SPS) was physically mounted adjacent to the bay containing the ruptured oxygen tank, and no one could yet determine whether the explosion had damaged the engine, its plumbing, or its electrical controls.", "evidence_class": "FACT" },
+    { "statement": "The Lunar Module Aquarius and its descent engine (Descent Propulsion System) were undocked-but-attached, undamaged by the explosion, and had propulsive performance margin; contingency plans already existed for using the LM engine to maneuver the docked stack in the event of an SPS failure, since this had been studied for other abort scenarios.", "evidence_class": "FACT" },
+    { "statement": "The Lunar Module's life-support and power systems (batteries, water, oxygen, and lithium hydroxide CO2-scrubber canisters) were designed and rated to sustain two astronauts during roughly two days of lunar-surface operations, not three astronauts for the multi-day transit a free-return trajectory around the Moon would require.", "evidence_class": "FACT" },
+    { "statement": "A direct abort burn using the SPS could turn the spacecraft around and return it to Earth in roughly a day and a half, far faster than looping around the Moon.", "evidence_class": "FACT" },
+    { "statement": "Apollo 13 was on a 'hybrid' trajectory (adjusted for a lunar landing at Fra Mauro), not the free-return trajectory used on some earlier missions; left uncorrected, this path would miss the Earth by roughly 2,600 miles on the way back.", "evidence_class": "FACT" },
+    { "statement": "Flight Director Gene Kranz and Mission Control judged that firing the SPS engine without knowing the extent of damage near it carried a risk of a further, possibly catastrophic failure during the burn, at a moment when the crew had no backup propulsion if the SPS failed outright.", "evidence_class": "CONTEMPORARY_BELIEF" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The specific carbon-dioxide-scrubber shape mismatch — that the Command Module's square lithium hydroxide canisters would not fit the Lunar Module's round receptacles — became an operationally urgent problem, and the improvised 'mailbox' adapter that solved it, only about a day and a half after the crew moved into the LM, i.e. after the trajectory decision had already been made and acted upon.", "evidence_class": "FACT" },
+    { "statement": "The full extent of the Service Module's exterior damage (an entire panel blown off, exposing damaged equipment) was not visible to the crew or Mission Control until the Service Module was jettisoned just before reentry, days after the trajectory decision.", "evidence_class": "FACT" },
+    { "statement": "The root cause of the explosion — damaged wiring insulation in oxygen tank 2, dating to a mishandling incident and an incompatible ground-test heater/thermostat design years earlier — was identified only by the post-flight Apollo 13 Review Board, not during the mission.", "evidence_class": "FACT" },
+    { "statement": "Whether the SPS engine and its plumbing were in fact undamaged (as later, cautious post-mission analysis suggested was likely) was not established at the time of the trajectory decision; Mission Control had to decide under genuine uncertainty about the engine's condition, not with knowledge that it would probably have worked.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Direct abort using the Service Module main engine (SPS)",
+      "description": "Immediately turn the spacecraft around and fire the Service Module's main engine (SPS) for a burn that would send Apollo 13 straight back toward Earth, arriving in roughly a day and a half.",
+      "upside": "Dramatically shortens the return time and the total duration the crew would need to survive on damaged/limited systems, minimizing exposure to consumables shortfalls and further mechanical failure.",
+      "downside": "Required firing an engine mounted directly next to the site of an explosion whose full extent of damage was unknown, under time pressure, with no propulsion backup if the SPS itself failed or exploded during the burn.",
+      "why_it_made_sense": "Speed directly addressed the crew's most acute problem — dwindling power and oxygen — and the SPS was, on paper, the spacecraft's most capable engine for a large course-change burn; if it were undamaged, this was the fastest way to get the crew home.",
+      "risk_carried": "If the SPS or its associated Service Module systems had been damaged by the explosion, attempting to fire it could cause a further explosion or loss of attitude control, potentially destroying the vehicle or stranding the crew with no propulsion at all."
+    },
+    {
+      "id": "option_b",
+      "label": "Free-return trajectory around the Moon using the LM as a 'lifeboat'",
+      "description": "Use the undamaged Lunar Module's descent engine to correct onto a free-return trajectory that would loop around the Moon and use lunar gravity to send the joined spacecraft back toward Earth, arriving in roughly four days total.",
+      "upside": "Used a demonstrably undamaged engine and system with performance margin, avoided any question of firing a possibly-compromised SPS, and matched an already-studied contingency (using the LM to maneuver the stack in an SPS-failure scenario).",
+      "downside": "Took roughly three times longer to get home than a direct abort, forcing three astronauts to live in a Lunar Module whose power, water, and CO2-scrubbing systems were rated for two astronauts over about two days of lunar surface operations, not three astronauts over roughly four days of transit.",
+      "why_it_made_sense": "It removed the single largest unknown (the SPS's condition) from the critical path and relied on hardware known to work, on the reasoning that a slower, more certain route home was safer than a faster route through an engine of doubtful integrity.",
+      "risk_carried": "Committing to the longer path meant the crew's survival now depended on stretching consumables well past their rated limits, with problems (such as the LM's CO2-scrubber canister mismatch) that had not yet even been identified, let alone solved, at the moment the trajectory was chosen."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "NASA Flight Director Gene Kranz and Mission Control, in coordination with the Apollo 13 crew (Lovell, Swigert, Haise)",
+    "decided_when": "Within roughly the first hour after the explosion and the abandonment of the lunar landing (the night of April 13, 1970); the actual free-return course-correction burn using the LM descent engine was executed later, at 61 hours 29 minutes ground elapsed time, once trajectory specialists had computed it.",
+    "stated_basis": "Kranz directed the team to pursue a Moon-loop return using the LM descent engine rather than attempt an immediate SPS burn, citing (per his own later account) a strong reluctance to fire an engine mounted next to the explosion site without knowing its condition, in favor of a slower path built on hardware known to be intact.",
+    "constraints": "Extremely limited time to assess SPS damage before a burn would have needed to be executed; no way to physically inspect the Service Module's interior; the LM's consumables (power, water, lithium hydroxide) were not designed for the load about to be placed on them, a constraint accepted as the price of avoiding the SPS risk; electrical power in the Command Module also had to be shut down almost entirely to conserve it for reentry, complicating any parallel option to still attempt an SPS burn later."
+  },
+  "decision_quality": {
+    "rating": "STRONG",
+    "justification": "Facing acute time pressure and irreversible options, Mission Control correctly identified the single largest unknown risk (the untested condition of the SPS engine next to the explosion) and chose the option that removed it, accepting a well-understood and manageable trade-off (stretching consumables) over a poorly-understood and potentially catastrophic one (firing a possibly damaged engine with no backup). It matched an already-studied contingency plan rather than improvising blind, and left room to solve the consumables problem as it arose (as the crew and ground engineers did with the CO2-scrubber 'mailbox' fix days later)."
+  },
+  "outcome_quality": {
+    "rating": "GOOD",
+    "justification": "All three astronauts returned safely, splashing down on April 17, 1970. The LM's stretched consumables held out, aided by improvised fixes (the CO2-scrubber adapter, extreme power rationing) developed after the trajectory decision, and post-flight inspection suggested the SPS engine likely would have worked if fired — meaning the safer-seeming choice also happened to forgo a burn that a later, calmer analysis judged might well have succeeded, without that having been knowable at the time."
+  },
+  "outcome": {
+    "immediate": "Apollo 13 looped around the Moon and executed the free-return and subsequent 'PC+2' course-correction burns using the LM descent engine; the crew endured cold, cramped conditions and severe power/water rationing for roughly four days, solved a life-threatening CO2 buildup with an improvised filter adapter, and splashed down safely in the Pacific Ocean on April 17, 1970.",
+    "long_term": "The mission became a widely cited example of real-time crisis engineering and mission-control teamwork; NASA's subsequent investigation (the Apollo 13 Review Board) identified the root cause in the oxygen tank's damaged wiring and led to design changes in later Apollo spacecraft; the mission is frequently invoked in engineering and management education as a model of structured problem-solving under extreme constraint.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "How quickly and by what reasoning Mission Control ruled out a direct SPS abort",
+      "description": "Some accounts (including Gene Kranz's own retrospective statements) emphasize an immediate, strong intuitive aversion to firing the SPS engine so close to the explosion site; other technical retrospectives note that the CSM's available electrical power after the explosion may also have been insufficient to operate the SPS engine's valves and gimbal system in time, meaning the decision may have been reinforced, or in some tellings partly forced, by a separate power constraint rather than resting on risk judgment alone. Sources do not fully agree on how much each factor weighed in the real-time decision."
+    }
+  ],
+  "has_progressive_version": true,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 78,
+      "rationale": "The known_at_t0 facts give a viewer two comparably serious, concrete risks to weigh — an engine of unknown condition next to an explosion vs. a known-good engine attached to life-support systems rated for far less time/people than needed — without requiring any information withheld until the reveal. Both options are genuinely defensible engineering judgments under real uncertainty, not a strawman vs. an obvious winner."
+    },
+    "dilemma_balance": {
+      "score": 75,
+      "rationale": "Speed-with-unknown-risk vs. slowness-with-known-constraint is a well-matched trade-off: a reasonable person could plausibly argue either way, since the 'safe' option is not free of danger (three people stretching two-person consumables) and the 'risky' option is not obviously reckless (the SPS may well have been undamaged). Score is not higher because the mission's outcome is unusually widely known (via the 1995 film and decades of retelling), which can pre-color viewer judgment before the reveal."
+    },
+    "context_compression": {
+      "score": 85,
+      "rationale": "Compresses to one clean image and question ('bang next to your main engine, use it now or take the long way on the backup engine?') that needs no prior spaceflight knowledge to grasp quickly."
+    },
+    "reveal_payoff": {
+      "score": 62,
+      "rationale": "The specific hindsight detail — that the SPS likely would have worked, meaning the safer-feeling choice also happened to forgo a burn that probably would have succeeded — is a genuine, well-sourced payoff. Score is capped by this being one of the most famous space stories in existence; a large share of viewers already know the crew survived, which reduces suspense around the outcome itself even though the trajectory-choice reasoning and the CO2-scrubber twist remain less commonly known."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Precise T0, strong primary/NASA-archival sourcing, a genuinely balanced A/B where both options carry real and different categories of risk, and a real (if partial) reveal payoff. Main caveat for producers: because this is an extremely well-known story, framing and marketing should lean on the less-known specifics (the SPS-damage uncertainty, the consumables math, the free-return burn timing) rather than the 'did they survive' question, since most viewers already know that answer going in."
+  }
+}

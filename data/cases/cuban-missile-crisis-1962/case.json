@@ -1,0 +1,111 @@
+{
+  "id": "cuban-missile-crisis-1962",
+  "title": "Cuban Missile Crisis: Blockade vs. Air Strike (October 1962)",
+  "case_type": ["political", "diplomacy", "crisis"],
+  "fame_level": "well_known",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "era": "Cold War, October 1962",
+  "location": "Washington D.C., USA / Cuba / Atlantic quarantine line",
+  "actors": [
+    { "name": "John F. Kennedy", "role": "President of the United States, final decision-maker" },
+    { "name": "Robert F. Kennedy", "role": "Attorney General, ExComm member, advocate for the blockade option" },
+    { "name": "Robert McNamara", "role": "Secretary of Defense, ExComm member" },
+    { "name": "Curtis LeMay", "role": "USAF Chief of Staff, Joint Chiefs, advocate for air strikes" },
+    { "name": "Maxwell Taylor", "role": "Chairman of the Joint Chiefs of Staff" },
+    { "name": "Nikita Khrushchev", "role": "First Secretary of the Communist Party of the Soviet Union" }
+  ],
+  "t0": {
+    "definition": "The moment ExComm (the Executive Committee of the National Security Council) has confirmed, from U-2 photography, that the Soviet Union is building medium-range ballistic missile sites in Cuba, and must recommend a response to President Kennedy — before any public announcement and before any strike or blockade has begun.",
+    "date": "October 16-21, 1962 (decision converges the evening of October 20-21; publicly announced October 22, 1962, 7:00 PM EST)",
+    "location": "The White House, Washington D.C."
+  },
+  "stakes": "A wrong call in either direction could trigger direct US-Soviet nuclear war. Acting too weakly could leave nuclear-capable missiles operational 90 miles from Florida; acting too aggressively could start the war the decision was meant to prevent.",
+  "known_at_t0": [
+    { "statement": "U-2 reconnaissance photographs taken October 14, 1962 and analyzed by the National Photographic Interpretation Center show construction consistent with Soviet SS-4 medium-range ballistic missile (MRBM) launch sites near San Cristobal, Cuba.", "evidence_class": "FACT" },
+    { "statement": "US intelligence assessed that the missile sites were not yet operational as of October 16-20, and estimated (with uncertainty) several more days to weeks before the missiles could be fueled, mated with warheads, and launched.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Soviet officials, including Foreign Minister Andrei Gromyko in an October 18 Oval Office meeting, had directly told President Kennedy that Soviet aid to Cuba was defensive and training-related only, not offensive weapons.", "evidence_class": "FACT" },
+    { "statement": "The Joint Chiefs of Staff assessed that even a large air strike could not be guaranteed to destroy 100% of the missile sites in a single pass, and recommended it be paired with an invasion force.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Robert Kennedy and several ExComm members argued that a surprise US air strike on Cuba would be seen internationally as a 'Pearl Harbor in reverse,' damaging US moral standing regardless of military outcome.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "CIA estimates at the time put Soviet military personnel in Cuba at roughly 8,000-10,000.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "A naval quarantine could be framed under the Organization of American States' Rio Treaty as a collective hemispheric defense measure, giving it a stronger legal footing than a unilateral blockade.", "evidence_class": "FACT" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "Nuclear warheads for the medium-range missiles, and for IL-28 bombers, had already arrived in Cuba (aboard the freighter Indigirka, arriving October 4, 1962) — this was not known to US intelligence during the October 16-22 deliberations and was confirmed only decades later through Soviet-era disclosures.", "evidence_class": "FACT" },
+    { "statement": "Actual Soviet troop strength in Cuba was approximately 42,000, roughly four to five times the CIA's contemporary estimate.", "evidence_class": "FACT" },
+    { "statement": "On October 27, without authorization from Moscow, a Soviet submarine (B-59) came close to launching a nuclear-tipped torpedo against US Navy vessels enforcing the quarantine; the launch required unanimous agreement among three officers, and one, Vasili Arkhipov, refused. ExComm had no visibility into this near-miss as it happened.", "evidence_class": "FACT" },
+    { "statement": "Whether Soviet field commanders in Cuba held pre-delegated authority to use tactical nuclear weapons against a US invasion force without a fresh order from Moscow is disputed among historians; it was not something ExComm could have assessed at T0 either way.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Air strike (with likely follow-on invasion)",
+      "description": "A US surprise air strike targeting the missile sites and Soviet military assets in Cuba, advocated most forcefully by Air Force Chief of Staff Curtis LeMay and initially favored by several Joint Chiefs, likely to be followed by a ground invasion to secure the island.",
+      "upside": "Removes the missile threat directly and quickly, before the sites can become operational; demonstrates resolve; avoids a prolonged standoff.",
+      "downside": "Cannot guarantee destruction of every missile; would likely kill Soviet personnel on Cuban soil, which risked direct escalation; internationally resembled a surprise attack with no warning or off-ramp for Moscow.",
+      "why_it_made_sense": "US doctrine at the time held that a credible, fast, overwhelming response to a clear military provocation deterred further escalation; intelligence suggested a real and narrowing window before the missiles became launch-ready, so speed had genuine strategic value.",
+      "risk_carried": "If any missiles survived the strike and were launched, or if Soviet forces on Cuba or in Berlin responded militarily, the crisis could escalate directly into general war between nuclear powers."
+    },
+    {
+      "id": "option_b",
+      "label": "Naval quarantine (blockade) plus diplomatic pressure",
+      "description": "A naval blockade around Cuba to intercept further Soviet shipments, combined with public demand for missile removal and back-channel diplomacy, without an immediate strike on the existing sites.",
+      "upside": "Avoids a first strike, preserves the option to escalate later if needed, gives Khrushchev room to back down without a humiliating public capitulation, and secured a legal/diplomatic basis through the OAS.",
+      "downside": "Does not remove the missile sites already under construction; they could become operational while the blockade was in effect; still carried real escalation risk if a Soviet ship refused inspection or a US aircraft was fired on.",
+      "why_it_made_sense": "It matched the actual military problem (missiles not yet operational, more equipment still arriving by sea) more precisely than an air strike, kept the crisis reversible, and put the burden of the next escalatory step on Khrushchev rather than Kennedy.",
+      "risk_carried": "The missiles already in Cuba remained in place and could be completed during the standoff; a lower-key response also risked being read by Moscow as weakness, inviting further Soviet moves elsewhere (e.g., Berlin)."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "President John F. Kennedy, following roughly a week of internal ExComm debate",
+    "decided_when": "Settled internally on the evening of October 20, 1962; announced publicly October 22, 1962",
+    "stated_basis": "Kennedy and the majority of ExComm judged the quarantine as the option that addressed the immediate military problem (further Soviet shipments, missiles not yet operational) while preserving room to negotiate or escalate later, and avoided the moral and diplomatic cost of a surprise strike.",
+    "constraints": "Needed OAS backing under the Rio Treaty to frame the blockade as lawful; needed to brief and secure at least tacit support from key allies (notably the UK) before the public announcement; needed to keep the missile sites' status effectively frozen without giving Khrushchev cause for immediate retaliation."
+  },
+  "decision_quality": {
+    "rating": "STRONG",
+    "justification": "ExComm systematically worked through both options with explicit attention to escalation risk, reversibility, and off-ramps for the adversary — the deliberation itself, not just its result, is what many decision-making scholars (e.g., Graham Allison) treat as a model case. The choice matched the actual, if partially uncertain, state of the missile sites (not yet operational) rather than assuming worst-case readiness, and kept later options open. It does not rate 'no weaknesses': the option still carried real escalation risk that the record shows ExComm knew it was accepting."
+  },
+  "outcome_quality": {
+    "rating": "GOOD",
+    "justification": "The crisis ended without war: the Soviet Union agreed on October 28, 1962 to remove the missiles under UN verification, in exchange for a US public pledge not to invade Cuba and a secret agreement to remove US Jupiter missiles from Turkey. That said, the outcome also depended on events ExComm did not control or know about in real time — most notably Vasili Arkhipov's refusal to authorize a nuclear torpedo launch from submarine B-59 on October 27 — so 'good outcome' should not be read as proof the path to it was free of chance."
+  },
+  "outcome": {
+    "immediate": "Soviet missile sites in Cuba were dismantled and shipped back under UN observation by late November 1962; the US quarantine was lifted; no direct US-Soviet military clash occurred.",
+    "long_term": "The crisis contributed to the 1963 establishment of the Moscow-Washington 'hotline' for direct leader-to-leader communication and to the 1963 Partial Nuclear Test Ban Treaty; it is widely (though not universally) credited with shifting both superpowers toward more structured Cold War crisis management.",
+    "causal_directness": "CONTRIBUTING"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Pre-delegated authority for tactical nuclear weapons in Cuba",
+      "description": "Some post-Cold War accounts and interviews with former Soviet officers suggest Soviet field commanders may have held some pre-delegated authority to use certain tactical nuclear weapons if a US invasion began, without a fresh Moscow order; the declassified documentary record on the exact chain of command is incomplete, and historians disagree on how much autonomy existed in practice."
+    },
+    {
+      "topic": "How split ExComm actually was on October 20",
+      "description": "Robert Kennedy's memoir 'Thirteen Days,' other participants' recollections, and later analysis of the declassified ExComm tape recordings (notably by historian Sheldon Stern) do not fully agree on how unanimous the group was by the final recommendation, or on the exact sequence in which individual members shifted their position toward the blockade."
+    }
+  ],
+  "has_progressive_version": true,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 80,
+      "rationale": "A viewer given the same known_at_t0 facts (missiles not yet operational, Soviet denial on record, air strike cannot be guaranteed complete) can construct a real case for either option without needing information withheld until the reveal. The unknown_at_t0 facts (warheads already present, true troop count, the Arkhipov incident) are revealed only afterward, not needed to make the initial call."
+    },
+    "dilemma_balance": {
+      "score": 72,
+      "rationale": "Both options have genuine, well-matched trade-offs (speed/certainty vs. reversibility/moral cost). Score is not higher because this event is famous enough that many viewers already know 'blockade' was chosen, which can pre-color the choice for a meaningful fraction of the audience even though the in-universe case for air strikes is not a strawman."
+    },
+    "context_compression": {
+      "score": 90,
+      "rationale": "The dilemma reduces cleanly to a single image and a single question ('missile base being built 90 miles away, strike or blockade?') without any prerequisite historical knowledge."
+    },
+    "reveal_payoff": {
+      "score": 85,
+      "rationale": "The unknown_at_t0 reveal (nuclear warheads already in Cuba, real troop strength 4-5x the CIA estimate, and especially the B-59 submarine near-launch) is a strong, well-sourced payoff that recontextualizes the whole decision without requiring any invented drama."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Precise T0, strong primary sourcing (declassified ExComm tapes, National Security Archive), a genuinely balanced A/B, and a high-payoff reveal. Main weakness is that the outcome is widely known, which caps dilemma_balance and reveal_payoff somewhat versus a genuinely unfamiliar case."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "case_id": "tetraethyl-lead-1924",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Deceit and Denial: The Deadly Politics of Industrial Pollution",
+      "author_or_institution": "Gerald Markowitz and David Rosner",
+      "date": "2002 (revised edition 2013)",
+      "citation": "Markowitz, G., & Rosner, D. (2002). Deceit and Denial: The Deadly Politics of Industrial Pollution. Berkeley: University of California Press / Milbank Memorial Fund.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Historical analysis of the lead and tetraethyl-lead industries' pattern of downplaying worker poisoning and shaping the scientific review process; basis for the source_disagreement on how independent the 1925-1926 Public Health Service investigation actually was."
+    },
+    {
+      "id": "src-02",
+      "title": "Timeline: Leaded gasoline & alternatives",
+      "author_or_institution": "William Kovarik / Environmental History Resources (drawing on his doctoral research, 'The Ethyl Controversy,' 1993)",
+      "date": "Timeline compiled from primary records dated 1921-1927; hosted ongoing",
+      "citation": "https://environmentalhistory.org/about/ethyl-leaded-gasoline/lead-history-timeline/",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "Detailed chronology: December 1921 first TEL tests; Deepwater, NJ deaths beginning September 1923; the six named Bayway, NJ workers who died between September 26 and October 30, 1924; the May 20, 1925 Public Health Service conference; and the January 26, 1926 PHS committee finding of 'no good grounds' to prohibit TEL."
+    },
+    {
+      "id": "src-03",
+      "title": "A century of tragedy: How the car and gas industry knew about the health risks of leaded fuel but sold it for 100 years anyway",
+      "author_or_institution": "The Conversation (academic-authored explainer, drawing on Kovarik's and Markowitz/Rosner's research)",
+      "date": "2021",
+      "citation": "https://theconversation.com/a-century-of-tragedy-how-the-car-and-gas-industry-knew-about-the-health-risks-of-leaded-fuel-but-sold-it-for-100-years-anyway-173395",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Bayway death toll and hospitalizations, Standard Oil's initial public downplaying of worker symptoms as overwork, and the industry's argument (Frank Howard) that the gasoline dilution ratio made TEL safe."
+    },
+    {
+      "id": "src-04",
+      "title": "Yandell Henderson",
+      "author_or_institution": "Multiple historical accounts of Henderson's public warnings, cross-checked via his own contemporaneous public statements as reported in 1924-1925 press coverage (e.g., New York World) and later historical summaries",
+      "date": "Statements made 1924-1925; documented in subsequent historical scholarship",
+      "citation": "Henderson, Y., as quoted in contemporaneous press coverage and discussed in Kovarik, W. (1993). The Ethyl Controversy: How the news media set the agenda for a public health controversy over leaded gasoline, 1924-1926 (PhD dissertation, University of Maryland).",
+      "source_type": "ACADEMIC",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Henderson's contemporaneous public warning that lead dispersed from automobile exhaust could accumulate as a population-wide, cumulative exposure risk distinct from acute occupational poisoning."
+    },
+    {
+      "id": "src-05",
+      "title": "Charles F. Kettering and the 1921 discovery of tetraethyl lead",
+      "author_or_institution": "Environmental History Resources (Kovarik)",
+      "date": "Compiled historical account, drawing on primary GM/Ethyl Corporation records from 1921-1924",
+      "citation": "https://environmentalhistory.org/people/charles-f-kettering-and-the-1921-discovery-of-tetraethyl-lead/",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "That GM engineers, including Thomas Midgley, had researched and tested ethanol-gasoline blends as an anti-knock alternative, and that ethanol's inability to be patented or monopolized (unlike tetraethyl lead) shaped industry's commercial preference for TEL."
+    },
+    {
+      "id": "src-06",
+      "title": "Clair Cameron Patterson",
+      "author_or_institution": "California Institute of Technology (Caltech Library / Caltech News)",
+      "date": "Retrospective institutional biography, summarizing Patterson's 1965 publication and subsequent research",
+      "citation": "https://www.caltech.edu/about/news/getting-lead-out-47935",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "That Clair Patterson's 1965 research (using isotope geochemistry techniques he developed from the late 1950s) established that gasoline-derived lead, not natural background sources, accounted for the majority of measured environmental and human lead levels, decades after the 1924-1926 decision."
+    },
+    {
+      "id": "src-07",
+      "title": "Lead Poisoning: A Historical Perspective",
+      "author_or_institution": "U.S. Environmental Protection Agency",
+      "date": "Archived EPA historical retrospective",
+      "citation": "https://www.epa.gov/archive/epa/aboutepa/lead-poisoning-historical-perspective.html",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Regulatory timeline: the 1925 Surgeon General's temporary suspension of TEL production/sale pending investigation, the 1926 finding permitting resumed sale, the 1970 Clean Air Act, the 1975 introduction of unleaded gasoline for new U.S. vehicles, and the 1996 U.S. ban on leaded gasoline for on-road use."
+    },
+    {
+      "id": "src-08",
+      "title": "The Secret History of Lead",
+      "author_or_institution": "The Nation (Jamie Lincoln Kitman)",
+      "date": "2000",
+      "citation": "https://www.thenation.com/article/archive/secret-history-lead/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Industry correspondence and public statements from the 1920s framing tetraethyl lead's commercial value in terms of its exclusivity/patent protection compared with non-patentable alternatives such as ethanol."
+    }
+  ]
+}

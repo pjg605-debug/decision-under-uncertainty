@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shorts.schema.json",
+  "title": "ShortsScripts",
+  "type": "object",
+  "required": ["case_id", "versions"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": { "type": "string" },
+    "versions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["length", "script"],
+        "additionalProperties": false,
+        "properties": {
+          "length": { "enum": ["20-25s", "30-40s", "45-60s"] },
+          "script": {
+            "type": "object",
+            "required": ["hook", "context", "options", "lock_in", "actual_choice", "outcome", "why_it_was_hard"],
+            "additionalProperties": false,
+            "properties": {
+              "hook": { "type": "string" },
+              "context": { "type": "string" },
+              "options": { "type": "string" },
+              "lock_in": { "type": "string" },
+              "actual_choice": { "type": "string" },
+              "outcome": { "type": "string" },
+              "why_it_was_hard": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

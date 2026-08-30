@@ -1,0 +1,87 @@
+{
+  "case_id": "battle-of-cannae-216bce",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Histories, Book 3 (The Battle of Cannae)",
+      "author_or_institution": "Polybius",
+      "date": "Written c. 167-118 BC; this edition translated by W. R. Paton",
+      "citation": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html",
+      "source_type": "PRIMARY",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Primary ancient account of Roman army composition, the command rotation between Varro and Paullus, and the course of the battle; also the source of the more critical characterization of Varro and sympathetic portrayal of Paullus.",
+      "note": "Written roughly 50-70 years after the battle by a Greek historian with personal ties to the Scipio-Aemilius family (Paullus's descendants); used here for factual content but its characterization of Varro vs. Paullus is treated with caution per the source_disagreements entry."
+    },
+    {
+      "id": "src-02",
+      "title": "The History of Rome, Book 22 (Ab Urbe Condita)",
+      "author_or_institution": "Titus Livius (Livy)",
+      "date": "Written c. 27-25 BC",
+      "citation": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0152:book%3D22",
+      "source_type": "PRIMARY",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Alternative ancient account of the army's size, the Varro-Paullus dynamic, and the battle's casualties, differing from Polybius on specific figures.",
+      "note": "Written roughly two centuries after the battle, drawing partly on Polybius and partly on now-lost Roman annalistic sources; used for cross-checking and for the source_disagreements entries on numbers."
+    },
+    {
+      "id": "src-03",
+      "title": "Cannae",
+      "author_or_institution": "Adrian Goldsworthy",
+      "date": "2001",
+      "citation": "Goldsworthy, A. (2001). Cannae. Cassell.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Modern academic military-historical assessment treating the Roman decision to seek pitched battle as a coherent, if unsuccessful, strategic response to the failure of the Fabian approach to protect Italian allies, rather than simple recklessness by Varro."
+    },
+    {
+      "id": "src-04",
+      "title": "The Punic Wars",
+      "author_or_institution": "Adrian Goldsworthy",
+      "date": "2000",
+      "citation": "Goldsworthy, A. (2000). The Punic Wars. Cassell.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Broader context on Roman cavalry weakness demonstrated at Trebia and Trasimene, the political unsustainability of the Fabian strategy by 216 BC, and the strategic reasoning behind Rome's decision to raise an unusually large army for 216 BC."
+    },
+    {
+      "id": "src-05",
+      "title": "Battle of Cannae",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/Battle-of-Cannae",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: date of the battle, command rotation system, and the battle's tactical outcome (double envelopment)."
+    },
+    {
+      "id": "src-06",
+      "title": "Battle of Cannae",
+      "author_or_institution": "World History Encyclopedia",
+      "date": "Web publication, ongoing curation",
+      "citation": "https://www.worldhistory.org/Battle_of_Cannae/",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Supporting overview of the Fabian strategy's political unpopularity at Rome and the strain the strategy placed on Rome's Italian allies before 216 BC."
+    },
+    {
+      "id": "src-07",
+      "title": "Quintus Fabius Maximus Verrucosus",
+      "author_or_institution": "Wikipedia (used for discovery/orientation only)",
+      "date": "Continually updated",
+      "citation": "https://en.wikipedia.org/wiki/Quintus_Fabius_Maximus_Verrucosus",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Used only to orient research on Fabius's nickname 'Cunctator' and the political criticism of his strategy; underlying claims cross-checked against Goldsworthy and the Britannica/World History Encyclopedia entries above."
+    },
+    {
+      "id": "src-08",
+      "title": "Why Did the Romans Lose the Battle of Cannae?",
+      "author_or_institution": "History Hit",
+      "date": "Web publication",
+      "citation": "https://www.historyhit.com/why-did-the-romans-lose-the-battle-of-cannae/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Supporting discussion of Roman cavalry inferiority at Trebia and Trasimene as an established, recognized weakness heading into Cannae."
+    }
+  ]
+}

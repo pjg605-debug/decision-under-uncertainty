@@ -1,0 +1,109 @@
+{
+  "id": "d-day-launch-1944",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "title": "D-Day: Launch on a Marginal Forecast or Postpone to the Next Tidal Window (June 1944)",
+  "case_type": ["military"],
+  "fame_level": "well_known",
+  "era": "World War II, June 1944",
+  "location": "Southwick House, near Portsmouth, England (Allied Expeditionary Force headquarters)",
+  "actors": [
+    { "name": "General Dwight D. Eisenhower", "role": "Supreme Allied Commander, Allied Expeditionary Force; final decision-maker" },
+    { "name": "Group Captain James Martin Stagg", "role": "Chief meteorologist to Eisenhower, presenting the combined Allied weather forecast" },
+    { "name": "General Bernard Montgomery", "role": "Commander, 21st Army Group; present at the Southwick House meetings" },
+    { "name": "Admiral Bertram Ramsay", "role": "Allied Naval Commander-in-Chief, Operation Neptune" },
+    { "name": "Air Chief Marshal Trafford Leigh-Mallory", "role": "Air Commander-in-Chief, Allied Expeditionary Air Force" }
+  ],
+  "t0": {
+    "definition": "Eisenhower's final go/no-go decision at the Southwick House commanders' meeting, made after he had already postponed the originally planned June 5 invasion by one day because of a storm, and after Group Captain Stagg presented a forecast of a brief clearing window opening June 6.",
+    "date": "Early morning of June 5, 1944 (the decisive meeting ran approximately 9:30 PM June 4 to just after 4:00 AM June 5; Eisenhower's final order was given at approximately 4:15 AM June 5, 1944)",
+    "location": "Southwick House, near Portsmouth, England"
+  },
+  "stakes": "Roughly 150,000 troops were already loaded aboard thousands of ships; further delay risked losing the tidal and lunar conditions the invasion plan required, exhausting seasick and cramped troops, straining the secrecy of the largest amphibious operation in history, and, if postponed past the immediate window, forcing a wait of about two weeks for the next viable combination of tide and moonlight — during which Allied intentions could be discovered or the operational buildup could unravel.",
+  "known_at_t0": [
+    { "statement": "A storm over the English Channel had already forced Eisenhower to postpone the originally planned June 5 invasion by 24 hours, a decision made on June 4.", "evidence_class": "FACT" },
+    { "statement": "Group Captain James Stagg, combining forecasts from British and American meteorological teams (which did not fully agree with each other), predicted a brief improvement in weather beginning June 6: winds and seas moderating enough for a landing, with cloud cover clearing enough for air support, though conditions would not be ideal.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Weather forecasting in 1944 relied on ship and land observation networks and had no satellite data; predicting conditions even 24-48 hours out over the Atlantic and Channel carried substantial, openly acknowledged uncertainty, and Stagg's briefings to Eisenhower described this uncertainty directly rather than presenting a guaranteed forecast.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "The invasion plan required a specific combination of a late-rising moon (for airborne operations and naval bombardment visibility) and a low tide shortly after dawn (to expose German beach obstacles); only a few days in any given month satisfied both conditions, and June 5-7, 1944 was such a window.", "evidence_class": "FACT" },
+    { "statement": "If the invasion did not proceed within the June 5-7 window, the next date combining the required tidal and lunar conditions would not occur until approximately June 19, roughly two weeks later.", "evidence_class": "FACT" },
+    { "statement": "By the time of the decision, a large fraction of the invasion force — variously described as approximately 150,000 troops — was already embarked aboard landing craft and transport ships, some of which had been at sea or loaded for days; further delay meant continued physical and logistical strain on those troops and vessels.", "evidence_class": "FACT" },
+    { "statement": "Eisenhower and his commanders judged that an extended delay increased the risk that German intelligence would detect the invasion buildup or that operational secrecy would otherwise be compromised.", "evidence_class": "CONTEMPORARY_BELIEF" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "On June 19, 1944, a severe Channel storm — described by multiple sources as the worst to strike the Normandy coast in several decades — struck the invasion area and destroyed the American Mulberry artificial harbor off Omaha Beach (Mulberry A), disabling 21 of its 28 breakwater caissons, while badly damaging the British Mulberry B; had the invasion been postponed to the next tidal window around June 19, the fleet and landing force could have been caught at sea or on open beaches by this storm.", "evidence_class": "FACT" },
+    { "statement": "German meteorologists, working from a sparser data network than the Allies (partly because Allied forces controlled more of the North Atlantic weather-observation picture), did not predict the June 5-6 clearing window and assessed conditions as too rough for an Allied landing, contributing to a degree of tactical surprise (several senior German commanders, including Erwin Rommel, were away from their posts on June 5-6).", "evidence_class": "FACT" },
+    { "statement": "Whether an invasion launched into the actual June 19 storm conditions would have failed outright, suffered severe losses, or succeeded despite the weather cannot be established with certainty; this is a counterfactual, and this case treats it as a genuine unknown rather than a settled fact.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Launch on June 6 on the marginal forecast",
+      "description": "Accept Stagg's forecast of a brief clearing window and commit to landing on June 6, 1944, even though conditions were expected to be only marginally acceptable rather than ideal.",
+      "upside": "Used the only available near-term tidal/lunar window, kept the embarked troops from further physical and morale strain, preserved operational secrecy before it could erode further, and took advantage of the likelihood that German forces, expecting worse weather, would be less prepared.",
+      "downside": "The forecast carried real uncertainty; if the weather did not clear as predicted, naval gunfire support, airborne operations, and landing craft control could all be degraded, potentially producing higher casualties or a failed landing.",
+      "why_it_made_sense": "Every additional day of delay cost the operation more in exhausted troops, strained secrecy, and risk of discovery, while the forecast — though uncertain — was the professional judgment of the Allies' most experienced combined meteorological team; waiting for a guaranteed-perfect forecast was not realistically available given 1944 forecasting technology.",
+      "risk_carried": "If the brief clearing window did not materialize as forecast, the invasion could be launched into worse conditions than expected, jeopardizing naval and air support and potentially the landing itself."
+    },
+    {
+      "id": "option_b",
+      "label": "Postpone to the next tidal window (~June 19)",
+      "description": "Call off the June 5-7 attempt entirely and wait for the next date combining the required tide and moonlight, roughly two weeks later.",
+      "upside": "Avoided launching into the currently unsettled weather; gave more time for a clearer, more confident forecast; avoided the risk of a marginal-weather landing degrading air and naval support.",
+      "downside": "Meant roughly two more weeks with a huge invasion force loaded, staged, and increasingly difficult to conceal or sustain; risked morale and logistical deterioration among embarked troops; increased the window in which German intelligence might detect Allied intentions or reinforce the Normandy coast.",
+      "why_it_made_sense": "A two-week delay bought time for better information and avoided committing to marginal conditions; it also matched the ordinary military instinct to avoid launching a fragile, complex, multi-service operation into uncertain weather when an alternative date existed.",
+      "risk_carried": "The commanders had no way to know what weather the next window would actually bring; delay carried its own risks (secrecy, logistics, troop condition) that were just as real as the risks of launching into the June 6 forecast."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_a",
+    "decided_by": "General Dwight D. Eisenhower, Supreme Allied Commander, after consulting his senior commanders (Montgomery, Ramsay, Leigh-Mallory, Bedell Smith) and hearing Stagg's forecast update in the early hours of June 5, 1944",
+    "decided_when": "Approximately 4:15 AM, June 5, 1944, at Southwick House, following a silence of roughly 30-45 seconds by Eisenhower's own later account before he gave the order to proceed",
+    "stated_basis": "Eisenhower judged that Stagg's forecast of a marginal but real clearing window on June 6, combined with the mounting costs of further delay (troop condition, secrecy, the approaching loss of the tidal window), made launching the better bet than waiting indefinitely for a more certain forecast that 1944 meteorology could not reliably promise.",
+    "constraints": "The tidal/lunar requirement fixed the near-term options to essentially June 5, 6, or 7, or a wait until approximately June 19; roughly 150,000 troops were already embarked; forecasting technology of the era (no satellite imagery, limited mid-ocean observation) meant no fully confident long-range forecast was available regardless of how long the commanders waited."
+  },
+  "decision_quality": {
+    "rating": "STRONG",
+    "justification": "Eisenhower weighed a specific, professionally delivered forecast against concrete, well-understood costs of delay (tidal constraints, troop strain, secrecy risk) rather than gambling blindly; he had already shown willingness to postpone once (moving from June 5 to June 6) when the forecast genuinely called for it, indicating the decision process was responsive to the actual meteorological information rather than fixed in advance. The choice does not rate a flawless '10' because the underlying forecast still carried genuine uncertainty that Eisenhower himself accepted going in — but making a good decision under irreducible uncertainty, rather than waiting for certainty that could not be had, is itself what this case treats as strong decision-making."
+  },
+  "outcome_quality": {
+    "rating": "GOOD",
+    "justification": "The invasion proceeded on June 6, 1944 with the forecast clearing largely as predicted, contributing to a landing that achieved tactical surprise (aided by German commanders' own expectation of worse weather) and established the Normandy beachhead. The outcome quality is reinforced, in hindsight, by the fact that the alternative option (waiting for the ~June 19 window) would have exposed the invasion fleet to one of the worst Channel storms of the mid-20th century, which in fact wrecked the American Mulberry harbor structure on that date — though this case treats what would have happened to an actual invasion attempt in those conditions as an unresolved counterfactual, not a certainty."
+  },
+  "outcome": {
+    "immediate": "The Normandy landings proceeded on June 6, 1944 as forecast, with weather conditions clearing enough to permit the planned naval bombardment, airborne drops, and amphibious landings; the Allies achieved a foothold on the Normandy coast, aided by a degree of tactical surprise partly attributable to German forces not expecting an attack in the prevailing weather.",
+    "long_term": "The successful establishment of the Normandy beachhead opened the Western Front in Europe and is broadly credited by historians as a major contributing factor in the eventual defeat of Nazi Germany, alongside the ongoing Eastern Front campaign and other Allied operations; the June 19, 1944 storm subsequently destroyed the Omaha Beach Mulberry harbor, forcing the Allies to rely more heavily on the surviving British Mulberry and over-the-beach logistics for a period afterward.",
+    "causal_directness": "CONTRIBUTING"
+  },
+  "source_disagreements": [
+    {
+      "topic": "How confident Stagg's June 5 forecast actually was, and how the meeting's tone is remembered",
+      "description": "Stagg's own 1971 memoir 'Forecast for Overlord' and various participant recollections differ somewhat on how confidently the improved-weather forecast was presented versus how much residual uncertainty and internal disagreement remained among the British and American meteorological teams feeding Stagg's combined briefing; some later popular accounts (and dramatizations) compress this into a more dramatic, single-voice prediction than the historical record of multiple, partially disagreeing forecasting teams supports."
+    },
+    {
+      "topic": "The exact wording and timing of Eisenhower's final order",
+      "description": "Eisenhower's phrase is most often quoted as 'OK, let's go' or 'Okay, we'll go,' and secondary sources vary slightly on the precise wording, the exact time (commonly given as approximately 4:15 AM), and how long Eisenhower paused beforehand; this case uses the commonly cited approximate time and both attested phrasings without asserting one exact transcript-quality wording as definitive."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 82,
+      "rationale": "The known_at_t0 facts (marginal forecast, tidal/lunar constraint, troops already embarked, secrecy risk) give a viewer everything needed to weigh 'launch now' vs. 'wait' without requiring the June 19 storm reveal to make the call feel meaningful."
+    },
+    "dilemma_balance": {
+      "score": 66,
+      "rationale": "Both options have real, well-documented trade-offs, but D-Day is extremely famous — most viewers already know Eisenhower said 'go' and that the landing succeeded, which pre-colors the choice for a meaningful share of the audience more than a less iconic event would. This caps the score versus a fully blind dilemma."
+    },
+    "context_compression": {
+      "score": 90,
+      "rationale": "The premise ('troops already loaded, storm outside, forecaster says a brief clearing window tomorrow — go or wait two weeks?') compresses to one image and one question with essentially no prerequisite knowledge."
+    },
+    "reveal_payoff": {
+      "score": 88,
+      "rationale": "The June 19, 1944 storm that wrecked the Omaha Mulberry harbor is a strong, well-sourced, genuinely surprising reveal that most audiences do not already know, and it directly inverts the naive 'waiting is always safer' intuition."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Precise T0, strong primary sourcing (Stagg's own memoir, National Archives, IWM), and a real A/B with genuine costs on both sides. The main honest weakness is fame: because the outcome (successful landing) is common knowledge, dilemma_balance is capped versus a genuinely unfamiliar case — but the June 19 storm reveal supplies a real, under-known payoff that keeps this case worth producing rather than merely restating a well-known story."
+  }
+}
