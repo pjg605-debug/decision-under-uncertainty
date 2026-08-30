@@ -1,15 +1,18 @@
 import type { DecisionEvent, NarrativeSlots } from '../core/schemas/decision-event';
 import austerlitzNarrative from './narratives/austerlitz-1805.json';
+import cubanMissileNarrative from './narratives/cuban-missile-1962.json';
+import netflixNarrative from './narratives/netflix-2007.json';
+import newCokeNarrative from './narratives/new-coke-1985.json';
 
 const evidence = (id: string, title: string, institution: string, klass: 'FACT'|'CONTEMPORARY_BELIEF'|'STATED_RATIONALE'|'INFERENCE' = 'FACT') => ({ id, source_type:'reference', title, author_or_institution:institution, publication_date:'n.d.', evidence_class:klass });
 const option = (id:string,label:string,description:string,upside:string,downside:string) => ({ id,label,short_description:description,upside,downside,known_tradeoffs:[`${upside} versus ${downside}`] });
 
 export const narratives: Record<string, NarrativeSlots> = {
   'austerlitz-1805': austerlitzNarrative,
-  'cuban-missile-1962': { hook:'A launch site is forming ninety miles from your coast.', short_setup:'Public pressure favors force. The cost of misreading the other side could be nuclear war.', why_option_a_made_sense:'An air strike could remove the missiles quickly.', why_option_b_made_sense:'A quarantine created time and preserved a path to negotiation.', actual_decision_explanation:'Kennedy chose a naval quarantine.', outcome_story:'The missiles were withdrawn after an intense standoff and private concessions.', hindsight_analysis:'A slower action can be decisive when it preserves communication and limits irreversible escalation.', decision_principle:'Under extreme stakes, prefer moves that preserve the next move.' },
+  'cuban-missile-1962': cubanMissileNarrative,
   'challenger-1986': { hook:'Cold weather is outside your tested experience. The launch window is closing.', short_setup:'Engineers raised concern about O-ring performance in low temperatures.', hindsight_analysis:'Schedule pressure and ambiguous evidence distorted how risk was communicated and accepted.', decision_principle:'Absence of failure data is not evidence of safety outside the tested range.' },
-  'netflix-2007': { hook:'Your profitable product may be a bridge to its own replacement.', short_setup:'DVD-by-mail was working; streaming was immature.', hindsight_analysis:'The strong outcome does not prove every detail of the bet was knowable. The decision preserved strategic exposure to a plausible future.', decision_principle:'When disruption is plausible, buy learning before certainty.' },
-  'new-coke-1985': { hook:'Taste tests say change. Identity says beware.', short_setup:'Blind taste tests favored a sweeter formula, while attachment to the original brand was harder to measure.', hindsight_analysis:'The research answered a narrower question than the decision required.', decision_principle:'Measure what customers are choosing—not only what they are tasting.' },
+  'netflix-2007': netflixNarrative,
+  'new-coke-1985': newCokeNarrative,
   'apollo-13-1970': { hook:'Your damaged spacecraft must become a lifeboat.', short_setup:'An oxygen tank explosion forced the crew and mission control to improvise with limited power and consumables.', hindsight_analysis:'The response was strong because teams made constraints explicit, distributed expertise, and continuously revised the plan.', decision_principle:'In a crisis, turn hidden constraints into a shared operating picture.' }
 };
 

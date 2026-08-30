@@ -1,0 +1,8 @@
+{
+  "case_id": "austerlitz-1805",
+  "sources": [
+    {"id":"aus-e1","source_type":"contemporary_account","title":"A Detailed Account of the Battle of Austerlitz","author_or_institution":"Karl von Stutterheim; Library of Congress digital collection","publication_date":"1807","url":"https://www.loc.gov/item/24009173/","accessed_at":"2026-08-30","evidence_class":"CONTEMPORARY_BELIEF","supports":["Allied information and planning as described soon after the battle"]},
+    {"id":"aus-e2","source_type":"military_history_analysis","title":"The Battle of Austerlitz and the Principles of War","author_or_institution":"Fondation Napoléon","publication_date":"n.d.","url":"https://www.napoleon.org/en/history-of-the-two-empires/articles/the-battle-of-austerlitz-and-the-principles-of-war/","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["Weyrother's plan routed major Allied columns south from the Pratzen Heights","The Allied intended route was against the French right"]},
+    {"id":"aus-e3","source_type":"editorial_method_note","title":"T0 and actor mismatch review","author_or_institution":"Decision / T0 editorial review","publication_date":"2026-08-30","url":"","accessed_at":"2026-08-30","evidence_class":"INFERENCE","supports":["The current card conflates the pre-battle council decision with battlefield observation","Allied command is not a single actor with one information set"]}
+  ]
+}

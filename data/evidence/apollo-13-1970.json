@@ -1,0 +1,8 @@
+{
+  "case_id": "apollo-13-1970",
+  "sources": [
+    {"id":"ap-e1","source_type":"mission_report","title":"Apollo 13 Mission Report","author_or_institution":"NASA Manned Spacecraft Center","publication_date":"1970-09-01","url":"https://ntrs.nasa.gov/citations/19710003598","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["Loss of service-module cryogenic oxygen caused the abort","The lunar module provided power and life support for return","A circumlunar return profile was used"]},
+    {"id":"ap-e2","source_type":"mission_operations_report","title":"Mission Operations Report: Apollo 13","author_or_institution":"NASA","publication_date":"1970-04-28","url":"https://www.nasa.gov/wp-content/uploads/static/history/alsj/a13/A13_MissionOpReport.pdf","accessed_at":"2026-08-30","evidence_class":"CONTEMPORARY_BELIEF","supports":["Controllers and crew first sorted false indications from real failures","By 57:35 mission elapsed time the crew was entering the lunar module for communications and life support"]},
+    {"id":"ap-e3","source_type":"editorial_method_note","title":"Dominated-option review","author_or_institution":"Decision / T0 editorial review","publication_date":"2026-08-30","url":"","accessed_at":"2026-08-30","evidence_class":"INFERENCE","supports":["Once command-module oxygen and fuel-cell loss was established, remaining in the command module was not a credible balanced option","The case is better modeled as progressive crisis decisions than one binary choice"]}
+  ]
+}
