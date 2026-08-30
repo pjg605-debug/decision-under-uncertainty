@@ -8,7 +8,8 @@ Decision / T0 is connected to the existing Supabase project as a shared editoria
 - Migration applied: `supabase/migrations/202608300001_content_hub.sql` (`202608300001`)
 - GitHub repository: `pjg605-debug/decision-under-uncertainty`
 - GitHub branch: `codex/supabase-content-hub`
-- Integration source commit: `1c42b522d47d944ba47d31bb5fadf0739fa90ba9`
+- Local integration source commit: `1c42b522d47d944ba47d31bb5fadf0739fa90ba9`
+- Published GitHub integration snapshot: `61145826fb5a1f624f881de82d549908b37628c0`
 - Production URL: `https://decision-under-uncertainty.pjg605.chatgpt.site/`
 - Applied date: 2026-08-30
 
