@@ -1,0 +1,85 @@
+{
+  "case_id": "challenger-launch-1986",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Report of the Presidential Commission on the Space Shuttle Challenger Accident, Volume 1, Chapter V: The Contributing Cause of the Accident",
+      "author_or_institution": "Presidential Commission on the Space Shuttle Challenger Accident (Rogers Commission); archived by NASA History Office",
+      "date": "1986",
+      "citation": "https://www.nasa.gov/history/rogersrep/v1ch5.htm",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Sequence and content of the January 27, 1986 teleconference: the forecast temperature, Thiokol's initial written recommendation against launch below 53°F, NASA Marshall's (Mulloy/Hardy) pushback, the off-line Thiokol caucus and Jerry Mason's 'management hat' remark to Robert Lund, and the reversal to a formal launch recommendation."
+    },
+    {
+      "id": "src-02",
+      "title": "Report of the Presidential Commission on the Space Shuttle Challenger Accident (full report)",
+      "author_or_institution": "Presidential Commission on the Space Shuttle Challenger Accident",
+      "date": "June 1986",
+      "citation": "Presidential Commission on the Space Shuttle Challenger Accident. (1986). Report of the Presidential Commission on the Space Shuttle Challenger Accident. Washington, D.C.: U.S. Government Printing Office.",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "Official finding that failure of the right SRB aft field-joint O-ring seal caused the accident; reconstruction of the O-ring material temperature (~28°F) at ignition; Roger Boisjoly's Commission testimony describing the reversal of the burden of proof from 'prove it is safe' to 'prove it is not safe.'"
+    },
+    {
+      "id": "src-03",
+      "title": "The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA",
+      "author_or_institution": "Diane Vaughan",
+      "date": "1996",
+      "citation": "Vaughan, D. (1996). The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA. University of Chicago Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Sociological analysis of how repeated prior flights with O-ring erosion became normalized within NASA/Thiokol's risk culture ('normalization of deviance'), framing why the cold-weather warning did not automatically override schedule pressure."
+    },
+    {
+      "id": "src-04",
+      "title": "Visual Explanations: Images and Quantities, Evidence and Narrative (Chapter 2: 'Visual and Statistical Thinking')",
+      "author_or_institution": "Edward R. Tufte",
+      "date": "1997",
+      "citation": "Tufte, E. R. (1997). Visual Explanations: Images and Quantities, Evidence and Narrative. Cheshire, CT: Graphics Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Analysis showing the O-ring erosion charts used in the January 27 teleconference organized data by launch/mission date rather than by temperature, used cluttered rocket-icon graphics, and omitted several warm-weather launches with no O-ring damage — weakening the visual case for the temperature correlation the engineers believed in."
+    },
+    {
+      "id": "src-05",
+      "title": "How record-setting cold contributed to the space shuttle Challenger disaster on Jan. 28, 1986",
+      "author_or_institution": "AccuWeather",
+      "date": "Published for the disaster's anniversary; content dated to the 1986 event",
+      "citation": "https://www.accuweather.com/en/space-news/how-record-setting-cold-contributed-to-the-space-shuttle-challenger-disaster-on-jan-28-1986/337486",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Specific launch-day conditions: overnight low near 22°F, ice on the launch pad structure, and a liftoff-time air temperature of approximately 36°F, roughly 15°F colder than any previous shuttle launch."
+    },
+    {
+      "id": "src-06",
+      "title": "Utah engineers' warning was ignored before Challenger explosion 30 years ago",
+      "author_or_institution": "The Salt Lake Tribune",
+      "date": "2016 (retrospective reporting on 1986 events, drawing on Boisjoly's own accounts and testimony)",
+      "citation": "https://archive.sltrib.com/article.php?id=3464503&itype=CMSID",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Roger Boisjoly's and Arnold Thompson's own account of arguing against launch in the teleconference, and the exclusion of dissenting engineers from Thiokol's final go-decision."
+    },
+    {
+      "id": "src-07",
+      "title": "'A Catastrophe of the Highest Order': The Tragic Legacy of Roger Boisjoly",
+      "author_or_institution": "AmericaSpace",
+      "date": "2012",
+      "citation": "https://www.americaspace.com/2012/02/07/a-catastrophe-of-the-highest-order-the-tragic-legacy-of-roger-boisjoly/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Boisjoly's post-accident testimony and interviews describing the January 27 meeting, the caucus, and his belief that the decision process had been compromised by schedule pressure."
+    },
+    {
+      "id": "src-08",
+      "title": "Challenger disaster",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/Challenger-disaster",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: crew fatalities, the Rogers Commission's cause finding, and the roughly three-year grounding of the Shuttle program until STS-26 in September 1988."
+    }
+  ]
+}

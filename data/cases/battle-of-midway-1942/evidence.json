@@ -1,0 +1,87 @@
+{
+  "case_id": "battle-of-midway-1942",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Shattered Sword: The Untold Story of the Battle of Midway",
+      "author_or_institution": "Jonathan Parshall and Anthony Tully",
+      "date": "2005",
+      "citation": "Parshall, J. & Tully, A. (2005). Shattered Sword: The Untold Story of the Battle of Midway. Potomac Books.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Primary-source (Japanese action report and damage-control record based) reconstruction of the 0715 rearming order, the 0728/0809/0820 scout reports, IJN deckload-strike doctrine, the state of Kido Butai's flight decks at 1020, and the argument that the American attack's success depended substantially on an independent chain of US decisions.",
+      "note": "The foundational modern corrective source for this case; used as the basis for the SOURCE_DISAGREEMENT entries."
+    },
+    {
+      "id": "src-02",
+      "title": "Midway: The Battle that Doomed Japan, the Japanese Navy's Story",
+      "author_or_institution": "Mitsuo Fuchida and Masatake Okumiya",
+      "date": "1955 (English translation, US Naval Institute Press)",
+      "citation": "Fuchida, M. & Okumiya, M. (1955). Midway: The Battle that Doomed Japan. United States Naval Institute Press.",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Fuchida's own postwar account of the battle, including his description of Kido Butai's flight decks at the moment of the American attack, which established the popular 'five fateful minutes' narrative later disputed by Shattered Sword.",
+      "note": "Fuchida was a participant (air group commander aboard Akagi), but Parshall & Tully and other historians document that his account, especially of deck conditions, was long treated skeptically in Japan and is not fully supported by surviving Japanese records; used here only as the source of the legend, not as a settled fact."
+    },
+    {
+      "id": "src-03",
+      "title": "Battles of Midway (official Navy historical overview)",
+      "author_or_institution": "Naval History and Heritage Command, US Navy",
+      "date": "Compiled from wartime action reports; maintained ongoing",
+      "citation": "https://www.history.navy.mil/content/dam/nhhc/browse-by-topic/War%20and%20Conflict/WWII/midway-170519.pdf",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Overall chronology of June 4, 1942 including US task force composition (Enterprise, Hornet, Yorktown) and timing of the dive-bomber attack."
+    },
+    {
+      "id": "src-04",
+      "title": "Vice Admiral Nagumo faces difficult decisions",
+      "author_or_institution": "The Pacific War (pacificwar.org), specialist naval history site drawing on Japanese action reports and Shattered Sword's research",
+      "date": "Ongoing web publication",
+      "citation": "https://www.pacificwar.org/Midway/Nagumo_under_pressure.html",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Detailed timeline of the 0728, 0809, and 0820 scout plane reports and Nagumo's decision sequence between 0728 and 0917."
+    },
+    {
+      "id": "src-05",
+      "title": "Putting the Midway Miracle in Perspective",
+      "author_or_institution": "Naval History Magazine, US Naval Institute",
+      "date": "June 2007, Volume 21, Number 3",
+      "citation": "https://www.usni.org/magazines/naval-history-magazine/2007/june/putting-midway-miracle-perspective",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Analytical discussion of how contingent and decision-dependent the American victory at Midway actually was, supporting the case's framing that outcome quality and decision quality should be assessed separately."
+    },
+    {
+      "id": "src-06",
+      "title": "The Unsung Joint Operational Success at Midway",
+      "author_or_institution": "Center for International Maritime Security (CIMSEC)",
+      "date": "Web publication",
+      "citation": "https://cimsec.org/the-unsung-joint-operational-success-at-midway/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Supporting discussion of Japanese carrier doctrine constraints (fighter allocation, deckload-strike practice) referenced in evaluating why Option B matched standing doctrine."
+    },
+    {
+      "id": "src-07",
+      "title": "'Shattered Sword' Book Review: The Untold Story of the Battle of Midway Explores the Myths and Tells the Complete Tale",
+      "author_or_institution": "HistoryNet",
+      "date": "Web publication",
+      "citation": "https://www.historynet.com/wwii-book-review-shattered-sword/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Independent summary confirming that Shattered Sword's use of Japanese primary sources substantially revises Fuchida's earlier, more dramatic account of flight-deck conditions at the moment of attack."
+    },
+    {
+      "id": "src-08",
+      "title": "Battle of Midway",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/Battle-of-Midway",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check for the battle's outcome (carrier losses, date, strategic significance) and stakes."
+    }
+  ]
+}

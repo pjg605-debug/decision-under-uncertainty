@@ -1,0 +1,95 @@
+{
+  "case_id": "d-day-launch-1944",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Forecast for Overlord: June 6, 1944",
+      "author_or_institution": "James Martin Stagg",
+      "date": "1971",
+      "citation": "Stagg, J. M. (1971). Forecast for Overlord, June 6, 1944. W. W. Norton & Company.",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Stagg's own account, as Eisenhower's chief meteorologist, of the forecasting process, the disagreement among British and American forecasting teams, and the content of the briefings given to Eisenhower on June 4-5, 1944."
+    },
+    {
+      "id": "src-02",
+      "title": "How a weather forecast made history - the D-Day Landings",
+      "author_or_institution": "Royal Meteorological Society",
+      "date": "Web publication (D-Day 80th anniversary retrospective)",
+      "citation": "https://www.rmets.org/metmatters/how-weather-forecast-made-history-d-day-landings",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Technical account of 1944 forecasting limitations (no satellite data, reliance on ship/land observation networks) and the genuine uncertainty in the June 4-5 forecast."
+    },
+    {
+      "id": "src-03",
+      "title": "How The D-Day Landings Were Delayed By A Weather Forecast",
+      "author_or_institution": "Imperial War Museums (IWM)",
+      "date": "Web publication",
+      "citation": "https://www.iwm.org.uk/history/how-d-day-was-delayed-by-a-weather-forecast",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Timeline of the June 4 postponement from the originally planned June 5 date and the Southwick House decision process leading to the June 5 go order."
+    },
+    {
+      "id": "src-04",
+      "title": "Pressure, the D-Day Weather Forecast Story",
+      "author_or_institution": "The National WWII Museum, New Orleans",
+      "date": "Web publication",
+      "citation": "https://www.nationalww2museum.org/war/articles/pressure-d-day-weather-forecast-story",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Narrative account of the Southwick House meetings, Stagg's forecast delivery, and Eisenhower's decision process and approximate timing."
+    },
+    {
+      "id": "src-05",
+      "title": "General Dwight D. Eisenhower's Order of the Day (1944)",
+      "author_or_institution": "US National Archives",
+      "date": "Document dated June 1944; archive record ongoing",
+      "citation": "https://www.archives.gov/milestone-documents/general-eisenhowers-order-of-the-day",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Primary document context for Eisenhower's authority and framing of the invasion decision; used to cross-check the decision's timing and framing."
+    },
+    {
+      "id": "src-06",
+      "title": "D-Day, 'OK, we'll go'",
+      "author_or_institution": "Prologue Magazine, US National Archives",
+      "date": "Spring 2014",
+      "citation": "https://www.archives.gov/publications/prologue/2014/spring/d-day-ok-well-go",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Account of Eisenhower's own description of the decision moment, including the pause before giving the final order, sourced to Eisenhower's own later writings."
+    },
+    {
+      "id": "src-07",
+      "title": "The Mulberries Battle the Storm -- June 19, 1944",
+      "author_or_institution": "Old Salt Blog (naval history specialist publication), corroborated by Naval History and Heritage Command Mulberry harbor records",
+      "date": "Web publication",
+      "citation": "https://www.oldsaltblog.com/2016/06/mulberries-battle-storm-1944/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Account of the severe June 19, 1944 Channel storm that destroyed the Omaha Beach Mulberry harbor (Mulberry A), used to support the unknown_at_t0 claim about what the alternative ~June 19 window would have brought."
+    },
+    {
+      "id": "src-08",
+      "title": "D-Day: Mulberries",
+      "author_or_institution": "Naval History and Heritage Command, US Navy",
+      "date": "Archive record, ongoing maintenance",
+      "citation": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-europe/operation-overlord/mulberries.html",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Official US Navy record confirming the scale of the June 19, 1944 storm damage to the Mulberry harbors (21 of 28 caissons destroyed at Mulberry A)."
+    },
+    {
+      "id": "src-09",
+      "title": "Normandy landings",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/event/Normandy-Invasion",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check of the invasion date, scale, and immediate/long-term outcome."
+    }
+  ]
+}

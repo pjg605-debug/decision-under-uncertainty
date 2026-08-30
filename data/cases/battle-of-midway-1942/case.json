@@ -1,0 +1,111 @@
+{
+  "id": "battle-of-midway-1942",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "title": "Battle of Midway: Launch Now or Wait to Recover and Rearm (June 4, 1942)",
+  "case_type": ["military"],
+  "fame_level": "well_known",
+  "era": "Pacific War, World War II, June 1942",
+  "location": "Aboard the Japanese carrier Akagi, flagship of the First Air Fleet (Kido Butai), north of Midway Atoll, Pacific Ocean",
+  "actors": [
+    { "name": "Vice Admiral Chuichi Nagumo", "role": "Commander, First Air Fleet (Kido Butai); final decision-maker aboard Akagi" },
+    { "name": "Rear Admiral Ryunosuke Kusaka", "role": "Chief of Staff, First Air Fleet; principal advisor to Nagumo on the recovery-and-rearm decision" },
+    { "name": "Rear Admiral Tamon Yamaguchi", "role": "Commander, Carrier Division 2 (Hiryu, Soryu); signaled recommendation to launch an immediate strike with aircraft on hand" },
+    { "name": "Commander Minoru Genda", "role": "Air operations officer, First Air Fleet staff" },
+    { "name": "Rear Admiral Frank Jack Fletcher", "role": "Commander, Task Force 17 (USS Yorktown); overall tactical commander of US carrier forces" },
+    { "name": "Rear Admiral Raymond Spruance", "role": "Commander, Task Force 16 (USS Enterprise, USS Hornet)" }
+  ],
+  "t0": {
+    "definition": "The window aboard Akagi in which Vice Admiral Nagumo had to decide whether to launch an immediate strike with whatever aircraft were ready (a mix of planes still armed for a second Midway land-strike and others partway through rearming), or to recover the returning first Midway strike wave, complete a uniform rearming with anti-ship ordnance, and launch a single fully coordinated, fighter-escorted strike later that morning. The window opens with the first ambiguous scout report and closes once Nagumo commits to the recover-and-rearm plan.",
+    "date": "June 4, 1942, approximately 0728-0830 local time (recovery of the Midway strike wave began shortly after 0830-0837; a coordinated strike was being organized for a target launch around 1030 when the American dive-bomber attack arrived at approximately 1020)",
+    "location": "Flag bridge of the aircraft carrier Akagi, approximately 200-240 nautical miles northwest of Midway Atoll"
+  },
+  "stakes": "Kido Butai's four fleet carriers (Akagi, Kaga, Soryu, Hiryu) represented the core of Japan's offensive naval air power six months into the Pacific war. The Midway operation was designed to draw out and destroy the US Pacific Fleet's remaining carriers; whether Nagumo struck immediately or waited determined how long Kido Butai's flight decks stayed in a vulnerable, mid-cycle state while the location and strength of the American force remained only partly confirmed.",
+  "known_at_t0": [
+    { "statement": "At 0715, before any enemy ships had been reported, Nagumo ordered the reserve strike aircraft (which had been held armed with torpedoes and armor-piercing bombs for a possible anti-ship mission) to be rearmed with high-explosive/fragmentation bombs for a second strike on Midway's land facilities, based on reports from the returning first wave that a second attack on the atoll was needed.", "evidence_class": "FACT" },
+    { "statement": "At 0728, a scout floatplane launched from the cruiser Tone reported sighting 'what appears to be 10 enemy surface ships' roughly 240 miles from Midway, without specifying ship types.", "evidence_class": "FACT" },
+    { "statement": "A follow-up report around 0809 described the contact as cruisers and destroyers, which did not by itself indicate a carrier was present; only at approximately 0820 did the same scout amend the report to say the force was 'accompanied by what appears to be an aircraft carrier.'", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Rearming aircraft from one ordnance type to another was slow, manual work: torpedoes and bombs had to be winched down and moved by hand-cranked trucks, of which each carrier had only a limited number, so only a handful of aircraft could be rearmed at any one time and the process could not be quickly reversed once underway.", "evidence_class": "FACT" },
+    { "statement": "The first Midway strike wave, launched at dawn, was returning low on fuel and needed to land; most of Kido Butai's fighters were either escorting that wave, flying combat air patrol over the fleet, or being recycled through both duties, leaving few fighters free to escort an immediate scratch strike.", "evidence_class": "FACT" },
+    { "statement": "Imperial Japanese Navy carrier doctrine at the time emphasized launching full, uniformly armed, fighter-escorted 'deckload' strikes rather than piecemeal attacks, on the reasoning that a small or uncoordinated strike against a defended target risked heavy losses for little result.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Rear Admiral Tamon Yamaguchi, commanding Carrier Division 2 from the Hiryu, signaled a recommendation that Nagumo launch a strike immediately with the aircraft that were ready, rather than wait for a fully coordinated force.", "evidence_class": "STATED_RATIONALE" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "Three US carriers (Enterprise, Hornet, and Yorktown) were present and operating against Kido Butai, not one or two as Japanese pre-battle intelligence had assumed; Yorktown, believed by Japan to have been sunk or put out of action at the Battle of the Coral Sea a month earlier, had in fact been patched up at Pearl Harbor in roughly 72 hours and sailed in time to take part.", "evidence_class": "FACT" },
+    { "statement": "US dive bombers from Enterprise and Yorktown were already airborne and searching for Kido Butai during the period Nagumo was weighing his options; their eventual attack, which arrived at approximately 1020, resulted substantially from an independent chain of decisions on the American side (notably Lieutenant Commander Clarence McClusky's choice to keep searching and his group's sighting of the Japanese destroyer Arashi's wake) rather than from anything Nagumo did or did not do in this specific window.", "evidence_class": "FACT" },
+    { "statement": "According to Jonathan Parshall and Anthony Tully's primary-source reconstruction in 'Shattered Sword' (2005), the popular postwar account of Japanese flight decks packed with fully armed, fueled aircraft at the moment of the American attack — largely traceable to Mitsuo Fuchida's 1955 memoir — is not well supported by surviving Japanese action reports and deck-cycle records; Akagi in particular likely had few if any strike aircraft actually spotted on her flight deck at 1020. Parshall and Tully argue the more consequential problem was cumulative and doctrinal (rigid adherence to coordinated deckload-strike doctrine and CAP-cycle management across the whole morning) rather than a single dramatic 'five fateful minutes.'", "evidence_class": "INFERENCE" },
+    { "statement": "How much weight this specific 0728-0830 decision carried for the battle's ultimate outcome, relative to earlier doctrinal choices and to essentially independent events on the American side, is a matter of ongoing historical interpretation, not something Nagumo could have assessed at the time.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Launch immediately with whatever aircraft are ready",
+      "description": "Order an immediate scratch strike using the aircraft already on or near the flight deck — a mix of some still carrying land-attack bombs and others partway through rearming with torpedoes — launched with minimal fighter escort and without waiting to recover the incoming Midway strike wave.",
+      "upside": "Could put ordnance in the air against the reported enemy force well before 1030, closing the window during which the American carrier (once confirmed) might find and strike Kido Butai first.",
+      "downside": "A hastily assembled, mixed-ordnance strike with little or no fighter escort risked heavy losses to American carrier fighters and had less concentrated striking power against an armored flight deck; some aircraft would still be carrying bombs poorly suited to sinking ships, and the fuel-critical Midway strike wave would be left to circle or ditch.",
+      "why_it_made_sense": "Once a carrier was suspected to be present, speed carried real value: a partial strike that found and damaged the American carrier was arguably better than a textbook-perfect strike that arrived too late to matter. Highly trained IJN aircrew could, in principle, operate outside a fully coordinated launch cycle.",
+      "risk_carried": "An uncoordinated, weakly escorted strike could be intercepted and shot down piecemeal by American fighters without achieving decisive damage, while simultaneously leaving Kido Butai's own flight decks in the confused, mixed-ordnance state the strike launch would create."
+    },
+    {
+      "id": "option_b",
+      "label": "Recover the Midway wave, complete rearming, and launch one coordinated strike",
+      "description": "Land the returning first Midway strike wave, finish a uniform rearming of the reserve aircraft with torpedoes and anti-ship bombs, assemble a full fighter escort, and launch a single concentrated strike against the American force once its position and composition were confirmed, targeted for roughly 1030.",
+      "upside": "A properly escorted, uniformly armed strike at full strength had the best chance of inflicting decisive damage on an American carrier in one blow, and matched standing IJN doctrine for how a carrier strike should be conducted.",
+      "downside": "Bought the American side roughly two more hours in which to locate Kido Butai and strike first, and kept Japanese flight decks occupied with recovery, rearming, and spotting operations throughout that window.",
+      "why_it_made_sense": "Standing doctrine held that a partial, weakly escorted strike against a defended target wasted aircraft for little result; the returning aircraft were genuinely low on fuel and had to land regardless of what else Nagumo decided; and the enemy carrier report was still tentative ('what appears to be') rather than confirmed.",
+      "risk_carried": "It gave the American carriers more time to be found first and locked Kido Butai into an extended period of vulnerable flight-deck activity precisely while an enemy carrier's exact location was only approximately known."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "Vice Admiral Chuichi Nagumo, commander of the First Air Fleet, acting on the counsel of his chief of staff Rear Admiral Ryunosuke Kusaka, aboard Akagi",
+    "decided_when": "Approximately 0830-0837, June 4, 1942: Nagumo ordered the returning Midway strike wave recovered first, deferring an immediate launch; a coordinated strike against the American force was being organized for a target launch time around 1030 when the US dive-bomber attack arrived first, at approximately 1020",
+    "stated_basis": "Nagumo and Kusaka judged that the fuel-critical returning aircraft had to land regardless, that few fighters were free to escort an immediate strike, and that IJN doctrine calling for a full, uniformly armed, escorted strike offered better odds than sending out a partial force against a target whose composition ('what appears to be' a carrier) was still not fully confirmed.",
+    "constraints": "A limited number of ordnance-handling trucks meant rearming could not proceed faster than a handful of aircraft at a time and could not be safely reversed mid-process; most available fighters were committed to combat air patrol or to escorting/recovering the Midway strike wave; the scout report itself remained tentative for roughly an hour after the first sighting."
+  },
+  "decision_quality": {
+    "rating": "REASONABLE",
+    "justification": "The decision followed standing Imperial Japanese Navy carrier doctrine and responded to real, binding constraints: aircraft genuinely low on fuel had to land, few fighters were free to escort a scratch strike, and the scout report describing a possible carrier remained tentative for roughly an hour. It is not rated STRONG because Yamaguchi's dissenting recommendation for an immediate, if imperfect, strike was a genuinely available and defensible alternative that some contemporaries and later analysts consider at least equally reasonable given how quickly the tactical picture could change. Modern scholarship (Parshall & Tully, 'Shattered Sword') treats the choice as a doctrinally conventional, professionally defensible call rather than either an obvious blunder or an obviously correct one, while also arguing that the deeper problem was Japan's rigid deckload-strike doctrine accumulating risk across the whole morning, not a single moment of indecision."
+  },
+  "outcome_quality": {
+    "rating": "BAD",
+    "justification": "Between approximately 1020 and 1026 on June 4, 1942, US Navy dive bombers caught three of Kido Butai's four carriers with minimal fighter cover at altitude and set them ablaze within minutes; the fourth was sunk later that day. Japan lost all four fleet carriers of Kido Butai in a single engagement, an unambiguously catastrophic outcome. Whether this specific decision window was the direct cause, however, is genuinely contested: Shattered Sword argues the American attack succeeded through a substantially independent chain of events on the US side (McClusky's search decision and the sighting of the destroyer Arashi's wake), so a bad outcome does not by itself prove the 0728-0830 decision itself was the determining error."
+  },
+  "outcome": {
+    "immediate": "US Navy Dauntless dive bombers from Enterprise and Yorktown attacked Kido Butai at approximately 1020-1026 on June 4, 1942, finding Akagi, Kaga, and Soryu with little fighter cover at altitude; all three were left ablaze within about six minutes. The fourth carrier, Hiryu, launched counterstrikes that critically damaged Yorktown before Hiryu herself was located and sunk later that day. Japan lost all four fleet carriers and a large proportion of its trained carrier aircrew and deck/maintenance personnel.",
+    "long_term": "The loss of four fleet carriers and their trained air groups in a single day ended Japan's capacity to conduct offensive carrier operations at the scale of the war's first six months and is conventionally described by historians as the turning point of the Pacific naval war, although its causal weight relative to other factors (US industrial output, subsequent campaigns) is itself debated among historians.",
+    "causal_directness": "CONTESTED"
+  },
+  "source_disagreements": [
+    {
+      "topic": "The 'five fateful minutes' legend versus the primary-source reconstruction of flight-deck conditions",
+      "description": "Mitsuo Fuchida and Masatake Okumiya's widely read 1955 memoir 'Midway: The Battle that Doomed Japan' describes Japanese flight decks packed with fueled, armed aircraft at the exact moment of the American dive-bomber attack — the image most popular accounts still use. Jonathan Parshall and Anthony Tully's 'Shattered Sword' (2005), built on Japanese action reports, deck-cycle records, and damage-control accounts not available to Fuchida's original readers, argues this scene is not well supported, especially for Akagi, and that Fuchida's account was long treated skeptically within Japan itself before its Western revision. This case's narrative follows Shattered Sword's reconstruction and flags the gap explicitly rather than repeating the legendary version."
+    },
+    {
+      "topic": "How decisive Nagumo's 0728-0830 decision actually was to the battle's outcome",
+      "description": "Older popular narratives (including much of the English-language tradition built on Fuchida) treat Nagumo's hesitation between striking immediately and waiting as the single hinge event that 'doomed' Japan at Midway. Parshall and Tully's analysis complicates this: they argue Nagumo's adherence to rigid IJN doctrine across the whole morning mattered, but also that the American dive-bomber attack succeeded through a substantially independent chain of decisions on the US side, meaning even a faster Japanese launch in this window might not have prevented the US carriers from finding and striking Kido Butai. How much causal weight this specific decision carries, versus earlier doctrinal and organizational factors, remains disputed among historians."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 78,
+      "rationale": "The viewer is given the ambiguous scout report, the mixed/rearming ordnance state, the fighter-escort shortage, and the standing doctrine rationale for waiting — enough to weigh a genuine trade-off between speed and coordination without needing outside knowledge."
+    },
+    "dilemma_balance": {
+      "score": 75,
+      "rationale": "Both options were live positions among actual IJN flag officers at the time (Yamaguchi for immediate launch, Nagumo/Kusaka for coordinated launch), and modern scholarship treats the chosen option as doctrinally defensible rather than an obvious error, so neither side reads as a strawman."
+    },
+    "context_compression": {
+      "score": 62,
+      "rationale": "The dilemma depends on carrier-ordnance mechanics (torpedoes vs. bombs, rearming logistics, fighter escort cycles) that need a few extra seconds of setup versus a purely political or weather-based dilemma; the hook can convey the human tension quickly, but full comprehension needs the short_setup beat."
+    },
+    "reveal_payoff": {
+      "score": 87,
+      "rationale": "Two strong reveals stack here: three US carriers were present instead of the one or two Japan assumed, and the popular 'five fateful minutes' image of packed flight decks is itself substantially a legend that modern primary-source research does not support — a genuine myth-vs-reconstruction payoff this project is built for."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Strong dilemma, strong sourcing (Shattered Sword provides a rigorous primary-source corrective to the Fuchida legend), and a genuine, well-documented SOURCE_DISAGREEMENT angle. The main production risk is that the myth-vs-reconstruction nuance (the decision may have mattered less to the outcome than legend claims) requires careful scripting so it reads as 'the legend oversimplifies' rather than 'nothing Nagumo did mattered' — an easy point to flatten incorrectly in short-form video."
+  }
+}

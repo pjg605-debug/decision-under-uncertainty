@@ -1,0 +1,115 @@
+{
+  "id": "challenger-launch-1986",
+  "title": "Space Shuttle Challenger: Launch or Delay in Record Cold (January 1986)",
+  "case_type": ["science", "industry"],
+  "fame_level": "well_known",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "era": "NASA Space Shuttle program, January 1986",
+  "location": "Teleconference linking Morton Thiokol (Wasatch Division, Utah), NASA Marshall Space Flight Center (Huntsville, Alabama), and NASA Kennedy Space Center (Florida)",
+  "actors": [
+    { "name": "Roger Boisjoly", "role": "Morton Thiokol seal/O-ring engineer, lead advocate against launching in the forecast cold" },
+    { "name": "Arnold Thompson", "role": "Morton Thiokol engineer, supervisor of rocket motor cases, joined Boisjoly's objection" },
+    { "name": "Robert Lund", "role": "Morton Thiokol Vice President of Engineering; initially recommended against launch, then reversed after being told to 'take off his engineering hat and put on his management hat'" },
+    { "name": "Joe Kilminster", "role": "Morton Thiokol Vice President of Space Booster Programs; signed the final launch-recommendation fax to NASA" },
+    { "name": "Jerry Mason", "role": "Morton Thiokol Senior Vice President, Wasatch Division; led the off-line management caucus that reversed the engineering recommendation" },
+    { "name": "Lawrence Mulloy", "role": "NASA Marshall Space Flight Center, Solid Rocket Booster Project Manager; challenged Thiokol's initial no-launch recommendation" },
+    { "name": "George Hardy", "role": "NASA Marshall, Deputy Director of Science and Engineering; said he was 'appalled' by the no-launch recommendation" }
+  ],
+  "t0": {
+    "definition": "The point during the January 27, 1986 evening teleconference among Morton Thiokol engineers and management, NASA Marshall Space Flight Center, and NASA Kennedy launch officials at which Thiokol must give NASA a final engineering recommendation on whether to proceed with the January 28 Challenger (STS-51-L) launch, given a forecast overnight and launch-time temperature far colder than any prior shuttle flight.",
+    "date": "Teleconference held approximately 8:45 PM January 27, 1986 through just before midnight EST; launch scheduled 11:38 AM EST January 28, 1986",
+    "location": "Linked teleconference: Morton Thiokol Wasatch Division (Utah), NASA Marshall Space Flight Center (Alabama), NASA Kennedy Space Center (Florida)"
+  },
+  "stakes": "Seven astronauts' lives rode on whether an already twice-delayed, high-visibility mission (carrying the first Teacher in Space) should fly through a specific, suspected-but-not-rigorously-characterized cold-weather failure mode in the solid rocket booster field joints, or be delayed again with no guarantee that delay itself would resolve the underlying uncertainty.",
+  "known_at_t0": [
+    { "statement": "STS-51C, launched January 1985 at approximately 53°F — the coldest shuttle launch to date — showed the worst O-ring erosion and hot-gas blow-by observed in the program up to that point.", "evidence_class": "FACT" },
+    { "statement": "The forecast for the night of January 27-28, 1986 called for overnight lows near 22°F at the pad, with conditions at the rescheduled launch time expected to be far colder than any previous shuttle launch; ice had formed on the launch structure.", "evidence_class": "FACT" },
+    { "statement": "In the teleconference, Thiokol engineers presented a recommendation against launching below 53°F, arguing there was insufficient data to certify O-ring performance below that temperature.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "The charts Thiokol engineers used to support the no-launch recommendation displayed O-ring damage organized by launch/mission rather than by temperature, and did not include several warm-weather launches that showed no O-ring damage at all — weakening rather than strengthening the visual case that damage correlated with cold.", "evidence_class": "FACT" },
+    { "statement": "Boisjoly and Thompson believed, based on the 51C erosion data, that O-ring resiliency (the seal's ability to re-seat after joint rotation at ignition) was reduced at low temperature, though this had not been tested down to the forecast temperature range.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "NASA Marshall officials Lawrence Mulloy and George Hardy pushed back strongly on the engineering recommendation, stating it was unconvincing because it rested on a single cold-launch data point and offered no clear, quantified temperature threshold.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "After NASA's pushback, Thiokol requested an off-line, Thiokol-only caucus of roughly 30 minutes, during which senior manager Jerry Mason told engineering Vice President Robert Lund to 'take off his engineering hat and put on his management hat.'", "evidence_class": "FACT" },
+    { "statement": "Following the caucus, Thiokol management reversed its position and gave NASA a formal recommendation to launch, overriding the continued objections of Boisjoly, Thompson, and other working engineers, who were not asked to concur in or sign the final reversed recommendation.", "evidence_class": "FACT" },
+    { "statement": "Boisjoly later testified that during the meeting the standard of proof effectively inverted: instead of the normal requirement to demonstrate a system was safe to fly, Thiokol engineers found themselves being asked to prove beyond doubt that it was not safe to fly.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "The shuttle program had already delayed the STS-51-L launch several times for unrelated technical and weather reasons, creating organizational pressure within both NASA and Thiokol to avoid further slippage.", "evidence_class": "CONTEMPORARY_BELIEF" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The Rogers Commission later reconstructed that the O-ring material temperature on the shaded side of the right solid rocket booster was approximately 28°F at ignition — far colder than the ambient air temperature — because the boosters had been cold-soaked overnight; no validated model producing this specific figure was available to the teleconference participants that night.", "evidence_class": "FACT" },
+    { "statement": "The Rogers Commission's post-accident finding that a primary O-ring in the right SRB aft field joint failed to seal at ignition, and that hot combustion gases breached the joint roughly 58-73 seconds into flight, directly causing the structural failure of the external tank and the vehicle's breakup — the specific failure mechanism was established only through the post-accident investigation.", "evidence_class": "FACT" },
+    { "statement": "Diane Vaughan's later sociological analysis, describing the pattern as 'normalization of deviance' (the gradual acceptance of anomalies as normal because prior flights had survived them), is a retrospective academic framework developed years after the accident, not a description available to anyone in the room that night.", "evidence_class": "INFERENCE" },
+    { "statement": "Edward Tufte's later reconstruction of the same O-ring data as a single scatterplot with temperature on one axis and damage on the other, showing the cold-temperature risk far more starkly than the charts actually used, was produced after the accident specifically to demonstrate what a better chart could have shown — it did not exist on January 27, 1986.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Delay the launch until temperatures return to the previously flight-proven range",
+      "description": "Postpone the January 28 launch until ambient and O-ring temperatures were back within the range of prior successful flights (at minimum the 53°F of the coldest previous launch, STS-51C), pending additional data or testing on O-ring behavior in the cold.",
+      "upside": "Removes the one variable — unprecedented cold — that Thiokol's own engineers had flagged as untested and that correlated with the worst O-ring damage seen to date; avoids flying into a condition no shuttle had ever flown in.",
+      "downside": "Further delays an already multiply-delayed, high-visibility mission, with schedule, cost, and public-relations consequences; does not by itself generate new data, and no rigorously established 'safe' temperature floor below 53°F existed either.",
+      "why_it_made_sense": "The people who had designed and tested the joint said outright they lacked sufficient data to certify safety below 53°F, and the only cold-weather flight on record had produced the worst erosion yet observed — extending caution to an untested, unprecedented condition is standard engineering practice under genuine uncertainty.",
+      "risk_carried": "If the temperature-erosion link were weaker than feared, a delay could be read as an overreaction to thin evidence, and repeated delays carried their own institutional and financial costs without guaranteeing the uncertainty would ever be fully resolved."
+    },
+    {
+      "id": "option_b",
+      "label": "Proceed with the January 28 launch as scheduled",
+      "description": "Launch as planned, treating the engineering team's cold-temperature concern as a real but insufficiently quantified risk rather than a proven reason to override the schedule.",
+      "upside": "Keeps the mission on schedule; the SRB joint, despite erosion on 51C, had never caused a catastrophic failure on any prior flight, and NASA/Thiokol management judged the data presented that night as inconclusive rather than a demonstrated show-stopper.",
+      "downside": "Committed the vehicle to the coldest launch attempted by a wide margin, in a suspected but not rigorously characterized failure mode, overriding the explicit initial recommendation of the engineers most familiar with the hardware.",
+      "why_it_made_sense": "From NASA Marshall management's perspective, the engineering case was thin — one cold data point, no quantified temperature-risk curve — and the joint's secondary O-ring had appeared to provide redundancy on prior flights with erosion; against a backdrop of a program that had flown before with known imperfections, proceeding did not look reckless to the decision-makers in the room.",
+      "risk_carried": "If the temperature-erosion relationship the engineers suspected but could not fully prove was real and worse than assumed, both the primary and secondary O-ring seals could fail to seat with no further redundancy — a risk that fell directly on the seven-person crew."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "Morton Thiokol senior management (Jerry Mason, Joe Kilminster, Robert Lund, Cal Wiggins), who reversed the engineering team's no-launch recommendation and issued NASA a formal 'go' to launch; accepted up the NASA chain, whose Level I/II officials were not informed of how contested the reversal had been.",
+    "decided_when": "Late evening January 27, 1986, following an approximately 30-minute Thiokol-only caucus during the teleconference; the written recommendation to launch was faxed to NASA before midnight.",
+    "stated_basis": "Thiokol management concluded the engineering objection, while sincerely held, was not backed by a clear, quantified safety threshold, and that the SRB joint's secondary O-ring provided an acceptable safety margin; NASA officials had also expressed strong reservations about deviating from the launch schedule again.",
+    "constraints": "Cumulative schedule pressure after several prior launch delays; a NASA requirement for a unanimous contractor 'go' before proceeding; no practical way that night to run new physical tests of O-ring behavior at the forecast temperature; a compressed decision window before the planned morning launch."
+  },
+  "decision_quality": {
+    "rating": "WEAK",
+    "justification": "The process that produced the launch recommendation had multiple, well-documented defects: the supporting data was presented in a form (organized by mission date, omitting warm-weather no-damage flights) that obscured rather than revealed the temperature correlation the engineers themselves believed in; the burden of proof was inverted from 'demonstrate it is safe' to 'demonstrate it is unsafe'; the engineers who best understood the hardware were effectively removed from the final decision after being told to think like managers; and the reversal was reached under acknowledged schedule pressure without any new data being obtained to justify the change of position. This is not a case of a reasonable process producing bad luck — the process itself was compromised."
+  },
+  "outcome_quality": {
+    "rating": "BAD",
+    "justification": "Challenger was destroyed 73 seconds after launch, killing all seven crew members. The Rogers Commission traced the direct cause to failure of the right SRB aft field-joint O-ring seal in exactly the cold conditions the engineers had warned about, at an O-ring temperature (~28°F) even colder than the forecast air temperature discussed that night."
+  },
+  "outcome": {
+    "immediate": "Space Shuttle Challenger (STS-51-L) disintegrated 73 seconds after liftoff on January 28, 1986, killing all seven crew members: Francis Scobee, Michael Smith, Judith Resnik, Ellison Onizuka, Ronald McNair, Gregory Jarvis, and Christa McAuliffe. The Rogers Commission determined the O-ring failure allowed hot combustion gases to breach the joint and ultimately destroy the external fuel tank and vehicle.",
+    "long_term": "The Shuttle program was grounded for nearly three years, returning to flight with STS-26 in September 1988. NASA redesigned the SRB field joints, restructured its safety-review chain (adding an independent safety office and giving astronauts a formal role in launch decisions), and the case became a canonical study in organizational decision-making and engineering ethics, most influentially through Diane Vaughan's concept of 'normalization of deviance' and Edward Tufte's critique of the data visualization used that night.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "How decisive external schedule/political pressure (e.g., proximity to the President's State of the Union address) was in the reversal",
+      "description": "Some accounts and commission testimony emphasize NASA's frustration with repeated delays and note the temporal proximity to a scheduled State of the Union address as context for pressure on Thiokol; other historians caution that a direct, documented causal link to that specific event is weaker than the well-supported claim of general, months-long schedule and cost pressure on the program."
+    },
+    {
+      "topic": "Whether NASA Level I/II officials (Arnold Aldrich, Jesse Moore) were told of the engineers' initial objection before the launch decision was finalized",
+      "description": "Rogers Commission testimony established that the final Thiokol fax recommending launch did not convey the depth of internal engineering dissent, and Aldrich testified he was not informed of it; sources differ on whether this reflects a deliberate suppression of dissent versus a communication and documentation failure within Thiokol and Marshall."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 60,
+      "rationale": "A viewer given only the known_at_t0 facts (the one prior cold-weather flight already showed the worst O-ring damage on record, and the forecast is for conditions far colder still) has real engineering substance to reason with on both sides — 'one data point is weak statistical evidence' and 'there is a secondary/redundant seal' are genuine, not strawman, arguments for launching. But because the delay side is anchored to a concrete, already-observed worst-case precedent that the launch would exceed, most viewers will lean toward 'delay' fairly readily rather than finding the choice a true toss-up."
+    },
+    "dilemma_balance": {
+      "score": 35,
+      "rationale": "Honest assessment: this is the weakest-balanced of the three cases. Once a viewer is told 'the only previous cold flight already showed the worst damage seen, and we are about to go well below that temperature,' the naive risk-averse read ('why launch colder than your only known bad case?') is compelling even without institutional context or hindsight. NASA/Thiokol management's actual argument (thin data, unquantified threshold, redundant seal) is real but comparatively weak against that instinct, so the A/B does not feel evenly matched the way Cuban Missile Crisis or Apollo 13 do."
+    },
+    "context_compression": {
+      "score": 88,
+      "rationale": "Compresses cleanly to a single vivid fact set: record cold forecast, a part already damaged at the previous coldest flight, a launch happening anyway — no prior historical knowledge required to grasp the tension in 5-10 seconds."
+    },
+    "reveal_payoff": {
+      "score": 55,
+      "rationale": "Moderate payoff. Because the 'safe' answer is somewhat guessable in advance (see dilemma_balance), the outcome itself is less surprising than in a genuinely balanced case; the real payoff comes from specific process details revealed afterward — the actual O-ring temperature (28°F, colder than the discussed forecast), the chart that omitted warm-weather no-damage flights, and the documented inversion of the burden of proof — which recontextualize *why* it went wrong rather than *whether* it would."
+    }
+  },
+  "production_verdict": {
+    "status": "WEAK",
+    "reasoning": "This is a well-sourced, historically important case and a legitimate WEAK-decision/BAD-outcome contrast to cases where good process met bad luck — that value should not be lost. But judged strictly as a guessing-game dilemma, it underperforms: presented honestly with known_at_t0 facts, a large share of viewers will correctly predict 'delay' without needing any inside information, because the launch would exceed the only cold-weather precedent on record and that precedent was already the worst damage seen. Recommend keeping this case in the pilot specifically as a 'watch a good instinct get overridden by bad process' narrative rather than marketing it as a close 50/50 call — the hindsight_analysis and longform_story carry the real value here more than the A/B guess itself does."
+  }
+}

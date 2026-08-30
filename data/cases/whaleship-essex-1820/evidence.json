@@ -1,0 +1,85 @@
+{
+  "case_id": "whaleship-essex-1820",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Narrative of the Most Extraordinary and Distressing Shipwreck of the Whale-Ship Essex, of Nantucket",
+      "author_or_institution": "Owen Chase",
+      "date": "1821",
+      "citation": "Chase, O. (1821). Narrative of the Most Extraordinary and Distressing Shipwreck of the Whale-Ship Essex, of Nantucket. New York: W. B. Gilley. Full text: https://www.gutenberg.org/files/61931/61931-h/61931-h.htm",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "First mate Owen Chase's own account of the debate over destination after the sinking, the crew's fear of cannibal islands, the decision to sail for South America, and the subsequent starvation, deaths, and cannibalism during the voyage."
+    },
+    {
+      "id": "src-02",
+      "title": "Account of the sinking of the whaleship Essex (Thomas Nickerson manuscript, written c. 1876)",
+      "author_or_institution": "Thomas Nickerson (cabin boy, later published by the Nantucket Historical Association)",
+      "date": "Written circa 1876; published 1984",
+      "citation": "Nickerson, T. (1984). The Loss of the Ship 'Essex,' Sunk by a Whale (T. F. Heffernan, Ed.). Nantucket Historical Association / Penguin Classics. Manuscript record: https://archive.org/details/sv106-1",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Independent crew-member account (written decades later) of the destination debate and Captain Pollard's initial preference for the nearer islands before being overruled by his officers, corroborating and lightly diverging from Chase's version."
+    },
+    {
+      "id": "src-03",
+      "title": "In the Heart of the Sea: The Tragedy of the Whaleship Essex",
+      "author_or_institution": "Nathaniel Philbrick",
+      "date": "2000",
+      "citation": "Philbrick, N. (2000). In the Heart of the Sea: The Tragedy of the Whaleship Essex. Viking.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Consolidated, research-based reconstruction of the sinking, the destination debate, distances and wind conditions to the Marquesas/Society Islands versus South America, and the voyage's outcome including the Henderson Island stopover and final rescues."
+    },
+    {
+      "id": "src-04",
+      "title": "Inside the Terrifying True Story of the Sperm Whale That Sank the Whale-Ship 'Essex'",
+      "author_or_institution": "Smithsonian Magazine",
+      "date": "2015",
+      "citation": "https://www.smithsonianmag.com/smart-news/inside-the-terrifying-true-story-of-the-sperm-whale-that-sank-the-whale-ship-essex-and-inspired-herman-melvilles-moby-dick-180985362/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Corroboration that the crew's fear the Marquesas/Society Islands were inhabited by cannibals was unfounded in the specific case, and that traders had in fact visited those islands without incident by 1820."
+    },
+    {
+      "id": "src-05",
+      "title": "The True-Life Horror That Inspired Moby-Dick",
+      "author_or_institution": "Smithsonian Magazine",
+      "date": "2012",
+      "citation": "https://www.smithsonianmag.com/history/the-true-life-horror-that-inspired-moby-dick-17576/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Details of the casting of lots, the shooting of Owen Coffin by Charles Ramsdell, and Captain Pollard's later life and social ostracism in Nantucket."
+    },
+    {
+      "id": "src-06",
+      "title": "Essex",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/topic/Essex-whaling-ship",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: date of sinking, captain's name, number of crew, and eventual survivor count."
+    },
+    {
+      "id": "src-07",
+      "title": "A Dreadful Calamity: Stove by a Whale",
+      "author_or_institution": "Nantucket Historical Association",
+      "date": "Ongoing institutional history page",
+      "citation": "https://essex.nha.org/a-dreadful-calamaty/",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Institutional (museum/archive) account of the sinking and the immediate aftermath, used as a cross-check on dates and crew composition."
+    },
+    {
+      "id": "src-08",
+      "title": "Stove by a Whale: Owen Chase and the Essex",
+      "author_or_institution": "Thomas Farel Heffernan",
+      "date": "1981",
+      "citation": "Heffernan, T. F. (1981). Stove by a Whale: Owen Chase and the Essex. Wesleyan University Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Academic biographical and textual analysis of Owen Chase's narrative and its reliability, used to cross-check the primary account's description of the destination debate."
+    }
+  ]
+}

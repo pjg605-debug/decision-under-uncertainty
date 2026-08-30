@@ -1,0 +1,106 @@
+{
+  "id": "stanislav-petrov-1983",
+  "title": "Stanislav Petrov and the 1983 Soviet Missile-Warning False Alarm",
+  "case_type": ["military", "crisis"],
+  "fame_level": "medium",
+  "era": "Cold War, September 1983",
+  "location": "Serpukhov-15 command bunker, near Moscow, Soviet Union",
+  "actors": [
+    { "name": "Stanislav Yevgrafovich Petrov", "role": "Lieutenant Colonel, Soviet Air Defence Forces; duty officer at the Serpukhov-15 early-warning command center for the Oko satellite system" }
+  ],
+  "t0": {
+    "definition": "The moment, shortly after midnight on September 26, 1983, when the Oko early-warning satellite system's control console at Serpukhov-15 displays the highest-confidence 'launch' signal, first for one US intercontinental ballistic missile and then, within minutes, escalating to reports of up to five missiles launched from the direction of a US Minuteman ICBM field. Petrov, the duty officer, must decide within minutes whether to report this up the chain of command as a confirmed US missile attack or to judge it a system malfunction and not escalate it as an attack, before ground radar could possibly confirm or refute anything and well before any missile could have arrived.",
+    "date": "September 26, 1983, shortly after midnight Moscow time",
+    "location": "Serpukhov-15 early-warning command bunker, south of Moscow, Soviet Union"
+  },
+  "stakes": "Soviet doctrine called for the duty officer to relay a confirmed launch warning up the chain of command so that political and military leadership could decide on a retaliatory launch before incoming missiles could destroy Soviet command-and-control and land-based missiles. Reporting the alert as a confirmed attack could set in motion a retaliatory nuclear launch process; dismissing a real attack as a false alarm could leave the Soviet Union unable to respond to an actual first strike.",
+  "known_at_t0": [
+    { "statement": "The Oko satellite system had become operational only in 1982 and was relatively new; its reliability under real operating conditions was not yet fully proven.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Petrov had been involved in testing and troubleshooting the command bunker's computer systems and, according to his own later account, was aware the system was not '100 percent' reliable.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "The Oko console first reported a single US intercontinental ballistic missile launch, with the system's target-identification algorithm registering its highest confidence rating; within a few minutes the system escalated the report to a total of five missiles launched.", "evidence_class": "FACT" },
+    { "statement": "Soviet ground-based early-warning radar, which could in principle add independent corroboration, had not detected or confirmed any incoming missile by the time Petrov had to decide; ground radar could only detect missiles as they came over the horizon, much later in a missile's flight than satellite launch detection.", "evidence_class": "FACT" },
+    { "statement": "Petrov's own stated reasoning was that Soviet military doctrine and his own understanding of a genuine US first-strike plan assumed the United States would open a nuclear war with a massive, simultaneous launch of hundreds of missiles, not a handful, since a small strike would leave the Soviet Union both alerted and able to retaliate devastatingly; a report of only one, then five, missiles did not fit that expected pattern.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "Tensions between the Soviet Union and the United States were unusually elevated in September 1983: Soviet forces had shot down Korean Air Lines Flight 007 on September 1, 1983, killing all 269 aboard, and Soviet leadership under Yuri Andropov was operating under Operation RYaN, an intelligence effort premised on the belief that a NATO first strike was a real possibility.", "evidence_class": "FACT" },
+    { "statement": "Under the system's design and Petrov's formal duty, his role was to relay what the sensor system reported up the chain of command, not to independently override or reinterpret the sensor data himself.", "evidence_class": "FACT" },
+    { "statement": "Petrov later said he judged the odds of the alert being a genuine attack as roughly even, and made his call despite that uncertainty rather than because he was confident it was definitely false.", "evidence_class": "STATED_RATIONALE" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The alert was caused by a rare alignment in which sunlight reflected off high-altitude clouds over the northern United States (in the vicinity of Malmstrom Air Force Base, Montana, a US Minuteman ICBM field) at a seasonal angle near the autumnal equinox; the Oko satellite's infrared sensors, combined with the satellite's Molniya orbital geometry, misread these reflections as the infrared signature of missile launch plumes. This cause was identified only through later investigation, not at the time of the decision.", "evidence_class": "FACT" },
+    { "statement": "No US missiles had in fact been launched; there was no incoming attack of any kind. Petrov could not confirm this at the moment of decision — he judged the alert to be false based on his doctrinal reasoning and the pattern of the report, before any corroborating evidence (or its absence) had time to develop.", "evidence_class": "FACT" },
+    { "statement": "A software design limitation in the Oko system — reported in some technical retrospectives — meant the satellite's algorithms had not been adequately programmed to filter out this specific high-altitude cloud/sunlight optical configuration, making this kind of false signal more likely than operators may have appreciated at the time.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Report the alert up the chain of command as a confirmed missile attack",
+      "description": "Follow the system's design and Petrov's formal role: relay the Oko system's highest-confidence launch report to the Soviet General Staff as a confirmed US missile launch, which under Soviet procedure would start the process of assessing and potentially authorizing a retaliatory strike.",
+      "upside": "Matches Petrov's defined duty (report sensor data, do not filter or second-guess it); if the attack were real, it preserves the Soviet Union's ability to respond before its own forces could be destroyed in a first strike; avoids placing personal judgment above the warning system leadership had built and trusted.",
+      "downside": "If the alert were false, reporting it as confirmed could trigger a cascade toward nuclear retaliation against an attack that never happened, especially given the extremely tense political atmosphere only weeks after the KAL 007 shootdown.",
+      "why_it_made_sense": "The entire early-warning system existed precisely so that a first strike could be detected and answered before Soviet retaliatory capability was destroyed; a duty officer who slow-rolled or downgraded a top-confidence sensor report on his own authority was deviating from the system's whole design logic, and could not personally rule out that this was the real thing.",
+      "risk_carried": "Escalating a false alarm into a reported 'confirmed attack' at the highest level of Soviet leadership, in an already hair-trigger political climate, carried a real risk of contributing to a mistaken retaliatory launch order."
+    },
+    {
+      "id": "option_b",
+      "label": "Judge it a system malfunction and report it as such, not as a confirmed attack",
+      "description": "Petrov used his own judgment about the plausibility of the attack pattern (small number of missiles, no ground radar corroboration, a new and imperfectly trusted system) to conclude the alert was a false alarm, and reported a system malfunction rather than a confirmed launch.",
+      "upside": "If correct, avoids feeding a false trigger into a chain of command that could escalate toward retaliatory nuclear launch; matches the observed inconsistency between the doctrinal expectation of a massive first strike and the small number of missiles reported.",
+      "downside": "If wrong, a real attack would have been dismissed, potentially delaying Soviet leadership's awareness of an actual incoming strike and reducing the time available to respond.",
+      "why_it_made_sense": "A genuine American disarming first strike, as understood by Soviet doctrine at the time, was expected to be launched with hundreds of missiles simultaneously so as to destroy Soviet retaliatory capability outright; a report of one missile, then five, did not fit that expected pattern, and no independent sensor (ground radar) had corroborated anything.",
+      "risk_carried": "Petrov was substituting his own real-time judgment for the sensor system's output and his formally defined role, on odds he himself later described as roughly even; if he was wrong, the cost of the error would have been catastrophic and irreversible."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "Lieutenant Colonel Stanislav Petrov, acting alone as the duty officer on shift",
+    "decided_when": "Within several minutes of the initial alert, shortly after midnight on September 26, 1983",
+    "stated_basis": "Petrov later explained that a real US first strike would be launched as a massive, simultaneous attack rather than a handful of missiles, that the alert's escalation pattern (one missile, then five) did not fit that expectation, that Soviet ground radar had not corroborated any incoming missile, and that the Oko satellite system was new enough that he did not fully trust it. He has said he judged the odds as roughly 50-50 but chose to report it as a system malfunction rather than a confirmed attack.",
+    "constraints": "He had only a few minutes to decide before any procedural window for reporting and escalating a launch would close; there was no time to wait for independent corroboration; he was acting alone as the senior officer on duty that shift, substituting for a colleague."
+  },
+  "decision_quality": {
+    "rating": "STRONG",
+    "justification": "Petrov's reasoning was grounded in specific, articulable facts available to him at the moment: the small and escalating (not simultaneous mass) missile count did not match the doctrinally expected shape of a genuine disarming first strike; no independent sensor had corroborated the satellite's report; and the satellite system was new enough that a false positive was a live possibility. This is a case of reasoning correctly under genuine uncertainty rather than simply 'getting lucky' — he explicitly weighed the doctrinal mismatch and the absence of corroboration, and by his own account still viewed the odds as close to even rather than assuming he was certainly right. The honest complication is that his choice also deviated from his formally defined role (relay sensor output, do not override it), and he could not fully rule out being wrong; a fully 'no weaknesses' STRONG rating is not appropriate, but the reasoning process itself — using doctrinal plausibility and absence of corroboration to override a high-confidence sensor report under severe time pressure — is well-documented and widely regarded by later analysts as a sound example of judgment under uncertainty, not merely a fortunate guess."
+  },
+  "outcome_quality": {
+    "rating": "GOOD",
+    "justification": "No missiles had in fact been launched, so not escalating the alert avoided feeding a false trigger into a nuclear command chain during an already extremely tense period; nuclear war was not triggered by this incident. As with any single case, this outcome does not retroactively prove the decision carried zero risk — Petrov himself has said he was not certain at the time — but here decision quality and outcome quality do line up, unlike some other Cold War near-misses where a reasonable-sounding call happened to go the other way."
+  },
+  "outcome": {
+    "immediate": "Petrov reported the alert as a system malfunction rather than a confirmed attack. No missiles arrived; ground radar and the passage of time confirmed no attack had occurred. He was not formally commended at the time; he faced some informal reprimand for incomplete paperwork/logbook procedure during the subsequent investigation, and continued in a less prominent post before eventually leaving military service.",
+    "long_term": "The incident remained secret within Soviet military and intelligence circles for years and became widely known in the West only after a 1998 memoir by Petrov's former commander and, especially, a 1999 Washington Post account based on interviews with Petrov himself. Petrov received a number of public recognitions in the 2000s and 2010s, including from international disarmament organizations, and became widely referred to as 'the man who saved the world.' The incident is frequently cited in discussions of nuclear command-and-control risk and the limits of automated early-warning systems, alongside other Cold War close calls.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Exact location the satellite indicated as the missile launch site",
+      "description": "Some technical accounts (e.g., the 2000 IEEE Spectrum analysis by Forden, Podvig, and Postol) identify the source of the false signal as being associated with Malmstrom Air Force Base in Montana, a major US Minuteman ICBM field, while some general-reference and encyclopedia accounts (e.g., Encyclopaedia Britannica) describe the indicated base as being in North Dakota. This does not affect the core facts of the false-alarm mechanism (sunlight on high-altitude clouds) or Petrov's reasoning, but the exact state/base named differs between sources."
+    },
+    {
+      "topic": "How close Petrov considered the odds, and how much he relied on 'gut feeling' versus formal doctrinal reasoning",
+      "description": "Later interviews and secondary retellings vary in emphasis: some accounts foreground Petrov's doctrinal argument (a real first strike would involve hundreds of missiles, not a handful) as the primary basis for his call, while others (including some of Petrov's own later remarks, e.g. to the Washington Post in 1999) emphasize that he considered the odds close to 50-50 and describe an intuitive 'gut feeling' component alongside the doctrinal reasoning. This narrative uses the more conservative framing: doctrinal mismatch and absence of corroboration as the stated basis, with acknowledged residual uncertainty."
+    }
+  ],
+  "has_progressive_version": true,
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
+  "quality_scores": {
+    "player_fairness": {
+      "score": 78,
+      "rationale": "A viewer given only the known_at_t0 facts (doctrine expects a simultaneous mass launch, not 1-5 missiles; no ground-radar corroboration; the satellite system is new and not fully trusted) can construct a real, specific case for 'false alarm' without needing anything from unknown_at_t0. The case for 'report it as an attack' is also real and stakes-based (this is the officer's defined role; the entire warning system exists to catch a real first strike before it destroys retaliatory capability; the cost of wrongly dismissing a real attack is civilization-ending), but it rests more on procedure and worst-case stakes than on specific counter-evidence that the alert IS real. That asymmetry -- specific evidence leaning one way, protocol/stakes-based caution the other -- keeps this from a perfect score, but it is not a coin flip: both sides are genuinely arguable from the facts given."
+    },
+    "dilemma_balance": {
+      "score": 60,
+      "rationale": "The doctrinal-mismatch argument (a real strike would be hundreds of missiles, not five) is specific and fairly persuasive once stated, which tilts a neutral viewer toward 'false alarm' even before any reveal. Option A's strongest argument is more abstract ('this is your job, and the downside of being wrong is total') than a concrete reason to doubt the false-alarm read. This case is also one of the most pop-culture-saturated 'hero' stories in the nuclear-close-call genre, so a meaningful share of viewers will recognize it and already know Petrov was 'right,' pre-coloring the choice further. Both factors push this below a fully balanced dilemma."
+    },
+    "context_compression": {
+      "score": 90,
+      "rationale": "The dilemma reduces to a single visceral image and one question: 'a screen says missiles are inbound, you have minutes, do you call it in?' No historical background is required to feel the stakes immediately."
+    },
+    "reveal_payoff": {
+      "score": 60,
+      "rationale": "The mechanistic reveal (sunlight reflecting off high-altitude clouds mimicking missile plumes) is satisfying but has become fairly widely known through a decade-plus of documentaries and retrospectives about 'the man who saved the world,' so it lands as confirmation more than surprise for viewers with any prior exposure to the story. The genuinely fresher payoff -- that Petrov himself later described the odds as roughly 50-50 rather than being confident he was right -- helps, but the headline reveal itself is not very novel to this genre's existing audience."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Precise, minute-scale T0; strong interview-based and technical sourcing (1999 Washington Post interview, 2013 BBC interview, 2000 IEEE Spectrum technical reconstruction); a genuinely reasoned decision-quality case that does not just default to 'STRONG because it worked'; and extremely fast context compression. The main real weakness, honestly stated, is that this is a heavily pre-known 'hero' story within the genre the pilot is drawing from, which caps dilemma_balance and reveal_payoff below what a genuinely obscure case with the same evidentiary structure could achieve -- the format works, but a meaningful share of the intended payoff is already 'spent' for viewers who have encountered this story before."
+  }
+}

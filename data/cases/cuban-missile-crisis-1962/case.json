@@ -3,6 +3,7 @@
   "title": "Cuban Missile Crisis: Blockade vs. Air Strike (October 1962)",
   "case_type": ["political", "diplomacy", "crisis"],
   "fame_level": "well_known",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
   "era": "Cold War, October 1962",
   "location": "Washington D.C., USA / Cuba / Atlantic quarantine line",
   "actors": [
@@ -84,5 +85,27 @@
       "description": "Robert Kennedy's memoir 'Thirteen Days,' other participants' recollections, and later analysis of the declassified ExComm tape recordings (notably by historian Sheldon Stern) do not fully agree on how unanimous the group was by the final recommendation, or on the exact sequence in which individual members shifted their position toward the blockade."
     }
   ],
-  "has_progressive_version": true
+  "has_progressive_version": true,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 80,
+      "rationale": "A viewer given the same known_at_t0 facts (missiles not yet operational, Soviet denial on record, air strike cannot be guaranteed complete) can construct a real case for either option without needing information withheld until the reveal. The unknown_at_t0 facts (warheads already present, true troop count, the Arkhipov incident) are revealed only afterward, not needed to make the initial call."
+    },
+    "dilemma_balance": {
+      "score": 72,
+      "rationale": "Both options have genuine, well-matched trade-offs (speed/certainty vs. reversibility/moral cost). Score is not higher because this event is famous enough that many viewers already know 'blockade' was chosen, which can pre-color the choice for a meaningful fraction of the audience even though the in-universe case for air strikes is not a strawman."
+    },
+    "context_compression": {
+      "score": 90,
+      "rationale": "The dilemma reduces cleanly to a single image and a single question ('missile base being built 90 miles away, strike or blockade?') without any prerequisite historical knowledge."
+    },
+    "reveal_payoff": {
+      "score": 85,
+      "rationale": "The unknown_at_t0 reveal (nuclear warheads already in Cuba, real troop strength 4-5x the CIA estimate, and especially the B-59 submarine near-launch) is a strong, well-sourced payoff that recontextualizes the whole decision without requiring any invented drama."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "Precise T0, strong primary sourcing (declassified ExComm tapes, National Security Archive), a genuinely balanced A/B, and a high-payoff reveal. Main weakness is that the outcome is widely known, which caps dilemma_balance and reveal_payoff somewhat versus a genuinely unfamiliar case."
+  }
 }

@@ -1,0 +1,85 @@
+{
+  "case_id": "shackleton-endurance-1915",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "South: The Story of Shackleton's Last Expedition, 1914-1917",
+      "author_or_institution": "Sir Ernest Shackleton",
+      "date": "1919",
+      "citation": "Shackleton, E. (1919). South: The Story of Shackleton's Last Expedition, 1914-1917. William Heinemann. Full text: https://www.gutenberg.org/files/5199/5199-h/5199-h.htm",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Primary-source basis for the whalers' warning at South Georgia, the sighting and naming of 'Glacier Bay' around January 15, 1915, Shackleton's own stated reasoning for continuing toward Vahsel Bay ('I had no intention of landing north of Vahsel Bay... every mile gained towards the south meant a mile less sledging'), his later expressed regret, and the ship's position (76 deg 34' S, 31 deg 30' W) when beset around January 18-19, 1915."
+    },
+    {
+      "id": "src-02",
+      "title": "Endurance: Shackleton's Incredible Voyage",
+      "author_or_institution": "Alfred Lansing",
+      "date": "1959",
+      "citation": "Lansing, A. (1959). Endurance: Shackleton's Incredible Voyage. McGraw-Hill.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Widely regarded, heavily primary-source-based (crew diaries, logs, interviews with survivors) secondary reconstruction of the ship's approach through the pack, the whalers' warnings, and the ship's distance from Vahsel Bay when beset; used for cross-checking the sequence of events and the practical obstacles (broken ice, open water, dogs, supply loads) that made a late overland dash to Vahsel Bay from the beset position impractical."
+    },
+    {
+      "id": "src-03",
+      "title": "The Endurance: Shackleton's Legendary Antarctic Expedition",
+      "author_or_institution": "Caroline Alexander",
+      "date": "1998",
+      "citation": "Alexander, C. (1998). The Endurance: Shackleton's Legendary Antarctic Expedition. Alfred A. Knopf.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Modern archive- and photograph-based (Frank Hurley's photographs, ship's log material) secondary account used to cross-check the timeline of the ship's progress through the pack from December 1914 and the approximate distance (roughly 85 nautical miles in this account) from Vahsel Bay when the ship became beset."
+    },
+    {
+      "id": "src-04",
+      "title": "Why did Endurance sink? Sea-floor and sea-ice conditions in the western Weddell Sea, Antarctica, around the wreck of Sir Ernest Shackleton's Endurance",
+      "author_or_institution": "Julian A. Dowdeswell et al., published in Antarctic Science",
+      "date": "2020",
+      "citation": "Dowdeswell, J. A., et al. (2020). Why did Endurance sink? Sea-floor and sea-ice conditions in the western Weddell Sea, Antarctica, around the wreck of Sir Ernest Shackleton's Endurance. Antarctic Science, 32(4). Cambridge University Press.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Peer-reviewed modern glaciological/oceanographic analysis of Weddell Sea ice conditions and the wreck site, used to support the inference that 1914-15 was consistent with an unusually heavy regional ice year, and as the basis for the causal_directness and long_term outcome framing regarding the ship's loss."
+    },
+    {
+      "id": "src-05",
+      "title": "How Shackleton Battled the Icy Dangers of the Weddell Sea",
+      "author_or_institution": "History Hit",
+      "date": "2022",
+      "citation": "https://www.historyhit.com/shackleton-and-the-icy-weddell-sea/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the historical precedent of the Weddell Sea's difficulty: the Scottish National Antarctic Expedition (William Bruce, 1902-04) turning back from the ice, and the German Filchner expedition's ship Deutschland being beset for roughly eight months in 1912 before escaping undamaged -- used to support the known_at_t0 statement about known regional precedents for both bad and survivable outcomes."
+    },
+    {
+      "id": "src-06",
+      "title": "Ernest Shackleton's doomed Endurance wasn't built to handle polar ice -- and he knew it, new analysis finds",
+      "author_or_institution": "CNN (reporting on 2025 structural analysis research)",
+      "date": "October 6, 2025",
+      "citation": "https://www.cnn.com/2025/10/06/science/endurance-ship-sinking-structural-weakness",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Reports Shackleton's own private acknowledgment (in a letter to his wife) that Endurance was less structurally robust for ice work than his earlier ship Nimrod, used only as background context on known risk factors, not as the basis for any load-bearing claim about the Glacier Bay decision itself, which concerned ice conditions and course rather than hull design."
+    },
+    {
+      "id": "src-07",
+      "title": "The Endurance Story",
+      "author_or_institution": "South Georgia Heritage Trust",
+      "date": "Accessed 2026",
+      "citation": "https://sght.org/the-endurance-story/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the South Georgia departure timeline: Endurance's month-long delay at Grytviken (originally planned as a few days) waiting for ice conditions to improve, based on the whaling captains' advice, before entering the Weddell Sea pack in December 1914."
+    },
+    {
+      "id": "src-08",
+      "title": "Vahsel Bay",
+      "author_or_institution": "Australian Antarctic Data Centre / Australian Antarctic Gazetteer",
+      "date": "Accessed 2026",
+      "citation": "https://data.aad.gov.au/aadc/gaz/display_name.cfm?gaz_id=111727",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "Geographic reference confirming Vahsel Bay's location and its identification as the Imperial Trans-Antarctic Expedition's intended landing site on the Caird Coast / Luitpold Coast area of the Weddell Sea."
+    }
+  ]
+}

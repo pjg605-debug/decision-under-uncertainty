@@ -4,9 +4,10 @@
   "title": "DecisionEvent",
   "type": "object",
   "required": [
-    "id", "title", "case_type", "fame_level", "t0", "stakes",
+    "id", "title", "case_type", "fame_level", "pilot_batch", "t0", "stakes",
     "known_at_t0", "unknown_at_t0", "options", "actual_decision",
-    "decision_quality", "outcome_quality", "outcome"
+    "decision_quality", "outcome_quality", "outcome", "quality_scores",
+    "production_verdict"
   ],
   "additionalProperties": false,
   "properties": {
@@ -139,6 +140,64 @@
         }
       }
     },
-    "has_progressive_version": { "type": "boolean" }
+    "has_progressive_version": { "type": "boolean" },
+    "pilot_batch": {
+      "enum": ["CURATED_HIGH_POTENTIAL", "LOW_FAME_STRESS_TEST"],
+      "description": "CURATED_HIGH_POTENTIAL = deliberately picked for strong decision-point potential (selection-biased sample, see ARCHITECTURE.md/NARRATIVE_PILOT_REPORT.md). LOW_FAME_STRESS_TEST = deliberately obscure cases picked to test whether format quality holds without relying on famous, pre-known narratives."
+    },
+    "quality_scores": {
+      "type": "object",
+      "description": "Narrative/format quality scores, distinct from decision_quality/outcome_quality (which judge the historical actor's judgment, not the content's watchability).",
+      "required": ["player_fairness", "dilemma_balance", "context_compression", "reveal_payoff"],
+      "additionalProperties": false,
+      "properties": {
+        "player_fairness": {
+          "type": "object",
+          "required": ["score", "rationale"],
+          "additionalProperties": false,
+          "properties": {
+            "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Can a viewer make a meaningful judgment from the information actually given? 100 = enough information, both options genuinely reasonable. 0 = effectively a coin flip/guessing game." },
+            "rationale": { "type": "string" }
+          }
+        },
+        "dilemma_balance": {
+          "type": "object",
+          "required": ["score", "rationale"],
+          "additionalProperties": false,
+          "properties": {
+            "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "How evenly matched do option A and option B feel? 100 = both very persuasive. 0 = one option obviously looks correct." },
+            "rationale": { "type": "string" }
+          }
+        },
+        "context_compression": {
+          "type": "object",
+          "required": ["score", "rationale"],
+          "additionalProperties": false,
+          "properties": {
+            "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "Can someone with zero historical background understand the situation in 5-10 seconds? Higher is better." },
+            "rationale": { "type": "string" }
+          }
+        },
+        "reveal_payoff": {
+          "type": "object",
+          "required": ["score", "rationale"],
+          "additionalProperties": false,
+          "properties": {
+            "score": { "type": "integer", "minimum": 0, "maximum": 100, "description": "When the real historical choice and outcome are revealed, is there enough surprise/intellectual payoff?" },
+            "rationale": { "type": "string" }
+          }
+        }
+      }
+    },
+    "production_verdict": {
+      "type": "object",
+      "description": "Explicit, honest go/no-go call for this case as showcase content. Failing some cases is an expected and useful pilot outcome, not something to avoid.",
+      "required": ["status", "reasoning"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["VIABLE", "WEAK", "FAILED"] },
+        "reasoning": { "type": "string" }
+      }
+    }
   }
 }

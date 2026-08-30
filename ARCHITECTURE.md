@@ -103,6 +103,29 @@ Key fields:
 - `id`, `title`, `case_type[]` (military | political | diplomacy |
   exploration | science | crisis | survival | industry), `fame_level`
   (well_known | medium | lesser_known)
+- `pilot_batch` — `CURATED_HIGH_POTENTIAL` or `LOW_FAME_STRESS_TEST`. See
+  section 11 below; this distinction is load-bearing for how the pilot's
+  results should and should not be generalized.
+- `quality_scores` — four narrative/format scores, each `{ score: 0-100,
+  rationale }`, deliberately separate from `decision_quality` /
+  `outcome_quality` (which judge the historical actor, not the content):
+  - `player_fairness` — can a viewer make a meaningful call from the
+    information actually given? 100 = enough information and both
+    options are genuinely reasonable; 0 = a coin flip dressed up as a
+    choice. This is the single most important score: the project's goal
+    is "a hard judgment made with real information," never "a viewer
+    tricked into guessing wrong."
+  - `dilemma_balance` — how evenly matched do A and B feel? 100 = both
+    persuasive; 0 = one looks obviously correct.
+  - `context_compression` — can someone with zero background understand
+    the situation in 5-10 seconds? Higher is better.
+  - `reveal_payoff` — once the real choice and outcome are revealed, is
+    there real surprise/intellectual payoff?
+- `production_verdict` — an explicit `{ status: VIABLE|WEAK|FAILED,
+  reasoning }` call on whether the case is fit for showcase content.
+  Landing on `FAILED` for some fraction of researched cases is an
+  expected, useful pilot outcome — the goal is never "make every
+  candidate work."
 - `t0` — `{ definition, date, location }`: the precise moment "the
   decision" is frozen at. Everything before this line is fair game for
   "known at T0"; everything after is outcome/hindsight only.
@@ -173,7 +196,31 @@ actual_decision → outcome`. New information must be something the actors
 actually learned in that order — never a later-known outcome dressed up
 as a mid-story clue.
 
-## 10. Non-goals for this pass
+## 10. Selection bias and the two pilot batches — read before generalizing results
+
+This pilot's first 12 cases were **deliberately chosen because their
+decision points are unusually strong** (clean T0, well-documented
+alternatives, high stakes, good sourcing). Whatever hit rate this batch
+achieves says "this format works when you pick a good historical case,"
+never "cases like this are common across history." That generalization
+gap is called out explicitly in `NARRATIVE_PILOT_REPORT.md`, tagged
+`pilot_batch: CURATED_HIGH_POTENTIAL`.
+
+A second consideration: a large share of the curated batch (Cuban Missile
+Crisis, Midway, Cannae, Challenger, Apollo 13, Petrov, Shackleton, ...)
+are cases whose decision-under-uncertainty framing is already
+well-trodden territory — the raw material was easier to find and reason
+about specifically because it is famous. To stress-test whether the
+format still works without that head start, a separate small batch is
+tagged `pilot_batch: LOW_FAME_STRESS_TEST`: genuinely obscure cases
+(general audiences essentially don't know them; even history specialists
+may only know them in passing), held to the identical quality bar and
+evaluated with the identical scores. Comparing quality-score
+distributions between the two batches is the actual test of whether
+"good decision content" requires fame to begin with, or whether fame was
+incidental to case selection.
+
+## 11. Non-goals for this pass
 
 No UI changes, no crawler, no mass generation, no SEO, no video
 rendering/upload automation. This pass is a narrative-quality and
