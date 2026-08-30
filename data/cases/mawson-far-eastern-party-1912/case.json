@@ -3,6 +3,7 @@
   "title": "Mawson's Far Eastern Party: Coast Route or Plateau Route After the Crevasse (December 1912)",
   "case_type": ["exploration", "survival"],
   "fame_level": "lesser_known",
+  "pilot_batch": "CURATED_HIGH_POTENTIAL",
   "era": "Heroic Age of Antarctic Exploration, Australasian Antarctic Expedition, December 1912",
   "location": "King George V Land, East Antarctica, approximately 500 km east of the expedition's main base (Winter Quarters, Cape Denison)",
   "actors": [
@@ -80,5 +81,27 @@
       "description": "Sources vary in stating the distance between roughly 480 km and 500 km (alternatively cited as approximately 311 miles), reflecting differences in measurement point and rounding rather than a substantive factual dispute."
     }
   ],
-  "has_progressive_version": false
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 60,
+      "rationale": "A viewer given the T0 facts (crevassed coastal descent vs. a plateau route already known to be dangerous, possible seals/rescue chance vs. no extra food) has enough to reason it out, but the framing is skewed by the fact that the party had just watched a fatal crevasse fall: that immediate, vivid trauma makes 'avoid another dangerous descent' feel like the emotionally obvious answer before the food/rescue upside of the coast route is even weighed."
+    },
+    "dilemma_balance": {
+      "score": 48,
+      "rationale": "Honest assessment: this leans toward one option reading as the more sensible choice. Choosing not to add a second known-hazardous glacier descent immediately after losing a companion to a crevasse is close to what most people would intuitively do, even though the coast route's food/rescue upside was real. It is not a strawman -- both options are grounded in the actual record -- but it is not a coin-flip either."
+    },
+    "context_compression": {
+      "score": 55,
+      "rationale": "Requires explaining what a sledging party is, why three men were 500 km from base with dogs and sledges, and what a relief-ship deadline means, before the route choice itself makes sense. More setup-dependent than a single-image hook; workable in the 30-40s/45-60s formats but tight for the 20-25s version."
+    },
+    "reveal_payoff": {
+      "score": 72,
+      "rationale": "The payoff is genuine and moving -- Mertz's contested cause of death (vitamin A poisoning vs. malnutrition, still debated by researchers), Mawson's own near-fatal crevasse fall, and missing the relief ship by mere hours after 500 km alone. The weakness is that this payoff belongs more to the aftermath of the decision than to the route choice itself, so it doesn't recontextualize the A/B choice as directly as in the other two cases."
+    }
+  },
+  "production_verdict": {
+    "status": "WEAK",
+    "reasoning": "This is an honest, well-sourced reconstruction of a real decision with named alternatives (Mawson's own account and secondary medical/historical literature both document the coast-vs-plateau choice), so it is not a fabricated or forced binary. But as dilemma-format content it is the weakest of the three cases: the immediately preceding trauma (Ninnis's fatal fall) tilts the emotional logic toward the plateau route before the viewer even weighs the coast route's real upside, the setup requires more front-loaded exposition than the format ideally wants, and the most dramatic payoff (Mertz's disputed cause of death, Mawson missing the ship by hours) is only loosely tied to the route decision itself rather than flowing directly from it. Recommend treating this case as a documented but lower-priority pilot entry rather than a flagship piece, and flag to the orchestrator that the wider Mawson survival ordeal may not compress into a clean two-option dilemma game as well as it works as pure survival narrative."
+  }
 }
