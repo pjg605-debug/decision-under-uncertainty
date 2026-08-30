@@ -8,7 +8,8 @@ Decision / T0 is connected to the existing Supabase project as a shared editoria
 - Migration applied: `supabase/migrations/202608300001_content_hub.sql` (`202608300001`)
 - GitHub repository: `pjg605-debug/decision-under-uncertainty`
 - GitHub branch: `codex/supabase-content-hub`
-- Integration source commit: `1c42b522d47d944ba47d31bb5fadf0739fa90ba9`
+- Local integration source commit: `1c42b522d47d944ba47d31bb5fadf0739fa90ba9`
+- Published GitHub integration snapshot: `61145826fb5a1f624f881de82d549908b37628c0`
 - Production URL: `https://decision-under-uncertainty.pjg605.chatgpt.site/`
 - Applied date: 2026-08-30
 
@@ -109,3 +110,4 @@ All nine remained present after migration and seeding. The applied migration and
 Claude should use `SUPABASE_URL` plus `SUPABASE_SERVICE_ROLE_KEY` in a trusted server or local agent environment. It must never expose the service credential to a browser or write it into Git, logs, prompts, narrative JSON, or review comments.
 
 The exact deployed table/column contract, relationships, workflow states, transitions, queues, attribution rules, narrative versioning protocol, review/revision linkage, and helper examples are in `CLAUDE_DB_INTEGRATION_HANDOFF.md`. The supported entry point is `scripts/editorial-desk.mjs`; Claude should append narrative versions and revisions, use evidence keys for citations, and call `transition_case_status` instead of directly mutating workflow state.
+
