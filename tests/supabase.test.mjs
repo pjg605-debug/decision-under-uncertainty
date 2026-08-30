@@ -17,6 +17,14 @@ test('content hub migration creates and enables RLS on every requested table', (
   }
 });
 
+test('migration is atomic, additive, and uses a project-scoped update trigger', () => {
+  assert.match(migration, /^begin;/);
+  assert.match(migration, /create function public\.duu_set_updated_at\(\)/);
+  assert.doesNotMatch(migration, /create or replace function public\.set_updated_at/);
+  assert.doesNotMatch(migration, /\b(drop|truncate|rename)\b/i);
+  assert.match(migration, /commit;\s*$/);
+});
+
 test('public roles receive reads only for approved content tables', () => {
   assert.match(migration, /revoke all on public\.decision_cases[\s\S]+from anon, authenticated/);
   assert.match(migration, /approved_cases_are_public[\s\S]+status in \('APPROVED','PROTOTYPE_READY','PUBLISHED'\)/);

@@ -2,7 +2,7 @@ begin;
 
 create extension if not exists pgcrypto;
 
-create or replace function public.set_updated_at()
+create function public.duu_set_updated_at()
 returns trigger
 language plpgsql
 set search_path = ''
@@ -267,11 +267,11 @@ create index research_claims_case_idx on public.research_claims(case_id, status)
 create index research_gaps_queue_idx on public.research_gaps(status, severity, created_at);
 create index publication_results_case_idx on public.publication_results(case_id, published_at desc);
 
-create trigger decision_cases_set_updated_at before update on public.decision_cases for each row execute function public.set_updated_at();
-create trigger narratives_set_updated_at before update on public.narratives for each row execute function public.set_updated_at();
-create trigger case_scores_set_updated_at before update on public.case_scores for each row execute function public.set_updated_at();
-create trigger research_claims_set_updated_at before update on public.research_claims for each row execute function public.set_updated_at();
-create trigger publication_results_set_updated_at before update on public.publication_results for each row execute function public.set_updated_at();
+create trigger decision_cases_set_updated_at before update on public.decision_cases for each row execute function public.duu_set_updated_at();
+create trigger narratives_set_updated_at before update on public.narratives for each row execute function public.duu_set_updated_at();
+create trigger case_scores_set_updated_at before update on public.case_scores for each row execute function public.duu_set_updated_at();
+create trigger research_claims_set_updated_at before update on public.research_claims for each row execute function public.duu_set_updated_at();
+create trigger publication_results_set_updated_at before update on public.publication_results for each row execute function public.duu_set_updated_at();
 
 create or replace function public.valid_case_status_transition(from_status text, to_status text)
 returns boolean
