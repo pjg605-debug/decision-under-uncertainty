@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "narrative.schema.json",
+  "title": "Narrative",
+  "type": "object",
+  "required": [
+    "case_id", "hook", "short_setup", "why_option_a_made_sense",
+    "why_option_b_made_sense", "actual_decision_explanation",
+    "outcome_story", "hindsight_analysis", "decision_principle", "longform_story"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": { "type": "string" },
+    "hook": { "type": "string" },
+    "short_setup": { "type": "string" },
+    "why_option_a_made_sense": { "type": "string" },
+    "why_option_b_made_sense": { "type": "string" },
+    "actual_decision_explanation": { "type": "string" },
+    "outcome_story": {
+      "type": "object",
+      "required": ["immediate", "long_term"],
+      "additionalProperties": false,
+      "properties": {
+        "immediate": { "type": "string" },
+        "long_term": { "type": "string" }
+      }
+    },
+    "hindsight_analysis": { "type": "string" },
+    "decision_principle": {
+      "type": "object",
+      "required": ["plain_language"],
+      "additionalProperties": false,
+      "properties": {
+        "plain_language": { "type": "string" },
+        "tag": { "type": "string" }
+      }
+    },
+    "longform_story": { "type": "string" }
+  }
+}
