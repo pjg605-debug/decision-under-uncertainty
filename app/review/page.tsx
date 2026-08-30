@@ -243,7 +243,9 @@ export default function ReviewDashboard() {
                 />
                 <div className="mt-3 flex flex-wrap gap-2">
                   <button
-                    disabled={busy || !narrative}
+                    disabled={
+                      busy || !narrative || item.status === 'REVISION_REQUESTED'
+                    }
                     onClick={() => act(item, 'approve')}
                     className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-40"
                   >

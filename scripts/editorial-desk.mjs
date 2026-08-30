@@ -81,6 +81,12 @@ if (queueCommands[command]) {
     }),
   });
   if (payload.case_key) {
+    await rpc('transition_case_status', {
+      p_case_key: payload.case_key,
+      p_to_status: 'CODEX_REVIEW',
+      p_actor_agent: payload.reviewer_agent || 'codex',
+      p_reason: 'Editorial review opened.',
+    });
     const next =
       payload.verdict === 'APPROVE'
         ? 'APPROVED'
@@ -103,13 +109,6 @@ if (queueCommands[command]) {
     `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&select=version&order=version.desc&limit=1`,
   );
   const version = (existing?.[0]?.version || 0) + 1;
-  await request(
-    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&is_current=eq.true`,
-    {
-      method: 'PATCH',
-      body: JSON.stringify({ is_current: false, status: 'ARCHIVED' }),
-    },
-  );
   const inserted = await request('narratives', {
     method: 'POST',
     headers: { prefer: 'return=representation' },
@@ -119,7 +118,7 @@ if (queueCommands[command]) {
       version,
       author_agent: payload.author_agent,
       status: 'IN_REVIEW',
-      is_current: true,
+      is_current: false,
     }),
   });
   if (payload.triggered_by_review_id) {

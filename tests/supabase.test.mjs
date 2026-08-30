@@ -5,6 +5,8 @@ import { transformSupabaseRows } from '../core/supabase-content.mjs';
 
 const migration = await readFile(new URL('../supabase/migrations/202608300001_content_hub.sql', import.meta.url), 'utf8');
 const seed = await readFile(new URL('../supabase/seed.sql', import.meta.url), 'utf8');
+const editorialDesk = await readFile(new URL('../scripts/editorial-desk.mjs', import.meta.url), 'utf8');
+const reviewRoute = await readFile(new URL('../app/api/review/route.ts', import.meta.url), 'utf8');
 
 const tables = ['decision_cases','decision_options','case_information','evidence','narratives','reviews','revisions','case_scores','shorts_variants','publication_results','agent_runs','status_transitions','research_claims','research_gaps'];
 
@@ -48,4 +50,11 @@ test('service role remains server-only', async () => {
   const publicRoute = await readFile(new URL('../app/api/content/route.ts', import.meta.url), 'utf8');
   assert.doesNotMatch(client, /SERVICE_ROLE|service_role/);
   assert.doesNotMatch(publicRoute, /SUPABASE_SERVICE_ROLE_KEY/);
+});
+
+test('a pending narrative version does not replace approved public content before review', () => {
+  assert.match(editorialDesk, /status: 'IN_REVIEW',[\s\S]+is_current: false/);
+  assert.doesNotMatch(editorialDesk, /status: 'IN_REVIEW',[\s\S]+is_current: true/);
+  assert.match(reviewRoute, /is_current: !revising/);
+  assert.match(reviewRoute, /Submit the requested narrative revision before approval/);
 });

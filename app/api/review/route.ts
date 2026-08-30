@@ -124,6 +124,11 @@ export async function POST(request: Request) {
     const current = cases?.[0];
     if (!current)
       return Response.json({ error: 'Case not found.' }, { status: 404 });
+    if (body.action === 'approve' && current.status === 'REVISION_REQUESTED')
+      return Response.json(
+        { error: 'Submit the requested narrative revision before approval.' },
+        { status: 409 },
+      );
     if (['NARRATIVE_DRAFTED', 'REVISION_DONE'].includes(current.status))
       await transition(
         admin,
@@ -150,10 +155,20 @@ export async function POST(request: Request) {
         resolved_at: revising ? null : new Date().toISOString(),
       }),
     });
+    if (!revising) {
+      await admin(
+        `narratives?case_id=eq.${encodeURIComponent(current.id)}&is_current=eq.true`,
+        {
+          method: 'PATCH',
+          body: JSON.stringify({ is_current: false }),
+        },
+      );
+    }
     await admin(`narratives?id=eq.${encodeURIComponent(body.narrative_id)}`, {
       method: 'PATCH',
       body: JSON.stringify({
         status: revising ? 'REVISION_REQUESTED' : 'APPROVED',
+        is_current: !revising,
       }),
     });
     if (!(body.action === 'approve' && current.status === 'APPROVED')) {
