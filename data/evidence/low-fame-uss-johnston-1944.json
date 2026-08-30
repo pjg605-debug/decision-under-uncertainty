@@ -1,0 +1,9 @@
+{
+  "case_id": "low-fame-uss-johnston-1944",
+  "stress_test_only": true,
+  "sources": [
+    {"id":"lf-e1","source_type":"official_naval_history","title":"Johnston (DD-557)","author_or_institution":"Naval History and Heritage Command","publication_date":"2026","url":"https://www.history.navy.mil/content/history/nhhc/browse-by-topic/ships/modern-ships/johnston.html","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["Commander Ernest Evans ordered Johnston to attack a much stronger Japanese force","Johnston was protecting escort carriers during the Battle off Samar"]},
+    {"id":"lf-e2","source_type":"official_naval_history","title":"1944 October 25: Battle off Samar","author_or_institution":"National Museum of the U.S. Navy","publication_date":"n.d.","url":"https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/leyte/samar.html","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["The escort group fought to defend its carriers against a superior force","Johnston was among the U.S. ships lost"]},
+    {"id":"lf-e3","source_type":"editorial_method_note","title":"Low-fame dilemma stress test","author_or_institution":"Decision / T0 editorial review","publication_date":"2026-08-30","url":"","accessed_at":"2026-08-30","evidence_class":"INFERENCE","supports":["The event has strong evidence and reveal payoff but weak dilemma balance","Duty, mission, and immediate threat make withdrawal a morally and operationally dominated card"]}
+  ]
+}

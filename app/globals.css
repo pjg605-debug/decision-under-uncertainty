@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@custom-variant dark (&:is(.dark *));
+@theme inline { --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-border: var(--border); --color-ring: var(--ring); --font-sans: var(--font-geist-sans); --font-mono: var(--font-geist-mono); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) * 1.5); --radius-2xl: calc(var(--radius) * 2); }
+:root { --background: oklch(.965 .018 78); --foreground: oklch(.18 .026 72); --card: oklch(.99 .009 78); --card-foreground: oklch(.18 .026 72); --primary: oklch(.49 .132 45); --primary-foreground: oklch(.98 .01 78); --secondary: oklch(.925 .025 78); --secondary-foreground: oklch(.24 .03 72); --muted: oklch(.92 .018 78); --muted-foreground: oklch(.48 .025 72); --border: oklch(.84 .025 75); --ring: oklch(.49 .132 45); --radius: .8rem; }
+.dark { --background: oklch(.17 .02 72); --foreground: oklch(.94 .018 78); --card: oklch(.22 .023 72); --card-foreground: oklch(.94 .018 78); --primary: oklch(.7 .13 55); --primary-foreground: oklch(.16 .02 72); --secondary: oklch(.27 .025 72); --secondary-foreground: oklch(.94 .018 78); --muted: oklch(.28 .02 72); --muted-foreground: oklch(.7 .02 75); --border: oklch(.34 .025 72); --ring: oklch(.7 .13 55); }
+* { border-color: var(--border); } html { background: var(--background); } body { margin: 0; font-family: var(--font-geist-sans), Arial, sans-serif; } button { cursor: pointer; }
+.eyebrow { font-family: var(--font-geist-mono), monospace; font-size: .625rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted-foreground); }
+::selection { background: color-mix(in oklab, var(--primary) 25%, transparent); }

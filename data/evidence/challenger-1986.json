@@ -1,0 +1,8 @@
+{
+  "case_id": "challenger-1986",
+  "sources": [
+    {"id":"ch-e1","source_type":"presidential_commission_report","title":"Report of the Presidential Commission on the Space Shuttle Challenger Accident, Volume 1","author_or_institution":"Rogers Commission / NASA Technical Reports Server","publication_date":"1986-06-06","url":"https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19860015255.pdf","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["Right solid rocket motor field-joint seal failure caused the accident","Temperature sensitivity and flawed decision processes contributed"]},
+    {"id":"ch-e2","source_type":"commission_testimony_and_findings","title":"Rogers Commission Chapter V: The Contributing Cause of the Accident","author_or_institution":"NASA History Office","publication_date":"1986","url":"https://www.nasa.gov/history/rogersrep/v1ch5.htm","accessed_at":"2026-08-30","evidence_class":"STATED_RATIONALE","supports":["Thiokol engineers initially would not recommend launch below 53°F","Management later reversed the recommendation","Senior launch decisionmakers did not receive the complete concern history"]},
+    {"id":"ch-e3","source_type":"editorial_method_note","title":"Viewpoint information partition review","author_or_institution":"Decision / T0 editorial review","publication_date":"2026-08-30","url":"","accessed_at":"2026-08-30","evidence_class":"INFERENCE","supports":["The current card gives the player engineer-level warnings while assigning a composite NASA-and-contractor management role","This makes the choice easier than it was for some actual decisionmakers and less fair as a reconstruction"]}
+  ]
+}
