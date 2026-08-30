@@ -1,88 +1,1319 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { ArrowRight, BarChart3, BookOpen, Check, ChevronRight, CircleHelp, Compass, Eye, EyeOff, Film, Filter, Globe2, History, LayoutGrid, LockKeyhole, RefreshCcw, Scale, Search, ShieldAlert, Sparkles, Target, X } from 'lucide-react';
-import { cases, narratives } from '../data/cases';
+import {
+  ArrowRight,
+  BarChart3,
+  BookOpen,
+  Check,
+  ChevronRight,
+  CircleHelp,
+  Compass,
+  Eye,
+  EyeOff,
+  Film,
+  Filter,
+  Globe2,
+  History,
+  LayoutGrid,
+  LockKeyhole,
+  RefreshCcw,
+  Scale,
+  Search,
+  ShieldAlert,
+  Sparkles,
+  Target,
+  X,
+} from 'lucide-react';
+import {
+  cases as fixtureCases,
+  narratives as fixtureNarratives,
+} from '../data/cases';
 import { ko } from '../data/i18n';
-import type { DecisionEvent, EvidenceClass } from '../core/schemas/decision-event';
+import type {
+  DecisionEvent,
+  EvidenceClass,
+  NarrativeSlots,
+} from '../core/schemas/decision-event';
 import { shortsPotential } from '../core/scoring/shorts';
 
-type View = 'home'|'case'|'library'|'compare'|'decisions'|'shorts';
-type Play = { caseId:string; choice:string; matched:boolean; quality:string; changed:boolean; at:string };
-const domainLabels: Record<string,string> = { history:'History',business:'Business',exploration:'Exploration',science:'Science',crisis:'Crisis' };
-const domainIcons: Record<string,React.ReactNode> = { history:<History size={17}/>,business:<BarChart3 size={17}/>,exploration:<Compass size={17}/>,science:<Sparkles size={17}/>,crisis:<ShieldAlert size={17}/> };
-const evidenceTone: Record<EvidenceClass,string> = { FACT:'bg-emerald-100 text-emerald-800',CONTEMPORARY_BELIEF:'bg-blue-100 text-blue-800',STATED_RATIONALE:'bg-amber-100 text-amber-800',INFERENCE:'bg-violet-100 text-violet-800' };
-const fallback = 'Narrative analysis is not yet available. The structured facts and evidence remain visible.';
+type View = 'home' | 'case' | 'library' | 'compare' | 'decisions' | 'shorts';
+type Play = {
+  caseId: string;
+  choice: string;
+  matched: boolean;
+  quality: string;
+  changed: boolean;
+  at: string;
+};
+const domainLabels: Record<string, string> = {
+  history: 'History',
+  business: 'Business',
+  exploration: 'Exploration',
+  science: 'Science',
+  crisis: 'Crisis',
+};
+const domainIcons: Record<string, React.ReactNode> = {
+  history: <History size={17} />,
+  business: <BarChart3 size={17} />,
+  exploration: <Compass size={17} />,
+  science: <Sparkles size={17} />,
+  crisis: <ShieldAlert size={17} />,
+};
+const evidenceTone: Record<EvidenceClass, string> = {
+  FACT: 'bg-emerald-100 text-emerald-800',
+  CONTEMPORARY_BELIEF: 'bg-blue-100 text-blue-800',
+  STATED_RATIONALE: 'bg-amber-100 text-amber-800',
+  INFERENCE: 'bg-violet-100 text-violet-800',
+};
+const fallback =
+  'Narrative analysis is not yet available. The structured facts and evidence remain visible.';
 
-type Language = 'en'|'ko';
-const LanguageContext = createContext<{lang:Language;setLang:(lang:Language)=>void;t:(value?:string)=>string}>({lang:'en',setLang:()=>{},t:(v='')=>v});
+type Language = 'en' | 'ko';
+const LanguageContext = createContext<{
+  lang: Language;
+  setLang: (lang: Language) => void;
+  t: (value?: string) => string;
+}>({ lang: 'en', setLang: () => {}, t: (v = '') => v });
 const useLanguage = () => useContext(LanguageContext);
-const localizeEvent=(event:DecisionEvent,t:(value?:string)=>string):DecisionEvent=>({
-  ...event,title:t(event.title),actor:t(event.actor),actor_role:t(event.actor_role),location:t(event.location),context_summary:t(event.context_summary),
-  known_information:event.known_information.map(t),unknown_information:event.unknown_information.map(t),uncertainty_factors:event.uncertainty_factors.map(t),
-  options:event.options.map(o=>({...o,label:t(o.label),short_description:t(o.short_description),upside:t(o.upside),downside:t(o.downside),known_tradeoffs:o.known_tradeoffs.map(t)})),
-  immediate_outcome:t(event.immediate_outcome),long_term_outcome:t(event.long_term_outcome),progressive:event.progressive?{evidence:t(event.progressive.evidence),prompt:t(event.progressive.prompt)}:undefined,
+type ContentStatus = 'loading' | 'remote' | 'fallback';
+type ContentValue = {
+  cases: DecisionEvent[];
+  narratives: Record<string, NarrativeSlots>;
+  status: ContentStatus;
+};
+const ContentContext = createContext<ContentValue>({
+  cases: fixtureCases,
+  narratives: fixtureNarratives,
+  status: 'loading',
 });
-const localizeNarrative=(n:Record<string,string|undefined>,t:(value?:string)=>string)=>Object.fromEntries(Object.entries(n).map(([k,v])=>[k,t(v)]));
+const useContent = () => useContext(ContentContext);
+const localizeEvent = (
+  event: DecisionEvent,
+  t: (value?: string) => string,
+): DecisionEvent => ({
+  ...event,
+  title: t(event.title),
+  actor: t(event.actor),
+  actor_role: t(event.actor_role),
+  location: t(event.location),
+  context_summary: t(event.context_summary),
+  known_information: event.known_information.map(t),
+  unknown_information: event.unknown_information.map(t),
+  uncertainty_factors: event.uncertainty_factors.map(t),
+  options: event.options.map((o) => ({
+    ...o,
+    label: t(o.label),
+    short_description: t(o.short_description),
+    upside: t(o.upside),
+    downside: t(o.downside),
+    known_tradeoffs: o.known_tradeoffs.map(t),
+  })),
+  immediate_outcome: t(event.immediate_outcome),
+  long_term_outcome: t(event.long_term_outcome),
+  progressive: event.progressive
+    ? {
+        evidence: t(event.progressive.evidence),
+        prompt: t(event.progressive.prompt),
+      }
+    : undefined,
+});
+const localizeNarrative = (
+  n: Record<string, string | undefined>,
+  t: (value?: string) => string,
+) => Object.fromEntries(Object.entries(n).map(([k, v]) => [k, t(v)]));
 
 export default function DecisionPlatform() {
-  const [lang,setLang] = useState<Language>('en');
-  useEffect(()=>{ const saved=localStorage.getItem('decision-t0-language') as Language|null; const next=saved||(navigator.language.toLowerCase().startsWith('ko')?'ko':'en'); setLang(next); document.documentElement.lang=next; },[]);
-  const changeLanguage=(next:Language)=>{ setLang(next); localStorage.setItem('decision-t0-language',next); document.documentElement.lang=next; };
-  const t=(value='')=>lang==='ko'?(ko[value]||value):value;
-  return <LanguageContext.Provider value={{lang,setLang:changeLanguage,t}}><Platform/></LanguageContext.Provider>;
+  const [lang, setLang] = useState<Language>('en');
+  const [content, setContent] = useState<ContentValue>({
+    cases: fixtureCases,
+    narratives: fixtureNarratives,
+    status: 'loading',
+  });
+  useEffect(() => {
+    const saved = localStorage.getItem(
+      'decision-t0-language',
+    ) as Language | null;
+    const next =
+      saved ||
+      (navigator.language.toLowerCase().startsWith('ko') ? 'ko' : 'en');
+    setLang(next);
+    document.documentElement.lang = next;
+  }, []);
+  useEffect(() => {
+    let current = true;
+    fetch('/api/content')
+      .then(async (response) => {
+        if (!response.ok) throw new Error('remote unavailable');
+        const value = await response.json();
+        if (current && Array.isArray(value.cases) && value.cases.length > 0)
+          setContent({
+            cases: value.cases,
+            narratives: value.narratives || {},
+            status: 'remote',
+          });
+      })
+      .catch(() => {
+        if (current)
+          setContent({
+            cases: fixtureCases,
+            narratives: fixtureNarratives,
+            status: 'fallback',
+          });
+      });
+    return () => {
+      current = false;
+    };
+  }, []);
+  const changeLanguage = (next: Language) => {
+    setLang(next);
+    localStorage.setItem('decision-t0-language', next);
+    document.documentElement.lang = next;
+  };
+  const t = (value = '') => (lang === 'ko' ? ko[value] || value : value);
+  return (
+    <LanguageContext.Provider value={{ lang, setLang: changeLanguage, t }}>
+      <ContentContext.Provider value={content}>
+        <Platform />
+      </ContentContext.Provider>
+    </LanguageContext.Provider>
+  );
 }
 
 function Platform() {
-  const [view,setView] = useState<View>('home');
-  const [active,setActive] = useState(cases[0]);
-  const [choice,setChoice] = useState<string>();
-  const [initialChoice,setInitialChoice] = useState<string>();
-  const [newEvidence,setNewEvidence] = useState(false);
-  const [revealed,setRevealed] = useState(false);
-  const [plays,setPlays] = useState<Play[]>([]);
-  const [filtersOpen,setFiltersOpen] = useState(false);
-  useEffect(()=>{ try { setPlays(JSON.parse(localStorage.getItem('decision-t0-plays')||'[]')); } catch {} },[]);
-  const selectCase=(c:DecisionEvent)=>{ setActive(c); setChoice(undefined); setInitialChoice(undefined); setNewEvidence(false); setRevealed(false); setView('case'); scrollTo({top:0,behavior:'smooth'}); };
-  const lock=()=>{ if(!choice)return; if(!initialChoice){setInitialChoice(choice); if(active.progressive){setNewEvidence(true);return;}} reveal(); };
-  const reveal=()=>{ if(!choice)return; setRevealed(true); const play={caseId:active.id,choice,matched:choice===active.actual_decision,quality:active.decision_quality,changed:!!initialChoice&&choice!==initialChoice,at:new Date().toISOString()}; const next=[...plays.filter(p=>p.caseId!==active.id),play]; setPlays(next); localStorage.setItem('decision-t0-plays',JSON.stringify(next)); };
-  return <main className="min-h-screen bg-background text-foreground">
-    <Header view={view} onView={setView}/>
-    {view==='home'&&<Home onCase={selectCase} onView={setView}/>} {view==='case'&&<CaseView event={active} choice={choice} setChoice={setChoice} initialChoice={initialChoice} newEvidence={newEvidence} revealed={revealed} lock={lock} reveal={reveal} reset={()=>selectCase(active)}/>} {view==='library'&&<Library onCase={selectCase} filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen}/>} {view==='compare'&&<Compare onCase={selectCase}/>} {view==='decisions'&&<MyDecisions plays={plays} onCase={selectCase}/>} {view==='shorts'&&<Shorts event={active} onEvent={setActive}/>} 
-    <MobileNav view={view} onView={setView}/>
-  </main>;
+  const { cases } = useContent();
+  const [view, setView] = useState<View>('home');
+  const [active, setActive] = useState(cases[0]);
+  const [choice, setChoice] = useState<string>();
+  const [initialChoice, setInitialChoice] = useState<string>();
+  const [newEvidence, setNewEvidence] = useState(false);
+  const [revealed, setRevealed] = useState(false);
+  const [plays, setPlays] = useState<Play[]>([]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  useEffect(() => {
+    try {
+      setPlays(JSON.parse(localStorage.getItem('decision-t0-plays') || '[]'));
+    } catch {}
+  }, []);
+  useEffect(() => {
+    setActive(
+      (previous) =>
+        cases.find((c) => c.id === previous.id) || cases[0] || previous,
+    );
+  }, [cases]);
+  const selectCase = (c: DecisionEvent) => {
+    setActive(c);
+    setChoice(undefined);
+    setInitialChoice(undefined);
+    setNewEvidence(false);
+    setRevealed(false);
+    setView('case');
+    scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const lock = () => {
+    if (!choice) return;
+    if (!initialChoice) {
+      setInitialChoice(choice);
+      if (active.progressive) {
+        setNewEvidence(true);
+        return;
+      }
+    }
+    reveal();
+  };
+  const reveal = () => {
+    if (!choice) return;
+    setRevealed(true);
+    const play = {
+      caseId: active.id,
+      choice,
+      matched: choice === active.actual_decision,
+      quality: active.decision_quality,
+      changed: !!initialChoice && choice !== initialChoice,
+      at: new Date().toISOString(),
+    };
+    const next = [...plays.filter((p) => p.caseId !== active.id), play];
+    setPlays(next);
+    localStorage.setItem('decision-t0-plays', JSON.stringify(next));
+  };
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Header view={view} onView={setView} />
+      {view === 'home' && <Home onCase={selectCase} onView={setView} />}{' '}
+      {view === 'case' && (
+        <CaseView
+          event={active}
+          choice={choice}
+          setChoice={setChoice}
+          initialChoice={initialChoice}
+          newEvidence={newEvidence}
+          revealed={revealed}
+          lock={lock}
+          reveal={reveal}
+          reset={() => selectCase(active)}
+        />
+      )}{' '}
+      {view === 'library' && (
+        <Library
+          onCase={selectCase}
+          filtersOpen={filtersOpen}
+          setFiltersOpen={setFiltersOpen}
+        />
+      )}{' '}
+      {view === 'compare' && <Compare onCase={selectCase} />}{' '}
+      {view === 'decisions' && (
+        <MyDecisions plays={plays} onCase={selectCase} />
+      )}{' '}
+      {view === 'shorts' && <Shorts event={active} onEvent={setActive} />}
+      <MobileNav view={view} onView={setView} />
+    </main>
+  );
 }
 
-function Header({view,onView}:{view:View;onView:(v:View)=>void}) { const {lang,setLang,t}=useLanguage(); return <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur-xl"><div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4"><button onClick={()=>onView('home')} className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-full border border-primary/30 bg-primary/10"><Scale size={17}/></span><div className="text-left"><p className="text-sm font-semibold">Decision / T0</p><p className="hidden text-[9px] uppercase tracking-[.19em] text-muted-foreground sm:block">{t('Judgment under uncertainty')}</p></div></button><nav className="hidden items-center gap-1 md:flex">{([['home','Today'],['library','Cases'],['compare','Compare'],['decisions','My decisions'],['shorts','Shorts']] as [View,string][]).map(([id,label])=><button key={id} onClick={()=>onView(id)} className={`rounded-full px-4 py-2 text-xs font-semibold ${view===id?'bg-foreground text-background':'text-muted-foreground hover:bg-secondary'}`}>{t(label)}</button>)}</nav><div className="flex items-center gap-2"><label className="flex items-center gap-1 rounded-full border bg-card px-2.5 py-2 text-xs font-semibold"><Globe2 size={14}/><select aria-label={t('Language')} value={lang} onChange={e=>setLang(e.target.value as Language)} className="bg-transparent outline-none"><option value="en">EN</option><option value="ko">한국어</option></select></label><button onClick={()=>onView('library')} aria-label={t('Search cases')} className="grid h-9 w-9 place-items-center rounded-full border"><Search size={16}/></button></div></div></header> }
+function Header({ view, onView }: { view: View; onView: (v: View) => void }) {
+  const { lang, setLang, t } = useLanguage();
+  const { status } = useContent();
+  return (
+    <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        <button
+          onClick={() => onView('home')}
+          className="flex items-center gap-3"
+        >
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-primary/30 bg-primary/10">
+            <Scale size={17} />
+          </span>
+          <div className="text-left">
+            <p className="flex items-center gap-2 text-sm font-semibold">
+              Decision / T0{' '}
+              <span
+                title={
+                  status === 'remote'
+                    ? 'Supabase content hub'
+                    : 'Bundled content fallback'
+                }
+                className={`h-1.5 w-1.5 rounded-full ${status === 'remote' ? 'bg-emerald-500' : status === 'loading' ? 'animate-pulse bg-amber-400' : 'bg-muted-foreground'}`}
+              />
+            </p>
+            <p className="hidden text-[9px] uppercase tracking-[.19em] text-muted-foreground sm:block">
+              {t('Judgment under uncertainty')}
+            </p>
+          </div>
+        </button>
+        <nav className="hidden items-center gap-1 md:flex">
+          {(
+            [
+              ['home', 'Today'],
+              ['library', 'Cases'],
+              ['compare', 'Compare'],
+              ['decisions', 'My decisions'],
+              ['shorts', 'Shorts'],
+            ] as [View, string][]
+          ).map(([id, label]) => (
+            <button
+              key={id}
+              onClick={() => onView(id)}
+              className={`rounded-full px-4 py-2 text-xs font-semibold ${view === id ? 'bg-foreground text-background' : 'text-muted-foreground hover:bg-secondary'}`}
+            >
+              {t(label)}
+            </button>
+          ))}
+        </nav>
+        <div className="flex items-center gap-2">
+          <label className="flex items-center gap-1 rounded-full border bg-card px-2.5 py-2 text-xs font-semibold">
+            <Globe2 size={14} />
+            <select
+              aria-label={t('Language')}
+              value={lang}
+              onChange={(e) => setLang(e.target.value as Language)}
+              className="bg-transparent outline-none"
+            >
+              <option value="en">EN</option>
+              <option value="ko">한국어</option>
+            </select>
+          </label>
+          <button
+            onClick={() => onView('library')}
+            aria-label={t('Search cases')}
+            className="grid h-9 w-9 place-items-center rounded-full border"
+          >
+            <Search size={16} />
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+}
 
-function Home({onCase,onView}:{onCase:(c:DecisionEvent)=>void;onView:(v:View)=>void}) { const {lang,t}=useLanguage(); const hero=cases[1]; return <>
-  <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-12 pt-10 lg:grid-cols-[.82fr_1.18fr] lg:items-center lg:pt-20"><div><p className="mb-4 font-mono text-xs uppercase tracking-[.24em] text-primary">{t('Case of the day')} · {hero.date_or_period}</p><h1 className="text-balance text-4xl font-semibold leading-[1.02] tracking-[-.045em] sm:text-6xl">{t('The future is hidden.')}<br/><span className="text-muted-foreground">{t('Your judgment isn’t.')}</span></h1><p className="mt-6 max-w-lg text-base leading-7 text-muted-foreground">{t('Enter the decision at T0. Use only what was knowable. Then compare your judgment with the actual choice and outcome.')}</p><button onClick={()=>onCase(hero)} className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground">{t('Enter today’s situation')} <ArrowRight size={16}/></button></div><CaseTeaser event={hero} onClick={()=>onCase(hero)}/></section>
-  <section className="border-y bg-card/50"><div className="mx-auto max-w-6xl px-4 py-12"><div className="mb-6 flex items-end justify-between"><div><p className="eyebrow">{t('Explore the archive')}</p><h2 className="mt-2 text-2xl font-semibold tracking-tight">{t('Decisions across fields')}</h2></div><button onClick={()=>onView('library')} className="text-xs font-semibold text-primary">{t('View all →')}</button></div><div className="grid grid-cols-2 gap-3 md:grid-cols-5">{['history','business','exploration','science','crisis'].map(d=>{const count=cases.filter(c=>c.domain===d).length;return <button key={d} onClick={()=>onView('library')} className="group rounded-2xl border bg-background p-4 text-left hover:border-primary"><span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-primary">{domainIcons[d]}</span><strong className="mt-5 block text-sm">{t(domainLabels[d])}</strong><span className="mt-1 block text-xs text-muted-foreground">{count?`${count}${lang==='ko'?'개 사건':' cases'}`:t('Coming cases')}</span></button>})}</div></div></section>
-  <section className="mx-auto max-w-6xl px-4 py-12"><div className="grid gap-4 sm:grid-cols-3"><Principle n="01" title={t('Hide the future')} text={t('No outcome or actual choice appears before you lock a decision.')}/><Principle n="02" title={t('Judge the process')} text={t('Decision quality and outcome quality remain independent.')}/><Principle n="03" title={t('Reveal the unknown')} text={t('See which critical facts were impossible to know at T0.')}/></div></section>
-  </>; }
+function Home({
+  onCase,
+  onView,
+}: {
+  onCase: (c: DecisionEvent) => void;
+  onView: (v: View) => void;
+}) {
+  const { lang, t } = useLanguage();
+  const { cases } = useContent();
+  const hero = cases.find((c) => c.id === 'cuban-missile-1962') || cases[0];
+  return (
+    <>
+      <section className="mx-auto grid max-w-6xl gap-8 px-4 pb-12 pt-10 lg:grid-cols-[.82fr_1.18fr] lg:items-center lg:pt-20">
+        <div>
+          <p className="mb-4 font-mono text-xs uppercase tracking-[.24em] text-primary">
+            {t('Case of the day')} · {hero.date_or_period}
+          </p>
+          <h1 className="text-balance text-4xl font-semibold leading-[1.02] tracking-[-.045em] sm:text-6xl">
+            {t('The future is hidden.')}
+            <br />
+            <span className="text-muted-foreground">
+              {t('Your judgment isn’t.')}
+            </span>
+          </h1>
+          <p className="mt-6 max-w-lg text-base leading-7 text-muted-foreground">
+            {t(
+              'Enter the decision at T0. Use only what was knowable. Then compare your judgment with the actual choice and outcome.',
+            )}
+          </p>
+          <button
+            onClick={() => onCase(hero)}
+            className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+          >
+            {t('Enter today’s situation')} <ArrowRight size={16} />
+          </button>
+        </div>
+        <CaseTeaser event={hero} onClick={() => onCase(hero)} />
+      </section>
+      <section className="border-y bg-card/50">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <div className="mb-6 flex items-end justify-between">
+            <div>
+              <p className="eyebrow">{t('Explore the archive')}</p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+                {t('Decisions across fields')}
+              </h2>
+            </div>
+            <button
+              onClick={() => onView('library')}
+              className="text-xs font-semibold text-primary"
+            >
+              {t('View all →')}
+            </button>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+            {['history', 'business', 'exploration', 'science', 'crisis'].map(
+              (d) => {
+                const count = cases.filter((c) => c.domain === d).length;
+                return (
+                  <button
+                    key={d}
+                    onClick={() => onView('library')}
+                    className="group rounded-2xl border bg-background p-4 text-left hover:border-primary"
+                  >
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-secondary text-primary">
+                      {domainIcons[d]}
+                    </span>
+                    <strong className="mt-5 block text-sm">
+                      {t(domainLabels[d])}
+                    </strong>
+                    <span className="mt-1 block text-xs text-muted-foreground">
+                      {count
+                        ? `${count}${lang === 'ko' ? '개 사건' : ' cases'}`
+                        : t('Coming cases')}
+                    </span>
+                  </button>
+                );
+              },
+            )}
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Principle
+            n="01"
+            title={t('Hide the future')}
+            text={t(
+              'No outcome or actual choice appears before you lock a decision.',
+            )}
+          />
+          <Principle
+            n="02"
+            title={t('Judge the process')}
+            text={t('Decision quality and outcome quality remain independent.')}
+          />
+          <Principle
+            n="03"
+            title={t('Reveal the unknown')}
+            text={t('See which critical facts were impossible to know at T0.')}
+          />
+        </div>
+      </section>
+    </>
+  );
+}
 
-function CaseTeaser({event,onClick}:{event:DecisionEvent;onClick:()=>void}) { const {lang,t}=useLanguage(); event=localizeEvent(event,t); return <article onClick={onClick} className="relative cursor-pointer overflow-hidden rounded-[2rem] border bg-card p-5 shadow-2xl shadow-primary/5 sm:p-8"><div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/30 to-transparent"/><div className="flex items-center justify-between border-b pb-5"><div><p className="font-mono text-xs text-muted-foreground">{event.date_or_period} · {event.location.toUpperCase()}</p><p className="mt-1 text-xs font-bold uppercase tracking-[.18em]">{lang==='ko'?`${t('You are the')} ${event.actor_role}`:`You are the ${event.actor_role}`}</p></div><Compass className="text-primary" size={22}/></div><div className="py-7"><p className="eyebrow">{t('Situation')} / 01</p><h2 className="mt-3 text-2xl font-semibold tracking-tight">{event.title}</h2><p className="mt-3 text-sm leading-6 text-muted-foreground">{event.context_summary}</p></div><div className="grid gap-3 sm:grid-cols-2">{event.options.map((o,i)=><div key={o.id} className="rounded-2xl border bg-secondary/50 p-5"><span className="font-mono text-xs text-primary">{t('OPTION')} {String.fromCharCode(65+i)}</span><strong className="mt-2 block">{o.label}</strong><span className="mt-1 block text-xs text-muted-foreground">{o.short_description}</span></div>)}</div><p className="mt-5 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[.15em] text-muted-foreground"><EyeOff size={13}/> {t('The outcome stays hidden until you decide')}</p></article> }
+function CaseTeaser({
+  event,
+  onClick,
+}: {
+  event: DecisionEvent;
+  onClick: () => void;
+}) {
+  const { lang, t } = useLanguage();
+  event = localizeEvent(event, t);
+  return (
+    <article
+      onClick={onClick}
+      className="relative cursor-pointer overflow-hidden rounded-[2rem] border bg-card p-5 shadow-2xl shadow-primary/5 sm:p-8"
+    >
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-primary/30 to-transparent" />
+      <div className="flex items-center justify-between border-b pb-5">
+        <div>
+          <p className="font-mono text-xs text-muted-foreground">
+            {event.date_or_period} · {event.location.toUpperCase()}
+          </p>
+          <p className="mt-1 text-xs font-bold uppercase tracking-[.18em]">
+            {lang === 'ko'
+              ? `${t('You are the')} ${event.actor_role}`
+              : `You are the ${event.actor_role}`}
+          </p>
+        </div>
+        <Compass className="text-primary" size={22} />
+      </div>
+      <div className="py-7">
+        <p className="eyebrow">{t('Situation')} / 01</p>
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+          {event.title}
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
+          {event.context_summary}
+        </p>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {event.options.map((o, i) => (
+          <div key={o.id} className="rounded-2xl border bg-secondary/50 p-5">
+            <span className="font-mono text-xs text-primary">
+              {t('OPTION')} {String.fromCharCode(65 + i)}
+            </span>
+            <strong className="mt-2 block">{o.label}</strong>
+            <span className="mt-1 block text-xs text-muted-foreground">
+              {o.short_description}
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-5 flex items-center justify-center gap-2 text-[10px] uppercase tracking-[.15em] text-muted-foreground">
+        <EyeOff size={13} /> {t('The outcome stays hidden until you decide')}
+      </p>
+    </article>
+  );
+}
 
-function CaseView({event,choice,setChoice,initialChoice,newEvidence,revealed,lock,reveal,reset}:{event:DecisionEvent;choice?:string;setChoice:(s:string)=>void;initialChoice?:string;newEvidence:boolean;revealed:boolean;lock:()=>void;reveal:()=>void;reset:()=>void}) { const {lang,t}=useLanguage(); event=localizeEvent(event,t); const n=localizeNarrative((narratives[event.narrative_id]||{}) as Record<string,string|undefined>,t); const chosen=event.options.find(o=>o.id===choice); return <div className="mx-auto max-w-4xl px-4 pb-28 pt-7"><div className="mb-5 flex items-center justify-between"><p className="font-mono text-xs uppercase tracking-[.2em] text-primary">{t('Field case')} · {t(domainLabels[event.domain])}</p><button onClick={reset} className="flex items-center gap-2 text-xs text-muted-foreground"><RefreshCcw size={13}/> {t('Reset')}</button></div><section className="overflow-hidden rounded-[1.8rem] border bg-card"><div className="border-b p-5 sm:p-8"><div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[.12em] text-muted-foreground"><span>{event.date_or_period}</span><span>·</span><span>{event.location}</span><span>·</span><strong className="text-foreground">{lang==='ko'?`${t('You are the')} ${event.actor_role}`:`You are the ${event.actor_role}`}</strong></div><h1 className="mt-4 text-3xl font-semibold tracking-[-.035em] sm:text-5xl">{event.title}</h1><p className="mt-4 max-w-2xl leading-7 text-muted-foreground">{n.short_setup||event.context_summary}</p></div><Stage n="01" title="Situation"><p className="leading-7">{event.context_summary}</p></Stage><Stage n="02" title="Known at T0"><div className="grid gap-2 sm:grid-cols-2">{event.known_information.map(x=><Info key={x} text={x}/>)}</div></Stage><Stage n="03" title="Your decision"><div className="grid gap-3 sm:grid-cols-2">{event.options.map((o,i)=><button disabled={revealed} key={o.id} onClick={()=>setChoice(o.id)} className={`relative rounded-2xl border-2 p-5 text-left transition ${choice===o.id?'border-primary bg-primary/5':'border-border hover:border-primary/50'} disabled:cursor-default`}><span className="font-mono text-[10px] text-primary">{t('OPTION')} {String.fromCharCode(65+i)}</span><h3 className="mt-2 text-lg font-semibold">{o.label}</h3><p className="mt-1 text-sm text-muted-foreground">{o.short_description}</p><div className="mt-4 grid gap-2 text-xs"><p><span className="text-emerald-700">{lang==='ko'?'장점':'Upside'} · </span>{o.upside}</p><p><span className="text-rose-700">{lang==='ko'?'단점':'Downside'} · </span>{o.downside}</p></div>{choice===o.id&&<span className="absolute right-4 top-4 grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground"><Check size={14}/></span>}</button>)}</div>{!revealed&&<button disabled={!choice} onClick={lock} className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-4 text-sm font-semibold text-background disabled:opacity-30"><LockKeyhole size={16}/>{t(initialChoice?'Lock final decision':'Lock decision')}</button>}{initialChoice&&!revealed&&<p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-[.2em] text-primary">{t('Decision locked')} · {event.options.find(o=>o.id===initialChoice)?.label}</p>}</Stage>
-      {newEvidence&&!revealed&&event.progressive&&<Stage n="04" title="New evidence"><div className="rounded-2xl border border-primary/30 bg-primary/5 p-5"><p className="eyebrow">{t('Update from the field')}</p><p className="mt-3 leading-7">{event.progressive.evidence}</p></div><p className="mt-4 text-sm text-muted-foreground">{event.progressive.prompt} {lang==='ko'?'위의 선택지 중 하나를 고른 뒤 최종 선택을 확정하세요.':'Select either option above, then lock your final decision.'}</p></Stage>}
-      {revealed&&<><div className="border-y bg-foreground p-6 text-background sm:p-8"><p className="font-mono text-[10px] uppercase tracking-[.2em] opacity-60">{t('Decision locked')}</p><p className="mt-2 text-2xl font-semibold">{lang==='ko'?'당신의 선택':'You chose'}: {chosen?.label}</p><p className="mt-1 text-sm opacity-70">{t(choice===event.actual_decision?'Your choice matched the historical decision. This is not a correctness score.':'You chose differently from the historical actor. History is not the answer key.')}</p></div><Stage n="04" title="What actually happened"><p className="eyebrow">{t('Historical decision')}</p><h3 className="mt-2 text-2xl font-semibold">{event.options.find(o=>o.id===event.actual_decision)?.label}</h3><p className="mt-3 leading-7 text-muted-foreground">{n.actual_decision_explanation||t(fallback)}</p></Stage><Stage n="05" title="Outcome"><div className="grid gap-3 sm:grid-cols-2"><Outcome label="Immediate" text={event.immediate_outcome}/><Outcome label="Long-term" text={event.long_term_outcome}/></div></Stage><Stage n="06" title="Judgment"><Quality decision={event.decision_quality} outcome={event.outcome_quality}/><p className="mt-4 text-xs leading-5 text-muted-foreground">{t('These are editorial assessments based on currently cited evidence—not objective truth.')}</p></Stage><Stage n="07" title="What you couldn’t know"><div className="grid gap-2">{event.unknown_information.map(x=><div key={x} className="flex gap-3 rounded-xl bg-foreground p-4 text-background"><CircleHelp className="mt-0.5 shrink-0 opacity-65" size={17}/><p className="text-sm leading-6">{x}</p></div>)}</div></Stage><Stage n="08" title="Hindsight analysis"><p className="text-lg leading-8">{n.hindsight_analysis||t(fallback)}</p><div className="mt-5 rounded-2xl border-l-4 border-primary bg-secondary p-5"><p className="eyebrow">{t('Decision principle')}</p><p className="mt-2 font-semibold leading-7">{n.decision_principle||t(fallback)}</p></div><div className="mt-6 border-t pt-6"><p className="eyebrow">{t('Evidence ledger')}</p><div className="mt-3 grid gap-3">{event.evidence.map(e=><div key={e.id} className="rounded-xl border p-4"><div className="flex flex-wrap items-center gap-2"><span className={`rounded-full px-2 py-1 text-[9px] font-bold ${evidenceTone[e.evidence_class]}`}>{e.evidence_class.replaceAll('_',' ')}</span><strong className="text-sm">{e.title}</strong></div><p className="mt-2 text-xs text-muted-foreground">{e.author_or_institution} · {e.source_type}</p></div>)}</div></div></Stage></>}
-    </section></div> }
+function CaseView({
+  event,
+  choice,
+  setChoice,
+  initialChoice,
+  newEvidence,
+  revealed,
+  lock,
+  reveal,
+  reset,
+}: {
+  event: DecisionEvent;
+  choice?: string;
+  setChoice: (s: string) => void;
+  initialChoice?: string;
+  newEvidence: boolean;
+  revealed: boolean;
+  lock: () => void;
+  reveal: () => void;
+  reset: () => void;
+}) {
+  const { lang, t } = useLanguage();
+  const { narratives } = useContent();
+  event = localizeEvent(event, t);
+  const n = localizeNarrative(
+    (narratives[event.narrative_id] || {}) as Record<
+      string,
+      string | undefined
+    >,
+    t,
+  );
+  const chosen = event.options.find((o) => o.id === choice);
+  return (
+    <div className="mx-auto max-w-4xl px-4 pb-28 pt-7">
+      <div className="mb-5 flex items-center justify-between">
+        <p className="font-mono text-xs uppercase tracking-[.2em] text-primary">
+          {t('Field case')} · {t(domainLabels[event.domain])}
+        </p>
+        <button
+          onClick={reset}
+          className="flex items-center gap-2 text-xs text-muted-foreground"
+        >
+          <RefreshCcw size={13} /> {t('Reset')}
+        </button>
+      </div>
+      <section className="overflow-hidden rounded-[1.8rem] border bg-card">
+        <div className="border-b p-5 sm:p-8">
+          <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-[.12em] text-muted-foreground">
+            <span>{event.date_or_period}</span>
+            <span>·</span>
+            <span>{event.location}</span>
+            <span>·</span>
+            <strong className="text-foreground">
+              {lang === 'ko'
+                ? `${t('You are the')} ${event.actor_role}`
+                : `You are the ${event.actor_role}`}
+            </strong>
+          </div>
+          <h1 className="mt-4 text-3xl font-semibold tracking-[-.035em] sm:text-5xl">
+            {event.title}
+          </h1>
+          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
+            {n.short_setup || event.context_summary}
+          </p>
+        </div>
+        <Stage n="01" title="Situation">
+          <p className="leading-7">{event.context_summary}</p>
+        </Stage>
+        <Stage n="02" title="Known at T0">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {event.known_information.map((x) => (
+              <Info key={x} text={x} />
+            ))}
+          </div>
+        </Stage>
+        <Stage n="03" title="Your decision">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {event.options.map((o, i) => (
+              <button
+                disabled={revealed}
+                key={o.id}
+                onClick={() => setChoice(o.id)}
+                className={`relative rounded-2xl border-2 p-5 text-left transition ${choice === o.id ? 'border-primary bg-primary/5' : 'border-border hover:border-primary/50'} disabled:cursor-default`}
+              >
+                <span className="font-mono text-[10px] text-primary">
+                  {t('OPTION')} {String.fromCharCode(65 + i)}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold">{o.label}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {o.short_description}
+                </p>
+                <div className="mt-4 grid gap-2 text-xs">
+                  <p>
+                    <span className="text-emerald-700">
+                      {lang === 'ko' ? '장점' : 'Upside'} ·{' '}
+                    </span>
+                    {o.upside}
+                  </p>
+                  <p>
+                    <span className="text-rose-700">
+                      {lang === 'ko' ? '단점' : 'Downside'} ·{' '}
+                    </span>
+                    {o.downside}
+                  </p>
+                </div>
+                {choice === o.id && (
+                  <span className="absolute right-4 top-4 grid h-6 w-6 place-items-center rounded-full bg-primary text-primary-foreground">
+                    <Check size={14} />
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+          {!revealed && (
+            <button
+              disabled={!choice}
+              onClick={lock}
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-4 text-sm font-semibold text-background disabled:opacity-30"
+            >
+              <LockKeyhole size={16} />
+              {t(initialChoice ? 'Lock final decision' : 'Lock decision')}
+            </button>
+          )}
+          {initialChoice && !revealed && (
+            <p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-[.2em] text-primary">
+              {t('Decision locked')} ·{' '}
+              {event.options.find((o) => o.id === initialChoice)?.label}
+            </p>
+          )}
+        </Stage>
+        {newEvidence && !revealed && event.progressive && (
+          <Stage n="04" title="New evidence">
+            <div className="rounded-2xl border border-primary/30 bg-primary/5 p-5">
+              <p className="eyebrow">{t('Update from the field')}</p>
+              <p className="mt-3 leading-7">{event.progressive.evidence}</p>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              {event.progressive.prompt}{' '}
+              {lang === 'ko'
+                ? '위의 선택지 중 하나를 고른 뒤 최종 선택을 확정하세요.'
+                : 'Select either option above, then lock your final decision.'}
+            </p>
+          </Stage>
+        )}
+        {revealed && (
+          <>
+            <div className="border-y bg-foreground p-6 text-background sm:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[.2em] opacity-60">
+                {t('Decision locked')}
+              </p>
+              <p className="mt-2 text-2xl font-semibold">
+                {lang === 'ko' ? '당신의 선택' : 'You chose'}: {chosen?.label}
+              </p>
+              <p className="mt-1 text-sm opacity-70">
+                {t(
+                  choice === event.actual_decision
+                    ? 'Your choice matched the historical decision. This is not a correctness score.'
+                    : 'You chose differently from the historical actor. History is not the answer key.',
+                )}
+              </p>
+            </div>
+            <Stage n="04" title="What actually happened">
+              <p className="eyebrow">{t('Historical decision')}</p>
+              <h3 className="mt-2 text-2xl font-semibold">
+                {
+                  event.options.find((o) => o.id === event.actual_decision)
+                    ?.label
+                }
+              </h3>
+              <p className="mt-3 leading-7 text-muted-foreground">
+                {n.actual_decision_explanation || t(fallback)}
+              </p>
+            </Stage>
+            <Stage n="05" title="Outcome">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <Outcome label="Immediate" text={event.immediate_outcome} />
+                <Outcome label="Long-term" text={event.long_term_outcome} />
+              </div>
+            </Stage>
+            <Stage n="06" title="Judgment">
+              <Quality
+                decision={event.decision_quality}
+                outcome={event.outcome_quality}
+              />
+              <p className="mt-4 text-xs leading-5 text-muted-foreground">
+                {t(
+                  'These are editorial assessments based on currently cited evidence—not objective truth.',
+                )}
+              </p>
+            </Stage>
+            <Stage n="07" title="What you couldn’t know">
+              <div className="grid gap-2">
+                {event.unknown_information.map((x) => (
+                  <div
+                    key={x}
+                    className="flex gap-3 rounded-xl bg-foreground p-4 text-background"
+                  >
+                    <CircleHelp
+                      className="mt-0.5 shrink-0 opacity-65"
+                      size={17}
+                    />
+                    <p className="text-sm leading-6">{x}</p>
+                  </div>
+                ))}
+              </div>
+            </Stage>
+            <Stage n="08" title="Hindsight analysis">
+              <p className="text-lg leading-8">
+                {n.hindsight_analysis || t(fallback)}
+              </p>
+              <div className="mt-5 rounded-2xl border-l-4 border-primary bg-secondary p-5">
+                <p className="eyebrow">{t('Decision principle')}</p>
+                <p className="mt-2 font-semibold leading-7">
+                  {n.decision_principle || t(fallback)}
+                </p>
+              </div>
+              <div className="mt-6 border-t pt-6">
+                <p className="eyebrow">{t('Evidence ledger')}</p>
+                <div className="mt-3 grid gap-3">
+                  {event.evidence.map((e) => (
+                    <div key={e.id} className="rounded-xl border p-4">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span
+                          className={`rounded-full px-2 py-1 text-[9px] font-bold ${evidenceTone[e.evidence_class]}`}
+                        >
+                          {e.evidence_class.replaceAll('_', ' ')}
+                        </span>
+                        <strong className="text-sm">{e.title}</strong>
+                      </div>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {e.author_or_institution} · {e.source_type}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Stage>
+          </>
+        )}
+      </section>
+    </div>
+  );
+}
 
-function Stage({n,title,children}:{n:string;title:string;children:React.ReactNode}) { const {t}=useLanguage(); return <section className="border-b p-5 last:border-b-0 sm:p-8"><div className="mb-5 flex items-center gap-3"><span className="font-mono text-[10px] text-primary">{n}</span><h2 className="text-xs font-bold uppercase tracking-[.17em]">{t(title)}</h2></div>{children}</section> }
-function Info({text}:{text:string}) { return <div className="flex gap-3 rounded-xl border bg-background p-4"><Eye className="mt-0.5 shrink-0 text-primary" size={16}/><p className="text-sm leading-6">{text}</p></div> }
-function Outcome({label,text}:{label:string;text:string}) { const {lang,t}=useLanguage(); return <div className="rounded-2xl bg-secondary p-5"><p className="eyebrow">{lang==='ko'?t(`${label} outcome`):`${label} outcome`}</p><p className="mt-3 text-sm leading-6">{text}</p></div> }
-function Quality({decision,outcome}:{decision:string;outcome:string}) { const {t}=useLanguage(); return <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3"><div className="rounded-2xl border bg-background p-5 text-center"><p className="eyebrow">{t('Decision quality')}</p><p className="mt-3 text-xl font-semibold">{t(decision)}</p></div><X className="text-muted-foreground" size={18}/><div className="rounded-2xl border bg-background p-5 text-center"><p className="eyebrow">{t('Outcome quality')}</p><p className="mt-3 text-xl font-semibold">{t(outcome)}</p></div></div> }
+function Stage({
+  n,
+  title,
+  children,
+}: {
+  n: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  const { t } = useLanguage();
+  return (
+    <section className="border-b p-5 last:border-b-0 sm:p-8">
+      <div className="mb-5 flex items-center gap-3">
+        <span className="font-mono text-[10px] text-primary">{n}</span>
+        <h2 className="text-xs font-bold uppercase tracking-[.17em]">
+          {t(title)}
+        </h2>
+      </div>
+      {children}
+    </section>
+  );
+}
+function Info({ text }: { text: string }) {
+  return (
+    <div className="flex gap-3 rounded-xl border bg-background p-4">
+      <Eye className="mt-0.5 shrink-0 text-primary" size={16} />
+      <p className="text-sm leading-6">{text}</p>
+    </div>
+  );
+}
+function Outcome({ label, text }: { label: string; text: string }) {
+  const { lang, t } = useLanguage();
+  return (
+    <div className="rounded-2xl bg-secondary p-5">
+      <p className="eyebrow">
+        {lang === 'ko' ? t(`${label} outcome`) : `${label} outcome`}
+      </p>
+      <p className="mt-3 text-sm leading-6">{text}</p>
+    </div>
+  );
+}
+function Quality({ decision, outcome }: { decision: string; outcome: string }) {
+  const { t } = useLanguage();
+  return (
+    <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+      <div className="rounded-2xl border bg-background p-5 text-center">
+        <p className="eyebrow">{t('Decision quality')}</p>
+        <p className="mt-3 text-xl font-semibold">{t(decision)}</p>
+      </div>
+      <X className="text-muted-foreground" size={18} />
+      <div className="rounded-2xl border bg-background p-5 text-center">
+        <p className="eyebrow">{t('Outcome quality')}</p>
+        <p className="mt-3 text-xl font-semibold">{t(outcome)}</p>
+      </div>
+    </div>
+  );
+}
 
-function Library({onCase,filtersOpen,setFiltersOpen}:{onCase:(c:DecisionEvent)=>void;filtersOpen:boolean;setFiltersOpen:(x:boolean)=>void}) { const {lang,t}=useLanguage(); const [q,setQ]=useState(''); const [domain,setDomain]=useState('all'); const [quality,setQuality]=useState('all'); const [outcome,setOutcome]=useState('all'); const [sort,setSort]=useState('score'); const shown=useMemo(()=>cases.filter(c=>(domain==='all'||c.domain===domain)&&(quality==='all'||c.decision_quality===quality)&&(outcome==='all'||c.outcome_quality===outcome)&&((c.title+' '+c.context_summary+' '+t(c.title)+' '+t(c.context_summary)).toLowerCase().includes(q.toLowerCase()))).sort((a,b)=>sort==='popular'?b.metadata.popularity-a.metadata.popularity:shortsPotential(b)-shortsPotential(a)),[q,domain,quality,outcome,sort,lang]); return <div className="mx-auto max-w-6xl px-4 pb-28 pt-10"><p className="eyebrow">{t('Case archive')}</p><h1 className="mt-2 text-4xl font-semibold tracking-tight">{t('Choose a decision point')}</h1><div className="mt-7 flex gap-2"><label className="flex flex-1 items-center gap-3 rounded-xl border bg-card px-4"><Search size={16}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t('Search cases')} className="w-full bg-transparent py-3 text-sm outline-none"/></label><button onClick={()=>setFiltersOpen(!filtersOpen)} className="flex items-center gap-2 rounded-xl border bg-card px-4 text-sm"><Filter size={15}/> <span className="hidden sm:inline">{t('Filters')}</span></button></div>{filtersOpen&&<div className="mt-3 grid gap-2 rounded-2xl border bg-card p-4 sm:grid-cols-4"><Select value={domain} set={setDomain} label="Domain" values={['all','history','business','science']}/><Select value={quality} set={setQuality} label="Decision" values={['all','Strong','Reasonable','Weak','Unclear']}/><Select value={outcome} set={setOutcome} label="Outcome" values={['all','Good','Bad','Mixed']}/><Select value={sort} set={setSort} label="Sort" values={['score','popular']}/></div>}<div className="mt-5 flex items-center justify-between text-xs text-muted-foreground"><span>{lang==='ko'?`${shown.length}개 사건`:`${shown.length} cases`}</span><span>{t('Designed to scale via structured records')}</span></div><div className="mt-4 grid gap-4 md:grid-cols-2">{shown.map(c=><CaseCard key={c.id} c={c} onClick={()=>onCase(c)}/>)}</div></div> }
-function Select({value,set,label,values}:{value:string;set:(s:string)=>void;label:string;values:string[]}) { const {t}=useLanguage(); const labels:Record<string,string>={all:'전체',history:'역사',business:'기업',science:'과학',score:'점수',popular:'인기도'}; return <label className="text-[10px] font-semibold uppercase tracking-[.14em] text-muted-foreground">{t(label)}<select value={value} onChange={e=>set(e.target.value)} className="mt-2 w-full rounded-lg border bg-background p-2 text-sm normal-case tracking-normal text-foreground">{values.map(v=><option key={v} value={v}>{t(v)===v?(labels[v]||v):t(v)}</option>)}</select></label> }
-function CaseCard({c,onClick}:{c:DecisionEvent;onClick:()=>void}) { const {lang,t}=useLanguage(); c=localizeEvent(c,t); return <button onClick={onClick} className="group rounded-2xl border bg-card p-5 text-left hover:border-primary"><div className="flex items-center justify-between"><span className="flex items-center gap-2 text-xs font-semibold text-primary">{domainIcons[c.domain]} {t(domainLabels[c.domain])}</span><span className="font-mono text-[10px] text-muted-foreground">{c.date_or_period}</span></div><h2 className="mt-5 text-xl font-semibold">{c.title}</h2><p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">{c.context_summary}</p><div className="mt-5 flex items-center justify-between border-t pt-4"><div className="flex gap-2"><span className="rounded-full bg-secondary px-2 py-1 text-[9px]">{t(c.decision_quality)} {lang==='ko'?'판단':'decision'}</span><span className="rounded-full bg-secondary px-2 py-1 text-[9px]">{t(c.outcome_quality)} {lang==='ko'?'결과':'outcome'}</span></div><ChevronRight className="transition group-hover:translate-x-1" size={16}/></div></button> }
+function Library({
+  onCase,
+  filtersOpen,
+  setFiltersOpen,
+}: {
+  onCase: (c: DecisionEvent) => void;
+  filtersOpen: boolean;
+  setFiltersOpen: (x: boolean) => void;
+}) {
+  const { lang, t } = useLanguage();
+  const { cases } = useContent();
+  const [q, setQ] = useState('');
+  const [domain, setDomain] = useState('all');
+  const [quality, setQuality] = useState('all');
+  const [outcome, setOutcome] = useState('all');
+  const [sort, setSort] = useState('score');
+  const shown = useMemo(
+    () =>
+      cases
+        .filter(
+          (c) =>
+            (domain === 'all' || c.domain === domain) &&
+            (quality === 'all' || c.decision_quality === quality) &&
+            (outcome === 'all' || c.outcome_quality === outcome) &&
+            (
+              c.title +
+              ' ' +
+              c.context_summary +
+              ' ' +
+              t(c.title) +
+              ' ' +
+              t(c.context_summary)
+            )
+              .toLowerCase()
+              .includes(q.toLowerCase()),
+        )
+        .sort((a, b) =>
+          sort === 'popular'
+            ? b.metadata.popularity - a.metadata.popularity
+            : shortsPotential(b) - shortsPotential(a),
+        ),
+    [cases, q, domain, quality, outcome, sort, lang],
+  );
+  return (
+    <div className="mx-auto max-w-6xl px-4 pb-28 pt-10">
+      <p className="eyebrow">{t('Case archive')}</p>
+      <h1 className="mt-2 text-4xl font-semibold tracking-tight">
+        {t('Choose a decision point')}
+      </h1>
+      <div className="mt-7 flex gap-2">
+        <label className="flex flex-1 items-center gap-3 rounded-xl border bg-card px-4">
+          <Search size={16} />
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder={t('Search cases')}
+            className="w-full bg-transparent py-3 text-sm outline-none"
+          />
+        </label>
+        <button
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className="flex items-center gap-2 rounded-xl border bg-card px-4 text-sm"
+        >
+          <Filter size={15} />{' '}
+          <span className="hidden sm:inline">{t('Filters')}</span>
+        </button>
+      </div>
+      {filtersOpen && (
+        <div className="mt-3 grid gap-2 rounded-2xl border bg-card p-4 sm:grid-cols-4">
+          <Select
+            value={domain}
+            set={setDomain}
+            label="Domain"
+            values={['all', 'history', 'business', 'science']}
+          />
+          <Select
+            value={quality}
+            set={setQuality}
+            label="Decision"
+            values={['all', 'Strong', 'Reasonable', 'Weak', 'Unclear']}
+          />
+          <Select
+            value={outcome}
+            set={setOutcome}
+            label="Outcome"
+            values={['all', 'Good', 'Bad', 'Mixed']}
+          />
+          <Select
+            value={sort}
+            set={setSort}
+            label="Sort"
+            values={['score', 'popular']}
+          />
+        </div>
+      )}
+      <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
+        <span>
+          {lang === 'ko' ? `${shown.length}개 사건` : `${shown.length} cases`}
+        </span>
+        <span>{t('Designed to scale via structured records')}</span>
+      </div>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        {shown.map((c) => (
+          <CaseCard key={c.id} c={c} onClick={() => onCase(c)} />
+        ))}
+      </div>
+    </div>
+  );
+}
+function Select({
+  value,
+  set,
+  label,
+  values,
+}: {
+  value: string;
+  set: (s: string) => void;
+  label: string;
+  values: string[];
+}) {
+  const { t } = useLanguage();
+  const labels: Record<string, string> = {
+    all: '전체',
+    history: '역사',
+    business: '기업',
+    science: '과학',
+    score: '점수',
+    popular: '인기도',
+  };
+  return (
+    <label className="text-[10px] font-semibold uppercase tracking-[.14em] text-muted-foreground">
+      {t(label)}
+      <select
+        value={value}
+        onChange={(e) => set(e.target.value)}
+        className="mt-2 w-full rounded-lg border bg-background p-2 text-sm normal-case tracking-normal text-foreground"
+      >
+        {values.map((v) => (
+          <option key={v} value={v}>
+            {t(v) === v ? labels[v] || v : t(v)}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+function CaseCard({ c, onClick }: { c: DecisionEvent; onClick: () => void }) {
+  const { lang, t } = useLanguage();
+  c = localizeEvent(c, t);
+  return (
+    <button
+      onClick={onClick}
+      className="group rounded-2xl border bg-card p-5 text-left hover:border-primary"
+    >
+      <div className="flex items-center justify-between">
+        <span className="flex items-center gap-2 text-xs font-semibold text-primary">
+          {domainIcons[c.domain]} {t(domainLabels[c.domain])}
+        </span>
+        <span className="font-mono text-[10px] text-muted-foreground">
+          {c.date_or_period}
+        </span>
+      </div>
+      <h2 className="mt-5 text-xl font-semibold">{c.title}</h2>
+      <p className="mt-2 line-clamp-2 text-sm leading-6 text-muted-foreground">
+        {c.context_summary}
+      </p>
+      <div className="mt-5 flex items-center justify-between border-t pt-4">
+        <div className="flex gap-2">
+          <span className="rounded-full bg-secondary px-2 py-1 text-[9px]">
+            {t(c.decision_quality)} {lang === 'ko' ? '판단' : 'decision'}
+          </span>
+          <span className="rounded-full bg-secondary px-2 py-1 text-[9px]">
+            {t(c.outcome_quality)} {lang === 'ko' ? '결과' : 'outcome'}
+          </span>
+        </div>
+        <ChevronRight
+          className="transition group-hover:translate-x-1"
+          size={16}
+        />
+      </div>
+    </button>
+  );
+}
 
-function Compare({onCase}:{onCase:(c:DecisionEvent)=>void}) { const {t}=useLanguage(); const left=cases[2],right=cases[4]; return <div className="mx-auto max-w-6xl px-4 pb-28 pt-10"><p className="eyebrow">{t('Compare judgments')}</p><h1 className="mt-2 text-4xl font-semibold tracking-tight">{t('Same result, different logic')}</h1><p className="mt-3 max-w-2xl text-muted-foreground">{t('Outcome alone cannot tell you whether the choice was sound at T0.')}</p><div className="mt-8 grid gap-4 md:grid-cols-2">{[left,right].map(raw=>{const c=localizeEvent(raw,t);return <article key={c.id} className="overflow-hidden rounded-3xl border bg-card"><div className="p-6"><p className="font-mono text-[10px] text-primary">{c.date_or_period} · {t(domainLabels[c.domain]).toUpperCase()}</p><h2 className="mt-3 text-2xl font-semibold">{c.title}</h2><p className="mt-3 text-sm leading-6 text-muted-foreground">{c.context_summary}</p></div><div className="border-y p-5"><Quality decision={c.decision_quality} outcome={c.outcome_quality}/></div><div className="p-6"><p className="eyebrow">{t('Core uncertainty')}</p><div className="mt-3 flex flex-wrap gap-2">{c.uncertainty_factors.map(x=><span key={x} className="rounded-full bg-secondary px-3 py-1.5 text-xs">{x}</span>)}</div><button onClick={()=>onCase(raw)} className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary">{t('Play this case')} <ArrowRight size={14}/></button></div></article>})}</div></div> }
+function Compare({ onCase }: { onCase: (c: DecisionEvent) => void }) {
+  const { t } = useLanguage();
+  const { cases } = useContent();
+  const left = cases.find((c) => c.id === 'challenger-1986') || cases[0],
+    right = cases.find((c) => c.id === 'new-coke-1985') || cases[1] || cases[0];
+  return (
+    <div className="mx-auto max-w-6xl px-4 pb-28 pt-10">
+      <p className="eyebrow">{t('Compare judgments')}</p>
+      <h1 className="mt-2 text-4xl font-semibold tracking-tight">
+        {t('Same result, different logic')}
+      </h1>
+      <p className="mt-3 max-w-2xl text-muted-foreground">
+        {t('Outcome alone cannot tell you whether the choice was sound at T0.')}
+      </p>
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {[left, right].map((raw) => {
+          const c = localizeEvent(raw, t);
+          return (
+            <article
+              key={c.id}
+              className="overflow-hidden rounded-3xl border bg-card"
+            >
+              <div className="p-6">
+                <p className="font-mono text-[10px] text-primary">
+                  {c.date_or_period} · {t(domainLabels[c.domain]).toUpperCase()}
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold">{c.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                  {c.context_summary}
+                </p>
+              </div>
+              <div className="border-y p-5">
+                <Quality
+                  decision={c.decision_quality}
+                  outcome={c.outcome_quality}
+                />
+              </div>
+              <div className="p-6">
+                <p className="eyebrow">{t('Core uncertainty')}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {c.uncertainty_factors.map((x) => (
+                    <span
+                      key={x}
+                      className="rounded-full bg-secondary px-3 py-1.5 text-xs"
+                    >
+                      {x}
+                    </span>
+                  ))}
+                </div>
+                <button
+                  onClick={() => onCase(raw)}
+                  className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary"
+                >
+                  {t('Play this case')} <ArrowRight size={14} />
+                </button>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
-function MyDecisions({plays,onCase}:{plays:Play[];onCase:(c:DecisionEvent)=>void}) { const {lang,t}=useLanguage(); const matched=plays.filter(p=>p.matched).length,strong=plays.filter(p=>p.quality==='Strong').length,changed=plays.filter(p=>p.changed).length; return <div className="mx-auto max-w-6xl px-4 pb-28 pt-10"><p className="eyebrow">{t('Local record')}</p><h1 className="mt-2 text-4xl font-semibold tracking-tight">{t('My decisions')}</h1><p className="mt-3 text-sm text-muted-foreground">{t('Simple device-only statistics. This is not a psychological diagnosis.')}</p><div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4"><Stat label="Cases played" value={plays.length}/><Stat label="Matched history" value={matched}/><Stat label="Strong selections" value={strong}/><Stat label="Changed after evidence" value={changed}/></div><div className="mt-8 rounded-3xl border bg-card p-5"><h2 className="text-sm font-semibold">{t('Decision log')}</h2>{plays.length===0?<div className="grid min-h-48 place-items-center text-center"><div><Target className="mx-auto text-muted-foreground"/><p className="mt-3 text-sm text-muted-foreground">{t('Play a case to start your record.')}</p></div></div>:<div className="mt-4 divide-y">{plays.map(p=>{const raw=cases.find(x=>x.id===p.caseId)!;const c=localizeEvent(raw,t);return <button key={p.caseId} onClick={()=>onCase(raw)} className="flex w-full items-center justify-between py-4 text-left"><div><strong className="text-sm">{c.title}</strong><p className="mt-1 text-xs text-muted-foreground">{lang==='ko'?`${c.options.find(o=>o.id===p.choice)?.label} 선택 · ${p.matched?'실제 선택과 일치':'실제 선택과 다름'}`:`Chose ${c.options.find(o=>o.id===p.choice)?.label} · ${p.matched?'Matched actual choice':'Different from actual choice'}`}</p></div><ChevronRight size={16}/></button>})}</div>}</div></div> }
-function Stat({label,value}:{label:string;value:number}) { const {t}=useLanguage(); return <div className="rounded-2xl border bg-card p-5"><p className="text-3xl font-semibold">{value}</p><p className="mt-2 text-xs text-muted-foreground">{t(label)}</p></div> }
+function MyDecisions({
+  plays,
+  onCase,
+}: {
+  plays: Play[];
+  onCase: (c: DecisionEvent) => void;
+}) {
+  const { lang, t } = useLanguage();
+  const { cases } = useContent();
+  const matched = plays.filter((p) => p.matched).length,
+    strong = plays.filter((p) => p.quality === 'Strong').length,
+    changed = plays.filter((p) => p.changed).length;
+  return (
+    <div className="mx-auto max-w-6xl px-4 pb-28 pt-10">
+      <p className="eyebrow">{t('Local record')}</p>
+      <h1 className="mt-2 text-4xl font-semibold tracking-tight">
+        {t('My decisions')}
+      </h1>
+      <p className="mt-3 text-sm text-muted-foreground">
+        {t(
+          'Simple device-only statistics. This is not a psychological diagnosis.',
+        )}
+      </p>
+      <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <Stat label="Cases played" value={plays.length} />
+        <Stat label="Matched history" value={matched} />
+        <Stat label="Strong selections" value={strong} />
+        <Stat label="Changed after evidence" value={changed} />
+      </div>
+      <div className="mt-8 rounded-3xl border bg-card p-5">
+        <h2 className="text-sm font-semibold">{t('Decision log')}</h2>
+        {plays.length === 0 ? (
+          <div className="grid min-h-48 place-items-center text-center">
+            <div>
+              <Target className="mx-auto text-muted-foreground" />
+              <p className="mt-3 text-sm text-muted-foreground">
+                {t('Play a case to start your record.')}
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-4 divide-y">
+            {plays.map((p) => {
+              const raw = cases.find((x) => x.id === p.caseId);
+              if (!raw) return null;
+              const c = localizeEvent(raw, t);
+              return (
+                <button
+                  key={p.caseId}
+                  onClick={() => onCase(raw)}
+                  className="flex w-full items-center justify-between py-4 text-left"
+                >
+                  <div>
+                    <strong className="text-sm">{c.title}</strong>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {lang === 'ko'
+                        ? `${c.options.find((o) => o.id === p.choice)?.label} 선택 · ${p.matched ? '실제 선택과 일치' : '실제 선택과 다름'}`
+                        : `Chose ${c.options.find((o) => o.id === p.choice)?.label} · ${p.matched ? 'Matched actual choice' : 'Different from actual choice'}`}
+                    </p>
+                  </div>
+                  <ChevronRight size={16} />
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+function Stat({ label, value }: { label: string; value: number }) {
+  const { t } = useLanguage();
+  return (
+    <div className="rounded-2xl border bg-card p-5">
+      <p className="text-3xl font-semibold">{value}</p>
+      <p className="mt-2 text-xs text-muted-foreground">{t(label)}</p>
+    </div>
+  );
+}
 
-function Shorts({event,onEvent}:{event:DecisionEvent;onEvent:(e:DecisionEvent)=>void}) { const {lang,t}=useLanguage(); const raw=event; event=localizeEvent(event,t); const n=localizeNarrative((narratives[event.narrative_id]||{}) as Record<string,string|undefined>,t); const frames=[['0–2 sec','HOOK',n.hook||event.title],['2–8 sec','CONTEXT',n.short_setup||event.context_summary],['8–13 sec','A / B',event.options.map(o=>o.label).join(lang==='ko'?' 대 ':'  vs  ')],['13–16 sec','DECISION LOCK',t('Lock your decision. No changing after the reveal.')],['16–25 sec','ACTUAL CHOICE',event.options.find(o=>o.id===event.actual_decision)?.label||''],['25–32 sec','OUTCOME',event.immediate_outcome],['32–38 sec','WHY IT WAS HARD',event.uncertainty_factors.join(' · ')]]; return <div className="mx-auto max-w-5xl px-4 pb-28 pt-10"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="eyebrow">{t('Storyboarding tool')}</p><h1 className="mt-2 text-4xl font-semibold tracking-tight">{t('Shorts preview')}</h1></div><select value={raw.id} onChange={e=>onEvent(cases.find(c=>c.id===e.target.value)!)} className="rounded-xl border bg-card px-4 py-3 text-sm">{cases.map(c=><option key={c.id} value={c.id}>{t(c.title)}</option>)}</select></div><div className="mt-8 grid gap-5 lg:grid-cols-[.72fr_1.28fr]"><div className="rounded-[2rem] bg-foreground p-5 text-background"><div className="aspect-[9/16] rounded-[1.4rem] border border-background/15 bg-[radial-gradient(circle_at_top,var(--color-primary),transparent_35%)] p-6"><p className="font-mono text-[10px] uppercase tracking-[.2em] opacity-60">Decision / T0</p><div className="flex h-full flex-col justify-center"><p className="text-xs font-semibold uppercase tracking-[.2em] text-primary">{event.date_or_period}</p><h2 className="mt-4 text-3xl font-semibold leading-tight">{n.hook||event.title}</h2><div className="mt-8 grid gap-2">{event.options.map((o,i)=><div key={o.id} className="rounded-xl border border-background/20 p-4 text-sm"><span className="mr-2 font-mono text-primary">{String.fromCharCode(65+i)}</span>{o.label}</div>)}</div></div></div></div><div><div className="mb-4 rounded-2xl border bg-card p-5"><div className="flex items-center justify-between"><div><p className="eyebrow">{t('Shorts potential')}</p><p className="mt-2 text-3xl font-semibold">{shortsPotential(raw)} <span className="text-sm text-muted-foreground">/ 100</span></p></div><Film className="text-primary"/></div><p className="mt-3 text-xs text-muted-foreground">{t('Rule-based editorial signal, not an objective prediction.')}</p></div><div className="space-y-2">{frames.map(([time,label,text])=><div key={time} className="grid grid-cols-[72px_1fr] gap-3 rounded-xl border bg-card p-4"><span className="font-mono text-[10px] text-primary">{time}</span><div><strong className="text-[10px] tracking-[.15em]">{t(label)}</strong><p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p></div></div>)}</div></div></div></div> }
+function Shorts({
+  event,
+  onEvent,
+}: {
+  event: DecisionEvent;
+  onEvent: (e: DecisionEvent) => void;
+}) {
+  const { lang, t } = useLanguage();
+  const { cases, narratives } = useContent();
+  const raw = event;
+  event = localizeEvent(event, t);
+  const n = localizeNarrative(
+    (narratives[event.narrative_id] || {}) as Record<
+      string,
+      string | undefined
+    >,
+    t,
+  );
+  const frames = [
+    ['0–2 sec', 'HOOK', n.hook || event.title],
+    ['2–8 sec', 'CONTEXT', n.short_setup || event.context_summary],
+    [
+      '8–13 sec',
+      'A / B',
+      event.options.map((o) => o.label).join(lang === 'ko' ? ' 대 ' : '  vs  '),
+    ],
+    [
+      '13–16 sec',
+      'DECISION LOCK',
+      t('Lock your decision. No changing after the reveal.'),
+    ],
+    [
+      '16–25 sec',
+      'ACTUAL CHOICE',
+      event.options.find((o) => o.id === event.actual_decision)?.label || '',
+    ],
+    ['25–32 sec', 'OUTCOME', event.immediate_outcome],
+    ['32–38 sec', 'WHY IT WAS HARD', event.uncertainty_factors.join(' · ')],
+  ];
+  return (
+    <div className="mx-auto max-w-5xl px-4 pb-28 pt-10">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="eyebrow">{t('Storyboarding tool')}</p>
+          <h1 className="mt-2 text-4xl font-semibold tracking-tight">
+            {t('Shorts preview')}
+          </h1>
+        </div>
+        <select
+          value={raw.id}
+          onChange={(e) => onEvent(cases.find((c) => c.id === e.target.value)!)}
+          className="rounded-xl border bg-card px-4 py-3 text-sm"
+        >
+          {cases.map((c) => (
+            <option key={c.id} value={c.id}>
+              {t(c.title)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="mt-8 grid gap-5 lg:grid-cols-[.72fr_1.28fr]">
+        <div className="rounded-[2rem] bg-foreground p-5 text-background">
+          <div className="aspect-[9/16] rounded-[1.4rem] border border-background/15 bg-[radial-gradient(circle_at_top,var(--color-primary),transparent_35%)] p-6">
+            <p className="font-mono text-[10px] uppercase tracking-[.2em] opacity-60">
+              Decision / T0
+            </p>
+            <div className="flex h-full flex-col justify-center">
+              <p className="text-xs font-semibold uppercase tracking-[.2em] text-primary">
+                {event.date_or_period}
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight">
+                {n.hook || event.title}
+              </h2>
+              <div className="mt-8 grid gap-2">
+                {event.options.map((o, i) => (
+                  <div
+                    key={o.id}
+                    className="rounded-xl border border-background/20 p-4 text-sm"
+                  >
+                    <span className="mr-2 font-mono text-primary">
+                      {String.fromCharCode(65 + i)}
+                    </span>
+                    {o.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="mb-4 rounded-2xl border bg-card p-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="eyebrow">{t('Shorts potential')}</p>
+                <p className="mt-2 text-3xl font-semibold">
+                  {shortsPotential(raw)}{' '}
+                  <span className="text-sm text-muted-foreground">/ 100</span>
+                </p>
+              </div>
+              <Film className="text-primary" />
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              {t('Rule-based editorial signal, not an objective prediction.')}
+            </p>
+          </div>
+          <div className="space-y-2">
+            {frames.map(([time, label, text]) => (
+              <div
+                key={time}
+                className="grid grid-cols-[72px_1fr] gap-3 rounded-xl border bg-card p-4"
+              >
+                <span className="font-mono text-[10px] text-primary">
+                  {time}
+                </span>
+                <div>
+                  <strong className="text-[10px] tracking-[.15em]">
+                    {t(label)}
+                  </strong>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    {text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-function Principle({n,title,text}:{n:string;title:string;text:string}) { return <div className="rounded-2xl border bg-card p-5"><span className="font-mono text-[10px] text-primary">{n}</span><h3 className="mt-4 font-semibold">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p></div> }
-function MobileNav({view,onView}:{view:View;onView:(v:View)=>void}) { const {t}=useLanguage(); const items:[View,React.ReactNode,string][]=[['home',<Compass key="i" size={18}/>,'Today'],['library',<LayoutGrid key="i" size={18}/>,'Cases'],['compare',<Scale key="i" size={18}/>,'Compare'],['decisions',<BookOpen key="i" size={18}/>,'My decisions'],['shorts',<Film key="i" size={18}/>,'Shorts']]; return <nav className="fixed inset-x-3 bottom-3 z-50 flex justify-around rounded-2xl border bg-background/95 p-2 shadow-xl backdrop-blur md:hidden">{items.map(([id,icon,label])=><button key={id} onClick={()=>onView(id)} className={`flex min-w-14 flex-col items-center gap-1 rounded-xl px-2 py-2 text-[9px] ${view===id?'bg-foreground text-background':'text-muted-foreground'}`}>{icon}{t(label)}</button>)}</nav> }
+function Principle({
+  n,
+  title,
+  text,
+}: {
+  n: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-2xl border bg-card p-5">
+      <span className="font-mono text-[10px] text-primary">{n}</span>
+      <h3 className="mt-4 font-semibold">{title}</h3>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
+    </div>
+  );
+}
+function MobileNav({
+  view,
+  onView,
+}: {
+  view: View;
+  onView: (v: View) => void;
+}) {
+  const { t } = useLanguage();
+  const items: [View, React.ReactNode, string][] = [
+    ['home', <Compass key="i" size={18} />, 'Today'],
+    ['library', <LayoutGrid key="i" size={18} />, 'Cases'],
+    ['compare', <Scale key="i" size={18} />, 'Compare'],
+    ['decisions', <BookOpen key="i" size={18} />, 'My decisions'],
+    ['shorts', <Film key="i" size={18} />, 'Shorts'],
+  ];
+  return (
+    <nav className="fixed inset-x-3 bottom-3 z-50 flex justify-around rounded-2xl border bg-background/95 p-2 shadow-xl backdrop-blur md:hidden">
+      {items.map(([id, icon, label]) => (
+        <button
+          key={id}
+          onClick={() => onView(id)}
+          className={`flex min-w-14 flex-col items-center gap-1 rounded-xl px-2 py-2 text-[9px] ${view === id ? 'bg-foreground text-background' : 'text-muted-foreground'}`}
+        >
+          {icon}
+          {t(label)}
+        </button>
+      ))}
+    </nav>
+  );
+}
