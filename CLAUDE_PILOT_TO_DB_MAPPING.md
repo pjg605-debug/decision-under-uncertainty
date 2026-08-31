@@ -39,8 +39,8 @@ Ordered by `production_verdict` (VIABLE first) as a suggested priority if/when C
 | `karluk-expedition-1914` | WEAK | 62 | lesser_known | LOW_FAME_STRESS_TEST |
 | `mawson-far-eastern-party-1912` | WEAK | 60 | lesser_known | CURATED_HIGH_POTENTIAL |
 | `shackleton-endurance-1915` | WEAK | 55 | medium | CURATED_HIGH_POTENTIAL |
+| `barry-marshall-self-experiment-1984` | WEAK | 58 | lesser_known | LOW_FAME_STRESS_TEST |
 | `tetraethyl-lead-1924` | WEAK | 52 | medium | CURATED_HIGH_POTENTIAL |
-| `barry-marshall-self-experiment-1984` | *(pending — research agent in progress at time of writing)* | — | — | LOW_FAME_STRESS_TEST |
 
 None of these are `FAILED` outright — the pilot's honest floor turned out to be `WEAK` (real sourcing, but a guessable or context-heavy dilemma), not "no viable case at all." See the pilot report for what specifically makes each `WEAK` case fall short.
 
