@@ -1,0 +1,112 @@
+{
+  "id": "seikanron-debate-1873",
+  "title": "The Seikanron Debate: Confront Korea Now, or Build Japan First? (1873)",
+  "case_type": ["political", "diplomacy"],
+  "fame_level": "lesser_known",
+  "pilot_batch": "LOW_FAME_STRESS_TEST",
+  "era": "Early Meiji-era Japan, 1873",
+  "location": "Tokyo, Japan (Council of State / Grand Council of State, Dajokan)",
+  "actors": [
+    { "name": "Saigo Takamori", "role": "Councillor of State and commander of the Imperial Guard; proposed traveling to Korea himself as envoy" },
+    { "name": "Okubo Toshimichi", "role": "Councillor of State, recently returned from the Iwakura Mission; led opposition to the Korea proposal" },
+    { "name": "Iwakura Tomomi", "role": "Head of the Iwakura Mission and acting head of government during Sanjo Sanetomi's illness; secured the Emperor's reversal of the decision" },
+    { "name": "Sanjo Sanetomi", "role": "Daijo-daijin (Chancellor/Prime Minister); had initially approved sending Saigo but fell ill before the decision was finalized" },
+    { "name": "Itagaki Taisuke", "role": "Councillor of State; supported Saigo's proposal and resigned alongside him" },
+    { "name": "Emperor Meiji", "role": "Emperor of Japan; formally approved sending Saigo on August 17-18, 1873, then reversed the decision on October 23, 1873 at Iwakura's request" }
+  ],
+  "t0": {
+    "definition": "The moment in mid-to-late October 1873 when the Japanese Council of State, having already obtained the Emperor's formal approval in August to send Saigo Takamori to Korea as a special envoy, must decide -- after the return of Okubo Toshimichi, Iwakura Tomomi, and other senior officials from the year-and-a-half-long Iwakura Mission to the United States and Europe -- whether to proceed with sending Saigo (risking, by Saigo's own stated reasoning, his assassination as grounds for a punitive military expedition) or to reverse the decision and prioritize internal modernization before any external confrontation with Korea.",
+    "date": "Cabinet approved sending Saigo on August 17-18, 1873; final reversal decided around October 22-23, 1873; Saigo's resignation submitted October 23, 1873",
+    "location": "Tokyo, at meetings of the Council of State (Dajokan)"
+  },
+  "stakes": "The decision would determine whether Japan, less than six years after the Meiji Restoration and still in the early stages of building a modern army, navy, and industrial base, would risk a military confrontation with Korea (and the possibility of drawing in Qing China or Russia, both of which had interests on the Korean peninsula) before its own modernization was far advanced -- or whether it would defer the Korea question and risk losing momentum, national unity, and the loyalty of the large samurai class left without a clear role after recent reforms.",
+  "known_at_t0": [
+    { "statement": "Korea's Joseon court, under the regency of the Daewongun, had repeatedly refused to accept Japanese diplomatic communications that used new Meiji-era imperial terminology, and Korean officials had reportedly used insulting language toward Japan in notices posted at Busan.", "evidence_class": "FACT" },
+    { "statement": "In a Council of State meeting, Saigo Takamori proposed traveling to Korea himself as a special envoy to negotiate; multiple accounts describe him stating that if Korea killed him, this would provide clear and unambiguous justification for a subsequent military expedition.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "The Council of State and Emperor Meiji had already formally approved sending Saigo as envoy on August 17-18, 1873, before Okubo, Iwakura, and other senior officials returned from abroad.", "evidence_class": "FACT" },
+    { "statement": "Okubo Toshimichi, in a written opinion (his '7 Points Document'), argued that action against Korea was premature because Japan was still in the early stages of internal modernization and that a war would be far too costly for Japan to sustain at this point.", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "Okubo, Iwakura, Kido Takayoshi, and other members of the Iwakura Mission had just spent roughly a year and a half touring the United States and European industrial and military powers, and returned with direct, firsthand impressions of how far behind Japan's own industrial and military capacity remained.", "evidence_class": "FACT" },
+    { "statement": "A large samurai class had recently lost its traditional stipends and social role under Meiji reforms, and some contemporaries and later historians believed war with Korea was seen by parts of this class (and by some supporters of Saigo, including Itagaki Taisuke) as a potential outlet for that displaced military energy.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Iwakura Tomomi held the position of acting head of the Council of State in place of the ill Daijo-daijin Sanjo Sanetomi at the time of the final decision, giving him direct authority to bring the matter before the Emperor.", "evidence_class": "FACT" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "Saigo Takamori, Itagaki Taisuke, Goto Shojiro, Eto Shimpei, and Soejima Taneomi would resign from the government within days of the reversal (Saigo on October 23; the others on October 24, accepted October 25, 1873), an outcome not yet certain to observers at the moment the Council debated its decision.", "evidence_class": "FACT" },
+    { "statement": "Saigo Takamori would return to his home domain of Satsuma and found a network of private military academies for former samurai, which would become the organizational base for the Satsuma Rebellion of 1877 -- an armed uprising against the Meiji government in which Saigo died.", "evidence_class": "FACT" },
+    { "statement": "Some of the officials who resigned in 1873 (including Eto Shimpei, who led the smaller Saga Rebellion in 1874) would go on to lead or inspire other armed uprisings against the Meiji government before the larger Satsuma Rebellion.", "evidence_class": "FACT" },
+    { "statement": "Japan would not undertake a major military campaign against Korea in the 1870s; instead, in 1875-76 it used a more limited naval incident (the Ganghwa Island incident) and gunboat diplomacy to force Korea to sign the Treaty of Ganghwa (1876), opening Korean ports without full-scale war.", "evidence_class": "FACT" },
+    { "statement": "Historians remain divided on whether Saigo's envoy proposal genuinely aimed at eventual war, or whether -- as some more recent biographical scholarship (e.g. Mark Ravina) argues -- his stated willingness to risk assassination was a rhetorical maneuver aimed partly at winning over Itagaki and other domestic political rivals, with his deeper intent closer to establishing a firm, direct relationship with Korea than to deliberately provoking war.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Proceed with Saigo's envoy mission and an assertive posture toward Korea now",
+      "description": "Follow through on the Council of State's August 1873 approval: send Saigo Takamori to Korea as a special envoy, accepting his own stated reasoning that if Korea rejected or killed him, this would give Japan clear grounds for a punitive military expedition.",
+      "upside": "Acted while Japan still had the national unity and momentum generated by the recent Meiji Restoration; addressed Korea's continued refusal to recognize Japan's new imperial status directly rather than deferring it; gave the large, recently displaced samurai class a clear national mission at a moment of domestic social strain; avoided the risk that continued delay would let Korea further consolidate its own defenses or draw closer to Qing China or Russia.",
+      "why_it_made_sense": "From the perspective of officials who had remained in Japan (rather than touring the West), Korea's provocations were a live, unresolved affront to national dignity that could plausibly worsen the longer it went unanswered, and Saigo's own stated willingness to risk his life for the mission was framed as a matter of honor and resolve rather than recklessness.",
+      "downside": "Risked a military confrontation, and possibly full-scale war, before Japan's army, navy, and industrial base were remotely comparable to Western powers -- a gap the Iwakura Mission's returning members had just observed firsthand; also risked drawing in Qing China (which had its own historical interests in Korea) or complicating relations with Russia.",
+      "risk_carried": "A war undertaken before Japan's military modernization was far advanced could have been catastrophically costly or even disastrous if it escalated beyond a limited punitive expedition, undermining the young Meiji state's stability at a moment when its own domestic institutions were still being built."
+    },
+    {
+      "id": "option_b",
+      "label": "Reverse the decision and prioritize internal modernization first",
+      "description": "Withdraw approval for Saigo's mission and postpone any confrontation with Korea, redirecting the government's attention and resources toward internal reform, industrialization, and building up Japan's own military and administrative capacity.",
+      "upside": "Avoided a military commitment before Japan's actual capacity to sustain a war was proven; preserved the resources and political capital of the Meiji government for internal modernization projects (land tax reform, conscription, industrial development) that the returning Iwakura Mission members judged urgently necessary; avoided provoking a crisis that might draw in Qing China or Russia while Japan was still vulnerable.",
+      "why_it_made_sense": "Okubo, Iwakura, and other Mission members had just directly observed the industrial and military scale of the Western powers, and judged -- based on that firsthand comparison -- that Japan's own military and economic base was not yet ready to sustain a war, however justified the underlying grievance against Korea might be.",
+      "downside": "Directly reversed a decision the Emperor had already formally approved just two months earlier, which was a serious political and personal affront to Saigo and his allies; risked losing the political unity of the early Meiji coalition, and risked leaving unresolved a genuine diplomatic problem (Korea's continued refusal to engage) that could still require a costly response later, on terms Japan might not control.",
+      "risk_carried": "The reversal triggered the immediate resignation of Saigo and several other senior officials, fracturing the Meiji government's leadership and removing Saigo's authority over a substantial number of loyal former-samurai troops -- setting conditions that would contribute, a few years later, to the armed Satsuma Rebellion of 1877."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "The Council of State (Dajokan), via Iwakura Tomomi acting as head of government and presenting the case to Emperor Meiji",
+    "decided_when": "Around October 22-23, 1873, roughly two months after the Emperor's initial approval of Saigo's mission on August 17-18, 1873",
+    "stated_basis": "Okubo Toshimichi's written opinion argued the proposed action against Korea was premature given Japan's own unfinished modernization and the cost a war would impose; Iwakura, holding acting authority over the Council of State while Sanjo Sanetomi was ill, presented this case to the Emperor and secured a reversal of the earlier approval.",
+    "constraints": "The decision required overturning an Emperor-approved cabinet decision only two months old, a serious institutional and political constraint; it also had to be reached quickly, since Saigo and his allies were prepared to act on the original approval, and the returning Iwakura Mission officials had only just re-entered the government after their long absence abroad."
+  },
+  "decision_quality": {
+    "rating": "REASONABLE",
+    "justification": "The anti-war faction's position was grounded in firsthand, recent, comparative observation of Western industrial and military capacity (from the Iwakura Mission) rather than abstract caution, and it correctly weighed the risk of committing a young, still-consolidating state to a foreign military venture it might not be able to sustain. It is not rated STRONG because reversing a decision the Emperor had already formally approved carried serious, foreseeable political costs (the resignation of multiple senior officials, including a figure as central as Saigo, and the fracturing of the governing coalition), and the decision did not offer any alternative resolution to the underlying, real diplomatic standoff with Korea beyond deferral."
+  },
+  "outcome_quality": {
+    "rating": "MIXED",
+    "justification": "Japan avoided a premature war with Korea and continued its internal modernization program (land tax reform, military conscription, industrial development) through the mid-to-late 1870s, and later achieved its aims regarding Korea through more limited means (the 1875-76 Ganghwa Island incident and treaty) without the general war Saigo's proposal risked -- a good outcome on the immediate international question. But the domestic political fallout was severe: the mass resignation fractured the Meiji leadership, and Saigo's return to Satsuma with a base of loyal former samurai directly fed into the 1877 Satsuma Rebellion, the largest and most serious armed uprising the Meiji government faced, in which an estimated tens of thousands were killed or wounded and Saigo himself died."
+  },
+  "outcome": {
+    "immediate": "Saigo Takamori resigned as Councillor of State and commander of the Imperial Guard on October 23, 1873; Itagaki Taisuke, Goto Shojiro, Eto Shimpei, and Soejima Taneomi resigned the following day, with the resignations accepted October 25, 1873. More than 100 Imperial Guard officers loyal to Saigo also left government service.",
+    "long_term": "Saigo returned to Satsuma and established private military academies for former samurai; these academies became the organizational and manpower base for the Satsuma Rebellion of 1877, a major armed uprising against the Meiji government that ended in Saigo's death and the definitive military supremacy of the new conscript national army over the old samurai class. Separately, Eto Shimpei, one of the other 1873 resignees, led the smaller Saga Rebellion in 1874. Japan's actual eventual opening of Korea came in 1876 via the Treaty of Ganghwa, following a more limited 1875 naval incident rather than the general war Saigo's 1873 proposal risked.",
+    "causal_directness": "CONTRIBUTING"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Saigo Takamori's true intent in proposing the envoy mission",
+      "description": "Traditional accounts (and Britannica's summary) describe Saigo as deliberately courting his own assassination to manufacture a pretext for war. More recent biographical scholarship, notably Mark Ravina's 'The Last Samurai: The Life and Battles of Saigo Takamori,' argues this framing may partly reflect Saigo's own rhetorical positioning in the Council of State debate (aimed in part at winning over Itagaki Taisuke) rather than a settled, singular intent to provoke war, and suggests his actual goal may have been closer to establishing direct, formal relations with Korea. This repository presents Saigo's stated willingness to risk assassination as a documented STATED_RATIONALE and flags the question of his deeper motive as contested and unresolved (INFERENCE)."
+    },
+    {
+      "topic": "Exact dates of the cabinet's initial approval and the underlying reasons for the samurai class's support for the Korea expedition",
+      "description": "Sources broadly agree the Emperor approved sending Saigo around August 17-18, 1873 and that the reversal came around October 22-23, 1873, but vary somewhat in exact-day precision and in how much weight to give to the theory that displaced samurai support for the expedition was primarily about finding a new social/military role versus primarily about genuine grievance over Korea's treatment of Japan; this repository treats the displaced-samurai-motive claim as CONTEMPORARY_BELIEF/INFERENCE rather than settled fact."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 74,
+      "rationale": "A viewer given the known_at_t0 facts (Korea's repeated diplomatic rebuffs, the Emperor's prior approval already granted, and the returning envoys' firsthand knowledge of the West's industrial/military lead) has genuine, non-hindsight grounds to argue either side. The case is fair mainly because it does not need Saigo's later death in the Satsuma Rebellion to make option A look bad in advance -- both options are framed on their contemporaneous merits. Score is not higher because the 'assassination as pretext for war' detail is unusually vivid and may read to a modern viewer as self-evidently reckless in a way that nudges the choice, even though it was a genuine, documented position taken seriously by senior officials at the time."
+    },
+    "dilemma_balance": {
+      "score": 70,
+      "rationale": "Both sides had serious, senior-level backing (an already Emperor-approved decision on one side, versus the concrete, firsthand comparative assessment of the Iwakura Mission's returning leadership on the other), and the eventual outcome (avoided war, but a major domestic rebellion four years later) does not cleanly vindicate either side, which helps keep the balance genuine rather than pre-decided by hindsight."
+    },
+    "context_compression": {
+      "score": 58,
+      "rationale": "The dilemma compresses reasonably well once translated into plain terms ('confront a rival now while national unity is high, or build up strength first, even though your own government already approved the confrontation two months ago'), but a zero-background viewer needs a beat more setup than the strongest curated-batch cases to understand why the Emperor's prior approval matters and why the returning delegation's firsthand Western trip carries special weight -- this is a real cost of the case being outside a Western-audience's existing historical frame."
+    },
+    "reveal_payoff": {
+      "score": 75,
+      "rationale": "The reveal -- that the 'safer,' modernization-first choice triggered a mass resignation that fed directly into a major armed rebellion four years later, killing the very man whose mission was blocked -- is a genuine, well-sourced, non-obvious payoff that recontextualizes the decision without needing to be exaggerated or dramatized beyond what the record supports."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "This case has a precise, well-documented T0 (the Council of State's October 1873 reversal of an already Emperor-approved decision), two genuinely balanced options each backed by senior officials with serious, contemporaneous reasoning, and an honest, sourced reveal (the Satsuma Rebellion) that complicates rather than simply validates the chosen path. Its main cost relative to the curated batch is context compression: general global audiences need slightly more setup to grasp the stakes of Meiji-era Japan's internal politics than they would for a Western Cold War or WWII case, which this repository reflects honestly in the context_compression score rather than pretending the case is as instantly legible as the most famous curated cases."
+  }
+}

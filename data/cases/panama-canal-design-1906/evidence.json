@@ -1,0 +1,85 @@
+{
+  "case_id": "panama-canal-design-1906",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "The Type of the Panama Canal",
+      "author_or_institution": "Popular Science Monthly, Vol. 74 (May 1909)",
+      "date": "1909",
+      "citation": "https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_74/May_1909/The_Type_of_the_Panama_Canal",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "The Board of Consulting Engineers' 8-5 vote split, the identities of the five minority (lock-canal) signers, Roosevelt's February 1906 message to Congress, and the June 1906 Senate vote of 36-31 approving the lock canal. Contemporary (1909) specialist science-journalism source, cross-checked against other sources below."
+    },
+    {
+      "id": "src-02",
+      "title": "Sea Level Canal (compiling Secretary of War William Howard Taft's 1906 report forwarding the majority and minority board reports to President Roosevelt)",
+      "author_or_institution": "Panama Canal history archive (Panama Canal Society / czbrats.com), quoting Taft's contemporary summary",
+      "date": "Original documents 1906; archived compilation ongoing",
+      "citation": "https://www.czbrats.com/Articles/sealevel.htm",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Secretary of War Taft's stated view that a sea-level canal would in principle be preferable but that its time and cost at Panama were 'in effect prohibitory' -- the direct rationale forwarded to Roosevelt ahead of his message to Congress."
+    },
+    {
+      "id": "src-03",
+      "title": "Panama Canal Construction, 1903-1914",
+      "author_or_institution": "GlobalSecurity.org (military/engineering history reference)",
+      "date": "Continually updated reference page",
+      "citation": "https://www.globalsecurity.org/military/facility/panama-canal-construction.htm",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology of the ICC's board process, the 8-5 majority/minority split, and the adoption of the minority (lock canal) report by the Isthmian Canal Commission."
+    },
+    {
+      "id": "src-04",
+      "title": "John Frank Stevens (biographical entry, American engineer & railroad builder)",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/biography/John-Frank-Stevens",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Stevens' appointment as chief engineer in 1905, his assessment that excavating Culebra to sea-level depth was impractical given slow prior progress and unstable geology, his lobbying for the lock-canal redesign, and his resignation in February 1907."
+    },
+    {
+      "id": "src-05",
+      "title": "The Panama Canal: Chief Engineers of the Panama Canal",
+      "author_or_institution": "PBS American Experience",
+      "date": "Documentary companion resource, publication date not specified on page",
+      "citation": "https://www.pbs.org/wgbh/americanexperience/features/panama-canal-chief-engineers-panama-canal",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "FACT",
+      "supported_claim": "Stevens' reasoning that the sea-level approach was made impractical by the unstable rock and mud of the Culebra cut, and his successful push for Isthmian Canal Commission approval of the lock-and-lake redesign."
+    },
+    {
+      "id": "src-06",
+      "title": "Panama Canal (event overview, resolution and legacy)",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/topic/Panama-Canal",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General chronology cross-check: the 1914 opening of the canal, the earlier French effort's failure under Ferdinand de Lesseps, and the canal's role in global shipping through the 20th century."
+    },
+    {
+      "id": "src-07",
+      "title": "Panama Canal Expansion news release: Panama Canal Welcomes Largest Vessel To-Date Through New Locks",
+      "author_or_institution": "Autoridad del Canal de Panama (Panama Canal Authority)",
+      "date": "Post-2016 (expansion opened June 2016)",
+      "citation": "https://pancanal.com/en/panama-canal-welcomes-largest-vessel-to-date-through-new-locks/",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "The scale of the 2016 Third Set of Locks expansion (new lock chambers roughly 427m x 55m x 18.3m vs. the original 1914 chambers of roughly 305m x 33.5m) and its purpose of accommodating Neopanamax vessels the original locks could not handle -- the basis for the unknown_at_t0 long-term nuance."
+    },
+    {
+      "id": "src-08",
+      "title": "Panama Canal Expansion - Third Locks",
+      "author_or_institution": "GlobalSecurity.org",
+      "date": "Continually updated reference page",
+      "citation": "https://www.globalsecurity.org/military/facility/panama-canal-expansion.htm",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the approximately $5.2 billion cost and 2016 completion date of the Third Set of Locks expansion project, and the reason it was undertaken (original locks too small for modern container ships)."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "karluk-expedition-1914",
+  "title": "The Karluk Disaster: Cross Together or Split for Help? (1914)",
+  "case_type": ["survival", "exploration"],
+  "fame_level": "lesser_known",
+  "pilot_batch": "LOW_FAME_STRESS_TEST",
+  "era": "Canadian Arctic Expedition, 1913-1914",
+  "location": "Wrangel Island, Chukchi Sea, off the Siberian coast",
+  "actors": [
+    { "name": "Robert Bartlett", "role": "Captain of the Karluk, in command of the survivors after the sinking" },
+    { "name": "Kataktovik", "role": "Inupiat hunter hired at Cape Smythe, Alaska; Bartlett's sole companion on the crossing to Siberia" },
+    { "name": "William Laird McKinlay", "role": "Expedition meteorologist, survivor at Wrangel Island, later author of a detailed memoir of the disaster" },
+    { "name": "Alistair Forbes Mackay", "role": "Expedition surgeon (Shackleton Antarctic expedition veteran); left the main group independently with three others and was never found" },
+    { "name": "Vilhjalmur Stefansson", "role": "Expedition leader; had left the Karluk in September 1913 on a hunting trip before it drifted away trapped in the ice, and was not present for the events at Wrangel Island" }
+  ],
+  "t0": {
+    "definition": "The moment in mid-to-late March 1914, after Bartlett has led the surviving party across weeks of brutal, relay-sledged travel over broken pack ice to reach Wrangel Island, when he must decide how the remaining group will attempt to reach outside help: take the whole surviving party onward across the sea ice to the Siberian mainland together, or leave the main body at Wrangel Island (where driftwood and some game were available) while he and a single companion make a faster, lighter attempt to reach Siberia and organize a rescue.",
+    "date": "Mid-to-late March 1914; Bartlett and Kataktovik departed Wrangel Island for Siberia on March 18, 1914",
+    "location": "Wrangel Island, and the sea ice of the Chukchi Sea/Long Strait between Wrangel Island and the Siberian coast"
+  },
+  "stakes": "By this point the expedition had already lost 8 of 25 people (a 4-man party sent ahead as trailbreakers, and a separate 4-man group that struck out on its own) in the weeks-long crossing from the wreck site to Wrangel Island. No one outside the expedition knew the Karluk's survivors had reached Wrangel Island at all -- the ship had been reported missing, with its last known position far to the east, months earlier. Whatever was decided next would determine whether the remaining roughly 17 survivors could realistically be found and rescued before their food and health gave out.",
+  "known_at_t0": [
+    { "statement": "The Karluk sank on January 11, 1914, after being crushed in pack ice in the Chukchi Sea; the survivors had already relayed supplies and traveled by stages across broken, pressure-ridged sea ice to reach Wrangel Island.", "evidence_class": "FACT" },
+    { "statement": "A 4-man advance/trailbreaking party sent out under First Officer Alexander Anderson on January 21, 1914 had not been seen again since; their fate was unknown at T0 (their remains were found a decade later, in 1924, on nearby Herald Island).", "evidence_class": "FACT" },
+    { "statement": "A separate group of four (ship's surgeon Alistair Mackay, oceanographer James Murray, anthropologist Henri Beuchat, and seaman Stanley Morris) had left the shipwreck-camp party on their own initiative in early February 1914, over Bartlett's objections, refusing his offer of a search/support party; they too had not been seen again by T0.", "evidence_class": "FACT" },
+    { "statement": "The crossing from the wreck site to Wrangel Island itself had required navigating pressure ridges up to 100 feet high and left the surviving party exhausted, with several men suffering injuries.", "evidence_class": "FACT" },
+    { "statement": "No government, ship captain, or family member outside the expedition knew that the Karluk's survivors had reached Wrangel Island; the ship had last been reported drifting in the ice far to the east months earlier, and expedition leader Vilhjalmur Stefansson (who had left the ship in September 1913 before it drifted away) had already reported it missing to Canadian officials.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "Wrangel Island itself offered some subsistence resources -- driftwood for fuel and shelter material, and game (seals, polar bears, birds) that an experienced hunter could pursue -- unlike the open sea ice.", "evidence_class": "FACT" },
+    { "statement": "Bartlett's original plan, announced immediately after the sinking, had been to lead the whole party first to Wrangel Island and then onward together to the Siberian mainland.", "evidence_class": "FACT" },
+    { "statement": "The Inupiat hunter Kataktovik, hired at Cape Smythe, Alaska before the Karluk became trapped in ice, was experienced in long-distance sea-ice travel and dog-sledge navigation, unlike most of the ship's company (scientists, sailors, and officers with little or no Arctic field experience).", "evidence_class": "FACT" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "Bartlett and Kataktovik would take six weeks to cross the sea ice and reach the Siberian coast (landfall near Cape Jakan around April 4, 1914), then continue overland along the coast before finally reaching a whaling ship and, eventually, Alaska -- a journey whose outcome was entirely unknown when they set out.", "evidence_class": "FACT" },
+    { "statement": "Three more members of the party that remained at Wrangel Island (Bjarne Mamen, George Malloch, and George Breddy) would die during Bartlett's roughly six-month absence, before rescue arrived.", "evidence_class": "FACT" },
+    { "statement": "The eventual rescue would not come until September 7, 1914 -- almost eight months after the sinking -- when the schooner King and Winge reached Wrangel Island and took off the 14 surviving members of the main party; an earlier relief attempt by the U.S. Revenue Cutter Bear had been unable to reach the island due to ice.", "evidence_class": "FACT" },
+    { "statement": "The fate of both the Anderson trailbreaking party and the Mackay/Murray/Beuchat/Morris group would never be conclusively established beyond the 1924 discovery of the Anderson party's remains on Herald Island; the Mackay group's fate remains unknown to this day.", "evidence_class": "FACT" },
+    { "statement": "Decades later, historians researching newly available correspondence (including Bartlett's private letters and the papers of expedition scientist Rudolph Anderson) would conclude that both Bartlett and expedition leader Stefansson bore significant, contested responsibility for the underlying decisions that put the Karluk into the ice in the first place -- a reassessment not available to anyone judging Bartlett's conduct at Wrangel Island in 1914.", "evidence_class": "INFERENCE" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Lead the whole surviving party onward across the sea ice to Siberia together",
+      "description": "Continue Bartlett's original plan: have the entire remaining group of roughly 17 survivors -- including several exhausted or injured members with little Arctic experience -- attempt the further sea-ice crossing from Wrangel Island to the Siberian mainland as one body.",
+      "upside": "Keeps the group together under its most experienced Arctic leader rather than leaving the majority to an indefinite, unsupervised wait; more hands are available for trail-breaking, hauling sledges, and building shelter; if the crossing succeeds, everyone reaches safety at once rather than the main party depending entirely on a rescue mission someone else must first complete.",
+      "why_it_made_sense": "Bartlett had already told the men this was the plan when the ship sank, and it avoided the risk of abandoning weaker members on a remote island indefinitely with no certainty that a two-man rescue attempt would succeed or that any relief expedition would ever be sent to that exact, unreported location.",
+      "downside": "The party had just barely survived a shorter, similarly brutal crossing to reach Wrangel Island, during which two separate smaller groups (8 men total) had already vanished; adding many inexperienced, exhausted, or injured people to a further, longer sea-ice crossing risked losing the whole party at once if the ice broke up or conditions turned, with no one left to alert the outside world at all.",
+      "risk_carried": "If the group crossing failed partway -- through open water, a storm, or exhaustion -- there would be no fallback: everyone who might have informed the outside world of the party's location and fate would be lost together."
+    },
+    {
+      "id": "option_b",
+      "label": "Split the party: Bartlett and one companion go for help, the rest wait at Wrangel Island",
+      "description": "Leave the bulk of the surviving party at Wrangel Island, where driftwood and some huntable game were available, while Bartlett and the most experienced remaining traveler, the Inupiat hunter Kataktovik, made a fast, lightly-equipped attempt to reach the Siberian mainland and organize an outside rescue.",
+      "upside": "A small, experienced two-person team could move far faster and more nimbly across dangerous, shifting ice than a large group burdened with injured or inexperienced members; it left the weaker survivors at a location with at least some subsistence resources rather than force-marching them across further hazardous ice; it created a real chance that news of the party's exact location could reach the outside world at all, since nobody currently knew where they were.",
+      "why_it_made_sense": "Given how many of the ship's company had no meaningful Arctic field experience, and given how narrowly the party had survived the shorter crossing already, Bartlett judged that sending the most capable pair for help, rather than force-marching everyone across more of the same terrain, gave the best realistic chance of getting anyone to safety.",
+      "downside": "It left roughly 15 survivors, including injured and inexperienced members, waiting at a remote island for an indefinite period with limited supplies and no communication, entirely dependent on a rescue attempt whose success was completely unknown at the moment Bartlett departed; if Bartlett and Kataktovik had died on the crossing, no one would have known where to look for the remaining party at all.",
+      "risk_carried": "The two-man crossing itself was extraordinarily hazardous -- roughly six weeks across moving pack ice with no backup -- and the group left behind faced months of uncertain waiting with no guarantee that help, once summoned, could reach them before supplies, health, or morale gave out."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "Captain Robert Bartlett",
+    "decided_when": "Decided during or shortly after the party's arrival at Wrangel Island in mid-March 1914; Bartlett and Kataktovik departed for Siberia on March 18, 1914",
+    "stated_basis": "According to Bartlett's and survivor William Laird McKinlay's later accounts, Bartlett revised his original plan of taking everyone to Siberia together after the ordeal of the first sledging attempts made clear that most of the men, being inexperienced and in some cases injured, could not safely make the further crossing; sending himself and the most experienced traveler, Kataktovik, for help was judged the more realistic way to get anyone to safety.",
+    "constraints": "Bartlett could draw only on the survivors and supplies already on hand; no outside contact, resupply, or advance knowledge of ice or weather conditions on the Siberian side was available; the decision had to be made in the immediate aftermath of a party that had already lost 8 of its original 25 members to two earlier, less organized attempts to travel across the same sea ice."
+  },
+  "decision_quality": {
+    "rating": "REASONABLE",
+    "justification": "Splitting off the most experienced, fittest pair to seek help while leaving the majority at a location with at least some subsistence resources was a defensible response to the concrete, recent evidence that large or inexperienced groups attempting this sea ice were being lost. It is not rated STRONG because the decision also left roughly 15 people, several already weakened, on a remote island for an open-ended period with no verified communication plan and no certainty that the two-man crossing would succeed at all -- a risk historians (including a detailed 2017/2018 academic reassessment by Janice Cavell) have judged Bartlett did too little to mitigate, including his choice not to more forcefully stop the earlier, similarly independent departure of the Mackay group."
+  },
+  "outcome_quality": {
+    "rating": "MIXED",
+    "justification": "Bartlett and Kataktovik's crossing succeeded and did lead to an eventual, real rescue -- a good outcome for the majority of the remaining party. But the outcome was not simply good: three more people (Mamen, Malloch, and Breddy) died at Wrangel Island during the roughly six-month wait for rescue, and the rescue itself took until September 1914, with an earlier relief ship (the Bear) unable to reach the island at all. Combined with the 8 people already lost before T0, 11 of the original 25 expedition members died in total."
+  },
+  "outcome": {
+    "immediate": "Bartlett and Kataktovik reached the Siberian coast near Cape Jakan around April 4, 1914 after roughly six weeks on the ice, then traveled overland along the coast before eventually reaching a whaling ship and the outside world. Word of the survivors' location reached rescue authorities, but ice conditions prevented the first relief ship (the U.S. Revenue Cutter Bear) from reaching Wrangel Island for months.",
+    "long_term": "The schooner King and Winge finally reached Wrangel Island on September 7, 1914 and rescued the 14 remaining survivors, who returned to Nome, Alaska with Bartlett shortly after. The disaster became the subject of a decades-long, still-unresolved dispute between Bartlett and expedition leader Vilhjalmur Stefansson over responsibility for the underlying decisions that had put the Karluk into the ice, a dispute later re-examined by historians using archival correspondence not available to the public at the time.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Why Mackay, Murray, Beuchat, and Morris left the main party independently in early February 1914",
+      "description": "Survivor accounts and later historians do not agree on the group's exact motive -- accounts cite factional resentment of Bartlett's authoritarian leadership, fear of the ice drifting the shipwreck camp further from land, and (in at least one account) drug use by Mackay -- and Bartlett's own later description of them as effectively already doomed when they left is itself a retrospective, not a contemporaneous, judgment. This repository does not treat any single motive as settled and does not use this episode as the case's T0 decision, since it was not a deliberate two-option choice Bartlett made but an independent departure he did not authorize and only partly tried to dissuade."
+    },
+    {
+      "topic": "How much responsibility Bartlett bears for the disaster overall",
+      "description": "Accounts range from portraying Bartlett as an unambiguous hero (Jennifer Niven's popular history) to a harsh critic who calls his handling of the ship reckless (William R. Hunt's biography of Stefansson) to a more recent, source-based reassessment (Janice Cavell, Journal of the Hakluyt Society, 2017/2018) concluding that both Bartlett and Stefansson share serious, if different, responsibility. This case restricts its T0 and options to the narrower, well-documented decision at Wrangel Island rather than adjudicating the broader responsibility dispute."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 62,
+      "rationale": "A viewer given the known_at_t0 facts (two earlier group departures already lost, no one outside knows the party's location, Wrangel Island has some subsistence resources) can reason toward either option, but the case requires more front-loaded context than the strongest cases in this project to make clear why 'keep everyone together' was a real option rather than an obvious mistake -- the two prior fatal splits could easily be read by a viewer as already answering the question ('splitting doesn't work'), which risks nudging the choice rather than leaving it genuinely open. This is a meaningfully lower score than the curated batch's strongest cases, and that gap is itself an honest finding for this stress test."
+    },
+    "dilemma_balance": {
+      "score": 55,
+      "rationale": "Because two earlier attempts by smaller, less-prepared groups to cross this same ice ended in disappearance, a viewer may reasonably feel 'send the most experienced two-person team' is the visibly safer-sounding option even before knowing the outcome, which unbalances the dilemma somewhat compared to a true coin-flip framing. The case is honestly scored lower here rather than inflated to look more balanced than it is."
+    },
+    "context_compression": {
+      "score": 50,
+      "rationale": "This case requires establishing several load-bearing facts before the dilemma lands -- the ship already sank, two earlier groups already vanished trying similar crossings, and nobody outside knows where the survivors are -- which takes noticeably longer than 5-10 seconds to set up cleanly for a zero-background viewer. This is a real cost of choosing a genuinely obscure, structurally messy historical episode rather than a famous, pre-simplified one."
+    },
+    "reveal_payoff": {
+      "score": 58,
+      "rationale": "The reveal that three more people died waiting at Wrangel Island during the six-month gap before rescue, and that the disaster fed a decades-long, still-disputed blame fight between Bartlett and Stefansson, is a genuine, honestly-sourced complication rather than a clean triumph -- but it is a quieter, more ambiguous payoff than the sharpest reveals in the curated batch, since there is no single vivid near-miss moment and the 'MIXED' outcome resists a tidy takeaway."
+    }
+  },
+  "production_verdict": {
+    "status": "WEAK",
+    "reasoning": "The underlying history is real and well-documented (strong primary and academic sourcing, including a rigorous 2017/2018 archival reassessment), and Bartlett's March 1914 decision to split the party is a genuine, deliberate two-option choice rather than pure chaos. But the broader episode surrounding it is exactly as messy as the brief warned it might be: two earlier, less-authorized group departures already ended fatally before T0, which both complicates a clean context-compression pitch and pre-tilts the dilemma's apparent balance toward 'splitting off a small expert team is safer,' undercutting player_fairness and dilemma_balance relative to the curated batch. This case is honestly closer to a borderline call than a confident VIABLE; it is being delivered as WEAK rather than forced upward, and its low fame does appear to correlate here with the raw material being genuinely harder to compress into a clean, untilted A/B than the curated batch's cases."
+  }
+}

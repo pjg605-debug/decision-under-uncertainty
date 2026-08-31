@@ -1,0 +1,75 @@
+{
+  "case_id": "seikanron-debate-1873",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Saigo Takamori (biographical entry)",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/biography/Saigo-Takamori",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Core sequence: Saigo's proposal to go to Korea as envoy and provoke his own assassination as grounds for war, the Emperor's approval on August 18, 1873, the returning officials' opposition, the reversal, and Saigo's resignation along with roughly 100 Imperial Guard officers; the connection to Saigo's later military academies and the Satsuma Rebellion."
+    },
+    {
+      "id": "src-02",
+      "title": "1-8 Okubo Toshimichi's Opinion on Constitutional Government",
+      "author_or_institution": "National Diet Library of Japan, 'Modern Japan in Archives' digital exhibit",
+      "date": "Digital exhibit compiling and describing 1873-era documents",
+      "citation": "https://www.ndl.go.jp/modern/e/cha1/description08.html",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Okubo Toshimichi's own written reasoning (the '7 Points Document') that an expedition against Korea was premature given Japan's unfinished internal modernization, cited from the National Diet Library's archival description of the period's key documents."
+    },
+    {
+      "id": "src-03",
+      "title": "Seikanron",
+      "author_or_institution": "Japanese Wiki Corpus (English-language digest of Japanese-language historical reference material, used for date cross-checking and discovery)",
+      "date": "Continually maintained reference page",
+      "citation": "https://www.japanesewiki.com/history/Seikanron.html",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on exact dates: the August 1873 cabinet decision, Iwakura's October 23 written opinion to the Emperor requesting postponement, and the sequence of resignations (Saigo October 23; Itagaki, Goto, Eto, and Soejima October 24, accepted October 25, 1873)."
+    },
+    {
+      "id": "src-04",
+      "title": "Seikanron",
+      "author_or_institution": "Wikipedia (used for discovery/orientation and cross-checking against Britannica and the National Diet Library sources)",
+      "date": "Continually updated",
+      "citation": "https://en.wikipedia.org/wiki/Seikanron",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "General framing of the debate's two factions and their stated reasoning, and the historiographical note (attributed in the article to modern scholarship) that Saigo's envoy proposal may have partly been aimed at winning over Itagaki Taisuke rather than reflecting a single settled motive."
+    },
+    {
+      "id": "src-05",
+      "title": "The Last Samurai: The Life and Battles of Saigo Takamori",
+      "author_or_institution": "Mark Ravina",
+      "date": "2004",
+      "citation": "Ravina, M. (2004). The Last Samurai: The Life and Battles of Saigo Takamori. John Wiley & Sons.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Academic biographical reassessment (referenced via secondary discussion, given source access constraints) arguing Saigo's stated willingness to be assassinated in Korea may have been partly a rhetorical and political maneuver within the Council of State debate rather than a simple, singular intent to provoke war -- the basis for this case's source_disagreements entry on Saigo's true motive."
+    },
+    {
+      "id": "src-06",
+      "title": "Meiji roku-nen no Seihen (Coups of 1873)",
+      "author_or_institution": "Japanese Wiki Corpus (English-language digest of Japanese-language historical reference material)",
+      "date": "Continually maintained reference page",
+      "citation": "https://www.japanesewiki.com/history/Meiji%20roku-nen%20no%20Seihen%20(Coups%20of%201873).html",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the broader political crisis of 1873 ('Meiji Six Political Crisis'), the roles of Iwakura and Sanjo Sanetomi, and the connection between the 1873 resignations and subsequent uprisings including Eto Shimpei's 1874 Saga Rebellion."
+    },
+    {
+      "id": "src-07",
+      "title": "Satsuma Rebellion",
+      "author_or_institution": "Wikipedia (used for discovery/orientation on the 1877 rebellion's connection to the 1873 resignations)",
+      "date": "Continually updated",
+      "citation": "https://en.wikipedia.org/wiki/Satsuma_Rebellion",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the outline of the 1877 Satsuma Rebellion, its origin in the private military academies Saigo established in Satsuma after 1873, and Saigo's death in the rebellion, used only for corroboration of the long-term outcome alongside the Britannica biographical entry."
+    }
+  ]
+}

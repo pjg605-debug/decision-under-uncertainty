@@ -1,0 +1,75 @@
+{
+  "case_id": "karluk-expedition-1914",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Vilhjalmur Stefansson, Robert Bartlett, and the Karluk Disaster: A Reassessment",
+      "author_or_institution": "Janice Cavell, The Journal of the Hakluyt Society",
+      "date": "January 2017 (revised April 2018)",
+      "citation": "Cavell, J. (2017, rev. 2018). 'Vilhjalmur Stefansson, Robert Bartlett, and the Karluk Disaster: A Reassessment.' The Journal of the Hakluyt Society. https://www.hakluyt.com/downloadable_files/Journal/Karluk.pdf",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "The core sequence used for this case's T0 and options: Bartlett's original plan to lead the whole party to Siberia, his revision after the first sledging attempts to take only Kataktovik, the independent Mackay/Murray/Beuchat/Morris departure and Bartlett's response to it, the deaths of Mamen, Malloch, and Breddy at Wrangel Island during Bartlett's absence, and the range of historian assessments of Bartlett's and Stefansson's responsibility. Based on the Peary Papers, the Anderson Papers, and the Stefansson Collection at Dartmouth College Library."
+    },
+    {
+      "id": "src-02",
+      "title": "Last voyage of the Karluk",
+      "author_or_institution": "Wikipedia (used for discovery/orientation and cross-checking dates against academic and archival sources)",
+      "date": "Continually updated",
+      "citation": "https://en.wikipedia.org/wiki/Last_voyage_of_the_Karluk",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the sinking date (January 11, 1914), the death toll (11 of 25), and the September 1914 rescue timeline; used only to orient research, with load-bearing facts corroborated against the Cavell academic article and the Hakluyt Society journal source below."
+    },
+    {
+      "id": "src-03",
+      "title": "The Journeys: The Wrangel Island Saga -- The Karluk Disaster",
+      "author_or_institution": "Dartmouth College Library (Stefansson Collection digital exhibit)",
+      "date": "Digital exhibit, drawing on the Stefansson Collection held at Dartmouth",
+      "citation": "https://journeys.dartmouth.edu/thewrangelislandsaga/the-karluk-disaster-2/",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "Confirms the sinking date and location, the establishment of Shipwreck Camp, and the multi-party movement of survivors toward Wrangel Island by mid-March 1914."
+    },
+    {
+      "id": "src-04",
+      "title": "The Karluk Disaster",
+      "author_or_institution": "Heritage Newfoundland and Labrador (Memorial University of Newfoundland)",
+      "date": "Continually maintained reference article",
+      "citation": "https://www.heritage.nf.ca/articles/exploration/karluk-disaster.php",
+      "source_type": "UNIVERSITY_RESEARCH",
+      "evidence_class": "FACT",
+      "supported_claim": "Background on Bartlett's Newfoundland origins and general chronology cross-check of the disaster and rescue."
+    },
+    {
+      "id": "src-05",
+      "title": "Karluk: The Great Untold Story of Arctic Exploration",
+      "author_or_institution": "William Laird McKinlay (expedition meteorologist and survivor)",
+      "date": "1976",
+      "citation": "McKinlay, W. L. (1976). Karluk: The Great Untold Story of Arctic Exploration. St. Martin's Press.",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Survivor's own account (referenced and quoted within the Cavell academic reassessment, src-01) of Bartlett's stated reasoning for revising the plan to take only Kataktovik to Siberia rather than the whole party, and of conditions during the wait at Wrangel Island."
+    },
+    {
+      "id": "src-06",
+      "title": "The Last Voyage of the Karluk",
+      "author_or_institution": "Robert A. Bartlett (with Ralph T. Hale)",
+      "date": "1916 (3rd edition 1928)",
+      "citation": "Bartlett, R. A. & Hale, R. T. (1916/1928). The Last Voyage of the Karluk. Boston: Hale, Cushman and Flint.",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Bartlett's own published narrative of the sinking, the crossing to Wrangel Island, and his decision to proceed to Siberia with Kataktovik; used as quoted and contextualized within the Cavell academic reassessment (src-01), which also flags where Bartlett's published account diverges from other evidence."
+    },
+    {
+      "id": "src-07",
+      "title": "Karluk (ship) -- overview and expedition route",
+      "author_or_institution": "Wikipedia (used for discovery/orientation)",
+      "date": "Continually updated",
+      "citation": "https://en.wikipedia.org/wiki/Karluk_(ship)",
+      "source_type": "WIKIPEDIA_DISCOVERY",
+      "evidence_class": "FACT",
+      "supported_claim": "Cross-check on the Canadian Arctic Expedition's original planned route (rendezvous at Herschel Island) and the overall death toll figures, used only for orientation and corroborated against the Cavell academic source."
+    }
+  ]
+}

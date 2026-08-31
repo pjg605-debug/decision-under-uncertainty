@@ -1,0 +1,114 @@
+{
+  "id": "panama-canal-design-1906",
+  "title": "Panama Canal: Sea-Level vs. Lock Canal (1906)",
+  "case_type": ["science", "industry"],
+  "fame_level": "lesser_known",
+  "pilot_batch": "LOW_FAME_STRESS_TEST",
+  "era": "Progressive Era U.S. engineering, 1905-1906",
+  "location": "Washington D.C., USA / Isthmus of Panama",
+  "actors": [
+    { "name": "Theodore Roosevelt", "role": "President of the United States, final recommender to Congress" },
+    { "name": "John Frank Stevens", "role": "Chief Engineer of the Panama Canal (1905-1907), advocate for the lock-and-lake design" },
+    { "name": "Henry L. Abbot", "role": "Retired U.S. Army brigadier general, member of the Board of Consulting Engineers, principal author of the 5-member minority report favoring a lock canal" },
+    { "name": "Alfred Noble", "role": "Civil engineer, member of the Board of Consulting Engineers, signer of the minority (lock canal) report" },
+    { "name": "George W. Davis", "role": "Chairman of the Board of Consulting Engineers, Isthmian Canal Commission member, sided with the 8-member sea-level majority" },
+    { "name": "William Barclay Parsons", "role": "Engineer, member of the Board of Consulting Engineers, sided with the sea-level majority" }
+  ],
+  "t0": {
+    "definition": "The moment in early 1906 when the international Board of Consulting Engineers, convened by the Isthmian Canal Commission, has split — an 8-member majority (including most of the European members) has recommended a sea-level canal; a 5-member minority (all American engineers, principal drafter Henry L. Abbot) has instead recommended a lock-and-lake canal — and chief engineer John Stevens has endorsed the minority view. President Roosevelt must decide which design to recommend to Congress, which will then vote, before any large-scale excavation strategy is locked in.",
+    "date": "Board reports submitted January 1906; Roosevelt's message to Congress endorsing the lock canal delivered February 19, 1906; U.S. Senate votes 36-31 to approve the lock canal on June 21, 1906",
+    "location": "Washington D.C. (decision); Isthmus of Panama (site under study)"
+  },
+  "stakes": "The choice would set the canal's engineering approach for the rest of construction: a wrong or overly optimistic call risked years of wasted excavation, a structure vulnerable to catastrophic failure (landslide or dam/lock collapse), or a canal that could not be completed at all within a politically and financially sustainable timeframe. The prior French effort under Ferdinand de Lesseps (1881-1889) had already collapsed financially and organizationally after committing to a sea-level design that proved unworkable in Panama's terrain, so the credibility of the entire U.S. undertaking was riding on getting this choice right.",
+  "known_at_t0": [
+    { "statement": "The Board of Consulting Engineers, convened by the Isthmian Canal Commission and including both American and European members, voted 8-5 in its formal report to recommend a sea-level canal without locks.", "evidence_class": "FACT" },
+    { "statement": "The 5-member minority report, principally drafted by retired Army engineer Henry L. Abbot and signed by Alfred Noble, Frederic P. Stearns, Joseph Ripley, and Isham Randolph (all American members of the board), recommended a lock-and-lake canal using a dam across the Chagres River at Gatun to create an elevated lake.", "evidence_class": "FACT" },
+    { "statement": "Chief Engineer John Stevens, who had toured the excavation at Culebra (the narrow mountain pass later called Gaillard Cut) and studied progress reports from the ongoing French and early American excavation there, publicly sided with the lock-canal minority against the board's own sea-level majority.", "evidence_class": "FACT" },
+    { "statement": "A sea-level canal would require cutting a channel roughly 45 feet deep through the Continental Divide at Culebra — far more excavation than a lock canal, which could hold the summit level much higher inside an artificial lake and thus require a shallower cut.", "evidence_class": "FACT" },
+    { "statement": "The rock and clay at Culebra were known, from both French-era and ongoing American excavation experience, to be geologically unstable and prone to slides when cut into a steep, deep channel; a sea-level design's much deeper, steeper cut through this material was judged by the minority to carry substantially higher landslide risk than a shallower lock-canal cut.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "The Chagres River, which crosses the canal route, floods heavily in the rainy season; a sea-level canal would need it diverted or tamed by other means to avoid periodically flooding and silting the channel, whereas a lock-and-lake design could use the Chagres itself, dammed at Gatun, as the water source for the summit lake and for operating the locks.", "evidence_class": "CONTEMPORARY_BELIEF" },
+    { "statement": "The proposed lock canal required building three sets of locks of a scale (dimensions and lift) with no precedent in existing canal engineering anywhere in the world, along with the Gatun Dam, which would be one of the largest earth dams yet attempted.", "evidence_class": "FACT" },
+    { "statement": "The French Panama Canal Company under Ferdinand de Lesseps had committed to a sea-level design starting in 1881 and collapsed in 1889 after failing to control landslides at Culebra, cost overruns, and disease losses among workers, without completing the canal.", "evidence_class": "FACT" },
+    { "statement": "Secretary of War William Howard Taft, forwarding both reports to Roosevelt, noted that while a sea-level canal would in principle be preferable if cost and time were not obstacles, he judged the time and cost of building one at Panama 'in effect prohibitory.'", "evidence_class": "STATED_RATIONALE" },
+    { "statement": "Advocates of the sea-level design argued it required no lock machinery that could fail or be sabotaged, no dependency on a single dam whose failure could be catastrophic, and offered simpler, more permanent operation once built, following the precedent and prestige of the sea-level Suez Canal.", "evidence_class": "CONTEMPORARY_BELIEF" }
+  ],
+  "unknown_at_t0": [
+    { "statement": "The lock canal, as actually built, would perform successfully for the remainder of the 20th century and beyond, handling growing volumes of shipping without a catastrophic lock or dam failure.", "evidence_class": "FACT" },
+    { "statement": "By the late 20th and early 21st century, growing container-ship sizes ('post-Panamax' vessels) would outgrow the original 1914 lock chambers (about 305 x 33.5 meters), requiring Panama to build an entirely new, larger third set of locks, completed in 2016 at a cost of roughly $5.2 billion, to remain competitive for the largest modern ships.", "evidence_class": "FACT" },
+    { "statement": "Even the completed lock canal would still require substantial excavation and repeated widening of the Culebra (Gaillard) Cut, including a major landslide in 1913 that partially blocked the nearly finished channel before opening, and continued slide-related maintenance and widening projects for decades afterward.", "evidence_class": "FACT" },
+    { "statement": "Chief Engineer Stevens, despite his central role in winning the lock-canal argument and organizing construction logistics, would resign in February 1907 — a year after the design decision — before the canal's excavation was completed, for reasons that remain debated among historians.", "evidence_class": "FACT" }
+  ],
+  "options": [
+    {
+      "id": "option_a",
+      "label": "Sea-level canal (majority recommendation)",
+      "description": "A canal at a single water level from ocean to ocean, without locks, following the model of the Suez Canal, requiring a much deeper and wider cut through the Culebra mountain pass and some means of controlling the Chagres River.",
+      "upside": "No lock machinery to build, maintain, operate, or potentially fail; simpler, more permanent, single-level design once complete; matched the prestigious precedent of the sea-level Suez Canal and avoided dependence on a single large dam.",
+      "downside": "Required vastly more excavation, especially through geologically unstable rock and clay at Culebra, with landslide risk that grew directly with cut depth; likely to take many more years and far more money than a lock canal, given the difficulty already demonstrated by the French effort; still needed some solution for the flooding Chagres River.",
+      "why_it_made_sense": "It followed the world's leading precedent for a modern interoceanic canal (Suez), avoided reliance on novel, unprecedented lock and dam engineering, and several of the board's most experienced international canal engineers judged it achievable and, in the long run, operationally superior.",
+      "risk_carried": "The Culebra cut, at the depth a sea-level design required, could suffer landslides severe enough to repeatedly block the channel or make maintaining sea-level depth impractical — a risk illustrated by the earlier French failure at the same site, and a risk that would still partially materialize even under the shallower lock-canal design that was ultimately chosen."
+    },
+    {
+      "id": "option_b",
+      "label": "Lock-and-lake canal (minority recommendation, backed by Stevens)",
+      "description": "A canal using a series of locks to raise ships to an artificial lake (Gatun Lake, created by damming the Chagres River) at roughly 85 feet above sea level, then lowering them again on the other side, requiring a shallower excavation through Culebra.",
+      "upside": "Required significantly less excavation at Culebra, reducing (though not eliminating) landslide exposure; used the Chagres River's own flow as a resource (impounded behind Gatun Dam) rather than a hazard to be diverted; judged achievable on a substantially faster construction timeline.",
+      "downside": "Depended on building locks and a dam at a scale with no prior precedent anywhere in canal engineering, introducing new categories of failure risk (lock mechanism failure, dam failure) that a sea-level canal would not have; locks add operational complexity and a maximum ship size limited by lock chamber dimensions, a constraint that would eventually require costly future expansion.",
+      "why_it_made_sense": "Chief Engineer Stevens, who had firsthand knowledge of how little progress decades of excavation (French and early American) had made against the unstable Culebra rock, judged a much shallower cut as the only realistic way to finish the canal in a workable timeframe; the design traded excavation risk for a different, but engineerable, category of risk (locks and dam) that American engineers on the minority board believed could be built to a high standard of safety.",
+      "risk_carried": "If the locks or the Gatun Dam failed or underperformed, the entire canal could be disabled at a single point of failure in a way a sea-level channel could not be; the design also permanently capped the maximum ship size the canal could handle, a constraint that history would eventually force Panama to address at large expense."
+    }
+  ],
+  "actual_decision": {
+    "chosen_option_id": "option_b",
+    "decided_by": "President Theodore Roosevelt, recommending to Congress; ratified by U.S. Senate vote",
+    "decided_when": "Roosevelt's message endorsing the lock canal was sent to Congress on February 19, 1906; the Senate voted 36-31 to approve the lock-canal plan on June 21, 1906",
+    "stated_basis": "Roosevelt and Secretary of War Taft judged that a sea-level canal, while in principle preferable if time and cost were not constraints, would take far longer and cost far more to build at Panama than a lock canal, given the demonstrated difficulty of excavating Culebra to greater depth; they credited Stevens' on-the-ground engineering judgment and the minority board members' technical case that locks and a dam were the more practically achievable path.",
+    "constraints": "Congress had to appropriate funds and pass legislation authorizing a specific design before large-scale excavation could proceed at full scale; the decision had to be made against the backdrop of the French Panama Canal Company's expensive and technically unresolved sea-level attempt, and under pressure to show tangible progress after early organizational problems on the American project."
+  },
+  "decision_quality": {
+    "rating": "REASONABLE",
+    "justification": "The decision followed a structured, technically-grounded process: a formal international board evaluation, a documented minority engineering report, on-the-ground assessment from the newly appointed chief engineer, and a public presidential message to Congress laying out the reasoning, followed by a full Senate vote. Roosevelt did not simply defer to the numerical board majority, but weighed the minority's specific technical argument (excavation risk and timeline at Culebra) against the majority's argument (operational simplicity, no novel dam/lock risk) and made an explicit, reasoned choice. It is not rated STRONG because the decision also required accepting a genuinely novel category of engineering risk (unprecedented locks and a very large dam) on a compressed evaluation timeline, and because the 36-31 Senate vote shows the case for the majority (sea-level) position was taken seriously by a large minority of decision-makers at the time, not settled beyond reasonable dispute in 1906."
+  },
+  "outcome_quality": {
+    "rating": "GOOD",
+    "justification": "The lock canal was completed in 1914, years ahead of what a sea-level design was projected to require, and operated for over a century without a catastrophic lock or dam failure — a strong practical vindication of the minority's engineering judgment. The outcome is not rated as an unqualified, permanent triumph: landslides at Culebra (including a major one in 1913) still had to be managed even under the shallower lock-canal cut, and the lock dimensions chosen in 1906 eventually became a real constraint, forcing a roughly $5.2 billion expansion project (completed 2016) to build a third, larger set of locks so the canal could handle modern container ships."
+  },
+  "outcome": {
+    "immediate": "Construction proceeded on the lock-and-lake design; the Panama Canal opened to traffic on August 15, 1914, roughly eight years after the design decision, using the Gatun, Pedro Miguel, and Miraflores locks and Gatun Lake as planned.",
+    "long_term": "The canal became one of the most heavily used and economically important waterways in the world for the rest of the 20th century, operated by the United States until full transfer to Panama in 1999. The original lock dimensions eventually became too small for the largest modern cargo ships, leading to the Panama Canal Authority's Third Set of Locks expansion project, completed in 2016, which added larger locks able to handle 'Neopanamax' vessels roughly three times the cargo capacity of the ships the 1914 locks were designed for.",
+    "causal_directness": "DIRECT"
+  },
+  "source_disagreements": [
+    {
+      "topic": "Exact composition of the majority and minority factions on the Board of Consulting Engineers",
+      "description": "Sources consistently agree on the 8-5 vote split and on the minority's five American members (Abbot, Noble, Stearns, Ripley, Randolph), but differ in how precisely they characterize the majority side's composition and how much weight to give to a common (but not universally repeated) claim that the sea-level majority was dominated by the board's European members while the lock-canal minority was entirely American; this repository treats the 8-5 vote and the five named minority members as the well-corroborated facts and treats the nationality-based characterization of the majority as a secondary, less rigorously sourced detail."
+    },
+    {
+      "topic": "Reasons for John Stevens' February 1907 resignation",
+      "description": "Historians differ on why Chief Engineer Stevens resigned roughly a year after winning the design argument and organizing the project's logistics and workforce — accounts vary between attributing it to the pressure and thanklessness of the job, friction with Washington oversight, and personal/financial motives; this repository does not treat any single explanation as settled fact."
+    }
+  ],
+  "has_progressive_version": false,
+  "quality_scores": {
+    "player_fairness": {
+      "score": 78,
+      "rationale": "A viewer given the known_at_t0 facts (sea-level requires a much deeper, landslide-prone cut; lock canal requires unprecedented dam/lock engineering; the French already failed trying sea-level at this exact site) has enough information to construct a real case for either side without needing hindsight. The case does require compressing real engineering trade-offs (excavation risk vs. novel-structure risk) that are less viscerally intuitive to a lay audience than, say, a military strike/no-strike choice, which caps this score somewhat below the strongest curated-batch cases."
+    },
+    "dilemma_balance": {
+      "score": 68,
+      "rationale": "Both options carry genuine, substantial engineering risk and had real expert backers (an 8-5 board split and a 36-31 Senate vote show this was not a lopsided call at the time). The score is not higher because in plain hindsight-free framing, 'avoid a huge, harder-to-fix excavation risk in exchange for a well-engineerable structure' can read as the more obviously prudent-sounding option to a modern viewer, even though sea-level had real, non-strawman advocates in 1906."
+    },
+    "context_compression": {
+      "score": 55,
+      "rationale": "The core dilemma (dig one flat channel vs. build locks and a lake) is visually simple, but making it land in 5-10 seconds requires the viewer to accept, with minimal setup, that 'more digging' is bad specifically because of landslide risk and timeline, and that 'building new machinery' is risky specifically because it is unprecedented — this needs slightly more front-loaded explanation than the strongest, single-image dilemmas in the curated batch."
+    },
+    "reveal_payoff": {
+      "score": 62,
+      "rationale": "The reveal that the chosen design worked for a century but was still eventually outgrown, requiring a new, larger set of locks in 2016, is a genuine and honestly-earned nuance rather than a simple 'good decision, good outcome forever' payoff. It is a moderate rather than dramatic payoff, though, since it lacks a single vivid near-miss moment (of the Arkhipov-submarine or B-59 type) — the payoff here is intellectual (permanence has limits) rather than a dramatic reveal."
+    }
+  },
+  "production_verdict": {
+    "status": "VIABLE",
+    "reasoning": "This case delivers a genuinely reconstructable, well-sourced, two-sided engineering dilemma with a precise T0 (the board's split report and Roosevelt's February 1906 message), real documented votes on both sides (8-5 board, 36-31 Senate) showing neither option was a strawman, and an honest, non-oversold long-term outcome (the lock canal worked for a century, then had to be substantially rebuilt). Its main weakness relative to the curated batch is that the trade-offs are more technical/engineering-flavored and take slightly more setup to land emotionally with a general audience than a life-or-death military or medical dilemma, which is reflected in a lower context_compression score."
+  }
+}
