@@ -1,0 +1,106 @@
+{
+  "case_id": "barry-marshall-self-experiment-1984",
+  "sources": [
+    {
+      "id": "src-01",
+      "title": "Helicobacter Connections (Nobel Lecture, December 8, 2005)",
+      "author_or_institution": "Barry J. Marshall",
+      "date": "2005",
+      "citation": "https://www.nobelprize.org/uploads/2018/06/marshall-lecture.pdf",
+      "source_type": "PRIMARY",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Marshall's own first-person account of the failed piglet animal-model study, the rejected 1983 conference abstract, his reasoning for bypassing the hospital ethics committee ('I decided to do it anyway using the don't ask don't tell strategy'), the day-by-day course of his illness after drinking the culture, the day-10 and day-14 endoscopy findings, his correction of the popular 'antibiotics on my wife's orders' story, and the commercial scale of the cimetidine/ranitidine market.",
+      "note": "The single richest primary source for this case; used for the majority of known_at_t0, unknown_at_t0, and source_disagreement entries."
+    },
+    {
+      "id": "src-02",
+      "title": "Unidentified curved bacilli on gastric epithelium in active chronic gastritis",
+      "author_or_institution": "J. Robin Warren and Barry J. Marshall",
+      "date": "1983",
+      "citation": "Warren, J. R.; Marshall, B. J. Lancet. 1983 Jun 4;1(8336):1273-1275.",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "First published report (as letters to the Lancet) of the association between spiral bacteria and chronic active gastritis, preceding the fuller 1984 paper and the self-experiment."
+    },
+    {
+      "id": "src-03",
+      "title": "Unidentified curved bacilli in the stomach of patients with gastritis and peptic ulceration",
+      "author_or_institution": "Barry J. Marshall and J. Robin Warren",
+      "date": "1984",
+      "citation": "Marshall, B. J.; Warren, J. R. Lancet. 1984;1(8390):1311-1315.",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "The roughly 100-patient ethics-committee-approved study finding the bacteria present in the large majority of patients with gastritis and peptic ulcer, the evidentiary basis Marshall had built before deciding on the self-experiment."
+    },
+    {
+      "id": "src-04",
+      "title": "Attempt to fulfil Koch's postulates for pyloric Campylobacter",
+      "author_or_institution": "Barry J. Marshall, J. A. Armstrong, D. B. McGechie, R. J. Glancy",
+      "date": "1985",
+      "citation": "Marshall, B. J.; Armstrong, J. A.; McGechie, D. B.; Glancy, R. J. Medical Journal of Australia. 1985;142(8):436-439.",
+      "source_type": "PRIMARY",
+      "evidence_class": "FACT",
+      "supported_claim": "The formal peer-reviewed publication of the self-experiment itself: the endoscopy/biopsy protocol, the clinical course, and the framing of the experiment as an attempt to fulfill Koch's postulates."
+    },
+    {
+      "id": "src-05",
+      "title": "NIH Consensus Conference: Helicobacter pylori in peptic ulcer disease",
+      "author_or_institution": "NIH Consensus Development Panel on Helicobacter pylori in Peptic Ulcer Disease",
+      "date": "1994",
+      "citation": "NIH Consensus Conference. Helicobacter pylori in peptic ulcer disease. JAMA. 1994 Jul 6;272(1):65-69. PMID: 8007082.",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "evidence_class": "FACT",
+      "supported_claim": "The 1994 U.S. National Institutes of Health consensus conference that formally endorsed antibiotic eradication therapy for H. pylori-associated peptic ulcer disease, marking the point of broad institutional acceptance roughly a decade after the self-experiment -- used to show the self-experiment did not settle the question alone."
+    },
+    {
+      "id": "src-06",
+      "title": "The Nobel Prize in Physiology or Medicine 2005 -- Press Release",
+      "author_or_institution": "The Nobel Assembly at Karolinska Institutet",
+      "date": "2005",
+      "citation": "https://www.nobelprize.org/prizes/medicine/2005/press-release/",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "Official citation and rationale for the 2005 Nobel Prize in Physiology or Medicine awarded jointly to Barry J. Marshall and J. Robin Warren 'for their discovery of the bacterium Helicobacter pylori and its role in gastritis and peptic ulcer disease,' and confirmation that broad clinical acceptance rested on the accumulated evidence built after 1984, not the self-experiment alone."
+    },
+    {
+      "id": "src-07",
+      "title": "Barry James Marshall--Discovery of Helicobacter pylori as a Cause of Peptic Ulcer",
+      "author_or_institution": "Robert A. Kyle, David P. Steensma, Marc A. Shampo",
+      "date": "2016",
+      "citation": "Kyle, R. A.; Steensma, D. P.; Shampo, M. A. Mayo Clinic Proceedings. 2016 May;91(5):e67-e68. PMID: 27150219.",
+      "source_type": "ACADEMIC",
+      "evidence_class": "FACT",
+      "supported_claim": "Peer-reviewed historical summary cross-checking the timeline of Marshall's career, the discovery, and the self-experiment against other secondary accounts."
+    },
+    {
+      "id": "src-08",
+      "title": "Barry J. Marshall",
+      "author_or_institution": "Encyclopaedia Britannica",
+      "date": "Continually updated reference entry",
+      "citation": "https://www.britannica.com/biography/Barry-J-Marshall",
+      "source_type": "REFERENCE",
+      "evidence_class": "FACT",
+      "supported_claim": "General biographical cross-check (dates, career posts, prizes) and a concise summary of the self-experiment and its significance."
+    },
+    {
+      "id": "src-09",
+      "title": "Gut Feeling",
+      "author_or_institution": "Lasker Foundation",
+      "date": "Historical essay, undated (Lasker Foundation archive)",
+      "citation": "https://laskerfoundation.org/gut-feeling/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Marshall's stated motivation for the self-experiment (failed animal experiments, inability to obtain trial funding without stronger evidence, his reasoning that he alone could give informed consent) and an account of the medical establishment's rejection of the theory before and its gradual acceptance after 1984."
+    },
+    {
+      "id": "src-10",
+      "title": "When Scientists Experiment on Themselves: H. pylori and Ulcers",
+      "author_or_institution": "Hanno Charisius, Scientific American (Guest Blog)",
+      "date": "2014",
+      "citation": "https://www.scientificamerican.com/blog/guest-blog/when-scientists-experiment-on-themselves-h-pylori-and-ulcers/",
+      "source_type": "QUALITY_MEDIA",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "Places the self-experiment in the broader history-of-medicine tradition of self-experimentation, records colleagues' contemporaneous reaction that the plan was 'completely insane,' and notes later research on H. pylori eradication being associated with rising rates of some allergic/autoimmune conditions -- the basis for the unknown_at_t0 entry on this later complication."
+    }
+  ]
+}
