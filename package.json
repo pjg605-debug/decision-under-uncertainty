@@ -12,6 +12,9 @@
     "test": "node --test tests/*.test.mjs",
     "db:seed:generate": "node scripts/generate-supabase-seed.mjs",
     "editorial": "node scripts/editorial-desk.mjs",
+    "claude:queue": "node scripts/claude-desk.mjs queue",
+    "claude:case": "node scripts/claude-desk.mjs case",
+    "claude:desk": "node scripts/claude-desk.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
   },

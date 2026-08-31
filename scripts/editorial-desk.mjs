@@ -13,7 +13,7 @@ const headers = {
   'content-type': 'application/json',
 };
 
-const request = async (path, init = {}) => {
+export const request = async (path, init = {}) => {
   const response = await fetch(
     `${baseUrl.replace(/\/$/, '')}/rest/v1/${path}`,
     {
@@ -26,8 +26,67 @@ const request = async (path, init = {}) => {
   return text ? JSON.parse(text) : null;
 };
 
-const rpc = (name, body) =>
+export const rpc = (name, body) =>
   request(`rpc/${name}`, { method: 'POST', body: JSON.stringify(body) });
+
+// Shared by the CLI below and scripts/claude-desk.mjs, so narrative
+// submission logic (versioning, revision linkage, status transition)
+// lives in exactly one place regardless of which agent calls it.
+export async function submitNarrativeVersion(payload) {
+  const existing = await request(
+    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&select=version&order=version.desc&limit=1`,
+  );
+  const version = (existing?.[0]?.version || 0) + 1;
+  const inserted = await request('narratives', {
+    method: 'POST',
+    headers: { prefer: 'return=representation' },
+    body: JSON.stringify({
+      ...payload.narrative,
+      case_id: payload.case_id,
+      version,
+      author_agent: payload.author_agent,
+      status: 'IN_REVIEW',
+      is_current: false,
+    }),
+  });
+  if (payload.triggered_by_review_id) {
+    await request('revisions', {
+      method: 'POST',
+      body: JSON.stringify({
+        case_id: payload.case_id,
+        narrative_id: inserted[0].id,
+        triggered_by_review_id: payload.triggered_by_review_id,
+        author_agent: payload.author_agent,
+        before_version: version - 1 || null,
+        after_version: version,
+        summary: payload.summary || 'Narrative revision submitted.',
+        changes: payload.changes || [],
+      }),
+    });
+  }
+  if (payload.case_key) {
+    await rpc('transition_case_status', {
+      p_case_key: payload.case_key,
+      p_to_status: payload.triggered_by_review_id
+        ? 'REVISION_DONE'
+        : 'NARRATIVE_DRAFTED',
+      p_actor_agent: payload.author_agent,
+      p_reason: payload.summary || `Narrative version ${version} submitted.`,
+    });
+  }
+  return inserted;
+}
+
+// Everything below is the CLI entry point. It only runs when this file is
+// executed directly (`node scripts/editorial-desk.mjs ...`), not when
+// another script (e.g. scripts/claude-desk.mjs) imports `request`/`rpc`
+// above to avoid duplicating this file's Supabase REST/RPC plumbing.
+const isMain = import.meta.url === `file://${process.argv[1]}`;
+if (isMain) {
+  await runCli();
+}
+
+async function runCli() {
 const args = process.argv.slice(2);
 const command = args.shift();
 const readJson = () => {
@@ -104,52 +163,11 @@ if (queueCommands[command]) {
   }
   print(review);
 } else if (command === 'submit-narrative-version') {
-  const payload = readJson();
-  const existing = await request(
-    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&select=version&order=version.desc&limit=1`,
-  );
-  const version = (existing?.[0]?.version || 0) + 1;
-  const inserted = await request('narratives', {
-    method: 'POST',
-    headers: { prefer: 'return=representation' },
-    body: JSON.stringify({
-      ...payload.narrative,
-      case_id: payload.case_id,
-      version,
-      author_agent: payload.author_agent,
-      status: 'IN_REVIEW',
-      is_current: false,
-    }),
-  });
-  if (payload.triggered_by_review_id) {
-    await request('revisions', {
-      method: 'POST',
-      body: JSON.stringify({
-        case_id: payload.case_id,
-        narrative_id: inserted[0].id,
-        triggered_by_review_id: payload.triggered_by_review_id,
-        author_agent: payload.author_agent,
-        before_version: version - 1 || null,
-        after_version: version,
-        summary: payload.summary || 'Narrative revision submitted.',
-        changes: payload.changes || [],
-      }),
-    });
-  }
-  if (payload.case_key) {
-    await rpc('transition_case_status', {
-      p_case_key: payload.case_key,
-      p_to_status: payload.triggered_by_review_id
-        ? 'REVISION_DONE'
-        : 'NARRATIVE_DRAFTED',
-      p_actor_agent: payload.author_agent,
-      p_reason: payload.summary || `Narrative version ${version} submitted.`,
-    });
-  }
-  print(inserted);
+  print(await submitNarrativeVersion(readJson()));
 } else {
   console.error(
     `Unknown command: ${command || '(none)'}\n\nCommands:\n  get-case-for-research [limit]\n  get-case-for-narrative [limit]\n  get-case-for-codex-review [limit]\n  get-revision-requests [limit]\n  transition <case-key> <status> <agent> [reason]\n  submit-review '<json>'\n  submit-narrative-version '<json>'`,
   );
   process.exit(1);
+}
 }
