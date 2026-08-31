@@ -1,0 +1,9 @@
+{
+  "case_id": "new-coke-1985",
+  "sources": [
+    {"id":"nc-e1","source_type":"company_history","title":"New Coke: The Most Memorable Marketing Blunder Ever?","author_or_institution":"The Coca-Cola Company","publication_date":"n.d.","url":"https://www.coca-colacompany.com/about-us/history/new-coke-the-most-memorable-marketing-blunder-ever","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["The company announced a formula replacement in April 1985","The original formula returned after 79 days","The change produced intense consumer reaction"]},
+    {"id":"nc-e2","source_type":"company_history","title":"1985: New Coke and Stranger Things","author_or_institution":"The Coca-Cola Company","publication_date":"2019","url":"https://www.coca-colacompany.com/about-us/history/coke-history-1985-new-coke-and-stranger-things","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["New Coke was withdrawn after 79 days following public outcry"]},
+    {"id":"nc-e3","source_type":"academic_case","title":"Launching New Coke","author_or_institution":"INSEAD","publication_date":"2000","url":"https://www.insead.edu/faculty-research/publications/case-studies/launching-new-coke","accessed_at":"2026-08-30","evidence_class":"FACT","supports":["The formula decision responded to Pepsi Challenge taste-test competition","The episode is a documented strategic and research-framing case"]},
+    {"id":"nc-e4","source_type":"academic_analysis","title":"New Coke, Mixture Perception, and the Flavor Balance Hypothesis","author_or_institution":"Journal of Business Research","publication_date":"1998","url":"https://www.sciencedirect.com/science/article/abs/pii/S0148296397002208","accessed_at":"2026-08-30","evidence_class":"INFERENCE","supports":["Sip-test preference and full-product consumption can measure different experiences","Taste evidence did not by itself resolve the replacement decision"]}
+  ]
+}
