@@ -3,3 +3,6 @@ project_id = "decision-under-uncertainty"
 [db.seed]
 enabled = true
 sql_paths = ["./seed.sql"]
+
+[functions.generate-judgment-article]
+verify_jwt = false
