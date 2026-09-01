@@ -75,4 +75,14 @@ test('site reader supports explicit and automatic failover modes', async () => {
   assert.match(source, /fetchPublishedArticlesFromAirtable/);
   assert.match(source, /for \(const article of airtableArticles\)/);
   assert.match(source, /for \(const article of supabaseArticles\)/);
+  assert.match(source, /for \(const article of bundledArticles\)/);
+});
+
+test('the prepared batch is bundled into the site without an external database', async () => {
+  const articles = JSON.parse(
+    await readFile(new URL('../data/articles/bundled-articles.json', import.meta.url), 'utf8'),
+  );
+  assert.equal(articles.length, 10);
+  assert.equal(new Set(articles.map((article) => article.slug)).size, 10);
+  assert.ok(articles.every((article) => article.id && article.version === 1 && article.published_at));
 });

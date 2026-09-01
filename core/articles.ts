@@ -1,3 +1,6 @@
+import bundledArticleData from '../data/articles/bundled-articles.json';
+import { fetchPublishedArticlesFromAirtable } from './airtable-articles.mjs';
+
 export type ArticleBlock =
   | { kind: 'heading'; text: string }
   | { kind: 'paragraph'; text: string }
@@ -167,6 +170,10 @@ const normalizeArticle = (row: Record<string, unknown>): Article => ({
     : [],
 });
 
+const bundledArticles = (bundledArticleData as unknown as Record<string, unknown>[]).map(
+  normalizeArticle,
+);
+
 export async function fetchPublishedArticles(): Promise<Article[]> {
   const url = process.env.SUPABASE_URL || '';
   const key = process.env.SUPABASE_ANON_KEY || '';
@@ -205,16 +212,17 @@ export async function fetchPublishedArticles(): Promise<Article[]> {
   }
 
   const merged = new Map<string, Article>();
+  for (const article of fallbackArticles) merged.set(article.slug, article);
+  for (const article of bundledArticles) merged.set(article.slug, article);
   for (const article of airtableArticles) merged.set(article.slug, article);
   for (const article of supabaseArticles) merged.set(article.slug, article);
   const articles = [...merged.values()].sort(
     (left, right) => Date.parse(right.published_at) - Date.parse(left.published_at),
   );
-  return articles.length ? articles : fallbackArticles;
+  return articles;
 }
 
 export async function fetchPublishedArticle(slug: string): Promise<Article | undefined> {
   const articles = await fetchPublishedArticles();
   return articles.find((article) => article.slug === slug);
 }
-import { fetchPublishedArticlesFromAirtable } from './airtable-articles.mjs';

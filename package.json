@@ -13,6 +13,7 @@
     "db:seed:generate": "node scripts/generate-supabase-seed.mjs",
     "airtable:seed": "node scripts/airtable-article-failover.mjs seed",
     "airtable:sync": "node scripts/airtable-article-failover.mjs sync-to-supabase",
+    "articles:bundle": "node scripts/generate-bundled-articles.mjs",
     "editorial": "node scripts/editorial-desk.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
