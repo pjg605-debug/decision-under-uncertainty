@@ -3,6 +3,7 @@ import { ExternalLink, FlaskConical, PenLine } from 'lucide-react';
 import ArticleHeader from '../../../components/article-header';
 import { fetchPublishedArticle } from '../../../core/articles';
 import { getResearchSourceDetail } from '../../../core/research-source-details';
+import { getThoughtExperimentGuide } from '../../../core/thought-experiment-guides';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,6 +42,7 @@ export default async function ArticlePage({ params }: Props) {
     dateStyle: 'long',
     timeZone: 'Asia/Seoul',
   }).format(new Date(article.published_at));
+  const thoughtGuide = getThoughtExperimentGuide(article.slug);
   return (
     <main className="min-h-screen bg-background text-foreground">
       <ArticleHeader backToArchive />
@@ -144,6 +146,33 @@ export default async function ArticlePage({ params }: Props) {
             <p className="mt-5 text-sm text-muted-foreground">
               {article.thought_experiment.reflection}
             </p>
+            {thoughtGuide ? (
+              <div className="mt-7 border-t pt-6">
+                <p className="eyebrow text-primary">사고실험 해설</p>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                  {thoughtGuide.issue}
+                </p>
+                <div className="mt-5 grid gap-3">
+                  {thoughtGuide.choiceNotes.map((note, index) => (
+                    <div
+                      key={note}
+                      className="rounded-xl bg-background p-4 text-sm leading-6"
+                    >
+                      <b className="mr-2 text-primary">
+                        {String.fromCharCode(65 + index)}.
+                      </b>
+                      <span className="text-muted-foreground">{note}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 rounded-xl border border-primary/25 bg-primary/5 p-4">
+                  <p className="text-sm font-semibold text-primary">결론</p>
+                  <p className="mt-2 text-sm leading-7">
+                    {thoughtGuide.conclusion}
+                  </p>
+                </div>
+              </div>
+            ) : null}
           </section>
           <section className="mt-6 rounded-[1.7rem] bg-foreground p-6 text-background sm:p-8">
             <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[.18em] opacity-60">
