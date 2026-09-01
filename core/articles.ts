@@ -170,26 +170,51 @@ const normalizeArticle = (row: Record<string, unknown>): Article => ({
 export async function fetchPublishedArticles(): Promise<Article[]> {
   const url = process.env.SUPABASE_URL || '';
   const key = process.env.SUPABASE_ANON_KEY || '';
-  if (!url || !key) return fallbackArticles;
+  const sourceMode = process.env.ARTICLE_SOURCE_MODE || 'auto';
+  const airtable = {
+    token: process.env.AIRTABLE_TOKEN || '',
+    baseId: process.env.AIRTABLE_BASE_ID || '',
+    tableId: process.env.AIRTABLE_ARTICLES_TABLE_ID || '',
+  };
+  const supabaseArticles: Article[] = [];
+  const airtableArticles: Article[] = [];
 
-  try {
-    const response = await fetch(
-      `${url.replace(/\/$/, '')}/rest/v1/articles?status=eq.PUBLISHED&is_current=eq.true&select=*&order=published_at.desc`,
-      {
-        headers: { apikey: key, Authorization: `Bearer ${key}` },
-        cache: 'no-store',
-      },
-    );
-    if (!response.ok) throw new Error(`Supabase articles request failed (${response.status}).`);
-    const rows = await response.json();
-    if (!Array.isArray(rows) || rows.length === 0) return fallbackArticles;
-    return rows.map(normalizeArticle);
-  } catch {
-    return fallbackArticles;
+  if (sourceMode !== 'airtable' && url && key) {
+    try {
+      const response = await fetch(
+        `${url.replace(/\/$/, '')}/rest/v1/articles?status=eq.PUBLISHED&is_current=eq.true&select=*&order=published_at.desc`,
+        {
+          headers: { apikey: key, Authorization: `Bearer ${key}` },
+          cache: 'no-store',
+        },
+      );
+      if (!response.ok) throw new Error(`Supabase articles request failed (${response.status}).`);
+      const rows = await response.json();
+      if (Array.isArray(rows)) supabaseArticles.push(...rows.map(normalizeArticle));
+    } catch {
+      // Airtable or bundled content remains available during a Supabase outage.
+    }
   }
+
+  if (sourceMode !== 'supabase' && airtable.token && airtable.baseId && airtable.tableId) {
+    try {
+      airtableArticles.push(...(await fetchPublishedArticlesFromAirtable(airtable)));
+    } catch {
+      // Bundled content is the final fail-closed reader fallback.
+    }
+  }
+
+  const merged = new Map<string, Article>();
+  for (const article of airtableArticles) merged.set(article.slug, article);
+  for (const article of supabaseArticles) merged.set(article.slug, article);
+  const articles = [...merged.values()].sort(
+    (left, right) => Date.parse(right.published_at) - Date.parse(left.published_at),
+  );
+  return articles.length ? articles : fallbackArticles;
 }
 
 export async function fetchPublishedArticle(slug: string): Promise<Article | undefined> {
   const articles = await fetchPublishedArticles();
   return articles.find((article) => article.slug === slug);
 }
+import { fetchPublishedArticlesFromAirtable } from './airtable-articles.mjs';

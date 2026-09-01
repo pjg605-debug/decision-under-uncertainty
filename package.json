@@ -11,6 +11,8 @@
     "start": "wrangler dev --config dist/server/wrangler.json",
     "test": "node --test tests/*.test.mjs",
     "db:seed:generate": "node scripts/generate-supabase-seed.mjs",
+    "airtable:seed": "node scripts/airtable-article-failover.mjs seed",
+    "airtable:sync": "node scripts/airtable-article-failover.mjs sync-to-supabase",
     "editorial": "node scripts/editorial-desk.mjs",
     "lint": "oxlint",
     "format": "oxfmt"

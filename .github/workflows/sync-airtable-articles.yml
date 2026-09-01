@@ -1,0 +1,32 @@
+name: Sync Airtable articles to Supabase
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-airtable-articles
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: vars.AIRTABLE_FAILOVER_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Copy pending Airtable articles into Supabase
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+          AIRTABLE_BASE_ID: ${{ vars.AIRTABLE_BASE_ID }}
+          AIRTABLE_ARTICLES_TABLE_ID: ${{ vars.AIRTABLE_ARTICLES_TABLE_ID }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/airtable-article-failover.mjs sync-to-supabase
