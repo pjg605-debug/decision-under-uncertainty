@@ -1,0 +1,36 @@
+name: Publish one judgment-training article
+
+on:
+  schedule:
+    - cron: '0 3,9,15,21 * * *'
+      timezone: 'Asia/Seoul'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-judgment-article
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Publish the oldest queued draft
+        env:
+          PUBLISH_URL: https://fnxbilbihakhqvxjmoqo.supabase.co/functions/v1/publish-next-article
+          PUBLISH_SECRET: ${{ secrets.GITHUB_PUBLISH_SECRET }}
+        run: |
+          set -euo pipefail
+          response_file="$(mktemp)"
+          status="$(curl --silent --show-error --output "$response_file" --write-out '%{http_code}' \
+            --request POST \
+            --header 'Content-Type: application/json' \
+            --header "x-publish-secret: $PUBLISH_SECRET" \
+            --data '{}' \
+            "$PUBLISH_URL")"
+          cat "$response_file"
+          test "$status" -ge 200
+          test "$status" -lt 300
