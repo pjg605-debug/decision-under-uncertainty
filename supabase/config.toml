@@ -6,3 +6,6 @@ sql_paths = ["./seed.sql"]
 
 [functions.generate-judgment-article]
 verify_jwt = false
+
+[functions.publish-next-article]
+verify_jwt = false
