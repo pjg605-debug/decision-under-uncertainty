@@ -74,7 +74,7 @@ Treat all items below as requiring live verification before mutation.
 - GitHub default branch `claude/decision-uncertainty-case-selection-9q6h5y` contains `.github/workflows/publish-judgment-article.yml` at commit `9e23d45...`. It publishes a queued draft and therefore must be replaced, not merely supplied with a secret.
 - A Codex heartbeat named `판단훈련 초안 매일 보충` may be active. It conflicts with the server-only timer requirement and should be removed or paused.
 - The local implementation branch is `codex/articles-site`. GitHub scheduled workflows run from the repository's default branch, so verify the default branch before testing.
-- Airtable failover code is present locally. In `auto` mode the reader merges both sources and prefers Supabase for duplicate slugs. `slug + version` is the recovery idempotency key. The Airtable base has not yet been created because four writable workspaces exist and no destination has been chosen. See `docs/AIRTABLE_FAILOVER.md`.
+- Airtable failover code is present locally. In `auto` mode the reader merges both sources and prefers Supabase for duplicate slugs. `slug + version` is the recovery idempotency key. The `Insight` workspace now contains base `Decision Articles Failover` (`appwRBRbocw1KUlHa`) and table `Articles` (`tblZGa8VwchQTAznx`) with ten `PUBLISHED / PENDING` records. Runtime activation still needs a narrowly scoped server-side Airtable token. See `docs/AIRTABLE_FAILOVER.md`.
 - Slack delivery is not configured because no workspace/channel destination has been provided. Do not guess a Slack channel. Once supplied, post only the article link and a short introduction.
 
 ## 7. Takeover sequence

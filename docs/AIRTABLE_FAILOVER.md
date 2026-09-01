@@ -6,6 +6,13 @@ Airtable is a temporary publishing source when Supabase management or data acces
 
 The system never copies Supabase credentials into Airtable. Tokens remain server-side environment variables or GitHub secrets.
 
+Current provisioned destination:
+
+- Workspace: `Insight`
+- Base: `Decision Articles Failover` (`appwRBRbocw1KUlHa`)
+- Table: `Articles` (`tblZGa8VwchQTAznx`)
+- Initial records: 10 articles, all `PUBLISHED / PENDING`
+
 ## Source policy
 
 - `ARTICLE_SOURCE_MODE=auto`: read both sources, merge by `slug`, and prefer the Supabase row when both stores contain the same slug.
@@ -41,12 +48,11 @@ Create one table named `Articles`. Use `Title` as the primary field.
 
 ## Activation
 
-1. Create the Airtable base and table, then record the base and table IDs.
-2. Add `AIRTABLE_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_ARTICLES_TABLE_ID`, and `ARTICLE_SOURCE_MODE=auto` to the hosted Site environment.
-3. Seed the prepared ten-article batch with `pnpm airtable:seed`.
-4. After Supabase returns, apply migration `202609010006_airtable_article_sync.sql`.
-5. Add the matching GitHub secrets/variables and set repository variable `AIRTABLE_FAILOVER_ENABLED=true`.
-6. Run the sync workflow manually once. It will then retry hourly at minute 17.
+1. Add a narrowly scoped `AIRTABLE_TOKEN`, the recorded base/table IDs, and `ARTICLE_SOURCE_MODE=auto` to the hosted Site environment.
+2. Seed future prepared batches with `pnpm airtable:seed`; the initial ten-article batch is already present.
+3. After Supabase returns, apply migration `202609010006_airtable_article_sync.sql`.
+4. Add the matching GitHub secrets/variables and set repository variable `AIRTABLE_FAILOVER_ENABLED=true`.
+5. Run the sync workflow manually once. It will then retry hourly at minute 17.
 
 Use `--dry-run` with either script command to count work without writing.
 
