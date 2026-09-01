@@ -15,6 +15,7 @@ const config = await readFile(new URL('../supabase/config.toml', import.meta.url
 test('server cron invokes the article generator every six hours', () => {
   assert.match(migration, /'0 \*\/6 \* \* \*'/);
   assert.match(migration, /net\.http_post/);
+  assert.match(migration, /timeout_milliseconds := 120000/);
   assert.match(migration, /article_generator_cron_secret/);
 });
 

@@ -110,7 +110,8 @@ select cron.schedule(
           where name = 'article_generator_cron_secret'
         )
       ),
-      body := jsonb_build_object('scheduled_at', now())
+      body := jsonb_build_object('scheduled_at', now()),
+      timeout_milliseconds := 120000
     ) as request_id;
   $cron$
 );
