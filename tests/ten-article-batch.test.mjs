@@ -34,16 +34,21 @@ test('batch contains ten distinct publishable articles', () => {
   assert.match(migration, /true, 'PUBLISHED'/);
 });
 
-test('every article includes practice and primary sources', () => {
+test('every article includes a study discussion and primary sources', () => {
   for (const article of articles) {
     assert.ok(article.content_blocks.length >= 10);
     assert.ok(article.practice.steps.length >= 4);
+    assert.equal(article.practice.minutes, 0);
     assert.ok(article.source_notes.length >= 2);
     assert.ok(article.source_notes.every((source) => source.url.startsWith('https://doi.org/')));
+    assert.ok(article.content_blocks.some((block) => /실험|연구|모형/.test(`${block.title ?? ''} ${block.text ?? ''}`)));
   }
+  assert.equal(new Set(articles.map((article) => article.thought_experiment.title)).size, 10);
   assert.equal((migration.match(/"thought_experiment":/g) || []).length, 10);
   assert.equal((migration.match(/"practice":/g) || []).length, 10);
   assert.equal((migration.match(/"source_notes":/g) || []).length, 10);
   assert.ok((migration.match(/https:\/\/doi\.org\//g) || []).length >= 20);
+  assert.doesNotMatch(migration, /"practice":\{[^\n]+"minutes":[1-9]/);
+  assert.doesNotMatch(migration, /10분|7분|6분|시간 후/);
   assert.doesNotMatch(migration, /특정 종목을 매수|수익을 보장/);
 });

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Clock, ExternalLink, FlaskConical, PenLine } from 'lucide-react';
+import { ExternalLink, FlaskConical, PenLine } from 'lucide-react';
 import ArticleHeader from '../../../components/article-header';
 import { fetchPublishedArticle } from '../../../core/articles';
 
@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: Props) {
             <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-[-.045em] sm:text-6xl">{article.title}</h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">{article.subtitle}</p>
             <div className="mt-7 flex flex-wrap gap-3 text-xs text-muted-foreground">
-              <span>{published}</span><span>·</span><span className="flex items-center gap-1.5"><Clock size={13} /> {article.reading_minutes}분</span><span>·</span><span>{article.category}</span>
+              <span>{published}</span><span>·</span><span>{article.category}</span>
             </div>
             <div className="mt-5 flex flex-wrap gap-2">{article.tags.map((tag) => <span key={tag} className="rounded-full border bg-background px-3 py-1 text-[11px]">#{tag}</span>)}</div>
           </div>
@@ -59,16 +59,16 @@ export default async function ArticlePage({ params }: Props) {
             <p className="mt-5 text-sm text-muted-foreground">{article.thought_experiment.reflection}</p>
           </section>
           <section className="mt-6 rounded-[1.7rem] bg-foreground p-6 text-background sm:p-8">
-            <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[.18em] opacity-60"><PenLine size={13} /> {article.practice.minutes} minute practice</p>
+            <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[.18em] opacity-60"><PenLine size={13} /> Further inquiry</p>
             <h2 className="mt-3 text-2xl font-semibold">{article.practice.title}</h2>
             <ol className="mt-5 grid gap-3">{article.practice.steps.map((step, i) => <li key={step} className="flex gap-3 text-sm leading-6"><b className="text-primary">{i + 1}</b><span>{step}</span></li>)}</ol>
-            <p className="mt-6 rounded-xl bg-background/10 p-4 text-sm leading-6">규칙 예시 · “{article.practice.rule_template}”</p>
+            <p className="mt-6 rounded-xl bg-background/10 p-4 text-sm leading-6">검토 관점 · “{article.practice.rule_template}”</p>
           </section>
           <section className="mt-16 border-t pt-10">
             <p className="eyebrow">연구 근거</p>
             <div className="mt-5 grid gap-4">{article.source_notes.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="group rounded-2xl border p-5 hover:border-primary"><div className="flex items-start justify-between gap-4"><div><h3 className="font-semibold leading-6">{source.title}</h3><p className="mt-1 text-xs text-muted-foreground">{source.authors} · {source.year}</p><p className="mt-3 text-sm leading-6 text-muted-foreground">{source.note}</p></div><ExternalLink size={15} className="mt-1 shrink-0 text-primary" /></div></a>)}</div>
           </section>
-          <p className="mt-12 text-xs leading-5 text-muted-foreground">이 글은 교육과 자기관찰을 위한 판단 훈련 자료입니다. 특정 금융상품의 매수·매도 또는 개인화된 투자 조언이 아닙니다.</p>
+          <p className="mt-12 text-xs leading-5 text-muted-foreground">이 글은 행동과학 연구를 바탕으로 판단 문제를 탐구하는 교육 자료입니다. 특정 금융상품의 매수·매도 또는 개인화된 투자 조언이 아닙니다.</p>
         </div>
       </article>
     </main>
