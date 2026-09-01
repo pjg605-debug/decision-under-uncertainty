@@ -318,6 +318,12 @@ function Header({ view, onView }: { view: View; onView: (v: View) => void }) {
               {t(label)}
             </button>
           ))}
+          <a
+            href="/articles"
+            className="rounded-full px-4 py-2 text-xs font-semibold text-muted-foreground hover:bg-secondary"
+          >
+            {lang === 'ko' ? '아티클' : 'Articles'}
+          </a>
         </nav>
         <div className="flex items-center gap-2">
           <label className="flex items-center gap-1 rounded-full border bg-card px-2.5 py-2 text-xs font-semibold">
@@ -332,13 +338,13 @@ function Header({ view, onView }: { view: View; onView: (v: View) => void }) {
               <option value="ko">한국어</option>
             </select>
           </label>
-          <button
-            onClick={() => onView('library')}
-            aria-label={t('Search cases')}
+          <a
+            href="/articles"
+            aria-label={lang === 'ko' ? '아티클 읽기' : 'Read articles'}
             className="grid h-9 w-9 place-items-center rounded-full border"
           >
-            <Search size={16} />
-          </button>
+            <BookOpen size={16} />
+          </a>
         </div>
       </div>
     </header>
