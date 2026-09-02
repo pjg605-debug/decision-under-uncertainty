@@ -16,6 +16,7 @@ type ReviewCase = {
   updated_at: string;
   narratives: Array<{
     id: string;
+    language: string;
     version: number;
     status: string;
     author_agent: string;
@@ -63,14 +64,28 @@ export default function ReviewDashboard() {
       setBusy(false);
     }
   };
+  // is_current (and therefore review/approval) is scoped per (case_id,
+  // language) since narratives can now have an independently authored,
+  // independently versioned current row per language. Group by language so
+  // a reviewer acts on one language's narrative at a time, never both at
+  // once by accident.
+  const latestByLanguage = (item: ReviewCase) => {
+    const byLanguage = new Map<string, ReviewCase['narratives'][number]>();
+    for (const narrative of item.narratives) {
+      const current = byLanguage.get(narrative.language);
+      if (!current || narrative.version > current.version)
+        byLanguage.set(narrative.language, narrative);
+    }
+    return [...byLanguage.entries()].sort(([a], [b]) => a.localeCompare(b));
+  };
+
   const act = async (
     item: ReviewCase,
+    narrative: ReviewCase['narratives'][number] | undefined,
+    noteKey: string,
     action: 'approve' | 'request_revision',
   ) => {
-    const narrative = [...item.narratives].sort(
-      (a, b) => b.version - a.version,
-    )[0];
-    const summary = notes[item.case_key]?.trim();
+    const summary = notes[noteKey]?.trim();
     if (!narrative || !summary) {
       setError('Add a review note before submitting.');
       return;
@@ -93,7 +108,7 @@ export default function ReviewDashboard() {
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Review action failed.');
-      setNotes((current) => ({ ...current, [item.case_key]: '' }));
+      setNotes((current) => ({ ...current, [noteKey]: '' }));
       await load();
     } catch (value) {
       setError(
@@ -162,9 +177,7 @@ export default function ReviewDashboard() {
         </section>
         <section className="mt-6 grid gap-4">
           {cases.map((item) => {
-            const narrative = [...item.narratives].sort(
-              (a, b) => b.version - a.version,
-            )[0];
+            const perLanguage = latestByLanguage(item);
             return (
               <article
                 key={item.case_key}
@@ -181,16 +194,7 @@ export default function ReviewDashboard() {
                     {item.status.replaceAll('_', ' ')}
                   </span>
                 </div>
-                <div className="mt-5 grid gap-3 text-sm sm:grid-cols-3">
-                  <div className="rounded-xl bg-secondary p-4">
-                    <p className="text-[10px] uppercase tracking-[.14em] text-muted-foreground">
-                      Current narrative
-                    </p>
-                    <p className="mt-2 font-semibold">
-                      v{narrative?.version || '—'} ·{' '}
-                      {narrative?.author_agent || 'none'}
-                    </p>
-                  </div>
+                <div className="mt-5 grid gap-3 text-sm sm:grid-cols-2">
                   <div className="rounded-xl bg-secondary p-4">
                     <p className="text-[10px] uppercase tracking-[.14em] text-muted-foreground">
                       Open reviews
@@ -230,37 +234,58 @@ export default function ReviewDashboard() {
                     ))}
                   </div>
                 )}
-                <textarea
-                  value={notes[item.case_key] || ''}
-                  onChange={(event) =>
-                    setNotes((current) => ({
-                      ...current,
-                      [item.case_key]: event.target.value,
-                    }))
-                  }
-                  placeholder="Review note or requested revision"
-                  className="mt-4 min-h-24 w-full rounded-xl border bg-background p-4 text-sm outline-none focus:border-primary"
-                />
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <button
-                    disabled={
-                      busy || !narrative || item.status === 'REVISION_REQUESTED'
-                    }
-                    onClick={() => act(item, 'approve')}
-                    className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-40"
-                  >
-                    <CheckCircle2 size={15} />
-                    Approve
-                  </button>
-                  <button
-                    disabled={busy || !narrative}
-                    onClick={() => act(item, 'request_revision')}
-                    className="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold disabled:opacity-40"
-                  >
-                    <Send size={15} />
-                    Request revision
-                  </button>
-                </div>
+                {perLanguage.length === 0 && (
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    No narrative version submitted yet.
+                  </p>
+                )}
+                {perLanguage.map(([language, narrative]) => {
+                  const noteKey = `${item.case_key}:${language}`;
+                  return (
+                    <div
+                      key={language}
+                      className="mt-4 rounded-2xl border border-dashed p-4"
+                    >
+                      <p className="text-[10px] uppercase tracking-[.14em] text-muted-foreground">
+                        {language.toUpperCase()} narrative — v{narrative.version} ·{' '}
+                        {narrative.author_agent}
+                      </p>
+                      <textarea
+                        value={notes[noteKey] || ''}
+                        onChange={(event) =>
+                          setNotes((current) => ({
+                            ...current,
+                            [noteKey]: event.target.value,
+                          }))
+                        }
+                        placeholder={`Review note or requested revision (${language.toUpperCase()})`}
+                        className="mt-3 min-h-24 w-full rounded-xl border bg-background p-4 text-sm outline-none focus:border-primary"
+                      />
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        <button
+                          disabled={
+                            busy || item.status === 'REVISION_REQUESTED'
+                          }
+                          onClick={() => act(item, narrative, noteKey, 'approve')}
+                          className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-40"
+                        >
+                          <CheckCircle2 size={15} />
+                          Approve {language.toUpperCase()}
+                        </button>
+                        <button
+                          disabled={busy}
+                          onClick={() =>
+                            act(item, narrative, noteKey, 'request_revision')
+                          }
+                          className="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold disabled:opacity-40"
+                        >
+                          <Send size={15} />
+                          Request revision ({language.toUpperCase()})
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
               </article>
             );
           })}

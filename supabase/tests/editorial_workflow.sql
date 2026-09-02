@@ -18,11 +18,11 @@ begin
   ) returning id into v_case_id;
 
   insert into public.narratives (
-    case_id,narrative_key,version,status,author_agent,hook,short_setup,why_option_a_made_sense,
+    case_id,narrative_key,language,version,status,author_agent,hook,short_setup,why_option_a_made_sense,
     why_option_b_made_sense,actual_decision_explanation,outcome_story,hindsight_analysis,
     decision_principle,longform_story,evidence_refs,quality_evaluations,is_current
   ) values (
-    v_case_id,'integration-workflow-test',1,'DRAFT','claude','hook','setup','why a','why b','actual','outcome','analysis','principle','longform','[]'::jsonb,'{}'::jsonb,true
+    v_case_id,'integration-workflow-test','en',1,'DRAFT','claude','hook','setup','why a','why b','actual','outcome','analysis','principle','longform','[]'::jsonb,'{}'::jsonb,true
   ) returning id into v_narrative_v1;
 
   perform public.transition_case_status('integration-workflow-test','NARRATIVE_DRAFTED','claude','v1 submitted');
@@ -35,11 +35,11 @@ begin
   perform public.transition_case_status('integration-workflow-test','REVISION_REQUESTED','codex','revision requested');
 
   insert into public.narratives (
-    case_id,narrative_key,version,status,author_agent,hook,short_setup,why_option_a_made_sense,
+    case_id,narrative_key,language,version,status,author_agent,hook,short_setup,why_option_a_made_sense,
     why_option_b_made_sense,actual_decision_explanation,outcome_story,hindsight_analysis,
     decision_principle,longform_story,evidence_refs,quality_evaluations,is_current,revision_summary
   ) values (
-    v_case_id,'integration-workflow-test',2,'IN_REVIEW','claude','hook','setup','why a','why b','actual','revised outcome','analysis','principle','longform','[]'::jsonb,'{}'::jsonb,true,'Outcome boundary clarified.'
+    v_case_id,'integration-workflow-test','en',2,'IN_REVIEW','claude','hook','setup','why a','why b','actual','revised outcome','analysis','principle','longform','[]'::jsonb,'{}'::jsonb,true,'Outcome boundary clarified.'
   ) returning id into v_narrative_v2;
   insert into public.revisions (case_id,narrative_id,triggered_by_review_id,author_agent,before_version,after_version,summary,changes)
   values (v_case_id,v_narrative_v2,v_review_id,'claude',1,2,'Revision submitted.','[]'::jsonb);

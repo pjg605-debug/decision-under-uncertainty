@@ -112,14 +112,29 @@ export function transformSupabaseRows(rows) {
   return { cases, narratives };
 }
 
-export async function fetchApprovedContent({ url, key, fetchImpl = fetch }) {
+const SUPPORTED_LANGUAGES = ['en', 'ko'];
+
+export async function fetchApprovedContent({
+  url,
+  key,
+  language = 'en',
+  fetchImpl = fetch,
+}) {
   if (!url || !key)
     throw new Error('Supabase content reader is not configured.');
+  if (!SUPPORTED_LANGUAGES.includes(language))
+    throw new Error(
+      `Unsupported language "${language}"; expected one of ${SUPPORTED_LANGUAGES.join(', ')}.`,
+    );
   const params = new URLSearchParams({
     select:
       '*,decision_options(*),case_information(*),evidence(*),case_scores(*),narratives(*)',
     status: 'in.(APPROVED,PROTOTYPE_READY,PUBLISHED)',
     order: 'research_priority.desc,created_at.asc',
+    // Filters the embedded narratives resource, not decision_cases itself --
+    // a case with no current narrative in this language still comes back
+    // (with an empty narratives array), it just has no prose for it yet.
+    'narratives.language': `eq.${language}`,
   });
   const response = await fetchImpl(
     `${url.replace(/\/$/, '')}/rest/v1/decision_cases?${params}`,

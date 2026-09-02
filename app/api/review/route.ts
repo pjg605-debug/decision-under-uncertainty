@@ -72,7 +72,7 @@ export async function GET(request: Request) {
     const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_KEY);
     const params = new URLSearchParams({
       select:
-        'case_key,title,status,updated_at,narratives(id,version,status,author_agent,revision_summary,updated_at),reviews(id,review_type,field_name,severity,verdict,status,comment,suggested_change,findings,created_at),research_gaps(id,severity,status,description)',
+        'case_key,title,status,updated_at,narratives(id,language,version,status,author_agent,revision_summary,updated_at),reviews(id,review_type,field_name,severity,verdict,status,comment,suggested_change,findings,created_at),research_gaps(id,severity,status,description)',
       status:
         'in.(NARRATIVE_DRAFTED,CODEX_REVIEW,REVISION_REQUESTED,REVISION_DONE,HOLD,APPROVED)',
       order: 'research_priority.desc,updated_at.asc',
@@ -154,8 +154,15 @@ export async function POST(request: Request) {
       }),
     });
     if (!revising) {
+      // is_current is now scoped per (case_id, language), not per case_id
+      // alone -- unsetting every current narrative for the case regardless
+      // of language would clobber the other language's live narrative too.
+      // Look up the narrative being approved to scope the unset correctly.
+      const [approving] = await admin(
+        `narratives?id=eq.${encodeURIComponent(body.narrative_id)}&select=language`,
+      );
       await admin(
-        `narratives?case_id=eq.${encodeURIComponent(current.id)}&is_current=eq.true`,
+        `narratives?case_id=eq.${encodeURIComponent(current.id)}&language=eq.${encodeURIComponent(approving?.language || '')}&is_current=eq.true`,
         {
           method: 'PATCH',
           body: JSON.stringify({ is_current: false }),

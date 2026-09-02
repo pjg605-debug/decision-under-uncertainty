@@ -4,5 +4,6 @@ export function transformSupabaseRows(rows: Record<string, unknown>[]): { cases:
 export function fetchApprovedContent(options: {
   url: string;
   key: string;
+  language?: 'en' | 'ko';
   fetchImpl?: typeof fetch;
 }): Promise<{ cases: DecisionEvent[]; narratives: Record<string, NarrativeSlots> }>;
