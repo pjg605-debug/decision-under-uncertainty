@@ -29,12 +29,28 @@ export const request = async (path, init = {}) => {
 export const rpc = (name, body) =>
   request(`rpc/${name}`, { method: 'POST', body: JSON.stringify(body) });
 
+// Narratives are independently authored per language, never a translation
+// of the other -- see CODEX_INTEGRATION_HANDOFF.md's "bilingual narratives
+// must be independently authored" section (main branch). A write must state
+// its language explicitly; there is no silent default.
+export const SUPPORTED_NARRATIVE_LANGUAGES = ['en', 'ko'];
+
+export function assertSupportedNarrativeLanguage(language) {
+  if (!SUPPORTED_NARRATIVE_LANGUAGES.includes(language))
+    throw new Error(
+      `payload.narrative.language is required and must be one of ${SUPPORTED_NARRATIVE_LANGUAGES.join(', ')} (got ${JSON.stringify(language)}).`,
+    );
+}
+
 // Shared by the CLI below and scripts/claude-desk.mjs, so narrative
-// submission logic (versioning, revision linkage, status transition)
-// lives in exactly one place regardless of which agent calls it.
+// submission logic (language validation, per-language versioning, revision
+// linkage, status transition) lives in exactly one place regardless of
+// which agent calls it.
 export async function submitNarrativeVersion(payload) {
+  assertSupportedNarrativeLanguage(payload?.narrative?.language);
+  const language = payload.narrative.language;
   const existing = await request(
-    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&select=version&order=version.desc&limit=1`,
+    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&language=eq.${encodeURIComponent(language)}&select=version&order=version.desc&limit=1`,
   );
   const version = (existing?.[0]?.version || 0) + 1;
   const inserted = await request('narratives', {
