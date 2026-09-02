@@ -1,6 +1,13 @@
 name: Ingest pending article drafts
 
 on:
+  # A push adding/updating a draft JSON file (not the processed/ archive)
+  # triggers ingestion automatically. The archive commit this workflow
+  # makes on success carries "[skip ci]", so it never re-triggers itself.
+  push:
+    branches: [main]
+    paths:
+      - 'content/pending-articles/*.json'
   workflow_dispatch:
 
 permissions:
