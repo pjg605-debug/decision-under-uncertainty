@@ -30,7 +30,7 @@ jobs:
       - name: Publish the oldest queued draft
         env:
           PUBLISH_URL: https://fnxbilbihakhqvxjmoqo.supabase.co/functions/v1/publish-next-article
-          PUBLISH_SECRET: ${{ secrets.GITHUB_PUBLISH_SECRET }}
+          PUBLISH_SECRET: ${{ secrets.PUBLISH_SECRET }}
         run: |
           set -euo pipefail
           response_file="$(mktemp)"

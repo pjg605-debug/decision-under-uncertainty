@@ -45,7 +45,7 @@ export default {
   fetch: async (request: Request) => {
     if (request.method !== 'POST') return json(405, { error: 'Method not allowed' });
 
-    const expected = Deno.env.get('GITHUB_PUBLISH_SECRET') || '';
+    const expected = Deno.env.get('PUBLISH_SECRET') || '';
     const supplied = request.headers.get('x-publish-secret') || '';
     if (!expected || !constantTimeEqual(expected, supplied)) {
       return json(401, { error: 'Unauthorized' });

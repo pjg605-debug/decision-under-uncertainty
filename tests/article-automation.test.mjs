@@ -68,13 +68,13 @@ test('the oldest draft is published atomically', () => {
 test('GitHub publishes one queued draft four times per day in Seoul', () => {
   assert.match(workflow, /cron: '0 3,9,15,21 \* \* \*'/);
   assert.match(workflow, /timezone: 'Asia\/Seoul'/);
-  assert.match(workflow, /secrets\.GITHUB_PUBLISH_SECRET/);
+  assert.match(workflow, /secrets\.PUBLISH_SECRET/);
   assert.match(workflow, /publish-next-article/);
   assert.doesNotMatch(workflow, /OPENAI_API_KEY/);
 });
 
 test('the publisher requires the dedicated GitHub secret', () => {
   assert.match(config, /\[functions\.publish-next-article\][\s\S]*verify_jwt = false/);
-  assert.match(publisher, /GITHUB_PUBLISH_SECRET/);
+  assert.match(publisher, /PUBLISH_SECRET/);
   assert.match(publisher, /publish_next_draft_article/);
 });
