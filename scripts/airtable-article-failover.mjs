@@ -6,6 +6,7 @@ import {
   fetchAirtableArticleRecords,
   writeAirtableRecords,
 } from '../core/airtable-articles.mjs';
+import { resolveSupabaseServiceKey, supabaseAuthHeaders } from '../core/supabase-auth.mjs';
 
 const command = process.argv[2];
 const dryRun = process.argv.includes('--dry-run');
@@ -73,7 +74,8 @@ async function seedAirtable() {
 async function syncToSupabase() {
   const options = airtable();
   const supabaseUrl = requireEnv('SUPABASE_URL').replace(/\/$/, '');
-  const serviceKey = requireEnv('SUPABASE_SERVICE_ROLE_KEY');
+  const serviceKey = resolveSupabaseServiceKey(process.env);
+  if (!serviceKey) throw new Error('SUPABASE_SECRET_KEY (or SUPABASE_SERVICE_ROLE_KEY) is required.');
   const records = await fetchAirtableArticleRecords({ ...options, publishedOnly: true });
   const pending = records.filter(
     (record) => record.fields[AIRTABLE_ARTICLE_FIELDS.syncState] !== 'SYNCED',
@@ -90,8 +92,7 @@ async function syncToSupabase() {
     const response = await fetch(`${supabaseUrl}/rest/v1/rpc/sync_airtable_article`, {
       method: 'POST',
       headers: {
-        apikey: serviceKey,
-        Authorization: `Bearer ${serviceKey}`,
+        ...supabaseAuthHeaders(serviceKey),
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ p_article: article }),

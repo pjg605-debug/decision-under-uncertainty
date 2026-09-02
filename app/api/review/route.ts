@@ -1,8 +1,6 @@
-const required = [
-  'SUPABASE_URL',
-  'SUPABASE_SERVICE_ROLE_KEY',
-  'REVIEW_DASHBOARD_TOKEN',
-] as const;
+import { resolveSupabaseServiceKey, supabaseAuthHeaders } from '../../../core/supabase-auth.mjs';
+
+const required = ['SUPABASE_URL', 'REVIEW_DASHBOARD_TOKEN'] as const;
 
 const constantTimeEqual = (left: string, right: string) => {
   const a = new TextEncoder().encode(left);
@@ -17,9 +15,10 @@ const config = () => {
   const values = Object.fromEntries(
     required.map((name) => [name, process.env[name] || '']),
   ) as Record<(typeof required)[number], string>;
-  if (required.some((name) => !values[name]))
+  const serviceKey = resolveSupabaseServiceKey(process.env);
+  if (required.some((name) => !values[name]) || !serviceKey)
     throw new Error('Review dashboard is not configured.');
-  return values;
+  return { ...values, SUPABASE_SERVICE_KEY: serviceKey };
 };
 
 const authorized = (request: Request, token: string) => {
@@ -35,8 +34,7 @@ const client =
     const response = await fetch(`${url.replace(/\/$/, '')}/rest/v1/${path}`, {
       ...init,
       headers: {
-        apikey: key,
-        authorization: `Bearer ${key}`,
+        ...supabaseAuthHeaders(key),
         'content-type': 'application/json',
         ...(init.headers || {}),
       },
@@ -71,7 +69,7 @@ export async function GET(request: Request) {
     const env = config();
     if (!authorized(request, env.REVIEW_DASHBOARD_TOKEN))
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
-    const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+    const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_KEY);
     const params = new URLSearchParams({
       select:
         'case_key,title,status,updated_at,narratives(id,version,status,author_agent,revision_summary,updated_at),reviews(id,review_type,field_name,severity,verdict,status,comment,suggested_change,findings,created_at),research_gaps(id,severity,status,description)',
@@ -117,7 +115,7 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
-    const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
+    const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_KEY);
     const cases = await admin(
       `decision_cases?case_key=eq.${encodeURIComponent(body.case_key)}&select=id,status&limit=1`,
     );

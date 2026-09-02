@@ -1,5 +1,6 @@
 import bundledArticleData from '../data/articles/bundled-articles.json';
 import { fetchPublishedArticlesFromAirtable } from './airtable-articles.mjs';
+import { supabaseAuthHeaders } from './supabase-auth.mjs';
 
 export type ArticleBlock =
   | { kind: 'heading'; text: string }
@@ -191,7 +192,7 @@ export async function fetchPublishedArticles(): Promise<Article[]> {
       const response = await fetch(
         `${url.replace(/\/$/, '')}/rest/v1/articles?status=eq.PUBLISHED&is_current=eq.true&select=*&order=published_at.desc`,
         {
-          headers: { apikey: key, Authorization: `Bearer ${key}` },
+          headers: supabaseAuthHeaders(key),
           cache: 'no-store',
         },
       );

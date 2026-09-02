@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 
+import { resolveSupabaseServiceKey, supabaseAuthHeaders } from '../core/supabase-auth.mjs';
+
 const baseUrl = process.env.SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const serviceKey = resolveSupabaseServiceKey();
 if (!baseUrl || !serviceKey) {
-  console.error('SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.');
+  console.error('SUPABASE_URL and SUPABASE_SECRET_KEY (or SUPABASE_SERVICE_ROLE_KEY) are required.');
   process.exit(1);
 }
 
 const headers = {
-  apikey: serviceKey,
-  authorization: `Bearer ${serviceKey}`,
+  ...supabaseAuthHeaders(serviceKey),
   'content-type': 'application/json',
 };
 

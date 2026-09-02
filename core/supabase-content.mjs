@@ -1,3 +1,5 @@
+import { supabaseAuthHeaders } from './supabase-auth.mjs';
+
 const narrativeFields = [
   'hook',
   'short_setup',
@@ -123,8 +125,7 @@ export async function fetchApprovedContent({ url, key, fetchImpl = fetch }) {
     `${url.replace(/\/$/, '')}/rest/v1/decision_cases?${params}`,
     {
       headers: {
-        apikey: key,
-        authorization: `Bearer ${key}`,
+        ...supabaseAuthHeaders(key),
         accept: 'application/json',
       },
       cache: 'no-store',

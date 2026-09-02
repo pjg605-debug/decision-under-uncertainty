@@ -2,6 +2,19 @@ declare const Deno: { env: { get(name: string): string | undefined } };
 
 type JsonRecord = Record<string, unknown>;
 
+// Deno Edge Functions are deployed and type-checked independently of this
+// repo's Next.js tsconfig (which disallows relative ".ts" import
+// specifiers), so this mirrors core/supabase-auth.mjs's logic inline
+// rather than importing it. Keep both in sync: legacy JWT service_role
+// keys ("eyJ...") need both `apikey` and `Authorization: Bearer`; newer
+// non-JWT Supabase keys ("sb_secret_...") are rejected by the gateway if
+// sent as a Bearer JWT, so they only need `apikey`.
+function supabaseAuthHeaders(key: string): Record<string, string> {
+  if (!key) throw new Error('A Supabase key is required to build auth headers.');
+  if (key.startsWith('sb_')) return { apikey: key };
+  return { apikey: key, Authorization: `Bearer ${key}` };
+}
+
 const headers = { 'Content-Type': 'application/json; charset=utf-8' };
 
 function json(status: number, body: JsonRecord) {
@@ -46,8 +59,7 @@ export default {
       const result = await fetch(`${url.replace(/\/$/, '')}/rest/v1/rpc/publish_next_draft_article`, {
         method: 'POST',
         headers: {
-          apikey: key,
-          Authorization: `Bearer ${key}`,
+          ...supabaseAuthHeaders(key),
           'Content-Type': 'application/json',
         },
         body: '{}',

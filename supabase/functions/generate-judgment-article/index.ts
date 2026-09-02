@@ -1,4 +1,17 @@
 const OPENAI_API_URL = 'https://api.openai.com/v1/responses';
+
+// Deno Edge Functions are deployed and type-checked independently of this
+// repo's Next.js tsconfig (which disallows relative ".ts" import
+// specifiers), so this mirrors core/supabase-auth.mjs's logic inline
+// rather than importing it. Keep both in sync: legacy JWT service_role
+// keys ("eyJ...") need both `apikey` and `Authorization: Bearer`; newer
+// non-JWT Supabase keys ("sb_secret_...") are rejected by the gateway if
+// sent as a Bearer JWT, so they only need `apikey`.
+function supabaseAuthHeaders(key: string): Record<string, string> {
+  if (!key) throw new Error('A Supabase key is required to build auth headers.');
+  if (key.startsWith('sb_')) return { apikey: key };
+  return { apikey: key, Authorization: `Bearer ${key}` };
+}
 const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 
 declare const Deno: { env: { get(name: string): string | undefined } };
@@ -182,8 +195,7 @@ async function supabaseRequest(path: string, key: string, init: RequestInit = {}
   const result = await fetch(`${baseUrl.replace(/\/$/, '')}${path}`, {
     ...init,
     headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
+      ...supabaseAuthHeaders(key),
       'Content-Type': 'application/json',
       ...(init.headers || {}),
     },
