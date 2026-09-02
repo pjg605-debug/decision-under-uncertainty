@@ -1,18 +1,14 @@
 name: Publish one judgment-training article
 
 on:
-  # Temporarily disabled: every scheduled run has failed (4/4, see runs
-  # 33476286325, 33505993847, 33541721919, 33574101284). Root cause per
-  # user diagnosis: supabase/functions/publish-next-article's
-  # getServiceKey() can return a new-style sb_secret_ key while the
-  # function still sends it via `Authorization: Bearer`, which Supabase's
-  # gateway rejects as an invalid JWT for that key format. Re-enable the
-  # `schedule:` trigger below once the key-compat fix (planned as a
-  # separate step) is deployed and a manual workflow_dispatch run
-  # succeeds end-to-end.
-  # schedule:
-  #   - cron: '0 3,9,15,21 * * *'
-  #     timezone: 'Asia/Seoul'
+  # Re-enabled after the Supabase key-compat fix (core/supabase-auth.mjs,
+  # commit 29de5be) was deployed and a manual workflow_dispatch run
+  # succeeded end-to-end (run 33602930073). Prior scheduled runs had
+  # failed 4/4 (33476286325, 33505993847, 33541721919, 33574101284) on
+  # the since-fixed Bearer-header bug.
+  schedule:
+    - cron: '0 3,9,15,21 * * *'
+      timezone: 'Asia/Seoul'
   workflow_dispatch:
 
 permissions:
