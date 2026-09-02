@@ -38,6 +38,67 @@ No UI code was changed. The following should be considered in a later Codex impl
 6. `longform_story` has no reading surface, so production longform is currently stored but invisible.
 7. The product cannot mark a case as `production`, `hold`, or `rejected`; demo records remain visible even when editorial review fails.
 
+## New requirement: bilingual narratives must be independently authored, not translated
+
+Product decision (from the project owner, 2026-09-02): every case's narrative must
+exist as two **independently authored** versions — one written natively in Korean,
+one written natively in English — each drafted directly in that language from the
+shared case/evidence facts. Neither is a translation of the other. The explicit
+goal is to eliminate "translationese" (직역체) — the stiff, source-language-shaped
+phrasing that results from writing once and translating, which is detectable to a
+native reader even when technically accurate.
+
+This is not new: `UI issue #5` above already flagged that "the current Korean
+localization is keyed by exact English source strings" and the schema-gap list
+below already named `locale or stable translatable message IDs for narrative
+content` as missing. This section makes that gap concrete and blocking.
+
+### Why the current schema cannot support this
+
+Per `CLAUDE_DB_INTEGRATION_HANDOFF.md`'s deployed contract, `narratives` has no
+`language`/`locale` column at all, and:
+
+> `narratives` is unique on `(case_id, version)` and has a partial unique index
+> allowing only one `is_current = true` row per `case_id`.
+
+Because that uniqueness is scoped by `case_id` alone, a case can have exactly one
+"live" narrative at a time regardless of language — setting a Korean narrative to
+`is_current = true` un-sets any English one for the same case, and vice versa. Two
+independently authored, simultaneously live language versions are not
+representable today.
+
+### Requested schema change
+
+1. Add a `language` column to `narratives` (e.g. `text`, values `ko` | `en` for
+   now, extensible later). Not nullable; every existing row needs a backfill
+   value (the current 6 live narratives are English MVP demo content — backfill
+   them as `language = 'en'`).
+2. Change the `(case_id, version)` unique constraint to `(case_id, language,
+   version)`, so each language has its own independent version sequence (a
+   Korean revision does not bump the English version number, and vice versa).
+3. Change the partial `is_current` unique index from "one per `case_id`" to "one
+   per `(case_id, language)`", so a Korean and an English narrative can both be
+   `is_current = true` for the same case simultaneously.
+4. The public read path (`core/supabase-content.mjs` → `/api/content`, and
+   whatever the case-archive equivalent turns out to be) needs a language
+   selector (query param or `Accept-Language`) to pick which `is_current` row to
+   serve per case.
+5. Open question for the product owner, not assumed here: does this bilingual
+   requirement extend to `decision_options` (`label`, `short_description`,
+   `upside`, `downside`) and `evidence.citation`/note text — i.e. does the whole
+   player-facing surface need native KO/EN pairs, or only the long-form
+   narrative prose? Recommend deciding this before implementing, since it
+   changes the scope of (1)-(3) beyond just `narratives`.
+
+### What Claude will do once this ships
+
+For each case going forward (including the 13 pilot cases with no `decision_cases`
+row yet), Claude will submit two separate `narratives` rows per version bump —
+`language = 'ko'` and `language = 'en'` — each drafted independently from the same
+`evidence`/`case_information`, never by translating the other. Recommend resolving
+this schema change before importing any of the 13 pending pilot cases, to avoid a
+second migration once bilingual rows already exist.
+
 ## Schema fields missing after real-content testing
 
 These are proposals only; the schema was not changed:
@@ -59,6 +120,6 @@ These are proposals only; the schema was not changed:
 1. Add editorial status and hide non-production cases from the default archive.
 2. Add option-provenance and reconstructed-choice disclosure.
 3. Resolve sidecar evidence by ID and render claim-linked sources.
-4. Add locale-aware narrative loading independent of English string identity.
+4. **Priority (product owner request, 2026-09-02):** add the `narratives.language` column and the `(case_id, language)`-scoped uniqueness/`is_current` changes described in "New requirement: bilingual narratives must be independently authored, not translated" above, plus locale-aware narrative loading independent of English string identity.
 5. Add progressive multi-decision support before reconsidering Apollo 13.
 6. Do not alter the three approved narratives unless new evidence changes a factual claim or fairness evaluation.
