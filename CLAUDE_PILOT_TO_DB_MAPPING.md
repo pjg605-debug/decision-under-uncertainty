@@ -45,9 +45,13 @@ Ordered by `production_verdict` (VIABLE first) as a suggested import priority:
 
 None of these are `FAILED` outright — the pilot's honest floor turned out to be `WEAK` (real sourcing, but a guessable or context-heavy dilemma), not "no viable case at all." See the pilot report for what specifically makes each `WEAK` case fall short.
 
-## Canary import: `d-day-launch-1944`
+## Canary import: `d-day-launch-1944` — SUCCEEDED 2026-09-03
 
-Chosen as the first case through the new import pipeline: highest `player_fairness` (82) among all VIABLE cases with no existing DB row, the strongest sourcing in the pilot (Stagg's own memoir, IWM, US National Archives, Naval History and Heritage Command), and no overlap with the six live cases. Draft: `content/pending-cases/d-day-launch-1944.json` (archived to `content/pending-cases/processed/` on successful import). See this session's completion report for the actual import result (`decision_cases.id`, confirmed `status`, and the `get-narrative-queue-status` before/after count) — do not assume success from this doc alone; re-check the live queue.
+`decision_cases.id = 3219380c-a500-4c01-a783-2fafbf6ff241`, `status = RESEARCH_DONE`, 2 options, 10 `case_information` rows, 9 `evidence` rows, `errors: []`. Confirmed live via `get-narrative-queue-status`: `narrative_queue` went from empty to containing this case, with `missing_languages: ["en", "ko"]` (no narrative drafted yet — that's the next automated step, not part of this import). Draft archived to `content/pending-cases/processed/d-day-launch-1944.json`.
+
+Two real bugs were found and fixed only by actually running this end to end (both now in `supabase/migrations/202609030002_fix_import_pending_case_ambiguity.sql`): `import_pending_case()`'s `RETURNS TABLE` column names originally collided with `decision_cases`' own column names (Postgres 42702, ambiguous reference), and fixing that required `DROP FUNCTION` before `CREATE FUNCTION` since `CREATE OR REPLACE` cannot change a `RETURNS TABLE` row type (42P13). Neither was caught by review of the SQL alone — worth remembering before trusting a new write RPC's text without a real call.
+
+The remaining 12 pilot cases (see the priority table above) are the next candidates, one at a time, same pipeline, now proven working.
 
 ## Supabase-only content with no local equivalent
 
