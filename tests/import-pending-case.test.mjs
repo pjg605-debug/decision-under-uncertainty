@@ -30,6 +30,10 @@ const migration = await readFile(
   new URL('../supabase/migrations/202609030001_import_pending_case.sql', import.meta.url),
   'utf8',
 );
+const ambiguityFix = await readFile(
+  new URL('../supabase/migrations/202609030002_fix_import_pending_case_ambiguity.sql', import.meta.url),
+  'utf8',
+);
 
 function mockFetch(handler) {
   const calls = [];
@@ -194,7 +198,7 @@ test('importOne inserts via the transactional RPC and verifies every row landed 
     const u = String(url);
     if (u.includes('decision_cases?case_key=eq.d-day-launch-1944&select=id')) return jsonResponse([]);
     if (u.includes('rpc/import_pending_case'))
-      return jsonResponse([{ case_id: 'new-case-id', case_key: draft.case_key, status: 'RESEARCH_DONE' }]);
+      return jsonResponse([{ new_case_id: 'new-case-id', new_case_key: draft.case_key, landed_status: 'RESEARCH_DONE' }]);
     if (u.includes('decision_cases?id=eq.new-case-id'))
       return jsonResponse([{ id: 'new-case-id', case_key: draft.case_key, title: draft.title, status: 'RESEARCH_DONE' }]);
     if (u.includes('decision_options?case_id=eq.new-case-id')) return jsonResponse([{ id: 'o1' }, { id: 'o2' }]);
@@ -223,7 +227,7 @@ test('importOne throws on a read-back count mismatch instead of trusting the RPC
     const u = String(url);
     if (u.includes('decision_cases?case_key=eq.d-day-launch-1944&select=id')) return jsonResponse([]);
     if (u.includes('rpc/import_pending_case'))
-      return jsonResponse([{ case_id: 'new-case-id', case_key: draft.case_key, status: 'RESEARCH_DONE' }]);
+      return jsonResponse([{ new_case_id: 'new-case-id', new_case_key: draft.case_key, landed_status: 'RESEARCH_DONE' }]);
     if (u.includes('decision_cases?id=eq.new-case-id'))
       return jsonResponse([{ id: 'new-case-id', case_key: draft.case_key, title: draft.title, status: 'RESEARCH_DONE' }]);
     if (u.includes('decision_options?case_id=eq.new-case-id')) return jsonResponse([{ id: 'o1' }]); // only 1, draft has 2
@@ -279,5 +283,29 @@ test('the import migration can only land a case at DISCOVERED, RESEARCHING, or R
 test('the import function is granted only to service_role, matching every other write RPC in this schema', () => {
   assert.match(migration, /revoke all on function public\.import_pending_case\(jsonb\) from public, anon, authenticated;/);
   assert.match(migration, /grant execute on function public\.import_pending_case\(jsonb\) to service_role;/);
+});
+
+// Real bug found on first live use: `returns table (case_id uuid, case_key
+// text, status text)` shadows decision_cases' own case_key column, so
+// `where case_key = v_case_key` inside the duplicate check is ambiguous
+// (Postgres 42702) at call time even though the function creates fine.
+// 202609030002 fixes it by renaming the OUT parameters so no bare
+// identifier in the function body can be confused with a table column.
+test('202609030002 renames the RETURNS TABLE columns so they can never collide with a table column again', () => {
+  assert.match(ambiguityFix, /^begin;/);
+  assert.match(ambiguityFix, /commit;\s*$/);
+  assert.match(
+    ambiguityFix,
+    /returns table \(new_case_id uuid, new_case_key text, landed_status text\)/,
+  );
+});
+
+test('scripts/import-pending-case.mjs reads the RPC result by the fixed, collision-free column names', async () => {
+  const scriptSource = await readFile(
+    new URL('../scripts/import-pending-case.mjs', import.meta.url),
+    'utf8',
+  );
+  assert.match(scriptSource, /inserted\.new_case_id/);
+  assert.doesNotMatch(scriptSource, /inserted\.case_id\b/);
 });
 

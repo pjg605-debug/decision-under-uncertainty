@@ -128,16 +128,16 @@ export async function importOne(filename) {
   const [inserted] = await rpc('import_pending_case', { p_payload: draft });
 
   const [caseRow] = await request(
-    `decision_cases?id=eq.${encodeURIComponent(inserted.case_id)}&select=id,case_key,title,status`,
+    `decision_cases?id=eq.${encodeURIComponent(inserted.new_case_id)}&select=id,case_key,title,status`,
   );
   const options = await request(
-    `decision_options?case_id=eq.${encodeURIComponent(inserted.case_id)}&select=id`,
+    `decision_options?case_id=eq.${encodeURIComponent(inserted.new_case_id)}&select=id`,
   );
   const information = await request(
-    `case_information?case_id=eq.${encodeURIComponent(inserted.case_id)}&select=id`,
+    `case_information?case_id=eq.${encodeURIComponent(inserted.new_case_id)}&select=id`,
   );
   const evidence = await request(
-    `evidence?case_id=eq.${encodeURIComponent(inserted.case_id)}&select=id`,
+    `evidence?case_id=eq.${encodeURIComponent(inserted.new_case_id)}&select=id`,
   );
 
   if (!caseRow || caseRow.case_key !== draft.case_key || caseRow.title !== draft.title)
