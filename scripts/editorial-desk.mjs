@@ -111,6 +111,90 @@ export async function submitNarrativeVersion(payload) {
   return inserted;
 }
 
+// Product owner decision, 2026-09-03: fully automated approval/publish for
+// cases sourced and drafted through Claude's file-based pipelines (case
+// import + narrative submission), with no human or Codex review step. This
+// is a deliberate removal of the review checkpoint that both
+// CODEX_INTEGRATION_HANDOFF.md and CLAUDE.md previously described as never
+// to be automated -- the product owner was told exactly what this gives up
+// (an independent check before content reaches the public site) and chose
+// it anyway. Called right after a successful submitNarrativeVersion() with
+// that call's inserted narrative id.
+export async function autoApproveAndPublish({ case_id, case_key, narrative_id, language, author_agent }) {
+  await request('reviews', {
+    method: 'POST',
+    body: JSON.stringify({
+      case_id,
+      narrative_id,
+      reviewer_agent: author_agent,
+      review_type: 'OTHER',
+      severity: 'LOW',
+      status: 'RESOLVED',
+      verdict: 'APPROVE',
+      comment: 'Automated approval -- no human/Codex review (product owner decision, 2026-09-03).',
+      resolved_at: new Date().toISOString(),
+    }),
+  });
+
+  // Same sibling-language safety as app/api/review/route.ts's approve
+  // handler: unset is_current scoped by case_id AND language, never
+  // case_id alone, so approving one language never clobbers the other's
+  // live narrative.
+  await request(
+    `narratives?case_id=eq.${encodeURIComponent(case_id)}&language=eq.${encodeURIComponent(language)}&is_current=eq.true`,
+    { method: 'PATCH', body: JSON.stringify({ is_current: false }) },
+  );
+  await request(`narratives?id=eq.${encodeURIComponent(narrative_id)}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ status: 'APPROVED', is_current: true }),
+  });
+
+  const [caseRow] = await request(
+    `decision_cases?case_key=eq.${encodeURIComponent(case_key)}&select=status,title`,
+  );
+  const forward = ['CODEX_REVIEW', 'APPROVED', 'PROTOTYPE_READY', 'PUBLISHED'];
+  const startIndex = Math.max(0, forward.indexOf(caseRow?.status) + 1);
+  let current = caseRow?.status;
+  const transitioned = [];
+  for (const toStatus of forward.slice(startIndex)) {
+    await rpc('transition_case_status', {
+      p_case_key: case_key,
+      p_to_status: toStatus,
+      p_actor_agent: author_agent,
+      p_reason: 'Automated approval -- no human/Codex review (product owner decision, 2026-09-03).',
+    });
+    current = toStatus;
+    transitioned.push(toStatus);
+  }
+
+  // Same "first publish only" guard as app/api/review/route.ts's human
+  // approve endpoint: only announce when this call is what actually moved
+  // the case into PUBLISHED, not every time (e.g. adding a sibling
+  // language to an already-published case is a real, separate approval
+  // but not a new publish event).
+  if (transitioned.includes('PUBLISHED')) {
+    const webhook = process.env.SLACK_INSIGHT_WEBHOOK_URL;
+    if (webhook) {
+      try {
+        await fetch(webhook, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            text: `🧭 새 사건 공개: ${caseRow?.title} (${case_key})\nhttps://decision-under-uncertainty.pjg605.chatgpt.site/`,
+          }),
+        });
+      } catch (error) {
+        console.warn(
+          'Slack #insight notification failed:',
+          error instanceof Error ? error.message : 'unknown error',
+        );
+      }
+    }
+  }
+
+  return { case_key, status: current };
+}
+
 // Everything below is the CLI entry point. It only runs when this file is
 // executed directly (`node scripts/editorial-desk.mjs ...`), not when
 // another script (e.g. scripts/claude-desk.mjs) imports `request`/`rpc`

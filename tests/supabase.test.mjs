@@ -130,8 +130,17 @@ test('service role remains server-only', async () => {
 });
 
 test('a pending narrative version does not replace approved public content before review', () => {
-  assert.match(editorialDesk, /status: 'IN_REVIEW',[\s\S]+is_current: false/);
-  assert.doesNotMatch(editorialDesk, /status: 'IN_REVIEW',[\s\S]+is_current: true/);
+  // Scoped to submitNarrativeVersion's own body -- editorial-desk.mjs also
+  // exports autoApproveAndPublish (product owner decision, 2026-09-03: full
+  // automation with no human/Codex review step for Claude's own file-based
+  // pipelines), which legitimately sets is_current: true elsewhere in this
+  // file as part of that separate, later step. An unscoped [\s\S]+ match
+  // across the whole file would conflate the two.
+  const submitFnStart = editorialDesk.indexOf('export async function submitNarrativeVersion');
+  const submitFnEnd = editorialDesk.indexOf('export async function autoApproveAndPublish');
+  const submitFn = editorialDesk.slice(submitFnStart, submitFnEnd > submitFnStart ? submitFnEnd : undefined);
+  assert.match(submitFn, /status: 'IN_REVIEW',[\s\S]+is_current: false/);
+  assert.doesNotMatch(submitFn, /status: 'IN_REVIEW',[\s\S]+is_current: true/);
   assert.match(reviewRoute, /is_current: !revising/);
   assert.match(reviewRoute, /Submit the requested narrative revision before approval/);
 });

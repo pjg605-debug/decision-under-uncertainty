@@ -16,7 +16,7 @@
 import { readdir, readFile, rename } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { request, submitNarrativeVersion } from './editorial-desk.mjs';
+import { request, submitNarrativeVersion, autoApproveAndPublish } from './editorial-desk.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pendingDir = path.join(__dirname, '..', 'content', 'pending-narratives');
@@ -84,7 +84,7 @@ export async function submitOne(filename) {
   if (!caseRow)
     throw new Error(
       `${filename}: no decision_cases row for case_key=${draft.case_key} -- ` +
-        `creating a new case row is not one of Claude's granted writes; ask Codex to create it first.`,
+        `submit a case draft through content/pending-cases/ first (see scripts/import-pending-case.mjs).`,
     );
 
   const payload = {
@@ -112,11 +112,36 @@ export async function submitOne(filename) {
   }
 
   await rename(filePath, path.join(processedDir, filename));
+
+  // Product owner decision, 2026-09-03: fully automated approval/publish,
+  // no human or Codex review step (see editorial-desk.mjs's
+  // autoApproveAndPublish for the full rationale). The narrative itself is
+  // already safely inserted, verified, and archived above by this point --
+  // a failure here means the case is stuck mid-workflow (e.g. at
+  // CODEX_REVIEW) and needs attention, but it can never cause a duplicate
+  // narrative insert on retry, since the source file is already archived.
+  let publishedStatus;
+  try {
+    const result = await autoApproveAndPublish({
+      case_id: caseRow.id,
+      case_key: draft.case_key,
+      narrative_id: row.id,
+      language: draft.narrative.language,
+      author_agent: 'claude',
+    });
+    publishedStatus = result.status;
+  } catch (error) {
+    throw new Error(
+      `${filename}: narrative inserted and verified (id=${row.id}), but automated approval/publish failed -- ${error instanceof Error ? error.message : String(error)}`,
+    );
+  }
+
   return {
     case_key: draft.case_key,
     language: draft.narrative.language,
     version: row.version,
     id: row.id,
+    status: publishedStatus,
   };
 }
 
