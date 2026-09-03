@@ -119,7 +119,7 @@ export async function POST(request: Request) {
     }
     const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
     const cases = await admin(
-      `decision_cases?case_key=eq.${encodeURIComponent(body.case_key)}&select=id,status&limit=1`,
+      `decision_cases?case_key=eq.${encodeURIComponent(body.case_key)}&select=id,status,title&limit=1`,
     );
     const current = cases?.[0];
     if (!current)
@@ -156,8 +156,17 @@ export async function POST(request: Request) {
       }),
     });
     if (!revising) {
+      // Scope the is_current unset by language too -- narratives are
+      // independently authored per language (see
+      // CODEX_INTEGRATION_HANDOFF.md's bilingual-narratives section), and a
+      // case can have an EN and a KO narrative both live at once. Unsetting
+      // by case_id alone would clobber the sibling language's is_current
+      // row on every approval.
+      const [approving] = await admin(
+        `narratives?id=eq.${encodeURIComponent(body.narrative_id)}&select=language`,
+      );
       await admin(
-        `narratives?case_id=eq.${encodeURIComponent(current.id)}&is_current=eq.true`,
+        `narratives?case_id=eq.${encodeURIComponent(current.id)}&language=eq.${encodeURIComponent(approving?.language || '')}&is_current=eq.true`,
         {
           method: 'PATCH',
           body: JSON.stringify({ is_current: false }),
@@ -178,6 +187,32 @@ export async function POST(request: Request) {
         revising ? 'REVISION_REQUESTED' : 'APPROVED',
         body.summary,
       );
+    }
+    // Only announce the first time a case becomes publicly viewable.
+    // Approving a sibling language's narrative for a case that is already
+    // APPROVED/PROTOTYPE_READY/PUBLISHED (see the bilingual-narratives note
+    // above) is a real, legitimate approval but not a new publish event.
+    if (
+      body.action === 'approve' &&
+      !['APPROVED', 'PROTOTYPE_READY', 'PUBLISHED'].includes(current.status)
+    ) {
+      const webhook = process.env.SLACK_INSIGHT_WEBHOOK_URL;
+      if (webhook) {
+        try {
+          await fetch(webhook, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              text: `🧭 새 사건 공개: ${current.title} (${body.case_key})\nhttps://decision-under-uncertainty.pjg605.chatgpt.site/`,
+            }),
+          });
+        } catch (error) {
+          console.warn(
+            'Slack #insight notification failed:',
+            error instanceof Error ? error.message : 'unknown error',
+          );
+        }
+      }
     }
     return Response.json({ ok: true });
   } catch (error) {

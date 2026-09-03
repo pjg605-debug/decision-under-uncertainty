@@ -23,6 +23,7 @@ const editorialDeskSource = await readFile(
 const claudeMd = await readFile(new URL('../CLAUDE.md', import.meta.url), 'utf8');
 
 const {
+  cmdCase,
   cmdTransition,
   cmdDraftNarrative,
   cmdReviseNarrative,
@@ -30,6 +31,8 @@ const {
   CLAUDE_ALLOWED_TRANSITIONS,
   CLAUDE_AGENT_NAME,
 } = await import('../scripts/claude-desk.mjs');
+const { assertSupportedNarrativeLanguage, SUPPORTED_NARRATIVE_LANGUAGES } =
+  await import('../scripts/editorial-desk.mjs');
 
 function mockFetch(handler) {
   const calls = [];
@@ -126,7 +129,7 @@ test('agent attribution: draft-narrative always writes author_agent="claude" eve
     await cmdDraftNarrative({
       case_id: 'case-uuid',
       author_agent: 'codex', // attempted impersonation — must be overridden
-      narrative: { hook: 'h' },
+      narrative: { language: 'en', hook: 'h' },
     });
     const insert = bodies.find((b) => b.url.endsWith('/rest/v1/narratives'));
     assert.equal(insert.body.author_agent, 'claude');
@@ -146,7 +149,10 @@ test('narrative version protection: draft-narrative never inserts is_current=tru
     return jsonResponse({});
   });
   try {
-    await cmdDraftNarrative({ case_id: 'case-uuid', narrative: { hook: 'h' } });
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      narrative: { language: 'en', hook: 'h' },
+    });
     const insert = bodies.find((b) => b.url.endsWith('/rest/v1/narratives'));
     assert.equal(insert.body.is_current, false);
     assert.equal(insert.body.status, 'IN_REVIEW');
@@ -183,6 +189,125 @@ test('agent-run audit rows are attributed to claude and require a run_type', asy
     await cmdAgentRun({ run_type: 'research', status: 'SUCCEEDED' });
     assert.equal(bodies[0].agent_name, CLAUDE_AGENT_NAME);
     assert.equal(bodies[0].run_type, 'research');
+  } finally {
+    restore();
+  }
+});
+
+test('narratives are independently authored per language: draft-narrative rejects a payload with no narrative.language', async () => {
+  const { calls, restore } = mockFetch(() => {
+    throw new Error('should never reach the network without a valid language');
+  });
+  try {
+    assert.deepEqual(SUPPORTED_NARRATIVE_LANGUAGES, ['en', 'ko']);
+    assert.throws(() => assertSupportedNarrativeLanguage(undefined), /language is required/);
+    assert.throws(() => assertSupportedNarrativeLanguage('fr'), /language is required/);
+    await assert.rejects(
+      () => cmdDraftNarrative({ case_id: 'case-uuid', narrative: { hook: 'no language' } }),
+      /language is required/,
+    );
+    assert.equal(calls.length, 0);
+  } finally {
+    restore();
+  }
+});
+
+test('draft-narrative scopes the next-version lookup by (case_id, language), not case_id alone', async () => {
+  const bodies = [];
+  const { restore } = mockFetch((url, init) => {
+    bodies.push({ url, body: init.body ? JSON.parse(init.body) : null });
+    if (url.includes('narratives?')) {
+      assert.match(url, /language=eq\.ko/, 'version lookup must filter by the requested language');
+      return jsonResponse([{ version: 4 }]); // existing ko v4
+    }
+    if (url.endsWith('/rest/v1/narratives'))
+      return jsonResponse([{ id: 'narrative-uuid', version: 5, language: 'ko' }]);
+    return jsonResponse({});
+  });
+  try {
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      narrative: { language: 'ko', hook: 'ko hook' },
+    });
+    const insert = bodies.find((b) => b.url.endsWith('/rest/v1/narratives'));
+    assert.equal(insert.body.version, 5, 'ko version continues its own sequence (v4 -> v5)');
+    assert.equal(insert.body.language, 'ko');
+  } finally {
+    restore();
+  }
+});
+
+test('cmdCase groups current narratives by language, so en and ko can both be current at once', async () => {
+  const { restore } = mockFetch((url) => {
+    if (url.includes('decision_cases?case_key='))
+      return jsonResponse([{ id: 'case-uuid', case_key: 'x', status: 'PUBLISHED' }]);
+    if (url.includes('narratives?case_id='))
+      return jsonResponse([
+        { id: 'en-2', language: 'en', version: 2, is_current: true, status: 'APPROVED' },
+        { id: 'en-1', language: 'en', version: 1, is_current: false, status: 'ARCHIVED' },
+        { id: 'ko-1', language: 'ko', version: 1, is_current: true, status: 'APPROVED' },
+      ]);
+    return jsonResponse([]);
+  });
+  try {
+    const result = await cmdCase('x');
+    assert.equal(result.current_narratives.en.id, 'en-2');
+    assert.equal(result.current_narratives.ko.id, 'ko-1');
+    assert.equal(
+      result.current_narrative.id,
+      'en-2',
+      'legacy current_narrative stays an English-default convenience',
+    );
+    assert.equal(result.all_narrative_versions.length, 3);
+    assert.ok(result.all_narrative_versions.every((n) => 'language' in n));
+  } finally {
+    restore();
+  }
+});
+
+test('submitNarrativeVersion does not force a workflow transition when adding a sibling-language narrative to an already-approved case', async () => {
+  const { calls, restore } = mockFetch((url) => {
+    if (url.includes('decision_cases?case_key=')) return jsonResponse([{ status: 'APPROVED' }]);
+    if (url.includes('narratives?case_id=')) return jsonResponse([]); // no existing ko version
+    if (url.endsWith('/rest/v1/narratives'))
+      return jsonResponse([{ id: 'narrative-uuid', version: 1, language: 'ko' }]);
+    if (url.includes('rpc/transition_case_status'))
+      throw new Error('must not attempt a transition from APPROVED for a sibling-language draft');
+    return jsonResponse({});
+  });
+  try {
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      case_key: 'cuban-missile-1962',
+      narrative: { language: 'ko', hook: 'ko hook' },
+    });
+    assert.ok(
+      !calls.some((c) => c.url.includes('rpc/transition_case_status')),
+      'an already-APPROVED case must not receive a transition attempt for a new-language draft',
+    );
+  } finally {
+    restore();
+  }
+});
+
+test('submitNarrativeVersion still transitions RESEARCH_DONE -> NARRATIVE_DRAFTED for a genuine first draft', async () => {
+  const { calls, restore } = mockFetch((url) => {
+    if (url.includes('decision_cases?case_key=')) return jsonResponse([{ status: 'RESEARCH_DONE' }]);
+    if (url.includes('narratives?case_id=')) return jsonResponse([]);
+    if (url.endsWith('/rest/v1/narratives'))
+      return jsonResponse([{ id: 'narrative-uuid', version: 1, language: 'en' }]);
+    if (url.includes('rpc/transition_case_status')) return jsonResponse({ status: 'NARRATIVE_DRAFTED' });
+    return jsonResponse({});
+  });
+  try {
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      case_key: 'some-new-case',
+      narrative: { language: 'en', hook: 'en hook' },
+    });
+    const transitionCall = calls.find((c) => c.url.includes('rpc/transition_case_status'));
+    assert.ok(transitionCall, 'a first draft on a RESEARCH_DONE case must still transition to NARRATIVE_DRAFTED');
+    assert.equal(JSON.parse(transitionCall.init.body).p_to_status, 'NARRATIVE_DRAFTED');
   } finally {
     restore();
   }

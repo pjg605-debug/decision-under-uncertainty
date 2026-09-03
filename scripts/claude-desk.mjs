@@ -78,7 +78,17 @@ async function cmdCase(caseKey) {
       )
     : [];
 
-  const currentNarrative = narratives.find((n) => n.is_current) || null;
+  // is_current is scoped per (case_id, language), not per case_id alone --
+  // a case can have a current English narrative and a current Korean
+  // narrative at the same time, since neither is a translation of the
+  // other. current_narrative (singular) is kept only as a legacy
+  // English-default convenience; current_narratives (by language) is the
+  // contract to actually read going forward.
+  const currentNarrativesByLanguage = Object.fromEntries(
+    narratives
+      .filter((n) => n.is_current)
+      .map((n) => [n.language || 'en', n]),
+  );
 
   return {
     case: caseRow,
@@ -96,8 +106,10 @@ async function cmdCase(caseKey) {
     research_claims: claims,
     research_gaps: gaps,
     narrative_version_count: narratives.length,
-    current_narrative: currentNarrative,
+    current_narrative: currentNarrativesByLanguage.en || null,
+    current_narratives: currentNarrativesByLanguage,
     all_narrative_versions: narratives.map((n) => ({
+      language: n.language,
       version: n.version,
       status: n.status,
       author_agent: n.author_agent,

@@ -29,12 +29,28 @@ export const request = async (path, init = {}) => {
 export const rpc = (name, body) =>
   request(`rpc/${name}`, { method: 'POST', body: JSON.stringify(body) });
 
+// Narratives are independently authored per language, never a translation
+// of the other -- see CODEX_INTEGRATION_HANDOFF.md's "bilingual narratives
+// must be independently authored" section (main branch). A write must state
+// its language explicitly; there is no silent default.
+export const SUPPORTED_NARRATIVE_LANGUAGES = ['en', 'ko'];
+
+export function assertSupportedNarrativeLanguage(language) {
+  if (!SUPPORTED_NARRATIVE_LANGUAGES.includes(language))
+    throw new Error(
+      `payload.narrative.language is required and must be one of ${SUPPORTED_NARRATIVE_LANGUAGES.join(', ')} (got ${JSON.stringify(language)}).`,
+    );
+}
+
 // Shared by the CLI below and scripts/claude-desk.mjs, so narrative
-// submission logic (versioning, revision linkage, status transition)
-// lives in exactly one place regardless of which agent calls it.
+// submission logic (language validation, per-language versioning, revision
+// linkage, status transition) lives in exactly one place regardless of
+// which agent calls it.
 export async function submitNarrativeVersion(payload) {
+  assertSupportedNarrativeLanguage(payload?.narrative?.language);
+  const language = payload.narrative.language;
   const existing = await request(
-    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&select=version&order=version.desc&limit=1`,
+    `narratives?case_id=eq.${encodeURIComponent(payload.case_id)}&language=eq.${encodeURIComponent(language)}&select=version&order=version.desc&limit=1`,
   );
   const version = (existing?.[0]?.version || 0) + 1;
   const inserted = await request('narratives', {
@@ -64,15 +80,33 @@ export async function submitNarrativeVersion(payload) {
       }),
     });
   }
+  // Only move the case's workflow status when this narrative is part of the
+  // original linear flow (RESEARCH_DONE -> first draft, or
+  // REVISION_REQUESTED -> responding to a review). Submitting an
+  // additional language's narrative for a case that is already
+  // APPROVED/PROTOTYPE_READY/PUBLISHED/HOLD/etc. is a legitimate,
+  // independent action (e.g. adding a Korean narrative to a case whose
+  // English narrative is already live) and must not force an invalid
+  // transition -- decision_cases.status tracks the case as a whole, not
+  // per-language narrative review state, which lives on the narrative row
+  // itself (`status`, `is_current`, scoped by language).
   if (payload.case_key) {
-    await rpc('transition_case_status', {
-      p_case_key: payload.case_key,
-      p_to_status: payload.triggered_by_review_id
-        ? 'REVISION_DONE'
-        : 'NARRATIVE_DRAFTED',
-      p_actor_agent: payload.author_agent,
-      p_reason: payload.summary || `Narrative version ${version} submitted.`,
-    });
+    const [caseRow] = await request(
+      `decision_cases?case_key=eq.${encodeURIComponent(payload.case_key)}&select=status`,
+    );
+    const expectedFrom = payload.triggered_by_review_id
+      ? 'REVISION_REQUESTED'
+      : 'RESEARCH_DONE';
+    if (caseRow?.status === expectedFrom) {
+      await rpc('transition_case_status', {
+        p_case_key: payload.case_key,
+        p_to_status: payload.triggered_by_review_id
+          ? 'REVISION_DONE'
+          : 'NARRATIVE_DRAFTED',
+        p_actor_agent: payload.author_agent,
+        p_reason: payload.summary || `Narrative version ${version} submitted.`,
+      });
+    }
   }
   return inserted;
 }

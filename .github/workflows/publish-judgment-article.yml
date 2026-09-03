@@ -1,0 +1,65 @@
+name: Publish one judgment-training article
+
+on:
+  schedule:
+    - cron: '0 3,9,15,21 * * *'
+      timezone: 'Asia/Seoul'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-judgment-article
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Publish the oldest queued draft
+        id: publish
+        env:
+          PUBLISH_URL: https://fnxbilbihakhqvxjmoqo.supabase.co/functions/v1/publish-next-article
+          PUBLISH_SECRET: ${{ secrets.GITHUB_PUBLISH_SECRET }}
+        run: |
+          set -euo pipefail
+          response_file="$(mktemp)"
+          status="$(curl --silent --show-error --output "$response_file" --write-out '%{http_code}' \
+            --request POST \
+            --header 'Content-Type: application/json' \
+            --header "x-publish-secret: $PUBLISH_SECRET" \
+            --data '{}' \
+            "$PUBLISH_URL")"
+          cat "$response_file"
+          echo "response_file=$response_file" >> "$GITHUB_OUTPUT"
+          test "$status" -ge 200
+          test "$status" -lt 300
+
+      - name: Notify #insight on Slack
+        if: always()
+        continue-on-error: true
+        env:
+          SLACK_INSIGHT_WEBHOOK_URL: ${{ secrets.SLACK_INSIGHT_WEBHOOK_URL }}
+          RESPONSE_FILE: ${{ steps.publish.outputs.response_file }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SLACK_INSIGHT_WEBHOOK_URL:-}" ] || [ -z "${RESPONSE_FILE:-}" ] || [ ! -f "$RESPONSE_FILE" ]; then
+            echo "Slack webhook not configured or no publish response to report; skipping."
+            exit 0
+          fi
+          published="$(jq -r '.published // false' "$RESPONSE_FILE")"
+          if [ "$published" != "true" ]; then
+            echo "No article was published this run; skipping Slack notification."
+            exit 0
+          fi
+          title="$(jq -r '.article.title // "New article"' "$RESPONSE_FILE")"
+          url="$(jq -r '.url // ""' "$RESPONSE_FILE")"
+          payload="$(jq -n --arg title "$title" --arg url "$url" \
+            '{text: ("📰 새 아티클 발행: " + $title + "\n" + $url)}')"
+          curl --silent --show-error --output /dev/null \
+            --request POST \
+            --header 'Content-Type: application/json' \
+            --data "$payload" \
+            "$SLACK_INSIGHT_WEBHOOK_URL"
