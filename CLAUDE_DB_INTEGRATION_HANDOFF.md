@@ -4,7 +4,9 @@
 
 This handoff describes the schema actually deployed to Supabase project `fnxbilbihakhqvxjmoqo` by migration `202608300001_content_hub.sql` on 2026-08-30. The project URL is `https://fnxbilbihakhqvxjmoqo.supabase.co`. Store credentials only in server-side environment variables.
 
-**Pending migration, not yet applied to the live database**: `main`'s `supabase/migrations/202609020001_narrative_language.sql` (commit `8b8ccd2`) adds bilingual (independently authored `en`/`ko`) narrative support -- see "Bilingual narratives" below. The `narratives` columns, uniqueness, and write contract described in this document already reflect that migration's target state; the section marked pending tells you exactly what has not been run against the live DB yet. Until someone with `SUPABASE_DB_URL`/CLI access runs `supabase db push` (or applies the SQL directly) and the client code deploys, the live database still has the old schema (no `language` column, one `is_current` per `case_id`) -- do not submit a narrative write assuming the new columns exist without first confirming the migration has actually run (e.g. `pnpm claude:case <case-key>` returning a `language` field on `current_narrative`).
+**Migration applied 2026-09-03**: `supabase/migrations/202609020001_narrative_language.sql` (bilingual, independently authored `en`/`ko` narrative support) has been run against the live database via `supabase db push` -- see "Bilingual narratives" below. The `narratives` columns, uniqueness, and write contract described in this document reflect the live schema, not a future target.
+
+**Deploy pending, not yet run**: `supabase/functions/get-narrative-queue-status` (a read-only Edge Function backing the 2-hour case-narrative queue-check routine -- see that file's header comment) needs `supabase functions deploy get-narrative-queue-status` plus `supabase secrets set NARRATIVE_QUEUE_SECRET=<value>` run once from a machine with Supabase CLI access. Until that runs, the scheduled routine's queue check will get a connection/auth failure and no-op every cycle -- this is expected and safe, not a bug to chase.
 
 Required environment variable names:
 
