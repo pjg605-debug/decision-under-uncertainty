@@ -1,7 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { transformSupabaseRows } from '../core/supabase-content.mjs';
+import {
+  transformSupabaseRows,
+  fetchApprovedContent,
+  SUPPORTED_LANGUAGES,
+} from '../core/supabase-content.mjs';
 
 const migration = await readFile(new URL('../supabase/migrations/202608300001_content_hub.sql', import.meta.url), 'utf8');
 const seed = await readFile(new URL('../supabase/seed.sql', import.meta.url), 'utf8');
@@ -51,6 +55,71 @@ test('Supabase normalized rows transform back into the existing DecisionEvent co
   assert.deepEqual(result.cases[0].options.map((option) => option.id), ['a','b']);
   assert.deepEqual(result.cases[0].known_information, ['Known']);
   assert.equal(result.narratives.sample.hook, 'Hook');
+});
+
+test('fetchApprovedContent rejects an unsupported language before making a request', async () => {
+  await assert.rejects(
+    () =>
+      fetchApprovedContent({
+        url: 'https://example.supabase.co',
+        key: 'anon-key',
+        language: 'fr',
+        fetchImpl: () => {
+          throw new Error('fetchImpl must not be called for an unsupported language');
+        },
+      }),
+    /Unsupported language "fr"/,
+  );
+});
+
+test('fetchApprovedContent defaults to English and filters the embedded narratives resource by language', async () => {
+  const calls = [];
+  const fetchImpl = async (url) => {
+    calls.push(url);
+    return { ok: true, json: async () => [] };
+  };
+  await fetchApprovedContent({
+    url: 'https://example.supabase.co',
+    key: 'anon-key',
+    fetchImpl,
+  });
+  assert.equal(calls.length, 1);
+  const requested = new URL(calls[0]);
+  assert.equal(requested.searchParams.get('narratives.language'), 'eq.en');
+
+  calls.length = 0;
+  await fetchApprovedContent({
+    url: 'https://example.supabase.co',
+    key: 'anon-key',
+    language: 'ko',
+    fetchImpl,
+  });
+  const requestedKo = new URL(calls[0]);
+  assert.equal(requestedKo.searchParams.get('narratives.language'), 'eq.ko');
+});
+
+test('SUPPORTED_LANGUAGES is exactly en/ko', () => {
+  assert.deepEqual(SUPPORTED_LANGUAGES, ['en', 'ko']);
+});
+
+test('the public content route reads ?lang= and falls back to en for anything unsupported', async () => {
+  const routeSrc = await readFile(
+    new URL('../app/api/content/route.ts', import.meta.url),
+    'utf8',
+  );
+  assert.match(routeSrc, /searchParams\.get\('lang'\)/);
+  assert.match(routeSrc, /SUPPORTED_LANGUAGES\.includes\(requested \|\| ''\)/);
+});
+
+test('approving a narrative unsets is_current scoped by language, not case_id alone', () => {
+  assert.match(
+    reviewRoute,
+    /narratives\?id=eq\.\$\{encodeURIComponent\(body\.narrative_id\)\}&select=language/,
+  );
+  assert.match(
+    reviewRoute,
+    /narratives\?case_id=eq\.\$\{encodeURIComponent\(current\.id\)\}&language=eq\.\$\{encodeURIComponent\(approving\?\.language \|\| ''\)\}&is_current=eq\.true/,
+  );
 });
 
 test('service role remains server-only', async () => {

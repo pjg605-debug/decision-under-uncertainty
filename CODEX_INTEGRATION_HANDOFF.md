@@ -83,12 +83,22 @@ representable today.
    whatever the case-archive equivalent turns out to be) needs a language
    selector (query param or `Accept-Language`) to pick which `is_current` row to
    serve per case.
-5. Open question for the product owner, not assumed here: does this bilingual
-   requirement extend to `decision_options` (`label`, `short_description`,
-   `upside`, `downside`) and `evidence.citation`/note text — i.e. does the whole
-   player-facing surface need native KO/EN pairs, or only the long-form
-   narrative prose? Recommend deciding this before implementing, since it
-   changes the scope of (1)-(3) beyond just `narratives`.
+5. **Resolved (product owner, 2026-09-03):** `decision_options`/`case_information`/
+   `decision_cases` stay English-only in the schema — no `language` column, no
+   scope change to (1)-(3) above. Korean display for these short structured
+   fields is handled entirely client-side: `data/i18n.ts` holds a
+   `Record<English source string, natively-written Korean>` dictionary,
+   applied at render time by `localizeEvent`/`t()` in
+   `components/decision-platform.tsx`. This is a deliberate difference from
+   narrative prose, not a stopgap: a literal-string dictionary works fine for
+   short labels/bullets where the English source string is stable and known
+   in advance, but cannot carry nuance across long-form narrative text, which
+   is why narratives alone got the schema-level `language` column instead.
+   `tests/i18n-coverage.test.mjs` fails the build if any live fixture case's
+   `actor`/`actor_role`/`location`/`known_tradeoffs` (the derived
+   `"<upside> versus <downside>"` string per option) has no `ko` entry —
+   whoever adds a new case's structured fields must add the matching
+   dictionary entries in the same change.
 
 ### What Claude will do once this ships
 

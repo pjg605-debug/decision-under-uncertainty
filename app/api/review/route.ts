@@ -156,8 +156,17 @@ export async function POST(request: Request) {
       }),
     });
     if (!revising) {
+      // Scope the is_current unset by language too -- narratives are
+      // independently authored per language (see
+      // CODEX_INTEGRATION_HANDOFF.md's bilingual-narratives section), and a
+      // case can have an EN and a KO narrative both live at once. Unsetting
+      // by case_id alone would clobber the sibling language's is_current
+      // row on every approval.
+      const [approving] = await admin(
+        `narratives?id=eq.${encodeURIComponent(body.narrative_id)}&select=language`,
+      );
       await admin(
-        `narratives?case_id=eq.${encodeURIComponent(current.id)}&is_current=eq.true`,
+        `narratives?case_id=eq.${encodeURIComponent(current.id)}&language=eq.${encodeURIComponent(approving?.language || '')}&is_current=eq.true`,
         {
           method: 'PATCH',
           body: JSON.stringify({ is_current: false }),

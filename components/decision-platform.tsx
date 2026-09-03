@@ -142,7 +142,7 @@ export default function DecisionPlatform() {
   }, []);
   useEffect(() => {
     let current = true;
-    fetch('/api/content')
+    fetch(`/api/content?lang=${lang}`)
       .then(async (response) => {
         if (!response.ok) throw new Error('remote unavailable');
         const value = await response.json();
@@ -164,7 +164,11 @@ export default function DecisionPlatform() {
     return () => {
       current = false;
     };
-  }, []);
+    // Narratives are independently authored per language (never translated
+    // from the other), so switching lang must re-fetch from the server --
+    // the client-side `t()` dictionary below only covers short structured
+    // fields, not narrative prose.
+  }, [lang]);
   const changeLanguage = (next: Language) => {
     setLang(next);
     localStorage.setItem('decision-t0-language', next);
