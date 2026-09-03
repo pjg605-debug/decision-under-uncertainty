@@ -71,15 +71,33 @@ export async function submitNarrativeVersion(request, rpc, payload) {
       }),
     });
   }
+  // Only move the case's workflow status when this narrative is part of the
+  // original linear flow (RESEARCH_DONE -> first draft, or
+  // REVISION_REQUESTED -> responding to a review). Submitting an
+  // additional language's narrative for a case that is already
+  // APPROVED/PROTOTYPE_READY/PUBLISHED/HOLD/etc. is a legitimate,
+  // independent action (e.g. adding a Korean narrative to a case whose
+  // English narrative is already live) and must not force an invalid
+  // transition -- decision_cases.status tracks the case as a whole, not
+  // per-language narrative review state, which lives on the narrative row
+  // itself (`status`, `is_current`, scoped by language).
   if (payload.case_key) {
-    await rpc('transition_case_status', {
-      p_case_key: payload.case_key,
-      p_to_status: payload.triggered_by_review_id
-        ? 'REVISION_DONE'
-        : 'NARRATIVE_DRAFTED',
-      p_actor_agent: payload.author_agent,
-      p_reason: payload.summary || `Narrative version ${version} submitted.`,
-    });
+    const [caseRow] = await request(
+      `decision_cases?case_key=eq.${encodeURIComponent(payload.case_key)}&select=status`,
+    );
+    const expectedFrom = payload.triggered_by_review_id
+      ? 'REVISION_REQUESTED'
+      : 'RESEARCH_DONE';
+    if (caseRow?.status === expectedFrom) {
+      await rpc('transition_case_status', {
+        p_case_key: payload.case_key,
+        p_to_status: payload.triggered_by_review_id
+          ? 'REVISION_DONE'
+          : 'NARRATIVE_DRAFTED',
+        p_actor_agent: payload.author_agent,
+        p_reason: payload.summary || `Narrative version ${version} submitted.`,
+      });
+    }
   }
   return inserted;
 }

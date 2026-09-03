@@ -152,6 +152,53 @@ test('two languages for the same case get independent version sequences', async 
   assert.ok(koInsert);
 });
 
+test('submitNarrativeVersion does not force a workflow transition when adding a sibling-language narrative to an already-approved case', async () => {
+  const calls = [];
+  const request = async (path, init) => {
+    calls.push({ path, init });
+    if (path.startsWith('decision_cases?case_key=')) return [{ status: 'APPROVED' }];
+    if (path.startsWith('narratives?case_id=')) return [];
+    if (path === 'narratives') return [{ id: 'new-narrative-id' }];
+    return null;
+  };
+  const rpc = async (name) => {
+    throw new Error(`must not call rpc(${name}) from an already-APPROVED case`);
+  };
+  await submitNarrativeVersion(request, rpc, {
+    case_id: 'case-1',
+    case_key: 'cuban-missile-1962',
+    author_agent: 'claude',
+    narrative: { language: 'ko', hook: 'ko hook' },
+  });
+  assert.ok(
+    !calls.some((c) => c.path.includes('rpc/transition_case_status')),
+    'an already-APPROVED case must not receive a transition attempt for a new-language draft',
+  );
+});
+
+test('submitNarrativeVersion still transitions RESEARCH_DONE -> NARRATIVE_DRAFTED for a genuine first draft', async () => {
+  const rpcCalls = [];
+  const request = async (path) => {
+    if (path.startsWith('decision_cases?case_key=')) return [{ status: 'RESEARCH_DONE' }];
+    if (path.startsWith('narratives?case_id=')) return [];
+    if (path === 'narratives') return [{ id: 'new-narrative-id' }];
+    return null;
+  };
+  const rpc = async (name, body) => {
+    rpcCalls.push({ name, body });
+    return { status: 'NARRATIVE_DRAFTED' };
+  };
+  await submitNarrativeVersion(request, rpc, {
+    case_id: 'case-1',
+    case_key: 'some-new-case',
+    author_agent: 'claude',
+    narrative: { language: 'en', hook: 'en hook' },
+  });
+  assert.equal(rpcCalls.length, 1);
+  assert.equal(rpcCalls[0].name, 'transition_case_status');
+  assert.equal(rpcCalls[0].body.p_to_status, 'NARRATIVE_DRAFTED');
+});
+
 test('the API route defaults to English and only switches to Korean on an explicit ?lang=ko', async () => {
   const route = await readFile(new URL('../app/api/content/route.ts', import.meta.url), 'utf8');
   assert.match(route, /searchParams\.get\('lang'\)/);
