@@ -265,6 +265,54 @@ test('cmdCase groups current narratives by language, so en and ko can both be cu
   }
 });
 
+test('submitNarrativeVersion does not force a workflow transition when adding a sibling-language narrative to an already-approved case', async () => {
+  const { calls, restore } = mockFetch((url) => {
+    if (url.includes('decision_cases?case_key=')) return jsonResponse([{ status: 'APPROVED' }]);
+    if (url.includes('narratives?case_id=')) return jsonResponse([]); // no existing ko version
+    if (url.endsWith('/rest/v1/narratives'))
+      return jsonResponse([{ id: 'narrative-uuid', version: 1, language: 'ko' }]);
+    if (url.includes('rpc/transition_case_status'))
+      throw new Error('must not attempt a transition from APPROVED for a sibling-language draft');
+    return jsonResponse({});
+  });
+  try {
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      case_key: 'cuban-missile-1962',
+      narrative: { language: 'ko', hook: 'ko hook' },
+    });
+    assert.ok(
+      !calls.some((c) => c.url.includes('rpc/transition_case_status')),
+      'an already-APPROVED case must not receive a transition attempt for a new-language draft',
+    );
+  } finally {
+    restore();
+  }
+});
+
+test('submitNarrativeVersion still transitions RESEARCH_DONE -> NARRATIVE_DRAFTED for a genuine first draft', async () => {
+  const { calls, restore } = mockFetch((url) => {
+    if (url.includes('decision_cases?case_key=')) return jsonResponse([{ status: 'RESEARCH_DONE' }]);
+    if (url.includes('narratives?case_id=')) return jsonResponse([]);
+    if (url.endsWith('/rest/v1/narratives'))
+      return jsonResponse([{ id: 'narrative-uuid', version: 1, language: 'en' }]);
+    if (url.includes('rpc/transition_case_status')) return jsonResponse({ status: 'NARRATIVE_DRAFTED' });
+    return jsonResponse({});
+  });
+  try {
+    await cmdDraftNarrative({
+      case_id: 'case-uuid',
+      case_key: 'some-new-case',
+      narrative: { language: 'en', hook: 'en hook' },
+    });
+    const transitionCall = calls.find((c) => c.url.includes('rpc/transition_case_status'));
+    assert.ok(transitionCall, 'a first draft on a RESEARCH_DONE case must still transition to NARRATIVE_DRAFTED');
+    assert.equal(JSON.parse(transitionCall.init.body).p_to_status, 'NARRATIVE_DRAFTED');
+  } finally {
+    restore();
+  }
+});
+
 test('stale-state protection is not implemented at the DB RPC layer (documented limitation, not silently assumed)', () => {
   // transition_case_status takes no expected-current-status argument, so
   // there is no server-side compare-and-swap; CLAUDE.md instead documents
