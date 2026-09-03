@@ -300,6 +300,16 @@ test('202609030002 renames the RETURNS TABLE columns so they can never collide w
   );
 });
 
+// Postgres 42P13 ("cannot change return type of existing function") on
+// first deploy attempt of this fix: CREATE OR REPLACE cannot change a
+// RETURNS TABLE row type, only CREATE (after a DROP) can.
+test('202609030002 drops the old function before recreating it, since CREATE OR REPLACE cannot change a RETURNS TABLE row type', () => {
+  assert.match(ambiguityFix, /drop function if exists public\.import_pending_case\(jsonb\);/);
+  const dropIndex = ambiguityFix.indexOf('drop function if exists public.import_pending_case(jsonb);');
+  const createIndex = ambiguityFix.indexOf('create function public.import_pending_case(p_payload jsonb)');
+  assert.ok(dropIndex >= 0 && createIndex > dropIndex, 'drop must come before the new create');
+});
+
 test('scripts/import-pending-case.mjs reads the RPC result by the fixed, collision-free column names', async () => {
   const scriptSource = await readFile(
     new URL('../scripts/import-pending-case.mjs', import.meta.url),

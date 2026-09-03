@@ -8,7 +8,13 @@ begin;
 -- was never a schema/data problem -- the function's body just needs
 -- distinct names for its return columns so no embedded query can confuse
 -- an OUT parameter for a table column.
-create or replace function public.import_pending_case(p_payload jsonb)
+-- Postgres refuses to CREATE OR REPLACE a function when the RETURNS TABLE
+-- row type changes (42P13: "cannot change return type of existing
+-- function") -- the OUT parameter names are part of that row type, so the
+-- old signature has to be dropped first.
+drop function if exists public.import_pending_case(jsonb);
+
+create function public.import_pending_case(p_payload jsonb)
 returns table (new_case_id uuid, new_case_key text, landed_status text)
 language plpgsql
 security definer
