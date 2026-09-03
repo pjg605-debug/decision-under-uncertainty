@@ -3,3 +3,12 @@ project_id = "decision-under-uncertainty"
 [db.seed]
 enabled = true
 sql_paths = ["./seed.sql"]
+
+# Auth is its own secret header (x-queue-secret, see the function's own code)
+# checked to a narrow-purpose value, never the full service role key -- the
+# platform's default JWT gateway check is disabled here the same way it must
+# already be for this project's other narrow-secret functions
+# (submit-draft-article, publish-next-article), or every call gets rejected
+# before the function's own handler ever runs.
+[functions.get-narrative-queue-status]
+verify_jwt = false

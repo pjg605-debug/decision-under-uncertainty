@@ -42,3 +42,15 @@ test('the revision queue carries the actual review feedback needed to write a fi
   assert.match(src, /comment: review\.comment/);
   assert.match(src, /suggested_change: review\.suggested_change/);
 });
+
+test('config.toml disables the platform JWT gateway check for this function', async () => {
+  // Without this, Supabase's default gateway auth rejects every call with
+  // 401 UNAUTHORIZED_NO_AUTH_HEADER before the function's own x-queue-secret
+  // check ever runs -- confirmed against the real deployment.
+  const config = await readFile(
+    new URL('../supabase/config.toml', import.meta.url),
+    'utf8',
+  );
+  assert.match(config, /\[functions\.get-narrative-queue-status\]/);
+  assert.match(config, /verify_jwt = false/);
+});
