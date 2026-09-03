@@ -98,7 +98,7 @@ Claude writes only as required by its assignment:
 - Revision: append the new `narratives` version, then append `revisions` with `triggered_by_review_id` pointing to the requesting `reviews` row.
 - Workflow: call `transition_case_status`; do not bypass the RPC.
 
-Canonical structured facts belong to `decision_cases`, `decision_options`, and T0 `case_information`. Claude must not alter them casually or rewrite them as part of narrative editing.
+Canonical structured facts belong to `decision_cases`, `decision_options`, and T0 `case_information`. Claude must not alter an *existing* row of any of these casually or rewrite one as part of narrative editing. As of 2026-09-03, Claude may *create* a brand-new case's rows (through `RESEARCH_DONE`) via the file-based `content/pending-cases/` → `import_pending_case()` pipeline described in `CLAUDE.md`'s "Creating a new case" section — that pipeline refuses outright if the `case_key` already exists, so this doesn't weaken the "never alter an existing row" rule, it only adds a path for genuinely new ones.
 
 ## Narrative versioning and review loop
 

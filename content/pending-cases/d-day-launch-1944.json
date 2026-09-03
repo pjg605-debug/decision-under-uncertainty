@@ -1,0 +1,72 @@
+{
+  "case_key": "d-day-launch-1944",
+  "title": "Launch on the Marginal Forecast",
+  "domain": "history",
+  "subdomain": "military",
+  "actor": "General Dwight D. Eisenhower",
+  "actor_role": "Supreme Allied Commander",
+  "date_or_period": "1944",
+  "era": "1900s",
+  "location": "Southwick House, near Portsmouth, England",
+  "t0": "Eisenhower's final go/no-go decision at the Southwick House commanders' meeting, made after he had already postponed the originally planned June 5 invasion by one day because of a storm, and after Group Captain Stagg presented a forecast of a brief clearing window opening June 6 (approximately 4:15 AM, June 5, 1944).",
+  "context_summary": "A storm has already forced a one-day postponement of the Normandy invasion. The meteorologist's forecast says a brief, marginal clearing window opens tomorrow -- but 150,000 troops are already loaded aboard ship, and the next viable tide is two weeks away.",
+  "actual_decision_key": "launch",
+  "immediate_outcome": "The Normandy landings proceeded on June 6, 1944 as forecast, with weather conditions clearing enough to permit the planned naval bombardment, airborne drops, and amphibious landings; the Allies achieved a foothold on the Normandy coast, aided by a degree of tactical surprise partly attributable to German forces not expecting an attack in the prevailing weather.",
+  "long_term_outcome": "The successful establishment of the Normandy beachhead opened the Western Front in Europe and is broadly credited by historians as a major contributing factor in the eventual defeat of Nazi Germany, alongside the ongoing Eastern Front campaign and other Allied operations; the June 19, 1944 storm subsequently destroyed the Omaha Beach Mulberry harbor, forcing the Allies to rely more heavily on the surviving British Mulberry and over-the-beach logistics for a period afterward.",
+  "decision_quality": "Strong",
+  "outcome_quality": "Good",
+  "popularity": 95,
+  "controversy_risk": 15,
+  "context_compression": 90,
+  "visualizability": 92,
+  "source_disagreement": 22,
+  "uncertainty_factors": ["Forecast uncertainty", "Tidal window constraint", "Secrecy risk"],
+  "fame_score": 96,
+  "research_priority": 70,
+  "status": "RESEARCH_DONE",
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "launch",
+      "sort_order": 1,
+      "label": "Launch on June 6",
+      "short_description": "Accept Stagg's marginal-but-real forecast and commit to landing the next morning.",
+      "upside": "Uses the only near-term tidal and lunar window, stops further physical and logistical strain on troops already loaded aboard ship, and preserves operational secrecy before it can erode further.",
+      "downside": "The forecast still carries real uncertainty -- if the weather does not clear as predicted, naval gunfire support, airborne operations, and landing-craft control could all be degraded.",
+      "known_tradeoffs": ["Uses the only near-term tidal and lunar window, stops further physical and logistical strain on troops already loaded aboard ship, and preserves operational secrecy before it can erode further. versus The forecast still carries real uncertainty -- if the weather does not clear as predicted, naval gunfire support, airborne operations, and landing-craft control could all be degraded."]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "postpone",
+      "sort_order": 2,
+      "label": "Postpone to June 19",
+      "short_description": "Call off the June 5-7 attempt entirely and wait roughly two weeks for the next viable tide and moonlight.",
+      "upside": "Avoids launching into currently unsettled weather and buys time for a clearer, more confident forecast.",
+      "downside": "Means two more weeks with a huge invasion force loaded, staged, and increasingly difficult to conceal or sustain, while the risk of German intelligence detecting the buildup grows.",
+      "known_tradeoffs": ["Avoids launching into currently unsettled weather and buys time for a clearer, more confident forecast. versus Means two more weeks with a huge invasion force loaded, staged, and increasingly difficult to conceal or sustain, while the risk of German intelligence detecting the buildup grows."]
+    }
+  ],
+  "case_information": [
+    { "information_type": "KNOWN_AT_T0", "sequence": 1, "content": "A storm over the English Channel had already forced Eisenhower to postpone the originally planned June 5 invasion by 24 hours, a decision made on June 4." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 2, "content": "Group Captain James Stagg, combining forecasts from British and American meteorological teams (which did not fully agree with each other), predicted a brief improvement in weather beginning June 6: winds and seas moderating enough for a landing, with cloud cover clearing enough for air support, though conditions would not be ideal." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 3, "content": "Weather forecasting in 1944 relied on ship and land observation networks and had no satellite data; predicting conditions even 24-48 hours out over the Atlantic and Channel carried substantial, openly acknowledged uncertainty, and Stagg's briefings to Eisenhower described this uncertainty directly rather than presenting a guaranteed forecast." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 4, "content": "The invasion plan required a specific combination of a late-rising moon (for airborne operations and naval bombardment visibility) and a low tide shortly after dawn (to expose German beach obstacles); only a few days in any given month satisfied both conditions, and June 5-7, 1944 was such a window." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 5, "content": "If the invasion did not proceed within the June 5-7 window, the next date combining the required tidal and lunar conditions would not occur until approximately June 19, roughly two weeks later." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 6, "content": "By the time of the decision, a large fraction of the invasion force -- variously described as approximately 150,000 troops -- was already embarked aboard landing craft and transport ships, some of which had been at sea or loaded for days; further delay meant continued physical and logistical strain on those troops and vessels." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 7, "content": "Eisenhower and his commanders judged that an extended delay increased the risk that German intelligence would detect the invasion buildup or that operational secrecy would otherwise be compromised." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 1, "content": "On June 19, 1944, a severe Channel storm -- described by multiple sources as the worst to strike the Normandy coast in several decades -- struck the invasion area and destroyed the American Mulberry artificial harbor off Omaha Beach (Mulberry A), disabling 21 of its 28 breakwater caissons, while badly damaging the British Mulberry B; had the invasion been postponed to the next tidal window around June 19, the fleet and landing force could have been caught at sea or on open beaches by this storm." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 2, "content": "German meteorologists, working from a sparser data network than the Allies, did not predict the June 5-6 clearing window and assessed conditions as too rough for an Allied landing, contributing to a degree of tactical surprise (several senior German commanders, including Erwin Rommel, were away from their posts on June 5-6)." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 3, "content": "Whether an invasion launched into the actual June 19 storm conditions would have failed outright, suffered severe losses, or succeeded despite the weather cannot be established with certainty; this is a counterfactual, not a settled fact." }
+  ],
+  "evidence": [
+    { "evidence_key": "src-01", "source_type": "PRIMARY", "title": "Forecast for Overlord: June 6, 1944", "author_or_institution": "James Martin Stagg", "publication_date": "1971", "citation": "Stagg, J. M. (1971). Forecast for Overlord, June 6, 1944. W. W. Norton & Company.", "evidence_class": "STATED_RATIONALE", "supported_claim": "Stagg's own account, as Eisenhower's chief meteorologist, of the forecasting process, the disagreement among British and American forecasting teams, and the content of the briefings given to Eisenhower on June 4-5, 1944." },
+    { "evidence_key": "src-02", "source_type": "REFERENCE", "title": "How a weather forecast made history - the D-Day Landings", "author_or_institution": "Royal Meteorological Society", "publication_date": "Web publication (D-Day 80th anniversary retrospective)", "url": "https://www.rmets.org/metmatters/how-weather-forecast-made-history-d-day-landings", "citation": "https://www.rmets.org/metmatters/how-weather-forecast-made-history-d-day-landings", "evidence_class": "FACT", "supported_claim": "Technical account of 1944 forecasting limitations (no satellite data, reliance on ship/land observation networks) and the genuine uncertainty in the June 4-5 forecast." },
+    { "evidence_key": "src-03", "source_type": "GOVERNMENT_ARCHIVE", "title": "How The D-Day Landings Were Delayed By A Weather Forecast", "author_or_institution": "Imperial War Museums (IWM)", "publication_date": "Web publication", "url": "https://www.iwm.org.uk/history/how-d-day-was-delayed-by-a-weather-forecast", "citation": "https://www.iwm.org.uk/history/how-d-day-was-delayed-by-a-weather-forecast", "evidence_class": "FACT", "supported_claim": "Timeline of the June 4 postponement from the originally planned June 5 date and the Southwick House decision process leading to the June 5 go order." },
+    { "evidence_key": "src-04", "source_type": "QUALITY_MEDIA", "title": "Pressure, the D-Day Weather Forecast Story", "author_or_institution": "The National WWII Museum, New Orleans", "publication_date": "Web publication", "url": "https://www.nationalww2museum.org/war/articles/pressure-d-day-weather-forecast-story", "citation": "https://www.nationalww2museum.org/war/articles/pressure-d-day-weather-forecast-story", "evidence_class": "FACT", "supported_claim": "Narrative account of the Southwick House meetings, Stagg's forecast delivery, and Eisenhower's decision process and approximate timing." },
+    { "evidence_key": "src-05", "source_type": "GOVERNMENT_ARCHIVE", "title": "General Dwight D. Eisenhower's Order of the Day (1944)", "author_or_institution": "US National Archives", "publication_date": "Document dated June 1944; archive record ongoing", "url": "https://www.archives.gov/milestone-documents/general-eisenhowers-order-of-the-day", "citation": "https://www.archives.gov/milestone-documents/general-eisenhowers-order-of-the-day", "evidence_class": "FACT", "supported_claim": "Primary document context for Eisenhower's authority and framing of the invasion decision; used to cross-check the decision's timing and framing." },
+    { "evidence_key": "src-06", "source_type": "GOVERNMENT_ARCHIVE", "title": "D-Day, 'OK, we'll go'", "author_or_institution": "Prologue Magazine, US National Archives", "publication_date": "Spring 2014", "url": "https://www.archives.gov/publications/prologue/2014/spring/d-day-ok-well-go", "citation": "https://www.archives.gov/publications/prologue/2014/spring/d-day-ok-well-go", "evidence_class": "STATED_RATIONALE", "supported_claim": "Account of Eisenhower's own description of the decision moment, including the pause before giving the final order, sourced to Eisenhower's own later writings." },
+    { "evidence_key": "src-07", "source_type": "QUALITY_MEDIA", "title": "The Mulberries Battle the Storm -- June 19, 1944", "author_or_institution": "Old Salt Blog (naval history specialist publication)", "publication_date": "Web publication", "url": "https://www.oldsaltblog.com/2016/06/mulberries-battle-storm-1944/", "citation": "https://www.oldsaltblog.com/2016/06/mulberries-battle-storm-1944/", "evidence_class": "FACT", "supported_claim": "Account of the severe June 19, 1944 Channel storm that destroyed the Omaha Beach Mulberry harbor (Mulberry A), used to support the unknown_at_t0 claim about what the alternative ~June 19 window would have brought." },
+    { "evidence_key": "src-08", "source_type": "GOVERNMENT_ARCHIVE", "title": "D-Day: Mulberries", "author_or_institution": "Naval History and Heritage Command, US Navy", "publication_date": "Archive record, ongoing maintenance", "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-europe/operation-overlord/mulberries.html", "citation": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-europe/operation-overlord/mulberries.html", "evidence_class": "FACT", "supported_claim": "Official US Navy record confirming the scale of the June 19, 1944 storm damage to the Mulberry harbors (21 of 28 caissons destroyed at Mulberry A)." },
+    { "evidence_key": "src-09", "source_type": "REFERENCE", "title": "Normandy landings", "author_or_institution": "Encyclopaedia Britannica", "publication_date": "Continually updated reference entry", "url": "https://www.britannica.com/event/Normandy-Invasion", "citation": "https://www.britannica.com/event/Normandy-Invasion", "evidence_class": "FACT", "supported_claim": "General chronology cross-check of the invasion date, scale, and immediate/long-term outcome." }
+  ]
+}

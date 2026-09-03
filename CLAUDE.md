@@ -19,6 +19,8 @@ pnpm claude:queue
 - `NARRATIVE_QUEUE` — cases in `RESEARCH_DONE`, ready for a first narrative draft
 - `REVISION_QUEUE` — open reviews with `verdict = REVISE`, waiting on a Claude revision
 
+For an unattended/automated session with no live Supabase credentials, `supabase/functions/get-narrative-queue-status` exposes the same `NARRATIVE_QUEUE`/`REVISION_QUEUE` information (plus each case's structured facts) behind its own narrow, read-only secret — see that file's header comment.
+
 To inspect one case in full before writing anything:
 
 ```bash
@@ -29,9 +31,20 @@ This returns the case row, options, T0 known/unknown information, evidence, rese
 
 ## Role boundary
 
-Claude is **researcher/writer**: case research, T0 reconstruction, decision alternatives, evidence interpretation, narrative writing, option-rationale prose, hindsight analysis, responding to Codex/editor reviews, and narrative revisions.
+Claude is **researcher/writer**, and as of 2026-09-03 (product owner decision) also owns **new case supply**: case discovery, T0 reconstruction, decision alternatives, evidence interpretation, structuring a new case's facts and creating its `decision_cases`/`decision_options`/`case_information`/`evidence` rows through `RESEARCH_DONE`, narrative writing, option-rationale prose, hindsight analysis, responding to Codex/editor reviews, and narrative revisions.
 
-Claude does not redesign the database schema, take over UI implementation, or perform Codex's QA role unless explicitly asked. Structured facts (`decision_cases`, `decision_options`, T0 `case_information`) are not casually rewritten by Claude — only research-team writes are `evidence`, `research_claims`, `research_gaps`, and audit rows in `agent_runs`; narrative writes always append a new `narratives` version, never overwrite one.
+Claude still does not redesign the database schema or take over UI implementation unless explicitly asked, and still does not perform Codex's QA/approval role: `CODEX_REVIEW → APPROVED → PUBLISHED` is never something Claude transitions a case through itself, whether the case is one Claude created or one Codex did. The former blanket rule against Claude writing `decision_cases`/`decision_options`/`case_information` is superseded for **new** cases only (see "Creating a new case" below) — an **existing** row, whether created by Codex or by Claude in an earlier session, is still never casually rewritten; narrative writes always append a new `narratives` version, never overwrite one, and a case that already has a `decision_cases` row is never re-imported or silently patched.
+
+## Creating a new case
+
+Use the same file-based, write-through-CI pattern as narrative submission, so this session never needs a live `SUPABASE_SERVICE_ROLE_KEY`:
+
+1. Write `content/pending-cases/<case-key>.json` (see `scripts/import-pending-case.mjs`'s `validateDraft` for the exact required shape — `decision_cases` fields, 2+ `options`, `case_information` with at least one `KNOWN_AT_T0` and one `UNKNOWN_AT_T0`, and a non-empty `evidence` array).
+2. `status` may only be `DISCOVERED`, `RESEARCHING`, or `RESEARCH_DONE` in the draft — never anything from `CODEX_REVIEW` onward; those stages happen through the normal editorial review flow afterward, not at import time.
+3. Commit and push to `claude/decision-uncertainty-case-selection-9q6h5y`. The `import-pending-case.yml` workflow validates, calls the `import_pending_case()` Postgres function (one transaction — a mid-import failure leaves no partial case behind), reads the result back, and archives the draft on success; on any mismatch it leaves the file in place and fails the job (fail closed).
+4. The function itself refuses outright if `case_key` already exists — check `CLAUDE_PILOT_TO_DB_MAPPING.md` and/or the live queue first so you're not wasting a research pass on a case that's already in.
+5. Do not import in bulk. Land one case, confirm it actually reaches `RESEARCH_DONE` and shows up in `get-narrative-queue-status`, and only then continue with the next.
+6. Keep a backlog target, not an unbounded one — a handful of cases sitting at `RESEARCH_DONE`/awaiting review is healthy; producing far more than Codex can review is not. If `get-narrative-queue-status` already shows several cases waiting, prioritize drafting their narratives over sourcing new cases.
 
 ## Writing tools
 
@@ -56,4 +69,4 @@ Claude does not redesign the database schema, take over UI implementation, or pe
 
 ## Where the hand-researched pilot content lives
 
-`data/cases/<case-id>/{case,evidence,narrative,shorts,progressive}.json` is a separately-schema'd research pilot (see `schema/*.json` and the "Prior narrative pilot architecture" appendix in `ARCHITECTURE.md`) covering 16 hand-researched cases, split into `CURATED_HIGH_POTENTIAL` and `LOW_FAME_STRESS_TEST` batches. It predates and is **not yet imported into** the Supabase `decision_cases` table — case IDs there do not match live `case_key` values 1:1. See `CLAUDE_PILOT_TO_DB_MAPPING.md` for the case-by-case mapping and which ones are safe candidates to bring into the DB. Do not bulk-import this content; each case needs its own mapping/review pass, and creating a brand-new `decision_cases` row is outside Claude's granted writes per `CLAUDE_DB_INTEGRATION_HANDOFF.md` (that's schema/case-creation territory — coordinate with Codex).
+`data/cases/<case-id>/{case,evidence,narrative,shorts,progressive}.json` is a separately-schema'd research pilot (see `schema/*.json` and the "Prior narrative pilot architecture" appendix in `ARCHITECTURE.md`) covering 16 hand-researched cases, split into `CURATED_HIGH_POTENTIAL` and `LOW_FAME_STRESS_TEST` batches. It predates the Supabase `decision_cases` table and its case IDs do not match live `case_key` values 1:1. See `CLAUDE_PILOT_TO_DB_MAPPING.md` for the case-by-case mapping, which are already live (never re-import those), and which are safe candidates for "Creating a new case" above. Import one at a time via that pipeline, not in bulk, and re-check the mapping doc (or the live queue) immediately before each one — Codex may have created a row for it independently since the mapping doc was last updated.

@@ -22,14 +22,15 @@ DB status" column as **last known from documentation, not re-verified live**.
 
 ## Local cases with no corresponding `decision_cases` row at all
 
-None of these have ever been created in Supabase — there is no row to read, no status, no narrative version. Per `CLAUDE_DB_INTEGRATION_HANDOFF.md`, creating a brand-new `decision_cases` row is **not** one of Claude's granted writes (Claude's writes are `evidence`/`research_claims`/`research_gaps`/`agent_runs` on existing cases, and narrative/revision rows) — case creation is schema/engineer territory. The safe action for all of these is the same: **flag for Codex to create the case row** (from the pilot's `case.json`/`evidence.json`), after which Claude can proceed through the normal `RESEARCH_DONE → NARRATIVE_DRAFTED` queue flow.
+None of these have ever been created in Supabase — there is no row to read, no status, no narrative version. **As of 2026-09-03 (product owner decision), creating a brand-new `decision_cases` row is one of Claude's granted writes** — see `CLAUDE.md`'s "Creating a new case" section and `CODEX_INTEGRATION_HANDOFF.md`'s "Role boundary change" note. Import happens one case at a time via `content/pending-cases/<case-key>.json` → `import_pending_case()`, landing the case at `RESEARCH_DONE`; Codex's `CODEX_REVIEW → APPROVED → PUBLISHED` ownership is unchanged.
 
-Ordered by `production_verdict` (VIABLE first) as a suggested priority if/when Codex creates the rows:
+`d-day-launch-1944` was the canary for this pipeline (see "Canary import" below) — check its status before treating it as still unimported.
+
+Ordered by `production_verdict` (VIABLE first) as a suggested import priority:
 
 | Local case-id | Verdict | player_fairness | fame_level | pilot_batch |
 |---|---|---|---|---|
 | `battle-of-midway-1942` | VIABLE | 78 | well_known | CURATED_HIGH_POTENTIAL |
-| `d-day-launch-1944` | VIABLE | 82 | well_known | CURATED_HIGH_POTENTIAL |
 | `stanislav-petrov-1983` | VIABLE | 78 | medium | CURATED_HIGH_POTENTIAL |
 | `whaleship-essex-1820` | VIABLE | 78 | medium | CURATED_HIGH_POTENTIAL |
 | `panama-canal-design-1906` | VIABLE | 78 | lesser_known | LOW_FAME_STRESS_TEST |
@@ -43,6 +44,10 @@ Ordered by `production_verdict` (VIABLE first) as a suggested priority if/when C
 | `tetraethyl-lead-1924` | WEAK | 52 | medium | CURATED_HIGH_POTENTIAL |
 
 None of these are `FAILED` outright — the pilot's honest floor turned out to be `WEAK` (real sourcing, but a guessable or context-heavy dilemma), not "no viable case at all." See the pilot report for what specifically makes each `WEAK` case fall short.
+
+## Canary import: `d-day-launch-1944`
+
+Chosen as the first case through the new import pipeline: highest `player_fairness` (82) among all VIABLE cases with no existing DB row, the strongest sourcing in the pilot (Stagg's own memoir, IWM, US National Archives, Naval History and Heritage Command), and no overlap with the six live cases. Draft: `content/pending-cases/d-day-launch-1944.json` (archived to `content/pending-cases/processed/` on successful import). See this session's completion report for the actual import result (`decision_cases.id`, confirmed `status`, and the `get-narrative-queue-status` before/after count) — do not assume success from this doc alone; re-check the live queue.
 
 ## Supabase-only content with no local equivalent
 

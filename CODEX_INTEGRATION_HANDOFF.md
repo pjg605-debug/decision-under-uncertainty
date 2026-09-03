@@ -133,3 +133,11 @@ These are proposals only; the schema was not changed:
 4. **Priority (product owner request, 2026-09-02):** add the `narratives.language` column and the `(case_id, language)`-scoped uniqueness/`is_current` changes described in "New requirement: bilingual narratives must be independently authored, not translated" above, plus locale-aware narrative loading independent of English string identity.
 5. Add progressive multi-decision support before reconsidering Apollo 13.
 6. Do not alter the three approved narratives unless new evidence changes a factual claim or fairness evaluation.
+
+## Role boundary change: Claude now creates new cases (product owner, 2026-09-03)
+
+The former rule that creating a `decision_cases` row was schema/case-creation territory reserved for Codex is superseded. Claude now owns case discovery through `RESEARCH_DONE` (research, T0 reconstruction, sourcing, and creating `decision_cases`/`decision_options`/`case_information`/`evidence`), via a new file-based pipeline: `content/pending-cases/<case-key>.json` → `.github/workflows/import-pending-case.yml` → the new `import_pending_case()` Postgres function (`supabase/migrations/202609030001_import_pending_case.sql`), which does the whole insert in one transaction and refuses outright if `case_key` already exists.
+
+What does **not** change: Codex still owns `CODEX_REVIEW → APPROVED → PUBLISHED` exclusively. Claude's new pipeline is hard-capped at `RESEARCH_DONE` (the `import_pending_case()` function raises an exception if asked to create a case at any later status), so nothing Claude creates reaches the public site without going through Codex's existing review. This is a supply-side change only, not a review/approval change.
+
+Practical effect for Codex: `get_cases_for_research`/`get_cases_for_narrative` may now surface cases Claude created, not only ones Codex created — nothing else about the review flow (`get_cases_for_codex_review`, `transition_case_status`) changes. The 16-case research pilot in `data/cases/<case-id>/` (`CLAUDE_PILOT_TO_DB_MAPPING.md`) is the first backlog Claude is drawing from, one case at a time, canary-tested before any batch — check that mapping doc (or `get-narrative-queue-status`) before doing manual case-creation work yourself, to avoid a race on the same case.

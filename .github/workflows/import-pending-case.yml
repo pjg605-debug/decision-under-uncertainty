@@ -1,0 +1,47 @@
+name: Import pending case drafts
+
+on:
+  # A push adding a new case draft (not the processed/ archive) triggers
+  # import automatically. The archive commit this workflow makes on success
+  # carries "[skip ci]", so it never re-triggers itself.
+  push:
+    branches: [claude/decision-uncertainty-case-selection-9q6h5y]
+    paths:
+      - 'content/pending-cases/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-pending-case
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Import and verify each pending case
+        id: import
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/import-pending-case.mjs
+      - name: Commit archived case files
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain content/pending-cases)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/pending-cases
+            git commit -m "Archive imported case draft(s) [skip ci]"
+            git push
+          else
+            echo "No draft files were moved; nothing to commit."
+          fi
