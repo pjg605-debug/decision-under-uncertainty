@@ -1,4 +1,6 @@
 import { resolveSupabaseServiceKey, supabaseAuthHeaders } from '../../../core/supabase-auth.mjs';
+import { after } from 'next/server';
+import { hasNoPreviousApproval, isNewApproval, notifyCaseApproval } from '../../../core/slack-insight.mjs';
 
 const required = ['SUPABASE_URL', 'REVIEW_DASHBOARD_TOKEN'] as const;
 
@@ -117,7 +119,7 @@ export async function POST(request: Request) {
     }
     const admin = client(env.SUPABASE_URL, env.SUPABASE_SERVICE_KEY);
     const cases = await admin(
-      `decision_cases?case_key=eq.${encodeURIComponent(body.case_key)}&select=id,status&limit=1`,
+      `decision_cases?case_key=eq.${encodeURIComponent(body.case_key)}&select=id,title,status&limit=1`,
     );
     const current = cases?.[0];
     if (!current)
@@ -127,6 +129,10 @@ export async function POST(request: Request) {
         { error: 'Submit the requested narrative revision before approval.' },
         { status: 409 },
       );
+    const webhookUrl = process.env.SLACK_INSIGHT_WEBHOOK_URL;
+    const notifyApproval = Boolean(webhookUrl) &&
+      isNewApproval(body.action, current.status) &&
+      await hasNoPreviousApproval(admin, current.id);
     if (['NARRATIVE_DRAFTED', 'REVISION_DONE'].includes(current.status))
       await transition(
         admin,
@@ -183,6 +189,15 @@ export async function POST(request: Request) {
         revising ? 'REVISION_REQUESTED' : 'APPROVED',
         body.summary,
       );
+    }
+    if (notifyApproval) {
+      try {
+        // Keep the work alive after the response via Workers waitUntil.
+        const caseKey = body.case_key;
+        after(() => notifyCaseApproval({ webhookUrl, title: current.title, caseKey }));
+      } catch {
+        console.warn('Insight notification could not be scheduled.');
+      }
     }
     return Response.json({ ok: true });
   } catch (error) {
