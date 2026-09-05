@@ -1,0 +1,74 @@
+{
+  "case_key": "stanislav-petrov-1983",
+  "title": "Call It a Malfunction, or Report the Launch",
+  "domain": "crisis",
+  "subdomain": "military",
+  "actor": "Stanislav Petrov",
+  "actor_role": "Lieutenant Colonel, Soviet Air Defence Forces; duty officer, Serpukhov-15 early-warning command center",
+  "date_or_period": "1983",
+  "era": "Cold War",
+  "location": "Serpukhov-15 early-warning command bunker, south of Moscow, Soviet Union",
+  "t0": "Shortly after midnight on September 26, 1983, the Oko early-warning satellite system's console at Serpukhov-15 displays the highest-confidence launch signal, first for one US intercontinental ballistic missile and then, within minutes, escalating to reports of up to five missiles launched from the direction of a US Minuteman ICBM field. Petrov, the duty officer, must decide within minutes whether to report this up the chain of command as a confirmed US missile attack or judge it a system malfunction, before ground radar could possibly confirm or refute anything and well before any missile could have arrived.",
+  "context_summary": "A brand-new Soviet satellite system just declared, at its highest confidence level, that American missiles are inbound. Ground radar has confirmed nothing. Soviet doctrine says a real first strike would come as hundreds of missiles at once, not five. You have a few minutes to call it up the chain as an attack, or call it a glitch.",
+  "actual_decision_key": "report_malfunction",
+  "immediate_outcome": "Petrov reported the alert as a system malfunction rather than a confirmed attack. No missiles arrived; ground radar and the passage of time confirmed no attack had occurred. He was not formally commended at the time and faced some informal reprimand over incomplete logbook paperwork during the subsequent investigation, then continued in a less prominent post before eventually leaving military service.",
+  "long_term_outcome": "The incident remained secret within Soviet military and intelligence circles for years and became widely known in the West only after a 1998 memoir by Petrov's former commander and a 1999 Washington Post account based on interviews with Petrov himself. Petrov received a number of public recognitions in the 2000s and 2010s, including from international disarmament organizations, and became widely known as 'the man who saved the world.' The incident is frequently cited in discussions of nuclear command-and-control risk and the limits of automated early-warning systems.",
+  "decision_quality": "Strong",
+  "outcome_quality": "Good",
+  "popularity": 78,
+  "controversy_risk": 25,
+  "context_compression": 90,
+  "visualizability": 72,
+  "source_disagreement": 35,
+  "uncertainty_factors": ["Unproven new satellite system", "No ground-radar corroboration", "Missile count mismatched doctrine", "Minutes-only decision window"],
+  "fame_score": 74,
+  "research_priority": 65,
+  "status": "RESEARCH_DONE",
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "report_attack",
+      "sort_order": 1,
+      "label": "Report the alert up the chain of command as a confirmed missile attack",
+      "short_description": "Follow the system's design and Petrov's formal role: relay the Oko system's highest-confidence launch report to the Soviet General Staff as a confirmed US missile launch, starting the process of assessing and potentially authorizing a retaliatory strike.",
+      "upside": "Matches Petrov's defined duty to report sensor data rather than filter or second-guess it, and if the attack were real, preserves the Soviet Union's ability to respond before its own forces could be destroyed in a first strike.",
+      "downside": "If the alert were false, reporting it as confirmed could trigger a cascade toward nuclear retaliation against an attack that never happened, especially given the extremely tense political atmosphere only weeks after the KAL 007 shootdown.",
+      "known_tradeoffs": [
+        "Matches Petrov's defined duty to report sensor data rather than filter or second-guess it, and if the attack were real, preserves the Soviet Union's ability to respond before its own forces could be destroyed in a first strike. versus If the alert were false, reporting it as confirmed could trigger a cascade toward nuclear retaliation against an attack that never happened, especially given the extremely tense political atmosphere only weeks after the KAL 007 shootdown."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "report_malfunction",
+      "sort_order": 2,
+      "label": "Judge it a system malfunction and report it as such, not as a confirmed attack",
+      "short_description": "Use judgment about the plausibility of the attack pattern -- a small number of missiles, no ground-radar corroboration, a new and imperfectly trusted system -- to conclude the alert is a false alarm, and report a system malfunction rather than a confirmed launch.",
+      "upside": "If correct, avoids feeding a false trigger into a chain of command that could escalate toward retaliatory nuclear launch, and matches the observed inconsistency between the doctrinal expectation of a massive first strike and the small number of missiles reported.",
+      "downside": "If wrong, a real attack would have been dismissed, potentially delaying Soviet leadership's awareness of an actual incoming strike and reducing the time available to respond.",
+      "known_tradeoffs": [
+        "If correct, avoids feeding a false trigger into a chain of command that could escalate toward retaliatory nuclear launch, and matches the observed inconsistency between the doctrinal expectation of a massive first strike and the small number of missiles reported. versus If wrong, a real attack would have been dismissed, potentially delaying Soviet leadership's awareness of an actual incoming strike and reducing the time available to respond."
+      ]
+    }
+  ],
+  "case_information": [
+    { "information_type": "KNOWN_AT_T0", "sequence": 1, "content": "The Oko early-warning satellite system had become operational only in 1982, and Petrov later said he was aware, from his own work testing and troubleshooting the bunker's computer systems, that it was not '100 percent' reliable." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 2, "content": "Shortly after midnight on September 26, 1983, the Oko console reported a single US intercontinental ballistic missile launch at the system's highest confidence rating; within a few minutes the report escalated to a total of five missiles." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 3, "content": "Soviet ground-based early-warning radar, which could in principle add independent corroboration, had not detected or confirmed any incoming missile by the time Petrov had to decide -- ground radar could only pick up missiles much later in their flight, as they came over the horizon, than satellite launch detection." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 4, "content": "Petrov's own stated reasoning was that Soviet doctrine, and his understanding of a genuine US first-strike plan, assumed the United States would open a nuclear war with a massive, simultaneous launch of hundreds of missiles rather than a handful, since a small strike would leave the Soviet Union both alerted and able to retaliate devastatingly; a report of one, then five, missiles did not fit that expected pattern." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 5, "content": "Tensions between the Soviet Union and the United States were unusually elevated in September 1983: Soviet forces had shot down Korean Air Lines Flight 007 on September 1, 1983, killing all 269 aboard, and Soviet leadership under Yuri Andropov was operating under Operation RYaN, an intelligence effort premised on treating a NATO first strike as a real possibility." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 6, "content": "Under the system's design and Petrov's formal duty, his role was to relay what the sensor system reported up the chain of command, not to independently override or reinterpret the sensor data himself." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 7, "content": "Petrov later said he judged the odds of the alert being a genuine attack as roughly even, and made his call despite that uncertainty rather than because he was confident it was definitely false." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 1, "content": "The alert was caused by a rare alignment in which sunlight reflected off high-altitude clouds over the northern United States, near a US Minuteman ICBM field, at a seasonal angle close to the autumnal equinox; the Oko satellite's infrared sensors misread these reflections as the signature of missile launch plumes. This cause was identified only through later investigation, not at the time of the decision." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 2, "content": "No US missiles had in fact been launched; there was no incoming attack of any kind. Petrov could not confirm this at the moment of decision -- he judged the alert to be false based on doctrinal reasoning and the pattern of the report, before any corroborating evidence, or its absence, had time to develop." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 3, "content": "Some technical retrospectives report a software design limitation in the Oko system that had not adequately filtered out this specific high-altitude cloud and sunlight configuration, making this kind of false signal more likely than operators may have appreciated at the time." }
+  ],
+  "evidence": [
+    { "evidence_key": "src-01", "source_type": "QUALITY_MEDIA", "title": "I Had A Funny Feeling in My Gut", "author_or_institution": "David Hoffman, The Washington Post", "publication_date": "February 10, 1999", "url": "https://www.washingtonpost.com/wp-srv/inatl/longterm/coldwar/soviet10.htm", "citation": "Hoffman, D. (1999, February 10). I Had A Funny Feeling in My Gut. The Washington Post.", "evidence_class": "STATED_RATIONALE", "supported_claim": "One of the first major Western published accounts based on a direct interview with Petrov; source for his stated reasoning, his estimate of roughly 50-50 odds, and post-incident career consequences." },
+    { "evidence_key": "src-02", "source_type": "QUALITY_MEDIA", "title": "Stanislav Petrov: The man who may have saved the world", "author_or_institution": "Pavel Aksenov, BBC News", "publication_date": "September 26, 2013", "url": "https://www.bbc.com/news/world-europe-24280831", "citation": "https://www.bbc.com/news/world-europe-24280831", "evidence_class": "STATED_RATIONALE", "supported_claim": "Direct 2013 BBC interview quotes from Petrov describing the alert, his hesitation, and his reasoning." },
+    { "evidence_key": "src-03", "source_type": "ACADEMIC", "title": "False Alarm, Nuclear Danger", "author_or_institution": "Geoffrey Forden, Pavel Podvig, and Theodore A. Postol", "publication_date": "March 2000", "citation": "Forden, G., Podvig, P., & Postol, T. A. (2000). False Alarm, Nuclear Danger. IEEE Spectrum, 37(3), 31-45.", "evidence_class": "FACT", "supported_claim": "Technical reconstruction of the Oko satellite system's operation, the escalation from one to five reported missiles, the Malmstrom Air Force Base indication, and the sunlight-on-high-altitude-clouds mechanism behind the false alarm." },
+    { "evidence_key": "src-04", "source_type": "REFERENCE", "title": "Stanislav Petrov", "author_or_institution": "Encyclopaedia Britannica", "publication_date": "Continually updated reference entry", "url": "https://www.britannica.com/biography/Stanislav-Petrov", "citation": "https://www.britannica.com/biography/Stanislav-Petrov", "evidence_class": "FACT", "supported_claim": "General biographical chronology cross-check: Petrov's rank, his duty that night as a substitute for the regular officer, and career consequences after the incident." },
+    { "evidence_key": "src-05", "source_type": "QUALITY_MEDIA", "title": "How the world reached the brink of nuclear war not once but twice in 1983", "author_or_institution": "Sergey Radchenko, The Conversation", "publication_date": "October 24, 2016", "url": "https://theconversation.com/how-the-world-reached-the-brink-of-nuclear-war-not-once-but-twice-in-1983-68998", "citation": "Radchenko, S. (2016, October 24). How the world reached the brink of nuclear war not once but twice in 1983. The Conversation.", "evidence_class": "FACT", "supported_claim": "Context on elevated Soviet threat perception in autumn 1983, including the September 1, 1983 KAL 007 shootdown and Operation RYaN." },
+    { "evidence_key": "src-06", "source_type": "QUALITY_MEDIA", "title": "The Man Who Helped Avert Nuclear Armageddon", "author_or_institution": "HISTORY (A&E Television Networks)", "publication_date": "Updated September 2023", "url": "https://www.history.com/articles/nuclear-attack-warning-cold-war-petrov", "citation": "https://www.history.com/articles/nuclear-attack-warning-cold-war-petrov", "evidence_class": "FACT", "supported_claim": "General chronology cross-check on the incident timeline and Petrov's later public recognition before his 2017 death." },
+    { "evidence_key": "src-07", "source_type": "QUALITY_MEDIA", "title": "The Man Who 'Saved the World' Dies at 77", "author_or_institution": "Arms Control Association (Arms Control Today)", "publication_date": "October 2017", "url": "https://www.armscontrol.org/act/2017-10/news-briefs/man-who-saved-world-dies-77", "citation": "https://www.armscontrol.org/act/2017-10/news-briefs/man-who-saved-world-dies-77", "evidence_class": "FACT", "supported_claim": "Obituary-based confirmation of Petrov's death in 2017 and summary of his standing among arms-control specialists." }
+  ]
+}
