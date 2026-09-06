@@ -203,10 +203,16 @@ function Platform() {
   }, [cases]);
   const selectCase = (c: DecisionEvent) => {
     setActive(c);
-    setChoice(undefined);
-    setInitialChoice(undefined);
+    // A case already recorded in `plays` was already locked and revealed in
+    // an earlier visit; re-entering it should show that result again, not
+    // force the choice/lock flow to be repeated from a blank slate every
+    // time (the site otherwise had no memory of a completed case, so
+    // revisiting the same case-of-the-day kept presenting it as unsolved).
+    const previousPlay = plays.find((p) => p.caseId === c.id);
+    setChoice(previousPlay?.choice);
+    setInitialChoice(previousPlay?.choice);
     setNewEvidence(false);
-    setRevealed(false);
+    setRevealed(!!previousPlay);
     setView('case');
     scrollTo({ top: 0, behavior: 'smooth' });
   };
