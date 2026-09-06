@@ -1,11 +1,19 @@
 'use client';
 
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   ArrowRight,
   BarChart3,
   BookOpen,
   Check,
+  ChevronDown,
   ChevronRight,
   CircleHelp,
   Compass,
@@ -207,11 +215,33 @@ function Platform() {
   }, [cases]);
   const selectCase = (c: DecisionEvent) => {
     setActive(c);
+    // A case already recorded in `plays` was already locked and revealed in
+    // an earlier visit; re-entering it should show that result again, not
+    // force the choice/lock flow to be repeated from a blank slate every
+    // time (the site otherwise had no memory of a completed case, so
+    // revisiting the same case-of-the-day kept presenting it as unsolved).
+    const previousPlay = plays.find((p) => p.caseId === c.id);
+    setChoice(previousPlay?.choice);
+    setInitialChoice(previousPlay?.choice);
+    setNewEvidence(false);
+    setRevealed(!!previousPlay);
+    setView('case');
+    // A fresh case starts at the top (Situation). A case that was already
+    // completed shouldn't force the reader back to Situation 1 -- CaseView
+    // scrolls straight to the recorded result instead (see its `revealed`
+    // effect below).
+    if (!previousPlay) {
+      scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+  // Distinct from `selectCase`: this is the explicit "Reset" button inside an
+  // open case, which should always clear back to an unanswered state so the
+  // reader can try again, regardless of what's already recorded in `plays`.
+  const restartCase = () => {
     setChoice(undefined);
     setInitialChoice(undefined);
     setNewEvidence(false);
     setRevealed(false);
-    setView('case');
     scrollTo({ top: 0, behavior: 'smooth' });
   };
   const lock = () => {
@@ -254,7 +284,7 @@ function Platform() {
           revealed={revealed}
           lock={lock}
           reveal={reveal}
-          reset={() => selectCase(active)}
+          reset={restartCase}
         />
       )}{' '}
       {view === 'library' && (
@@ -551,6 +581,16 @@ function CaseView({
     t,
   );
   const chosen = event.options.find((o) => o.id === choice);
+  const resultRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // Only fires when navigating into a *different* case (event.id change),
+    // not on every reveal -- so a case entered already-completed jumps
+    // straight to its recorded result instead of Situation 1, while a case
+    // the reader is actively locking/revealing right now stays put.
+    if (revealed) {
+      resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [event.id]);
   return (
     <div className="mx-auto max-w-4xl px-4 pb-28 pt-7">
       <div className="mb-5 flex items-center justify-between">
@@ -586,6 +626,7 @@ function CaseView({
         </div>
         <Stage n="01" title="Situation">
           <p className="leading-7">{event.context_summary}</p>
+          {!revealed && <NextStageButton to="stage-02" />}
         </Stage>
         <Stage n="02" title="Known at T0">
           <div className="grid gap-2 sm:grid-cols-2">
@@ -593,6 +634,7 @@ function CaseView({
               <Info key={x} text={x} />
             ))}
           </div>
+          {!revealed && <NextStageButton to="stage-03" />}
         </Stage>
         <Stage n="03" title="Your decision">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -677,7 +719,10 @@ function CaseView({
         )}
         {revealed && (
           <>
-            <div className="border-y bg-foreground p-6 text-background sm:p-8">
+            <div
+              ref={resultRef}
+              className="border-y bg-foreground p-6 text-background sm:p-8"
+            >
               <p className="font-mono text-[10px] uppercase tracking-[.2em] opacity-60">
                 {t('Decision locked')}
               </p>
@@ -786,7 +831,7 @@ function Stage({
 }) {
   const { t } = useLanguage();
   return (
-    <section className="border-b p-5 last:border-b-0 sm:p-8">
+    <section id={`stage-${n}`} className="border-b p-5 last:border-b-0 sm:p-8">
       <div className="mb-5 flex items-center gap-3">
         <span className="font-mono text-[10px] text-primary">{n}</span>
         <h2 className="text-xs font-bold uppercase tracking-[.17em]">
@@ -795,6 +840,21 @@ function Stage({
       </div>
       {children}
     </section>
+  );
+}
+function NextStageButton({ to }: { to: string }) {
+  const { t } = useLanguage();
+  return (
+    <button
+      onClick={() =>
+        document
+          .getElementById(to)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-5 py-3 text-xs font-semibold uppercase tracking-[.15em] text-primary transition hover:bg-primary/10"
+    >
+      {t('Next step')} <ChevronDown size={14} />
+    </button>
   );
 }
 function Info({ text }: { text: string }) {
