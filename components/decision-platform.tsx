@@ -150,7 +150,7 @@ export default function DecisionPlatform() {
   }, []);
   useEffect(() => {
     let current = true;
-    fetch('/api/content')
+    fetch(`/api/content?lang=${lang}`)
       .then(async (response) => {
         if (!response.ok) throw new Error('remote unavailable');
         const value = await response.json();
@@ -172,7 +172,11 @@ export default function DecisionPlatform() {
     return () => {
       current = false;
     };
-  }, []);
+    // Narratives are independently authored per language (never translated
+    // from the other), so switching lang must re-fetch from the server --
+    // the client-side `t()` dictionary below only covers short structured
+    // fields, not narrative prose.
+  }, [lang]);
   const changeLanguage = (next: Language) => {
     setLang(next);
     localStorage.setItem('decision-t0-language', next);
@@ -670,21 +674,21 @@ function CaseView({
               </button>
             ))}
           </div>
-          {!revealed && (
+          {/* Once new evidence has arrived, the lock button below moves into
+              the "New evidence" stage instead -- otherwise it stayed
+              anchored here, above the evidence the reader had just been
+              sent to consider, with nothing lower on the page to advance
+              with (a real report: a reader could pick an option there and
+              never find their way back up to actually lock it in). */}
+          {!revealed && !newEvidence && (
             <button
               disabled={!choice}
               onClick={lock}
               className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-4 text-sm font-semibold text-background disabled:opacity-30"
             >
               <LockKeyhole size={16} />
-              {t(initialChoice ? 'Lock final decision' : 'Lock decision')}
+              {t('Lock decision')}
             </button>
-          )}
-          {initialChoice && !revealed && (
-            <p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-[.2em] text-primary">
-              {t('Decision locked')} ·{' '}
-              {event.options.find((o) => o.id === initialChoice)?.label}
-            </p>
           )}
         </Stage>
         {newEvidence && !revealed && event.progressive && (
@@ -698,6 +702,18 @@ function CaseView({
               {lang === 'ko'
                 ? '위의 선택지 중 하나를 고른 뒤 최종 선택을 확정하세요.'
                 : 'Select either option above, then lock your final decision.'}
+            </p>
+            <button
+              disabled={!choice}
+              onClick={lock}
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-4 text-sm font-semibold text-background disabled:opacity-30"
+            >
+              <LockKeyhole size={16} />
+              {t('Lock final decision')}
+            </button>
+            <p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-[.2em] text-primary">
+              {t('Decision locked')} ·{' '}
+              {event.options.find((o) => o.id === initialChoice)?.label}
             </p>
           </Stage>
         )}
