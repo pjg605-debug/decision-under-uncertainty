@@ -1,0 +1,78 @@
+{
+  "case_key": "whaleship-essex-1820",
+  "title": "The Nearer Islands, or the Long Way to South America",
+  "domain": "exploration",
+  "subdomain": "maritime survival",
+  "actor": "George Pollard Jr.",
+  "actor_role": "Captain of the whaleship Essex; final decision-maker over the three surviving whaleboats",
+  "date_or_period": "1820",
+  "era": "Age of American whaling",
+  "location": "South Pacific Ocean, roughly 2,000 nautical miles west of the coast of South America",
+  "t0": "In the one to two days after a sperm whale rammed and sank the whaleship Essex on November 20, 1820, Captain George Pollard Jr. and twenty surviving crew are divided among three open whaleboats with whatever food, water and instruments they salvaged before the ship went down. Before the boats get underway, Pollard must choose a destination: the Marquesas or Society Islands, roughly 1,200-1,500 nautical miles west-southwest and reachable in an estimated two to three weeks with the prevailing trade winds behind them, or the South American coast, more than 3,000 nautical miles away against those same winds.",
+  "context_summary": "A whale has sunk your ship in the middle of the Pacific. Twenty men are in three open boats with what could be salvaged. One direction is close and downwind but rumored to hold cannibals. The other is familiar and 'safe' but more than twice as far, sailed against the wind, on the food and water already aboard.",
+  "actual_decision_key": "sail_for_south_america",
+  "immediate_outcome": "Pollard, who had initially favored the nearer islands, deferred to first mate Owen Chase and second mate Matthew Joy and set course for South America. The three boats became separated during the voyage and one was never found. Food and water ran out weeks before landfall; several crew members died of starvation and exposure, and survivors ate the bodies of the dead. On Pollard's boat the crew drew lots, and Owen Coffin -- Pollard's own first cousin -- was shot by Charles Ramsdell and eaten. Three crew members who had chosen to stay behind on uninhabited Henderson Island survived there on birds, eggs and shellfish.",
+  "long_term_outcome": "Eight of the twenty crew survived: three from Chase's boat, rescued on February 18, 1821 off the coast of Chile; two from Pollard's boat, rescued on February 23, 1821; and three taken off Henderson Island on April 9, 1821. Owen Chase published his narrative of the ordeal later in 1821, and it is understood to have been an influence on Herman Melville's writing of Moby-Dick. Thomas Nickerson, the fourteen-year-old cabin boy, wrote his own account decades later; the manuscript was rediscovered and published only in the twentieth century.",
+  "decision_quality": "Weak",
+  "outcome_quality": "Bad",
+  "popularity": 60,
+  "controversy_risk": 45,
+  "context_compression": 90,
+  "visualizability": 80,
+  "source_disagreement": 40,
+  "uncertainty_factors": ["Cannibal rumor was secondhand and unverifiable at sea", "No way to resupply once underway", "Three open boats that could become separated", "Distance and wind were estimates, not certainties"],
+  "fame_score": 55,
+  "research_priority": 65,
+  "status": "RESEARCH_DONE",
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "sail_for_islands",
+      "sort_order": 1,
+      "label": "Sail for the nearer Marquesas or Society Islands",
+      "short_description": "Run west-southwest with the trade winds toward the Marquesas or Society Islands, roughly 1,200-1,500 nautical miles off -- an estimated two-to-three-week passage.",
+      "upside": "Far shorter distance with following winds and currents, meaning much less time exposed in open boats and a far smaller demand on the food and water actually aboard.",
+      "downside": "The officers believed, on secondhand rumor rather than firsthand knowledge, that those islands were inhabited by hostile or cannibalistic peoples, so landfall itself might be the danger.",
+      "known_tradeoffs": [
+        "A two-to-three-week downwind passage is a far smaller logistical gamble than a multi-thousand-mile beat against the wind, purely in terms of what the boats can carry. versus If the islands reached did prove hostile, the risk shifts from surviving the voyage to surviving the arrival."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "sail_for_south_america",
+      "sort_order": 2,
+      "label": "Sail the longer route toward South America",
+      "short_description": "Head south to pick up more favorable westerlies, then east across more than 3,000 nautical miles against the prevailing trade winds to reach the South American coast.",
+      "upside": "Avoids the feared island populations entirely, aims at a familiar coast with people the crew expected to be non-hostile, and crosses known shipping routes where another vessel might pick them up.",
+      "downside": "A vastly longer voyage sailing against or across the prevailing winds, demanding far more food and water than the boats carried or could realistically ration, catch or collect over that distance.",
+      "known_tradeoffs": [
+        "Trades a risk the crew rated as terrifying and immediate -- violent death on landfall -- for one they may have assumed was familiar and survivable, since other whalemen had weathered hunger at sea before. versus Once underway, the food and water requirement cannot be renegotiated; a long beat to windward leaves almost no margin for calms, delay or miscalculation."
+      ]
+    }
+  ],
+  "case_information": [
+    { "information_type": "KNOWN_AT_T0", "sequence": 1, "content": "The Marquesas and Society Islands lay roughly 1,200-1,500 nautical miles to the west-southwest, reachable in an estimated two to three weeks by sailing with the prevailing trade winds and westward currents." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 2, "content": "The coast of South America lay more than 3,000 nautical miles away, and reaching it meant sailing against the prevailing trade winds for a far longer voyage of many weeks, on the hope of picking up more southerly westerlies partway through." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 3, "content": "First mate Owen Chase and second mate Matthew Joy believed, on the basis of secondhand rumor and outdated or garbled reports from earlier Pacific voyagers, that the nearer islands were inhabited by cannibals, and argued against sailing there on that basis. This was a belief held at the time, not verified knowledge about those particular islands." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 4, "content": "Captain Pollard's own later account gives the crew's fear of being 'devoured by cannibals' as the stated reason for rejecting the nearer islands." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 5, "content": "Some Pacific island groups, including Fiji and parts of the Marquesas, did have real documented histories of ritual or wartime cannibalism recorded by earlier European visitors and traders. This gave the crew's fear a basis in fact, without making it specific, current or reliable knowledge about the islands nearest to their position." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 6, "content": "By 1820 American and European trading and whaling vessels had in fact visited the Marquesas and Society Islands repeatedly without violent incident -- but this was not something the Essex's officers could verify from an open boat in mid-ocean." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 7, "content": "The three whaleboats were open, undecked craft roughly 25 feet long, carrying salvaged hardtack, water and a small number of Galapagos tortoises. Beyond rainfall and whatever fish could be caught, there was no way to resupply at sea." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 8, "content": "Pollard was the captain and held the decision, but his two mates pressed the opposite view; the choice was made as an argument among officers, not as a solitary command." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 1, "content": "The longer voyage would exhaust the boats' food and water long before landfall, leading to starvation, multiple deaths, cannibalism of the dead, and in one boat the drawing of lots to kill a living crewmate for food. None of this could have been foreseen as the specific consequence of choosing the longer route." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 2, "content": "That the feared route would most likely have been survivable while the 'safe' route proved catastrophic was not knowable at the decision point. This reading is an inference drawn afterward from what happened to the three men who did land on and remain at Henderson Island, not a fact available to the crew in November 1820." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 3, "content": "Only 8 of the 20 surviving crew would live to be rescued, over a period stretching from February to April 1821." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 4, "content": "The three boats would become separated during the voyage, and one of them would never be found." }
+  ],
+  "evidence": [
+    { "evidence_key": "src-01", "source_type": "PRIMARY", "title": "Narrative of the Most Extraordinary and Distressing Shipwreck of the Whale-Ship Essex, of Nantucket", "author_or_institution": "Owen Chase", "publication_date": "1821", "url": "https://www.gutenberg.org/files/61931/61931-h/61931-h.htm", "citation": "Chase, O. (1821). Narrative of the Most Extraordinary and Distressing Shipwreck of the Whale-Ship Essex, of Nantucket. New York: W. B. Gilley.", "evidence_class": "STATED_RATIONALE", "supported_claim": "First mate Owen Chase's own account of the debate over destination after the sinking, the crew's fear of cannibal islands, the decision to sail for South America, and the subsequent starvation, deaths and cannibalism during the voyage." },
+    { "evidence_key": "src-02", "source_type": "PRIMARY", "title": "The Loss of the Ship 'Essex,' Sunk by a Whale (Thomas Nickerson manuscript, written c. 1876)", "author_or_institution": "Thomas Nickerson (cabin boy), ed. Thomas Farel Heffernan, Nantucket Historical Association", "publication_date": "Written circa 1876; published 1984", "url": "https://archive.org/details/sv106-1", "citation": "Nickerson, T. (1984). The Loss of the Ship 'Essex,' Sunk by a Whale (T. F. Heffernan, Ed.). Nantucket Historical Association.", "evidence_class": "STATED_RATIONALE", "supported_claim": "Independent crew-member account, written decades later, of the destination debate and Pollard's initial preference for the nearer islands before being overruled by his officers -- corroborating and lightly diverging from Chase's version." },
+    { "evidence_key": "src-03", "source_type": "ACADEMIC", "title": "In the Heart of the Sea: The Tragedy of the Whaleship Essex", "author_or_institution": "Nathaniel Philbrick", "publication_date": "2000", "citation": "Philbrick, N. (2000). In the Heart of the Sea: The Tragedy of the Whaleship Essex. Viking.", "evidence_class": "FACT", "supported_claim": "Research-based reconstruction of the sinking, the destination debate, the distances and wind conditions to the Marquesas/Society Islands versus South America, and the voyage's outcome including the Henderson Island stopover and the final rescues." },
+    { "evidence_key": "src-04", "source_type": "ACADEMIC", "title": "Stove by a Whale: Owen Chase and the Essex", "author_or_institution": "Thomas Farel Heffernan", "publication_date": "1981", "citation": "Heffernan, T. F. (1981). Stove by a Whale: Owen Chase and the Essex. Wesleyan University Press.", "evidence_class": "FACT", "supported_claim": "Academic biographical and textual analysis of Chase's narrative and its reliability, used to cross-check the primary account's description of the destination debate." },
+    { "evidence_key": "src-05", "source_type": "QUALITY_MEDIA", "title": "Inside the Terrifying True Story of the Sperm Whale That Sank the Whale-Ship 'Essex'", "author_or_institution": "Smithsonian Magazine", "publication_date": "2015", "url": "https://www.smithsonianmag.com/smart-news/inside-the-terrifying-true-story-of-the-sperm-whale-that-sank-the-whale-ship-essex-and-inspired-herman-melvilles-moby-dick-180985362/", "citation": "https://www.smithsonianmag.com/smart-news/inside-the-terrifying-true-story-of-the-sperm-whale-that-sank-the-whale-ship-essex-and-inspired-herman-melvilles-moby-dick-180985362/", "evidence_class": "FACT", "supported_claim": "Corroboration that the crew's fear that the Marquesas/Society Islands held cannibals was unfounded in this specific case, and that traders had visited those islands without incident by 1820." },
+    { "evidence_key": "src-06", "source_type": "QUALITY_MEDIA", "title": "The True-Life Horror That Inspired Moby-Dick", "author_or_institution": "Smithsonian Magazine", "publication_date": "2012", "url": "https://www.smithsonianmag.com/history/the-true-life-horror-that-inspired-moby-dick-17576/", "citation": "https://www.smithsonianmag.com/history/the-true-life-horror-that-inspired-moby-dick-17576/", "evidence_class": "FACT", "supported_claim": "Details of the casting of lots, the shooting of Owen Coffin by Charles Ramsdell, and Pollard's later life and standing in Nantucket." },
+    { "evidence_key": "src-07", "source_type": "REFERENCE", "title": "Essex (whaling ship)", "author_or_institution": "Encyclopaedia Britannica", "publication_date": "Continually updated reference entry", "url": "https://www.britannica.com/topic/Essex-whaling-ship", "citation": "https://www.britannica.com/topic/Essex-whaling-ship", "evidence_class": "FACT", "supported_claim": "General chronology cross-check: date of the sinking, the captain's name, the number of crew, and the eventual survivor count." },
+    { "evidence_key": "src-08", "source_type": "REFERENCE", "title": "A Dreadful Calamity: Stove by a Whale", "author_or_institution": "Nantucket Historical Association", "publication_date": "Ongoing institutional history page", "url": "https://essex.nha.org/a-dreadful-calamaty/", "citation": "https://essex.nha.org/a-dreadful-calamaty/", "evidence_class": "FACT", "supported_claim": "Museum and archive account of the sinking and its immediate aftermath, used as a cross-check on dates and crew composition." },
+    { "evidence_key": "src-09", "source_type": "PRIMARY", "title": "Source disagreement noted in the research record", "author_or_institution": "Research record for this case (see src-01 and src-02)", "publication_date": "1821 and c. 1876", "citation": "Chase (1821) and Nickerson (c. 1876/1984), read against each other.", "evidence_class": "INFERENCE", "supported_claim": "Chase's published narrative and Nickerson's later manuscript agree that Pollard's preference for the nearer islands was overruled by his officers, but differ in how much initiative and certainty each attributes to Pollard versus Chase. Secondary accounts also vary on exactly how many days passed between the sinking and the boats' departure, and on the precise wording of the cannibalism fear. The substance of the decision is not in dispute; these gaps are recorded rather than resolved." }
+  ]
+}
