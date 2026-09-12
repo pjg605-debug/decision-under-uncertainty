@@ -1,0 +1,76 @@
+{
+  "case_key": "mawson-far-eastern-party-1912",
+  "title": "Down to the Coast, or Back Across the Plateau",
+  "domain": "exploration",
+  "subdomain": "polar survival",
+  "actor": "Douglas Mawson",
+  "actor_role": "Leader of the Australasian Antarctic Expedition and of the Far Eastern sledging party; decided the return route jointly with Xavier Mertz",
+  "date_or_period": "1912",
+  "era": "Heroic Age of Antarctic Exploration",
+  "location": "The plateau of King George V Land, East Antarctica, roughly 500 km east of the expedition's base at Cape Denison",
+  "t0": "December 14, 1912, within hours of the accident. Belgrave Ninnis has gone into a crevasse taking six of the party's best dogs, the sledge, the tent, a spade, an ice-axe and the great majority of the remaining food. Douglas Mawson and Xavier Mertz are alone roughly 500 km from base with about a week and a half of rations for two men, six weaker surviving dogs, and no food at all for the dogs. They must choose a return route now: down a heavily crevassed glacier to the frozen sea, where seals might be hunted and a ship might conceivably be sighted, or back across the plateau roughly along their outward track, more direct but with no food beyond the dogs themselves.",
+  "context_summary": "A crevasse has just swallowed your companion, your tent and nearly all your food. You are 500 km from base with ten days of rations and six starving dogs. One way home goes down a glacier you know is worse than the ground that just killed a man, but the coast has seals and a chance of being seen. The other is more direct and offers nothing to eat but the dogs.",
+  "actual_decision_key": "plateau_route",
+  "immediate_outcome": "Mawson and Mertz took the plateau route the same day, eating the dogs progressively as they went. Mertz's health declined sharply from around January 1, 1913; he suffered fits and delirium and died on January 8, roughly 100 miles from base. Mawson went on alone, cut down his sledge and stripped his load to essentials, and on January 17 fell partway into a crevasse, surviving only because his sledge harness caught on the lip -- after which he built a rope ladder against a repeat.",
+  "long_term_outcome": "Mawson reached Aladdin's Cave near base but was held there by a week-long blizzard, and finally walked into Winter Quarters on February 8, 1913 -- a few hours after the relief ship SY Aurora had sailed. He and the six men of a search party who had stayed behind were forced into an unplanned second Antarctic winter until the Aurora returned in December 1913. Mawson published his account, The Home of the Blizzard, in 1915. The medical cause of Mertz's death remains an open question, argued between a 1969 hypervitaminosis-A hypothesis and a 2005 re-evaluation emphasising malnutrition and the shock of an abrupt all-meat diet.",
+  "decision_quality": "Strong",
+  "outcome_quality": "Mixed",
+  "popularity": 45,
+  "controversy_risk": 30,
+  "context_compression": 55,
+  "visualizability": 78,
+  "source_disagreement": 60,
+  "uncertainty_factors": ["Midsummer sea-ice stability unverified", "Crevasse fields only partly known on either route", "No medical understanding of a dog-meat diet in 1912", "The relief ship's waiting window not precisely fixed"],
+  "fame_score": 42,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "coast_route",
+      "sort_order": 1,
+      "label": "Descend to the coast and travel by the sea ice",
+      "short_description": "Head for the frozen sea, accepting a descent through a heavily crevassed glacier, in the hope of hunting seals and of possibly being sighted by the relief ship or another sledging party working the coastline.",
+      "upside": "A real chance of supplementing a desperately short food supply with seal meat, and a chance -- slim, but real -- of being seen and taken off, rather than depending entirely on covering 500 km under their own power on what they carry.",
+      "downside": "The descent itself is known to be heavily crevassed, carrying the immediate risk of exactly the fall that has just killed Ninnis. And so close to midsummer it is uncertain whether the sea ice will stay stable enough to travel on at all.",
+      "known_tradeoffs": [
+        "With about ten days of food for two men and nothing for six dogs across roughly 500 km, any additional food source or any chance of outside rescue is a meaningful hedge against the real possibility that rations and strength alone will not get them home. versus A crevasse fall on the descent, or a breakup once on the sea ice, ends the journey immediately and there is no fallback."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "plateau_route",
+      "sort_order": 2,
+      "label": "Retrace the plateau route back toward Winter Quarters",
+      "short_description": "Head back over the plateau on a course close to the outward track, relying on the surviving dogs as the only food supplement, and cover the roughly 500 km without a coastal detour.",
+      "upside": "A shorter, more direct line to a known destination, with no gamble on an unfamiliar glacier descent or on unverified midsummer sea ice, and at least rough familiarity with the ground from the way out.",
+      "downside": "No food beyond the dogs themselves, including their livers -- a dietary shift whose physiological consequences were not understood in 1912. And the plateau still crosses dangerous, only partly known crevasse fields.",
+      "known_tradeoffs": [
+        "A fatal crevasse accident has just happened, and the coastal descent is known to be worse ground still; declining to add a second high-risk descent in favour of the direct route to a fixed, known destination is the more conservative reading of the danger actually demonstrated. versus It means total reliance on covering the full distance on badly reduced rations and a deteriorating diet, with no way to resupply if the journey runs long or health fails faster than expected."
+      ]
+    }
+  ],
+  "case_information": [
+    { "information_type": "KNOWN_AT_T0", "sequence": 1, "content": "Ninnis fell into a crevasse roughly 500 km from the expedition's base at Cape Denison, taking with him six of the party's best dogs, the men's tent, a spade, an ice-axe and the great majority of the remaining food. Mawson and Mertz were left with about a week and a half of rations for themselves, six surviving but weaker dogs, and no food reserve for the dogs." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 2, "content": "One possible return route led down to the frozen sea along the coast, by a glacier descent Mawson knew to be heavily crevassed. Reaching the coast offered the possibility of hunting seals, and a chance -- however slim -- of sighting the relief ship or another sledging party working along the coastline." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 3, "content": "The alternative retraced a course back over the plateau roughly along the outward track: more direct, requiring no glacier descent, but known to contain dangerous crevasse fields -- as Ninnis's fall had just demonstrated -- and offering no food beyond the surviving dogs." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 4, "content": "Mawson judged that a descent to the frozen sea would be dangerous because of how heavily crevassed the glacier there was, and that it was also uncertain whether the sea ice itself would stay safe to travel on so close to midsummer, when breakup was more likely. This is his own recorded reasoning." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 5, "content": "Mawson recorded that he and Mertz judged that, with reasonable weather, they might make it back to Winter Quarters on a week and a half of rations plus the six remaining dogs eaten progressively along the way. Again, this is their stated reasoning at the time, not a verified calculation." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 6, "content": "The relief ship SY Aurora worked on a limited seasonal window: it needed to depart by roughly the end of January to also collect the expedition's separate Western Base party before the pack ice closed. Any sledging party's return therefore had an effective, if not perfectly fixed, deadline." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 7, "content": "The spade and ice-axe had gone down with Ninnis, and what remained of the shelter was a spare tent cover with no poles." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 1, "content": "Xavier Mertz would die on January 8, 1913, roughly 100 miles from base, after a rapid decline. The cause is still debated: a 1969 hypothesis attributed it to hypervitaminosis A from eating the dogs' vitamin-A-rich livers, while a 2005 academic re-evaluation attributes it more to severe malnutrition, psychological shock and an abrupt shift to an almost all-meat diet. Neither could have been anticipated in 1912 -- the toxic effects of eating sled-dog liver in these quantities were not established medical knowledge." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 2, "content": "Mawson himself would fall partway into a crevasse on January 17, 1913, surviving only because his sledge harness caught on the lip, after which he built a rope ladder to guard against a repeat." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 3, "content": "The Aurora would sail from Cape Denison on February 8, 1913, only hours before Mawson walked in, forcing him and the six men of a search party who had stayed behind into an unplanned second Antarctic winter until the ship returned in December 1913." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 4, "content": "What would have happened on the coast route is unknowable. It was never taken, so the route decision cannot be shown to have produced a better or worse outcome than the alternative would have." }
+  ],
+  "evidence": [
+    { "evidence_key": "src-01", "source_type": "PRIMARY", "title": "The Home of the Blizzard: Being the Story of the Australasian Antarctic Expedition, 1911-1914", "author_or_institution": "Douglas Mawson", "publication_date": "1915", "url": "https://www.antarctica.gov.au/", "citation": "Mawson, D. (1915). The Home of the Blizzard. William Heinemann. Chapters 12-13.", "evidence_class": "STATED_RATIONALE", "supported_claim": "Mawson's own account of Ninnis's fall, the supplies lost, and the reasoning he and Mertz gave for taking the plateau route -- the decision-maker writing afterward about his own choice." },
+    { "evidence_key": "src-02", "source_type": "ACADEMIC", "title": "Mawson and Mertz: a re-evaluation of their ill-fated mapping journey during the 1911-1914 Australasian Antarctic Expedition", "author_or_institution": "Denise Carrington-Smith, Medical Journal of Australia", "publication_date": "2005", "citation": "Carrington-Smith, D. (2005). Medical Journal of Australia, 183(11), 638-641.", "evidence_class": "INFERENCE", "supported_claim": "The 2005 re-evaluation of Mertz's death, arguing the liver consumed was too little for acute toxicity and pointing instead to severe malnutrition, psychological trauma and an abrupt all-meat diet. One side of an unsettled medical dispute." },
+    { "evidence_key": "src-03", "source_type": "ACADEMIC", "title": "Hypervitaminosis A in the Antarctic in the Days of the Old Explorers", "author_or_institution": "J. B. Cleland and R. V. Southcott", "publication_date": "1969", "citation": "Cleland, J. B., & Southcott, R. V. (1969). Medical Journal of Australia.", "evidence_class": "INFERENCE", "supported_claim": "The original hypothesis attributing Mertz's death to vitamin A poisoning from husky liver. The other side of the same unsettled dispute." },
+    { "evidence_key": "src-04", "source_type": "GOVERNMENT_ARCHIVE", "title": "Mawson's fatal journey: Catastrophe (Home of the Blizzard interpretive site)", "author_or_institution": "Australian Antarctic Division / Australian Antarctic Program", "publication_date": "Ongoing institutional history site", "url": "https://mawsonshuts.antarctica.gov.au/cape-denison/mawsons-fatal-journey/catastrophe/", "citation": "https://mawsonshuts.antarctica.gov.au/cape-denison/mawsons-fatal-journey/catastrophe/", "evidence_class": "FACT", "supported_claim": "Archival cross-check on the timeline of Ninnis's fall, the supplies lost with him, and Mawson's subsequent solo journey." },
+    { "evidence_key": "src-05", "source_type": "QUALITY_MEDIA", "title": "The Most Terrible Polar Exploration Ever: Douglas Mawson's Antarctic Journey", "author_or_institution": "Smithsonian Magazine", "publication_date": "2013", "url": "https://www.smithsonianmag.com/history/the-most-terrible-polar-exploration-ever-douglas-mawsons-antarctic-journey-82192685/", "citation": "https://www.smithsonianmag.com/history/the-most-terrible-polar-exploration-ever-douglas-mawsons-antarctic-journey-82192685/", "evidence_class": "FACT", "supported_claim": "Corroborating detail on the deadline pressure created by the Aurora's necessary departure and on the return journey." },
+    { "evidence_key": "src-06", "source_type": "REFERENCE", "title": "Douglas Mawson", "author_or_institution": "Encyclopaedia Britannica", "publication_date": "Continually updated reference entry", "url": "https://www.britannica.com/biography/Douglas-Mawson", "citation": "https://www.britannica.com/biography/Douglas-Mawson", "evidence_class": "FACT", "supported_claim": "General biographical and chronological cross-check on Mawson's role and the expedition's dates." },
+    { "evidence_key": "src-07", "source_type": "WIKIPEDIA_DISCOVERY", "title": "Far Eastern Party", "author_or_institution": "English Wikipedia (discovery and orientation only; facts cross-checked against The Home of the Blizzard and the MJA articles)", "publication_date": "Continually updated", "url": "https://en.wikipedia.org/wiki/Far_Eastern_Party", "citation": "https://en.wikipedia.org/wiki/Far_Eastern_Party", "evidence_class": "FACT", "supported_claim": "Orientation on party composition, dates and the sequence of events. Used to locate the primary and academic sources, not as an authority itself." },
+    { "evidence_key": "src-08", "source_type": "REFERENCE", "title": "Source disagreements recorded in the research record", "author_or_institution": "Research record for this case (see src-01 through src-07)", "publication_date": "Compiled from the sources above", "citation": "Recorded rather than resolved.", "evidence_class": "INFERENCE", "supported_claim": "Two points are unsettled. First, the cause of Mertz's death: Cleland and Southcott (1969) argue hypervitaminosis A from husky liver; Carrington-Smith (2005) argues the quantity was too small and points to malnutrition, the trauma of losing Ninnis and the dogs, and the stress of an abrupt all-meat diet. The medical literature has not settled it, and this case does not either. Second, the distance from base at the time of the accident is variously given between about 480 and 500 km (also cited as roughly 311 miles), a difference of measurement point and rounding rather than a factual dispute." }
+  ]
+}
