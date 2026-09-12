@@ -1,0 +1,77 @@
+{
+  "case_key": "battle-of-cannae-216bce",
+  "title": "Fight the Battle, or Keep Refusing It",
+  "domain": "history",
+  "subdomain": "military",
+  "actor": "Gaius Terentius Varro",
+  "actor_role": "Consul of Rome for 216 BC, holding tactical command on his rotation day; the principal advocate of engaging Hannibal in open battle",
+  "date_or_period": "216 BC",
+  "era": "Second Punic War",
+  "location": "The plain beside the Aufidus river near Cannae, Apulia, southeastern Italy",
+  "t0": "August 2, 216 BC. Rome has raised its largest army yet -- commonly given as roughly eight Roman legions with an equal allied contingent -- specifically to end Hannibal's invasion in a single engagement, and it now stands near his force at Cannae. Under the Roman practice of alternating tactical command daily between the two consuls, today is Varro's day. He must either commit that army to open pitched battle on the plain, or continue the cautious shadow-and-harass strategy associated with Fabius Maximus, which has kept Rome from further disaster since Trasimene but has neither ended the war nor stopped Hannibal from ravaging allied farmland.",
+  "context_summary": "You have more infantry than Hannibal by a wide margin. You also have cavalry he has already beaten twice, decisively, in the two big battles of this war. The cautious strategy has avoided another catastrophe but cannot end the war, your allies are watching their fields burn, and Rome has run out of patience for delay. Today command is yours.",
+  "actual_decision_key": "engage_in_pitched_battle",
+  "immediate_outcome": "Varro committed the army to battle. Hannibal's cavalry defeated the Roman cavalry on both flanks, then turned in on the Roman infantry from the rear, encircling and destroying the bulk of the Roman army. Co-consul Lucius Aemilius Paullus was killed, along with a large share of Rome's senior political and military leadership. Varro survived and escaped with a small remaining force. Ancient sources put the Roman dead in the tens of thousands, among the largest single-day battlefield losses in recorded history.",
+  "long_term_outcome": "Rome did not sue for peace and did not collapse. Most of the Italian alliance system held, though some southern cities -- Capua most notably -- defected to Hannibal. Rome returned to Fabian-style avoidance for the rest of Hannibal's time in Italy and eventually won the war not by defeating him there but by carrying the fight to Carthaginian territory in Spain and North Africa. 'Cannae' became the standing shorthand for a battle of annihilation by encirclement.",
+  "decision_quality": "Reasonable",
+  "outcome_quality": "Bad",
+  "popularity": 78,
+  "controversy_risk": 25,
+  "context_compression": 58,
+  "visualizability": 80,
+  "source_disagreement": 70,
+  "uncertainty_factors": ["Cavalry inferiority known but its decisiveness unquantified", "Hannibal's choice of open ground", "No precedent for a defeat of this scale", "Army sizes disputed even in the ancient sources"],
+  "fame_score": 76,
+  "research_priority": 55,
+  "status": "RESEARCH_DONE",
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "engage_in_pitched_battle",
+      "sort_order": 1,
+      "label": "Engage Hannibal in decisive pitched battle now",
+      "short_description": "Commit the full, newly enlarged Roman and allied army to open battle on the plain at Cannae while holding a wide numerical advantage in infantry, seeking to end the war in one engagement.",
+      "upside": "If it works, Hannibal's army is destroyed in a stroke: the threat to Italy ends, the allies are relieved of continued devastation, and the political pressure built up against the cautious strategy is resolved.",
+      "downside": "Roman cavalry is badly outmatched, so the flanks of any Roman line are exposed regardless of how much infantry stands in the centre. And committing the entire field army to one battle means a single defeat is catastrophic rather than merely costly.",
+      "known_tradeoffs": [
+        "Rome built its largest-ever army precisely to overwhelm Hannibal by infantry mass; using a decisive numerical advantage in a set-piece battle rather than prolonging a war of attrition that is straining allied loyalty and Roman patience is a coherent, widely shared answer to a real problem, not a whim. versus If Hannibal finds a way to exploit the cavalry gap despite Roman infantry superiority, the flanks and rear are open with no line of retreat, and a battle becomes an encirclement."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "continue_fabian_strategy",
+      "sort_order": 2,
+      "label": "Keep to the Fabian delay-and-attrition strategy",
+      "short_description": "Refuse open battle, keep shadowing and harassing Hannibal's army, deny it supply and any decisive engagement, and wear it down as Fabius Maximus had since 217 BC.",
+      "upside": "Does not stake Rome's largest-ever field army on a single battle in which a known cavalry weakness could decide everything, and it has a track record: no further catastrophic defeat since Trasimene. It also denies Hannibal the decisive battle that an invading army deep in hostile country needs to force a resolution.",
+      "downside": "Leaves Hannibal free to keep ravaging Italian farmland and testing the loyalty of Rome's allies indefinitely, with no visible endpoint. And it is already politically unsustainable at Rome, where it is widely attacked as cowardly or futile.",
+      "known_tradeoffs": [
+        "It works in the narrow sense of avoiding disaster, and it starves an invader of the decision he needs. versus Continuing indefinitely risks the Italian alliance fraying under sustained devastation and further political instability at Rome, which could force an even worse engagement later on worse terms."
+      ]
+    }
+  ],
+  "case_information": [
+    { "information_type": "KNOWN_AT_T0", "sequence": 1, "content": "Roman cavalry had been decisively outclassed by Hannibal's Numidian and Gallic/Spanish cavalry in both preceding major engagements of the war -- at the Trebia in 218 BC and at Lake Trasimene in 217 BC. This was a recognised, well-understood problem for Roman commanders going into 216 BC, not a surprise." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 2, "content": "For 216 BC Rome raised an unusually large combined force of Roman and allied troops, described in the ancient sources as roughly eight Roman legions plus an equal allied contingent. The plan was to overwhelm Hannibal's numerically smaller army by sheer mass of infantry. The size figures come from sources that do not fully agree, and the plan's premise -- that mass would decide it -- was the Roman command's belief, not a demonstrated fact." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 3, "content": "The exact size of the Roman army at Cannae is disputed among the ancient sources. What they agree on is that it substantially outnumbered Hannibal's force in infantry." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 4, "content": "The Fabian strategy of avoiding pitched battle while shadowing and harassing Hannibal had prevented further catastrophic defeats since 217 BC. It had also left Hannibal free to range over and devastate Italian farmland, and it had produced no resolution to the war." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 5, "content": "That prolonged devastation of allied territory was understood at the time to be straining the loyalty of Rome's Italian allies, whose support was essential to Rome's ability to keep fielding armies. This was a contemporary judgment about allied morale rather than a measured fact." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 6, "content": "The Fabian strategy had become politically difficult to sustain at Rome. It was criticised by many Romans -- and, according to the sources, by Varro himself -- as excessively cautious, and Fabius had already been given the derisive nickname 'Cunctator', the Delayer, by critics of the approach." },
+    { "information_type": "KNOWN_AT_T0", "sequence": 7, "content": "When both consuls were present with a joint army, tactical command alternated day to day between them. Varro held command on August 2, 216 BC, the day the decision to engage was made." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 1, "content": "How decisive Hannibal's chosen ground -- a flat, open plain well suited to cavalry manoeuvre -- would prove in enabling a double envelopment was not something the Roman command could assess the way later analysts could, knowing how the battle actually ran. This is a judgment drawn afterward." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 2, "content": "The scale of the eventual defeat was not something either consul could have anticipated as the likely outcome. Rome had suffered serious but not annihilating defeats at Trebia and Trasimene, and there was no precedent for a loss of this magnitude." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 3, "content": "How Hannibal would use a numerically inferior force to encircle a much larger army -- rather than being ground down by superior Roman infantry mass, as the Roman plan assumed -- was a tactical innovation the Roman command could not have known in advance." },
+    { "information_type": "UNKNOWN_AT_T0", "sequence": 4, "content": "That Rome would survive the defeat without suing for peace, hold most of its alliance system, and eventually win the war by carrying it to Spain and North Africa rather than beating Hannibal in Italy, was not knowable on the day." }
+  ],
+  "evidence": [
+    { "evidence_key": "src-01", "source_type": "PRIMARY", "title": "Histories, Book 3 (The Battle of Cannae)", "author_or_institution": "Polybius, trans. W. R. Paton", "publication_date": "Written c. 167-118 BC", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html", "citation": "Polybius, Histories, Book 3.", "evidence_class": "CONTEMPORARY_BELIEF", "supported_claim": "The principal ancient account of the Roman army's composition, the command rotation between Varro and Paullus, and the course of the battle. Written from a particular vantage -- Polybius is markedly sympathetic to Paullus and critical of Varro -- so it is read as an ancient account rather than as settled fact." },
+    { "evidence_key": "src-02", "source_type": "PRIMARY", "title": "The History of Rome, Book 22 (Ab Urbe Condita)", "author_or_institution": "Titus Livius (Livy)", "publication_date": "Written c. 27-25 BC", "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0152:book%3D22", "citation": "Livy, Ab Urbe Condita, Book 22.", "evidence_class": "CONTEMPORARY_BELIEF", "supported_claim": "The alternative ancient account of the army's size, the Varro-Paullus dynamic and the casualties, differing from Polybius on figures and on emphasis." },
+    { "evidence_key": "src-03", "source_type": "ACADEMIC", "title": "Cannae", "author_or_institution": "Adrian Goldsworthy", "publication_date": "2001", "citation": "Goldsworthy, A. (2001). Cannae. Cassell.", "evidence_class": "INFERENCE", "supported_claim": "The modern military-historical reassessment treating the Roman decision to seek pitched battle as a coherent, if unsuccessful, response to a real strategic bind rather than as recklessness -- an interpretation, and the basis for rating the decision Reasonable against a Bad outcome." },
+    { "evidence_key": "src-04", "source_type": "ACADEMIC", "title": "The Punic Wars", "author_or_institution": "Adrian Goldsworthy", "publication_date": "2000", "citation": "Goldsworthy, A. (2000). The Punic Wars. Cassell.", "evidence_class": "INFERENCE", "supported_claim": "Broader context on the Roman cavalry weakness demonstrated at Trebia and Trasimene, and on the political unsustainability of the Fabian approach at Rome." },
+    { "evidence_key": "src-05", "source_type": "REFERENCE", "title": "Battle of Cannae", "author_or_institution": "Encyclopaedia Britannica", "publication_date": "Continually updated reference entry", "url": "https://www.britannica.com/event/Battle-of-Cannae", "citation": "https://www.britannica.com/event/Battle-of-Cannae", "evidence_class": "FACT", "supported_claim": "General chronology cross-check: the date of the battle, the consular command-rotation system, and the tactical outcome." },
+    { "evidence_key": "src-06", "source_type": "REFERENCE", "title": "Battle of Cannae", "author_or_institution": "World History Encyclopedia", "publication_date": "Web publication, ongoing curation", "url": "https://www.worldhistory.org/Battle_of_Cannae/", "citation": "https://www.worldhistory.org/Battle_of_Cannae/", "evidence_class": "FACT", "supported_claim": "Supporting overview of the Fabian strategy's unpopularity at Rome and the strain it placed on Rome's allies." },
+    { "evidence_key": "src-07", "source_type": "QUALITY_MEDIA", "title": "Why Did the Romans Lose the Battle of Cannae?", "author_or_institution": "History Hit", "publication_date": "Web publication", "url": "https://www.historyhit.com/why-did-the-romans-lose-the-battle-of-cannae/", "citation": "https://www.historyhit.com/why-did-the-romans-lose-the-battle-of-cannae/", "evidence_class": "INFERENCE", "supported_claim": "Supporting discussion of Roman cavalry inferiority at Trebia and Trasimene as an established, recognised weakness heading into 216 BC." },
+    { "evidence_key": "src-08", "source_type": "WIKIPEDIA_DISCOVERY", "title": "Quintus Fabius Maximus Verrucosus", "author_or_institution": "Wikipedia (discovery and orientation only)", "publication_date": "Continually updated", "url": "https://en.wikipedia.org/wiki/Quintus_Fabius_Maximus_Verrucosus", "citation": "https://en.wikipedia.org/wiki/Quintus_Fabius_Maximus_Verrucosus", "evidence_class": "CONTEMPORARY_BELIEF", "supported_claim": "Used only to orient research on the 'Cunctator' nickname and the political criticism of Fabius's strategy; the underlying claims rest on the sources above, not on this page." },
+    { "evidence_key": "src-09", "source_type": "REFERENCE", "title": "Source disagreements recorded in the research record", "author_or_institution": "Research record for this case (see src-01 through src-08)", "publication_date": "Compiled from the sources above", "citation": "Recorded rather than resolved.", "evidence_class": "INFERENCE", "supported_claim": "Two points are unsettled. First, army size and casualties: Polybius gives roughly eight legions of about 5,000 each with an equal allied contingent and puts Roman dead near 70,000; Livy uses different legion strengths and arrives at roughly 50,000. Neither account is fully internally consistent, and modern historians treat both as approximate while agreeing the scale was extraordinary. Second, how far Paullus opposed the decision: Polybius presents him as a cautious figure overruled or pressured by Varro, and is sympathetic to him throughout -- Polybius's patron Scipio Aemilianus was descended from Paullus's family, which may have shaped both the favourable portrait of Paullus and the unfavourable one of the 'populist' Varro. Livy divides the pair similarly but differs in emphasis. The ancient framing of Varro as simply reckless is therefore treated here as a biased characterisation, not a settled judgment." }
+  ]
+}
