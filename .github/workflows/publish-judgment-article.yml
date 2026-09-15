@@ -24,12 +24,14 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Publish the oldest queued draft
+        id: publish
         env:
           PUBLISH_URL: https://fnxbilbihakhqvxjmoqo.supabase.co/functions/v1/publish-next-article
           PUBLISH_SECRET: ${{ secrets.PUBLISH_SECRET }}
         run: |
           set -euo pipefail
           response_file="$(mktemp)"
+          echo "response_file=$response_file" >> "$GITHUB_OUTPUT"
           status="$(curl --silent --show-error --output "$response_file" --write-out '%{http_code}' \
             --request POST \
             --header 'Content-Type: application/json' \
@@ -39,3 +41,23 @@ jobs:
           cat "$response_file"
           test "$status" -ge 200
           test "$status" -lt 300
+
+      - name: Notify insight after a new article is published
+        if: ${{ success() && steps.publish.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          SLACK_INSIGHT_WEBHOOK_URL: ${{ secrets.SLACK_INSIGHT_WEBHOOK_URL }}
+          RESPONSE_FILE: ${{ steps.publish.outputs.response_file }}
+        run: |
+          set -euo pipefail
+          test -n "$SLACK_INSIGHT_WEBHOOK_URL" || exit 0
+          test -f "$RESPONSE_FILE" || exit 0
+          jq -e '.ok == true and .published == true and (.article.title | type == "string") and (.url | type == "string")' "$RESPONSE_FILE" >/dev/null || exit 0
+          payload_file="$(mktemp)"
+          trap 'rm -f "$payload_file"' EXIT
+          jq '{text: ("📰 새 아티클 발행: " + .article.title + "\n판단 훈련 아티클이 공개되었습니다.\n" + .url), mrkdwn: false, unfurl_links: false, unfurl_media: false}' "$RESPONSE_FILE" > "$payload_file"
+          if ! curl --silent --fail --output /dev/null --connect-timeout 3 --max-time 5 \
+            --request POST --header 'Content-Type: application/json' \
+            --data-binary "@$payload_file" "$SLACK_INSIGHT_WEBHOOK_URL" 2>/dev/null; then
+            echo '::warning::Insight notification failed; article publication is unchanged.'
+          fi
