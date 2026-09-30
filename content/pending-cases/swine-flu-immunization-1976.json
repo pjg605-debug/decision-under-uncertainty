@@ -1,0 +1,242 @@
+{
+  "case_key": "swine-flu-immunization-1976",
+  "title": "Immunize Every American, or Make the Vaccine and Wait",
+  "domain": "science",
+  "subdomain": "public health and vaccination policy",
+  "actor": "President Gerald R. Ford, on the recommendation of the Department of Health, Education, and Welfare (Secretary David Mathews; Assistant Secretary for Health Dr. Theodore Cooper) and the Center for Disease Control (Director Dr. David J. Sencer)",
+  "actor_role": "The President, deciding whether to back a federal program to vaccinate the entire U.S. population against a newly identified swine influenza virus; CDC's director wrote the recommendation that reached him",
+  "date_or_period": "February 1976 to February 1977 (decision taken 22-24 March 1976)",
+  "era": "Ford administration, U.S. Bicentennial year, 1976",
+  "location": "The White House, Washington, D.C.; Fort Dix, New Jersey; Center for Disease Control, Atlanta, Georgia",
+  "t0": "22-24 March 1976. In February, CDC identified a swine-type influenza A virus (A/New Jersey/76) among Army recruits at Fort Dix, New Jersey; one recruit, Private David Lewis, had collapsed and died on 4 February, and the Army estimates that as many as 500 recruits may have been exposed. A nationwide search has found no outbreak anywhere else. HEW has sent up a memorandum, written by CDC director David Sencer and signed by Assistant Secretary Theodore Cooper, recommending a $134 million federal program to immunize every American between September and November. It frames the choice as 'go or no go': manufacturers need a go-ahead within about two weeks if there is to be vaccine for everyone by autumn. The Office of Management and Budget's briefing for the 22 March meeting lists the uncertainties, including that HEW epidemiologists have called the probability of an epidemic 'unknown'. The President must decide whether to commit to immunizing the whole population now, or to have the vaccine made while holding back a mass campaign unless the virus starts to spread.",
+  "context_summary": "A new flu virus related to the one blamed for the 1918 pandemic has turned up at an Army training camp in New Jersey. One recruit is dead, and as many as 500 may have been exposed. It has not been found spreading anywhere else. Your health officials say there is a strong possibility of a pandemic next winter; your budget office's briefing says the epidemiologists call the probability unknown. Vaccine makers need your answer within weeks if there is to be enough for everyone by autumn.",
+  "actual_decision_key": "immunize_everyone",
+  "immediate_outcome": "At the 22 March meeting Ford deferred a decision until he had heard from leading scientists. On 24 March, after meeting a panel that included Jonas Salk and Albert Sabin, he went before television cameras to recommend vaccination for every American and asked Congress for $135 million, which he signed into law on 15 April. The program then stalled for months over liability: insurers refused to cover the vaccine manufacturers, who would not proceed without federal indemnity, until Ford signed a tort-claims law (Public Law 94-380) on 12 August. The first shots were given on 1 October. On 11 October three elderly people died shortly after vaccination at the same Pittsburgh clinic; health officials in nine states suspended vaccination, and the program resumed after investigators found no evidence linking the deaths to the vaccine. In November and December reports of Guillain-Barre syndrome among vaccinated people accumulated. On 16 December, after conference calls with outside experts, the program was suspended with the President's approval. More than 40 million people had been vaccinated.",
+  "long_term_outcome": "The pandemic never came. The virus was not found spreading from person to person beyond Fort Dix; the sporadic swine-flu infections identified later in 1976 and early 1977 showed no human-to-human spread, and several were traced to contact with pigs. At a Senate subcommittee hearing on 17 December 1976, CDC's Dr. William Foege estimated the incidence of Guillain-Barre syndrome among vaccinees at about four times normal; in January 1977 the Advisory Committee on Immunization Practices put the added risk at roughly one case per 100,000 to 200,000 vaccinations. By early February 1977 the Justice Department reported 104 damage claims, worth almost $11 million, filed against the federal government under the new law. In February 1977 the new HEW Secretary, Joseph Califano, replaced Sencer as director of CDC. On 30 December 1976 Ford said he agreed with the decision to suspend but defended the original March decision to immunize everyone. HEW later commissioned Richard Neustadt and Harvey Fineberg to review the episode; their report, The Swine Flu Affair, was published in 1978.",
+  "decision_quality": "Reasonable",
+  "outcome_quality": "Bad",
+  "popularity": 55,
+  "controversy_risk": 45,
+  "context_compression": 75,
+  "visualizability": 55,
+  "source_disagreement": 60,
+  "uncertainty_factors": [
+    "Whether the Fort Dix virus would spread beyond a single Army post",
+    "Whether a virus related to the 1918 strain would be as deadly with modern medicine",
+    "Whether vaccine production lead times left any room to wait for more evidence",
+    "Whether manufacturers and insurers would carry the liability for a vaccine given to everyone",
+    "What rare adverse effects a new vaccine given to tens of millions might reveal"
+  ],
+  "fame_score": 45,
+  "research_priority": 60,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "How likely a pandemic was, as presented to the President",
+        "description": "The HEW action memorandum (prepared by Sencer, 13 March 1976) states under its assumptions that 'present evidence and past experience indicate a strong possibility that this country will experience widespread A/swine influenza in 1976-77'. The OMB briefing prepared by James T. Lynn for the 22 March meeting (Attachment A) states that 'HEW epidemiologists have stated that the probability is \"unknown.\"' Both documents were in front of the President; this case presents both and does not adjudicate between them."
+      },
+      {
+        "topic": "Whether the March decision was sound",
+        "description": "Ford, on 30 December 1976, defended the original March decision while agreeing with the suspension. Albert Sabin, who sat on the 24 March panel, wrote in the New York Times on 5 November 1976 that the decision to proceed in March was justifiable but that the use of 1918 'scare tactics' was not, and favored a stockpiling, preparedness approach (both as recorded in the Neustadt-Fineberg chronology). Sencer and Millar, writing in 2006, concluded that the government 'wisely opted to put protection of the public first'. These are the positions of participants; this draft treats them as stated rationale and contemporary belief, not as a verdict."
+      },
+      {
+        "topic": "The 1918 death toll cited in the decision documents",
+        "description": "The HEW memorandum cites 450,000 American deaths in the 1918-1919 pandemic; the OMB Attachment A refers to 'the 1919 experience of 500,000 deaths'. Each figure is quoted only as the document states it; this draft does not assert a death toll of its own."
+      }
+    ],
+    "research_gaps": [
+      "The analytical chapters of Neustadt and Fineberg's The Swine Flu Affair could not be read directly this run (the NCBI Bookshelf copy was behind a reCAPTCHA); only Appendix C, the chronology, was read, from a scanned copy. This draft therefore does not characterize the report's conclusions.",
+      "The size of the Guillain-Barre excess is given only as the contemporaneous estimates recorded in the chronology (Foege, December 1976; ACIP, January 1977). Later epidemiological re-analyses were not assessed for this draft.",
+      "Stockpiling was discussed inside CDC on 9 March and 'briefly mentioned' at the ACIP on 10 March, but the formal HEW memorandum did not list it as a separate alternative; its four alternatives were no action, a minimum response, a government program, and the recommended combined approach. Option B in this case is the stockpiling approach as discussed before T0, not one of the memo's four alternatives."
+    ],
+    "decision_quality_rationale": "Rated Reasonable (INFERENCE). The asymmetry the HEW memo argued from was real: the cost of the program was bounded and known, while a pandemic on anything like the 1918 pattern would have been catastrophic, and production and delivery lead times genuinely forced a commitment months before the evidence could arrive. Against that, the documents show the probability was presented to the President in two incompatible ways ('strong possibility' and 'unknown'), and the memorandum as sent recommends 'immediate implementation' of a program for the entire population without naming any point at which the decision would be revisited. The rating reflects a defensible bet made under real time pressure, with weaknesses in how the uncertainty was communicated, and is scored independently of the fact that no pandemic came."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "immunize_everyone",
+      "sort_order": 1,
+      "label": "Launch a federal program to immunize every American",
+      "short_description": "Tell manufacturers to begin full-scale production now, ask Congress for about $134 million, and aim to vaccinate the whole population -- some 213 million people -- between September and the end of November, through state health departments, clinics and private doctors.",
+      "upside": "If the Fort Dix virus returns next winter as a pandemic, the country is protected before it spreads. HEW's memorandum argues that the government 'can tolerate unnecessary health expenditures better than unnecessary death and illness', and that vaccine for everyone by autumn is only possible if production starts now.",
+      "downside": "Commits the government to the largest immunization program it has ever attempted on the strength of one outbreak at one Army post, with the probability of a pandemic described to you as unknown. The vaccine will do nothing against ordinary flu strains or a mutated swine virus, and every problem that surfaces when a new vaccine is given to tens of millions of people becomes the government's problem. If no pandemic comes, the program will look like an expensive false alarm.",
+      "known_tradeoffs": [
+        "The stakes are lopsided: roughly $134 million and the risks of a new vaccine, against the possibility of a pandemic on the 1918 pattern. versus Acting at full scale on one outbreak sets a precedent: OMB's briefing asks whether a massive federal effort would be needed every year if the epidemic does not come."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "produce_and_hold",
+      "sort_order": 2,
+      "label": "Have the vaccine made, but hold back the mass campaign",
+      "short_description": "Have manufacturers produce swine-flu vaccine and stockpile it, keep routine flu protection for the elderly and chronically ill, watch closely for new swine-flu outbreaks, and launch a national campaign only if the virus starts spreading.",
+      "upside": "Keeps the protection of having vaccine on hand without committing the whole population, and the government, to an unprecedented program against a virus that has so far appeared at one Army post. Nobody is exposed to a new vaccine's unknown risks unless the threat materializes. Stockpiling was discussed inside CDC and raised at the Advisory Committee on Immunization Practices before the recommendation was written.",
+      "downside": "HEW's own assessment frames the choice as 'go or no go': vaccinating over 200 million people takes months, so a campaign launched after a pandemic has begun may reach much of the country too late. Congress, the press and the public already know about the Fort Dix virus and will expect visible action, and HEW expects Congress to act on its own if the administration does not.",
+      "known_tradeoffs": [
+        "Waiting preserves the option to act on better evidence and avoids vaccinating millions against a threat that may never come. versus The lead time for mass vaccination may mean that by the time the evidence arrives, it is too late to act on it."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "In February 1976 CDC identified a swine-type influenza A virus, designated A/New Jersey/76, in throat washings from Army recruits at Fort Dix, New Jersey. Private David Lewis, a Fort Dix recruit, collapsed and died on 4 February after leaving his sick bed for a night march; an isolate taken from him was among those sent to CDC. CDC announced the finding publicly on 19 February."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "Serological surveys at Fort Dix in early March led the Army to estimate that as many as 500 recruits may have been exposed. Person-to-person transmission has been established, but only at Fort Dix."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "A nationwide CDC search in late February turned up other isolated swine-flu infections in Minnesota, Wisconsin, Pennsylvania, Virginia and Mississippi; in all but one questionable Virginia case, the person had been in contact with pigs. No outbreak has been found outside Fort Dix."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "HEW's memorandum states that the virus is antigenically related to the virus implicated in the 1918-1919 pandemic, that the U.S. population under 50 is probably susceptible, and that severe influenza epidemics have come at roughly ten-year intervals, the last in 1968-69. On that basis it assesses 'a strong possibility' of widespread swine flu in 1976-77."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "OMB's briefing for the 22 March meeting lists the uncertainties: HEW epidemiologists have described the probability of an epidemic as 'unknown'; the vaccine would not protect against the conventional flu strains of recent years; a mutated swine virus could evade it; a new pandemic might not be as deadly as 1918 because of modern medicine; and a federal program now might create pressure to repeat it every year."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "HEW calls the situation 'go or no go'. To vaccinate some 213 million people, a program would have to be in full operation by the beginning of September and finished by the end of November, and manufacturers would need a go-ahead within about two weeks. The nation has never attempted an immunization program of that scope."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "The HEW memorandum sets out four alternatives -- no action, a minimum federal response (about $40 million), a fully government-run program (about $190 million) and a combined public-private program (about $134 million) -- and recommends the combined approach. Its own list of arguments for doing nothing includes that the 'pandemic' might not occur and the Department would then have avoided unnecessary health expenditures."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 8,
+      "content": "Before the recommendation was written, stockpiling vaccine was discussed at some length at a CDC staff meeting on 9 March and briefly mentioned at the Advisory Committee on Immunization Practices on 10 March, where members agreed that major action was needed. The formal memorandum does not present stockpiling as a separate alternative."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 9,
+      "content": "In January 1976, before Fort Dix, a CDC official had warned HEW's Secretary that liability problems might drive vaccine manufacturers out of the business, and recommended legislation to indemnify manufacturers or compensate people injured by vaccines."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Whether the virus would spread at all. It never did: no person-to-person spread was found beyond Fort Dix through the 1976-77 season, and later sporadic infections were traced to pigs or showed no human-to-human transmission."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That insurers would refuse to cover the manufacturers and the manufacturers would refuse to proceed without federal indemnity, delaying the program until a special law was signed on 12 August; the first shots were not given until 1 October."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That three elderly people would die shortly after vaccination at one Pittsburgh clinic on 11 October, prompting suspensions in nine states before investigators found no link to the vaccine."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 4,
+      "content": "That cases of Guillain-Barre syndrome would be reported among vaccinated people at a rate federal officials came to estimate at several times normal, leading to the program's suspension on 16 December 1976 after more than 40 million people had been vaccinated."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 5,
+      "content": "How far public participation would fall short: by mid-November only four project areas had passed 50 percent coverage, and a New York Times poll found that more than half of New York City residents who had not been vaccinated thought the shot unnecessary."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "The Swine Flu Affair: Decision-Making on a Slippery Disease, Appendix C: Swine Flu Chronology, January 1976-March 1977",
+      "author_or_institution": "Richard E. Neustadt and Harvey V. Fineberg, for the U.S. Department of Health, Education, and Welfare",
+      "publication_date": "1978",
+      "url": "https://biotech.law.lsu.edu/cphl/history/books/sw/Chronology.pdf",
+      "citation": "Richard E. Neustadt and Harvey V. Fineberg, The Swine Flu Affair: Decision-Making on a Slippery Disease (U.S. Department of Health, Education, and Welfare, 1978), Appendix C, 'Swine Flu Chronology, January 1976-March 1977', pp. 123-145. Also on NCBI Bookshelf as NBK219595.",
+      "evidence_class": "FACT",
+      "supported_claim": "The dated sequence this case is built on: the Fort Dix isolations and Private Lewis's death (4 February), the nationwide search and its pig-contact findings, the Army's exposure estimate, the 9-10 March stockpiling discussions, Sencer's memorandum (13 March), the 22 and 24 March meetings, the liability impasse and PL 94-380 (12 August), the first shots (1 October), the Pittsburgh deaths (11 October), the suspension (16 December), the claims filed and Sencer's replacement (February 1977)."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Memorandum, Assistant Secretary for Health to the Secretary, 'Swine Influenza--ACTION' (Attachment B to the 22 March 1976 meeting file)",
+      "author_or_institution": "Theodore Cooper, M.D., HEW; prepared by David J. Sencer, CDC, 13 March 1976. White House Central Files (HE 1), Gerald R. Ford Presidential Library",
+      "publication_date": "13 March 1976",
+      "url": "https://www.fordlibrarymuseum.gov/sites/default/files/pdf_documents/library/exhibits/swineflu/sf760322.pdf",
+      "citation": "Gerald R. Ford Presidential Library, White House Central Files Subject File HE 1 (Exec.), 'Swine Influenza Program Meeting', 22 March 1976, Attachment B.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "HEW's case for mass immunization as put to the President: the 'strong possibility' assessment, the 'go or no go' framing and timetable, the 213 million target, the four alternatives with their costs and pros and cons, and the argument that the administration 'can tolerate unnecessary health expenditures better than unnecessary death and illness'."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Swine Influenza Program Meeting, Monday, March 22, 1976 (agenda), with Attachment A: 'Uncertainties Surrounding a Federal Mass Swine Influenza Immunization Program'",
+      "author_or_institution": "James T. Lynn, Director, Office of Management and Budget. White House Central Files (HE 1), Gerald R. Ford Presidential Library",
+      "publication_date": "22 March 1976",
+      "url": "https://www.fordlibrarymuseum.gov/sites/default/files/pdf_documents/library/exhibits/swineflu/sf760322.pdf",
+      "citation": "Gerald R. Ford Presidential Library, White House Central Files Subject File HE 1 (Exec.), 'Swine Influenza Program Meeting', 22 March 1976, agenda and Attachment A.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "The uncertainties in front of the President at T0: that HEW epidemiologists called the probability 'unknown', that transmission was proven only at Fort Dix, that the vaccine would not protect against conventional or mutated strains, the precedent concern, and that manufacturers needed a go-ahead within two weeks."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Swine Flu Immunization Program of 1976 (topic guide)",
+      "author_or_institution": "Gerald R. Ford Presidential Library and Museum",
+      "publication_date": "Undated online guide",
+      "url": "https://www.fordlibrarymuseum.gov/digital-research-room/topic-guides/swine-flu-immunization-program-1976",
+      "citation": "https://www.fordlibrarymuseum.gov/digital-research-room/topic-guides/swine-flu-immunization-program-1976",
+      "evidence_class": "FACT",
+      "supported_claim": "Corroborates the headline dates: the 22 March meeting, the 24 March announcement, the 12 August signing, the October start, the 16 December suspension, and more than 40 million people vaccinated."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "ACADEMIC",
+      "title": "Reflections on the 1976 Swine Flu Vaccination Program",
+      "author_or_institution": "David J. Sencer and J. Donald Millar, Emerging Infectious Diseases 12(1)",
+      "publication_date": "January 2006",
+      "url": "https://wwwnc.cdc.gov/eid/article/12/1/05-1007_article",
+      "citation": "Sencer DJ, Millar JD. Reflections on the 1976 swine flu vaccination program. Emerg Infect Dis. 2006;12(1).",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "The retrospective account and defense by CDC's director and the head of the 1976 immunization program: the 13 March action memorandum, the ACIP recommendation of 10 March, about 45 million immunized, the 16 December moratorium, Sencer's dismissal by Califano, and their conclusion that the government 'wisely opted to put protection of the public first'. As the decision-makers' own account, it is stated rationale, not independent fact."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Swine Flu Chronology entries for 5 November and 30 December 1976 (Sabin in the New York Times; Ford in Vail, Colorado)",
+      "author_or_institution": "Richard E. Neustadt and Harvey V. Fineberg, for the U.S. Department of Health, Education, and Welfare",
+      "publication_date": "1978",
+      "url": "https://biotech.law.lsu.edu/cphl/history/books/sw/Chronology.pdf",
+      "citation": "Richard E. Neustadt and Harvey V. Fineberg, The Swine Flu Affair: Decision-Making on a Slippery Disease (U.S. Department of Health, Education, and Welfare, 1978), Appendix C, 'Swine Flu Chronology, January 1976-March 1977', pp. 123-145. Also on NCBI Bookshelf as NBK219595.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Participants' judgments after the fact: Sabin's view that proceeding in March was justifiable but that 1918 'scare tactics' were not, and his preference for stockpiling; Ford's defense of the March decision while concurring in the suspension."
+    },
+    {
+      "evidence_key": "src-07",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Swine Flu Chronology entries for 14 and 17 December 1976 and 14 January 1977 (Guillain-Barre estimates)",
+      "author_or_institution": "Richard E. Neustadt and Harvey V. Fineberg, for the U.S. Department of Health, Education, and Welfare",
+      "publication_date": "1978",
+      "url": "https://biotech.law.lsu.edu/cphl/history/books/sw/Chronology.pdf",
+      "citation": "Richard E. Neustadt and Harvey V. Fineberg, The Swine Flu Affair: Decision-Making on a Slippery Disease (U.S. Department of Health, Education, and Welfare, 1978), Appendix C, 'Swine Flu Chronology, January 1976-March 1977', pp. 123-145. Also on NCBI Bookshelf as NBK219595.",
+      "evidence_class": "FACT",
+      "supported_claim": "The contemporaneous Guillain-Barre figures: CDC's 14 December count of 54 cases in 10 states, 30 of them in vaccinees; Foege's 17 December estimate of about four times normal incidence among vaccinees; the ACIP's January 1977 estimate of roughly one case per 100,000 to 200,000 vaccinations."
+    },
+    {
+      "evidence_key": "src-08",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the documents above",
+      "publication_date": "2026-10-01",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That the decision was a defensible bet under genuine lead-time pressure, weakened by the inconsistent way the probability was presented and by the absence of a stated point for reconsideration. This is an interpretation, scored independently of the outcome."
+    }
+  ]
+}
