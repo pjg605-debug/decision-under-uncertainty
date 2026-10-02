@@ -1,0 +1,239 @@
+{
+  "case_key": "intel-dram-exit-1985",
+  "title": "Defend the Founding Business, or Get Out of Memories",
+  "domain": "business",
+  "subdomain": "semiconductors and corporate strategy",
+  "actor": "Intel Corporation: Andrew S. Grove, President and Chief Operating Officer, and Gordon E. Moore, Chairman and Chief Executive Officer",
+  "actor_role": "Intel's two top executives, deciding whether to keep competing in dynamic random access memory (DRAM), the product line Intel was founded on, or to leave it and concentrate on microprocessors",
+  "date_or_period": "1984 to 1987 (decision taken in 1985; exit announced to employees on 10 October 1985)",
+  "era": "Mid-1980s semiconductor slump and the rise of the personal computer",
+  "location": "Intel headquarters, Santa Clara, California",
+  "t0": "Mid-1985. Intel came out of 1984 with record revenue of about $1.63 billion and net income of about $198 million, having raised capital spending to $388 million and announced the world's first 256K CHMOS DRAM. Then the boom collapsed in the last quarter of 1984. In 1985 customers sat on excess inventory, the whole industry had too much capacity, prices fell precipitously, and Intel's new orders hit their low in the second quarter, when the company began losing money on its operations. In DRAMs, Intel has become a minor participant in a crowded market that Asian-based and other non-U.S. manufacturers are targeting. Its microprocessors, by contrast, have become the standard for personal computers, and a 32-bit successor, the 80386, is in development. Grove and Moore must decide whether to keep fighting in DRAMs, the business Intel was built on, or to leave it.",
+  "context_summary": "Your company invented the market it is now losing. Memory chips were the business you were founded on, and you announced the world's first 256K CHMOS version only last year. Since then the market has collapsed, foreign competitors are selling hard, and you have become a minor player. Your microprocessors, meanwhile, are the standard inside personal computers. Do you keep fighting for memory, or walk away from the business that made you?",
+  "actual_decision_key": "exit_dram",
+  "immediate_outcome": "Intel announced its exit from DRAMs to employees on 10 October 1985; the same month it unveiled the 80386 microprocessor, which worked at full speed on its first manufacturing run. The company kept its other volume memory line, EPROMs. Net income for 1985 was about $1.6 million on revenue of about $1.36 billion, down 16 percent, with operating losses in the second, third and fourth quarters. 1986 was worse: Intel decided to sell its bubble memory business, took a $60 million restructuring charge and recorded a net loss of about $173 million on revenue of about $1.27 billion. Over 1985-86 it closed eight older plants and cut its workforce by 7,200 people through attrition and layoffs.",
+  "long_term_outcome": "In 1987 Intel returned to profit and set revenue and net income records: revenue rose 51 percent and net income reached $248 million. Its annual report attributed the turnaround to a new generation of desktop computers based on Intel's advanced microprocessors. Grove later called getting out of DRAMs when Intel did 'the best business decision we ever made.' Robert Burgelman's 1994 study of the exit found that Intel's internal allocation of scarce manufacturing capacity had already shifted from memory to microprocessors before corporate strategy was officially changed.",
+  "decision_quality": "Strong",
+  "outcome_quality": "Good",
+  "popularity": 60,
+  "controversy_risk": 20,
+  "context_compression": 80,
+  "visualizability": 55,
+  "source_disagreement": 45,
+  "uncertainty_factors": [
+    "Whether the 1985 DRAM price collapse was a cyclical trough or a permanent loss of position",
+    "Whether microprocessors alone could carry a company that size",
+    "Whether Intel could keep its manufacturing edge without a high-volume DRAM line",
+    "Whether the 80386 would succeed and personal computer makers would adopt it"
+  ],
+  "fame_score": 55,
+  "research_priority": 55,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "When and by whom the exit was really decided",
+        "description": "Grove's account in Only the Paranoid Survive (1996) places the turning point in a conversation with Moore in the middle of 1985 ('If we got kicked out and the board brought in a new CEO, what do you think he would do?' -- 'He would get us out of memories.'). Burgelman's 1994 process study in Administrative Science Quarterly argues instead that Intel's internal selection environment had already shifted scarce manufacturing resources from memory to microprocessors before corporate strategy was officially changed, with middle-level managers' actions diverging from the official strategy. On Burgelman's reading, the top-level decision ratified a shift already under way. Both are presented; this case does not adjudicate."
+      },
+      {
+        "topic": "Financial figures",
+        "description": "Some secondary accounts give loss figures for 1985 and 1986 that do not match Intel's audited statements. This case uses the audited income statement in Intel's 1986 annual report: 1985 net income $1,570 thousand; 1986 net loss $173,165 thousand, including a $60,000 thousand restructuring charge."
+      }
+    ],
+    "research_gaps": [
+      "DRAM's share of Intel's revenue and Intel's DRAM market share at T0 were not verified from a primary source this run; widely repeated secondary figures were not used. The case relies on Intel's own description of itself in its 1986 annual report as having become 'a minor participant in the crowded, loss-plagued DRAM market'.",
+      "Burgelman's full paper was not read; only its abstract (Stanford GSB) was. The case uses only the abstract's claims.",
+      "Grove's 1985 conversation with Moore is quoted from the excerpt reproduced by Fortune (22 March 2016), attributed to Only the Paranoid Survive; the book itself was not read this run.",
+      "The precise date of the decision within 1985 is not documented in the sources read; Grove places the conversation in the middle of 1985, and Intel's timeline gives 10 October 1985 as the date the exit was announced to staff."
+    ],
+    "decision_quality_rationale": "Rated Strong (INFERENCE). On the evidence Intel's own executives had in 1985, the case for leaving was clear: Intel was a minor participant in a market that well-funded competitors were targeting, the downturn had removed any margin for a sub-scale player, and the company's distinctive position was in microprocessors, where it was the industry standard and had a new generation in development. The exit also preserved what memory work mattered for process technology by keeping EPROMs. The main weakness was timing rather than direction: Burgelman's account suggests resources had already moved before the official strategy changed, so the top-level decision lagged the evidence. The rating is scored independently of the 1987 recovery, which also depended on factors outside the decision, such as PC makers adopting the 80386."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "stay_in_dram",
+      "sort_order": 1,
+      "label": "Stay in DRAMs and fight on cost and technology",
+      "short_description": "Keep investing in DRAMs through the downturn, push the CHMOS technology Intel pioneered, and compete on manufacturing efficiency in the hope of regaining position when demand recovers.",
+      "upside": "Keeps the business Intel was founded on, and a high-volume memory line of the kind Intel itself relies on to refine its manufacturing techniques. The slump is hitting the whole industry, not only DRAMs, and leaving at the bottom of a cycle risks abandoning a market just before it recovers. Intel announced the first 256K CHMOS DRAM only last year, and many in the industry expect CHMOS to become the mainstream DRAM technology later in the decade.",
+      "downside": "Means pouring scarce capital and factory capacity into a commodity market where Intel is now a minor participant and where competitors are pricing aggressively. If the losses are structural rather than cyclical, the company bleeds money in memory while starving the microprocessor business that is its real franchise.",
+      "known_tradeoffs": [
+        "Identity, process learning and the chance of a cyclical recovery. versus Capital and capacity that could go to microprocessors, where Intel already sets the standard."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "exit_dram",
+      "sort_order": 2,
+      "label": "Get out of DRAMs and concentrate on microprocessors",
+      "short_description": "Leave the DRAM business, keep EPROMs as the volume memory product for refining manufacturing, and put the company's resources behind microprocessors and the forthcoming 32-bit 80386.",
+      "upside": "Stops investing in a market where it has become very hard to earn a return, and concentrates capital, engineers and factories on microprocessors, where Intel's chips are already the standard for personal computers and demand had outrun supply as recently as 1984.",
+      "downside": "Walks away from the product Intel was built on, at the cost of plant closures and layoffs, and bets the company's future on microprocessors at a moment when the whole computer market is in a slump. Intel has also licensed other manufacturers to produce its microprocessors, so it does not have that market to itself.",
+      "known_tradeoffs": [
+        "Focus on the business where Intel leads. versus Giving up the founding business and the volume it brought, with no certainty that microprocessors alone can carry the company."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "1984 was a record year for Intel: net revenues of about $1.63 billion and net income of about $198 million. Capital spending rose to $388 million, up 168 percent from 1983, in response to booming demand."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "The boom collapsed in the fourth quarter of 1984. In 1985 customers worked off excess inventory, the industry was over capacity, and prices fell precipitously. Intel's net new orders reached their lowest level in the second quarter of 1985, and the company was making operating losses."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "In 1984 Intel had announced the world's first 256K CHMOS dynamic RAM, and its annual report noted that many expected CHMOS to become the mainstream technology for producing DRAMs in the late 1980s."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "In DRAMs Intel had become, in its own later words, 'a minor participant in the crowded, loss-plagued DRAM market'. Its executives saw DRAM as an area targeted by non-U.S. manufacturers, where it was difficult to produce a return on the required investment, and Asian-based competitors had forced Intel to concentrate on manufacturing technology to stay competitive in memory."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "Intel's microprocessors had emerged as the standard for personal computers. In 1984 demand for its 80186 and 80286 outstripped supply even as production of the 80186 tripled each quarter. To assure customers of supply, Intel had licensed other semiconductor makers to produce its microprocessors."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "Intel was developing the 80386, a 32-bit microprocessor compatible with its earlier microprocessor family and designed for its new CHMOS III process."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "Intel also made EPROMs, a memory product it had invented and led in every generation; management regarded a high-volume product like EPROMs as important for refining manufacturing techniques."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 8,
+      "content": "Inside the company, decisions about where to allocate scarce manufacturing capacity had already been moving resources from memory toward microprocessors before corporate strategy officially changed, according to Robert Burgelman's later study of the exit."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "How deep the slump would go: 1985 ended with net income of only about $1.6 million on revenue down 16 percent, and 1986 brought a net loss of about $173 million, including a $60 million restructuring charge."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "The human cost: over 1985-86 Intel closed eight older plants and reduced its workforce by 7,200 people through attrition and layoffs, and in 1986 it also decided to sell its bubble memory business."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That the 80386, unveiled in October 1985, would work to full-speed specification on its first manufacturing run and that customers would design many systems around it during 1985-86."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 4,
+      "content": "That a new generation of desktop computers based on Intel's advanced microprocessors would drive a turnaround in 1987, with revenue up 51 percent and record net income of $248 million."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "CORPORATE_FILING",
+      "title": "Intel Corporation 1984 Annual Report",
+      "author_or_institution": "Intel Corporation (management report signed by Gordon E. Moore and Andrew S. Grove)",
+      "publication_date": "1985",
+      "url": "https://archive.org/details/intel-history-1984-annual-report-pdf",
+      "citation": "Intel Corporation, 1984 Annual Report, Internet Archive item intel-history-1984-annual-report-pdf.",
+      "evidence_class": "FACT",
+      "supported_claim": "Intel's 1984 announcement of the world's first 256K CHMOS dynamic RAM; the report's statement that many expected CHMOS to be the mainstream DRAM technology in the late 1980s; plans for a continued high rate of capital investment in 1985; the 80186 production ramp in 1984."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "CORPORATE_FILING",
+      "title": "Intel Corporation 1985 Annual Report, Management Report",
+      "author_or_institution": "Andrew S. Grove and Gordon E. Moore, Intel Corporation",
+      "publication_date": "1986",
+      "url": "https://archive.org/details/intel-history-1985-annual-report-pdf",
+      "citation": "Intel Corporation, 1985 Annual Report, Management Report, Internet Archive item intel-history-1985-annual-report-pdf.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "The executives' own reasons, written shortly after the decision: that DRAM 'has been targeted by non-U.S. manufacturers so it is difficult to produce a return on the investment required to be a participant'; that Asian-based competitors had forced Intel to focus on manufacturing technology in memory; the emphasis on EPROMs as the volume product to drive technology; and the account of 1985 (revenue down 16 percent, operating losses in the second to fourth quarters, earnings of $.01 per share)."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "CORPORATE_FILING",
+      "title": "Intel Corporation 1986 Annual Report, consolidated statement of income",
+      "author_or_institution": "Intel Corporation",
+      "publication_date": "1987",
+      "url": "https://archive.org/details/intel-history-1986-annual-report-pdf",
+      "citation": "Intel Corporation, 1986 Annual Report, consolidated statement of income, Internet Archive item intel-history-1986-annual-report-pdf.",
+      "evidence_class": "FACT",
+      "supported_claim": "Audited figures for 1984-1986: net revenues $1,629,332, $1,364,982 and $1,265,011 thousand; net income (loss) $198,189, $1,570 and $(173,165) thousand; a $60,000 thousand restructuring charge in 1986."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "CORPORATE_FILING",
+      "title": "Intel Corporation 1986 Annual Report, letter to shareholders",
+      "author_or_institution": "Andrew S. Grove and Gordon E. Moore, Intel Corporation",
+      "publication_date": "1987",
+      "url": "https://archive.org/details/intel-history-1986-annual-report-pdf",
+      "citation": "Intel Corporation, 1986 Annual Report, Internet Archive item intel-history-1986-annual-report-pdf.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "That Intel 'phased out of the dynamic random access memory (DRAM) business in 1985' having become 'a minor participant in the crowded, loss-plagued DRAM market'; that 1984 capital spending was $388 million, up 168 percent; that Intel microprocessors had emerged as the standard for personal computers and that Intel had licensed other manufacturers to produce them; and that over two years it closed eight plants and reduced the workforce by 7,200."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "CORPORATE_FILING",
+      "title": "Intel Corporation 1987 Annual Report, Management Report",
+      "author_or_institution": "Intel Corporation",
+      "publication_date": "1988",
+      "url": "https://archive.org/details/intel-history-1987-annual-report-pdf",
+      "citation": "Intel Corporation, 1987 Annual Report, Internet Archive item intel-history-1987-annual-report-pdf.",
+      "evidence_class": "FACT",
+      "supported_claim": "The 1987 turnaround: revenue up 51 percent, record net income of $248 million against a $173 million loss in 1986, attributed to desktop computers based on Intel's advanced microprocessors."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "CORPORATE_HISTORY",
+      "title": "Farewell to DRAM (Intel timeline, 1985)",
+      "author_or_institution": "Intel Corporation",
+      "publication_date": "Undated online timeline",
+      "url": "https://timeline.intel.com/1985/farewell-to-dram",
+      "citation": "https://timeline.intel.com/1985/farewell-to-dram",
+      "evidence_class": "FACT",
+      "supported_claim": "That the exit was announced on 10 October 1985, and Grove's later comments that 'it was an emotional decision' and that 'in retrospect, getting out of DRAMs when we did was the best business decision we ever made' (the latter retrospective, i.e. stated rationale)."
+    },
+    {
+      "evidence_key": "src-07",
+      "source_type": "BOOK",
+      "title": "Only the Paranoid Survive (excerpt as reproduced in Fortune, 22 March 2016)",
+      "author_or_institution": "Andrew S. Grove; excerpt in Fortune CEO Daily",
+      "publication_date": "1996 (book); 2016 (excerpt)",
+      "url": "https://fortune.com/2016/03/22/ceo-daily-tuesday-march-22",
+      "citation": "Andrew S. Grove, Only the Paranoid Survive (1996), as quoted in Fortune, 22 March 2016.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Grove's retrospective account of his 1985 exchange with Moore: 'If we got kicked out and the board brought in a new CEO, what do you think he would do?' -- 'He would get us out of memories.' -- 'Why shouldn't you and I walk out the door, come back, and do it ourselves?' A participant's account written about a decade later."
+    },
+    {
+      "evidence_key": "src-08",
+      "source_type": "ACADEMIC",
+      "title": "Fading Memories: A Process Theory of Strategic Business Exit in Dynamic Environments",
+      "author_or_institution": "Robert A. Burgelman, Administrative Science Quarterly 39(1)",
+      "publication_date": "March 1994",
+      "url": "https://www.gsb.stanford.edu/faculty-research/publications/fading-memories-process-theory-strategic-business-exit-dynamic",
+      "citation": "Burgelman RA. Fading memories: a process theory of strategic business exit in dynamic environments. Administrative Science Quarterly 1994;39(1):24-56.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "The scholarly interpretation that inertial forces caused Intel's corporate strategy to diverge from strategic actions taken by middle-level managers, and that Intel's internal selection environment shifted scarce manufacturing resources from memory to microprocessors before corporate strategy was officially changed."
+    },
+    {
+      "evidence_key": "src-09",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the documents above",
+      "publication_date": "2026-10-03",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That the exit was a strong decision in direction, weaker in timing, scored independently of the 1987 recovery."
+    }
+  ]
+}
