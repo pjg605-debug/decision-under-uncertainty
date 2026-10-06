@@ -1,0 +1,211 @@
+{
+  "case_key": "lehman-brothers-weekend-2008",
+  "title": "The Weekend of 13-14 September 2008: Rescue Lehman, or Let It Fail",
+  "domain": "business",
+  "subdomain": "financial crisis and central banking",
+  "actor": "U.S. Treasury Secretary Henry Paulson, Federal Reserve Chairman Ben Bernanke and Federal Reserve Bank of New York President Timothy Geithner",
+  "actor_role": "The officials who, over the weekend of 13-14 September 2008, had to decide whether the U.S. government would provide support to prevent Lehman Brothers' bankruptcy once a private rescue had failed",
+  "date_or_period": "March to September 2008 (decision taken on Sunday 14 September 2008)",
+  "era": "Global financial crisis, 2007-2009",
+  "location": "Federal Reserve Bank of New York, New York City",
+  "t0": "Sunday 14 September 2008. Lehman Brothers has suffered large losses on real estate and, during the week of 8 September, a run that has drained its liquidity. Since Friday night, Treasury and Fed officials have gathered Wall Street chief executives at the New York Fed, where Paulson has told them that a private-sector solution is the only option and that the Fed will not provide 'any form of extraordinary credit support'. By Saturday night a deal seemed done: Barclays would buy Lehman, with a consortium of banks financing its worst assets. On Sunday morning Barclays reported that Britain's Financial Services Authority had declined to approve it: the deal needed Barclays to guarantee Lehman's obligations until closing, which under U.K. law required a shareholder vote, and the FSA would not waive it. Bank of America has agreed to buy Merrill Lynch instead. Lehman's lawyers have warned that its default would 'trigger a cascade of defaults' through subsidiaries with large derivatives books. In March the Fed lent to support JP Morgan's purchase of Bear Stearns, and that rescue drew heavy political criticism. The officials must decide whether the government will now provide support to keep Lehman from filing for bankruptcy, or let it fail.",
+  "context_summary": "A major investment bank is running out of cash. Six months ago the government helped rescue a smaller one and was attacked for it. You have spent the weekend trying to sell this one to a private buyer, and on Sunday morning the deal collapses because British regulators will not approve it. If the bank does not have money to open on Monday, it files for bankruptcy. Do you step in with public money, or let it fail?",
+  "actual_decision_key": "let_fail",
+  "immediate_outcome": "With no buyer and no government support, Lehman Brothers Holdings filed for bankruptcy at 1:45 a.m. on Monday 15 September 2008. Its failure triggered default clauses in derivatives contracts across its subsidiaries, and its bankruptcy became, in the words of its bankruptcy counsel to the FCIC, 'the largest, most complex, multi-faceted and far-reaching bankruptcy case ever filed in the United States'. Within days the Fed made an emergency loan to rescue the insurer AIG, and the following week Goldman Sachs and Morgan Stanley were granted bank holding company status.",
+  "long_term_outcome": "The economist Laurence Ball describes Lehman's bankruptcy as the most dramatic event of the 2007-2009 financial crisis and notes that many economists believe it greatly worsened the crisis and the recession that followed. Lehman was the only large financial institution to file for bankruptcy during the crisis. Why the government let it fail remains contested: Fed officials have consistently said they lacked the legal authority to lend because Lehman's collateral was insufficient; the Financial Crisis Inquiry Commission's report noted that the Fed provided no written analysis showing this and that its emergency lending authority is very broad; the economist Laurence Ball concluded in 2016 that the Fed did have the authority and that legal constraints were not the real reason; and FCIC commissioner Peter Wallison called the rescue of Bear Stearns followed by the failure to rescue Lehman 'one of the great policy errors of all time'.",
+  "decision_quality": "Weak",
+  "outcome_quality": "Bad",
+  "popularity": 70,
+  "controversy_risk": 50,
+  "context_compression": 70,
+  "visualizability": 55,
+  "source_disagreement": 80,
+  "uncertainty_factors": [
+    "Whether Lehman was insolvent or only illiquid",
+    "Whether the Fed could legally lend enough against Lehman's collateral",
+    "How far a Lehman default would cascade through derivatives and funding markets",
+    "Whether markets had prepared for a Lehman failure after months of warning signs",
+    "Whether rescuing Lehman after Bear Stearns would entrench the expectation that every large firm would be saved"
+  ],
+  "fame_score": 70,
+  "research_priority": 60,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "Why the government let Lehman fail, and whether it could have done otherwise",
+        "description": "Bernanke told the FCIC that the Fed could not lend without a reasonable expectation of repayment, that Lehman lacked the collateral to support a loan big enough to meet the run, and that before TARP the Fed had no power to inject capital or give guarantees; he has repeated the collateral explanation since (Jackson Hole 2009, memoir 2015). The FCIC report observed that this was not the explanation Bernanke gave days after the bankruptcy, when he said markets had had time to prepare; that the Fed furnished no written analysis showing Lehman lacked sufficient collateral; and that the emergency lending authority requires only that loans be 'secured to the satisfaction of the Federal Reserve bank'. Laurence Ball (NBER WP 22410, 2016) concluded that a perceived lack of legal authority was not the reason the Fed did not act, that the Fed did have the authority, that the record shows no examination of the adequacy of Lehman's collateral before the bankruptcy, and that the decision was made primarily by Paulson. Lehman's CEO Richard Fuld told the FCIC that Lehman had adequate collateral and needed only a liquidity bridge. These positions are presented side by side; this case does not adjudicate them."
+      },
+      {
+        "topic": "What the policy error was, if there was one",
+        "description": "Peter Wallison's FCIC dissent does not turn on legal authority. He argues that the March 2008 rescue of Bear Stearns created a moral hazard: markets reasonably expected every large firm to be rescued, so letting Lehman fail six months later overturned those expectations and turned a potential crisis into a panic. On his reading the error was the inconsistency between the two decisions. Some members of the Fed's own FOMC, by contrast, argued after the event that letting Lehman fail was the only way to make credible the claim that no firm was too big to fail."
+      },
+      {
+        "topic": "How firm the 'no public money' line really was",
+        "description": "The phrase 'not a penny' comes from New York Fed General Counsel Tom Baxter's account to the FCIC of Paulson's position, not from a contemporaneous record by Paulson. Lehman's counsel H. Rodgin Cohen told the FCIC he believed the posture was 'a game of chicken'; the Fed's own liquidation-consortium plan contemplated a financial commitment that was not to be divulged; and U.K. Chancellor Alistair Darling said Paulson told him the New York Fed 'might be prepared to provide Barclays with regulatory assistance'."
+      }
+    ],
+    "research_gaps": [
+      "The case candidate entry described Wallison's dissent as arguing that the Fed had authority and that the decision was political, and described the FCIC majority as finding the authority question 'unresolved on the face of the record'. Neither characterization was found in the primary documents read this run (the Wallison dissent and FCIC Chapter 18), and both are omitted. Wallison's actual argument, as read in his dissent, is about moral hazard and inconsistency with Bear Stearns.",
+      "The text layer of the FCIC Chapter 18 PDF drops most numerals, so specific dollar amounts and counts from that chapter (market losses, claims, capital estimates) were not verified and are not used.",
+      "The Valukas Examiner's Report and Paulson's and Bernanke's memoirs were not read this run; Bernanke's memoir is cited only as quoted by Ball.",
+      "A Fed General Counsel opinion that emergency loans need not be fully secured is cited in FCIC Chapter 18, but the year is lost in the PDF's text layer, so whether it predates T0 could not be confirmed; it is not used as T0 information."
+    ],
+    "decision_quality_rationale": "Rated Weak (INFERENCE), with the rating explicitly contested. The constraints the officials cite were real: before TARP the Fed could not inject capital or give guarantees, lending into a run against inadequate collateral could have cost taxpayers tens of billions without saving the firm, and the political reaction to Bear Stearns was a genuine factor. But the documentary record assessed by three independent reviewers points the other way on process: the FCIC found no written analysis supporting the collateral claim and noted the Fed's explanation changed after the event; Ball found no evidence that collateral adequacy was examined before the bankruptcy; and Wallison judged the Bear-then-Lehman sequence a major policy error. Lehman's own lawyers had warned of a cascade of defaults, and the Fed rescued AIG within days. A decision whose stated basis was not documented at the time, and which was reversed in substance within the week, scores Weak on process regardless of which counterfactual would have turned out better."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "rescue_lehman",
+      "sort_order": 1,
+      "label": "Provide government support to keep Lehman out of bankruptcy",
+      "short_description": "Use the Fed's emergency lending powers, alone or to support a deal, to give Lehman the liquidity to open on Monday and buy time for an orderly sale or wind-down.",
+      "upside": "Avoids a disorderly bankruptcy of a deeply interconnected firm, which Lehman's own lawyers warn would trigger a cascade of defaults through subsidiaries with large derivatives books. Follows the precedent the Fed set with Bear Stearns in March, and the Fed's emergency lending authority requires only that loans be secured to the Reserve Bank's satisfaction, not fully secured.",
+      "downside": "Lends public money into a run against collateral officials believe may be insufficient, risking large losses if the firm fails anyway. After the backlash over Bear Stearns, a second rescue would confirm that large firms will always be saved, and could be politically impossible to sustain.",
+      "known_tradeoffs": [
+        "Containing the immediate damage from a disorderly failure. versus Entrenching the expectation that every large firm will be rescued, and risking taxpayer losses on a loan that may not be repaid."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "let_fail",
+      "sort_order": 2,
+      "label": "Refuse public support and let Lehman file for bankruptcy",
+      "short_description": "Hold the line that there will be no government money, accept that without a private buyer Lehman will file, and try to manage the fallout through liquidity facilities for the rest of the system.",
+      "upside": "Avoids putting public money behind a firm that may be insolvent and whose collateral may not cover a loan. Signals that firms cannot count on rescue, restoring some market discipline after Bear Stearns. Lehman's troubles have been public for months, so markets may have had time to prepare.",
+      "downside": "Accepts the disorderly bankruptcy of a major firm in the middle of a crisis, with consequences for derivatives counterparties, funding markets and other weak institutions that no one can map in advance. If markets have assumed a rescue, the shock of its absence could be severe.",
+      "known_tradeoffs": [
+        "Market discipline and protection of public money. versus The risk of a chain reaction no one can predict, in a market that has been led to expect rescue."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Lehman Brothers had suffered large losses on real estate investments, and during the week of 8 September 2008 a run by counterparties drained its liquidity. Unless it found a buyer or funding, it would not have the cash to open for business on Monday."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "On the Friday night, Paulson told the Wall Street chief executives gathered at the New York Fed that a private-sector solution was the only option, offering regulatory approvals and access to lending facilities but no 'extraordinary credit support'. New York Fed General Counsel Tom Baxter later told the FCIC that Paulson made clear there would be 'not a penny' of government assistance."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "By Saturday night an agreement appeared to have been reached for Barclays to buy Lehman, with a private consortium financing its most troubled assets. On Sunday morning Barclays told Paulson and Geithner that the U.K. Financial Services Authority had declined to approve the deal: the New York Fed required Barclays to guarantee Lehman's obligations until closing, which under U.K. law required a shareholder vote, and the FSA would not waive it. A last appeal by Paulson to the U.K. Chancellor, Alistair Darling, failed."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "Bank of America, the other potential buyer, had agreed over the weekend to acquire Merrill Lynch instead."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "On the Saturday, Lehman's counsel gave the Fed a document describing how Lehman's default would 'trigger a cascade of defaults through to the [subsidiaries] which have large OTC [derivatives] books'."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "In March 2008 the Fed had lent to facilitate JP Morgan's purchase of Bear Stearns under its emergency lending authority, and the rescue had drawn heavy criticism. Participants told the FCIC that it had been said 'on more than one occasion' that rescuing Lehman would be very politically difficult."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "The Fed's emergency lending authority requires loans to be 'secured to the satisfaction of the Federal Reserve bank', not fully secured. The Fed had no authority to inject capital into a firm or to give guarantees."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 8,
+      "content": "On the Friday night, Citigroup's CEO asked whether the group would also discuss AIG; Geithner replied, 'Let's focus on Lehman.'"
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That Lehman's bankruptcy would become what its counsel called the largest, most complex and far-reaching bankruptcy case ever filed in the United States, with default clauses triggered across its derivatives contracts."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That within days the Fed would make an emergency loan to rescue AIG, and that Goldman Sachs and Morgan Stanley would become bank holding companies the following week."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "How severely the failure would worsen the financial crisis and recession; many economists later concluded that it greatly worsened both."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 4,
+      "content": "That the reasons for the decision would remain disputed for years, with official explanations, the FCIC, an FCIC dissent and later scholarship giving conflicting accounts."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "The Financial Crisis Inquiry Report, Chapter 18: September 2008: The Bankruptcy of Lehman",
+      "author_or_institution": "Financial Crisis Inquiry Commission",
+      "publication_date": "January 2011",
+      "url": "https://fcic-static.law.stanford.edu/cdn_media/fcic-reports/fcic_final_report_chapter18.pdf",
+      "citation": "Financial Crisis Inquiry Commission, The Financial Crisis Inquiry Report (January 2011), Chapter 18, 'September 2008: The Bankruptcy of Lehman'.",
+      "evidence_class": "FACT",
+      "supported_claim": "The weekend's sequence: Paulson's Friday-night position, the near-deal with Barclays, the FSA's refusal on Sunday over the guarantee and shareholder vote, Bank of America's purchase of Merrill, Lehman counsel's 'cascade of defaults' warning, the 'secured to the satisfaction of the Federal Reserve bank' standard for emergency lending, and the FCIC's observations that the Fed provided no written analysis of Lehman's collateral and that Bernanke's explanation changed after the event."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "FCIC testimony and interviews quoted in Chapter 18 (Baxter, Cohen, Thain, Fuld, Darling)",
+      "author_or_institution": "Financial Crisis Inquiry Commission",
+      "publication_date": "January 2011",
+      "url": "https://fcic-static.law.stanford.edu/cdn_media/fcic-reports/fcic_final_report_chapter18.pdf",
+      "citation": "Financial Crisis Inquiry Commission, The Financial Crisis Inquiry Report (January 2011), Chapter 18, 'September 2008: The Bankruptcy of Lehman'.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Participants' accounts: Baxter's report of Paulson's 'not a penny'; Cohen's view of a 'game of chicken' and that a rescue was said to be politically very difficult after Bear; Thain's view that politicians and regulators feared the political consequences; Fuld's claim that Lehman had adequate collateral; and Darling's statements that he vetoed the Barclays deal and that Paulson had mentioned possible regulatory assistance."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Bernanke's testimony to the FCIC, as quoted in Chapter 18",
+      "author_or_institution": "Ben S. Bernanke; Financial Crisis Inquiry Commission",
+      "publication_date": "2010 (testimony); January 2011 (report)",
+      "url": "https://fcic-static.law.stanford.edu/cdn_media/fcic-reports/fcic_final_report_chapter18.pdf",
+      "citation": "Financial Crisis Inquiry Commission, The Financial Crisis Inquiry Report (January 2011), Chapter 18, 'September 2008: The Bankruptcy of Lehman'.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "The Fed chairman's account of the decision: that the Fed could not lend without a reasonable expectation of repayment, that before TARP it could not inject capital or give guarantees, that Lehman lacked collateral to support a loan large enough to meet the run, and that once buyers withdrew 'we essentially had no choice'."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "ACADEMIC",
+      "title": "The Fed and Lehman Brothers: Introduction and Summary (NBER Working Paper 22410)",
+      "author_or_institution": "Laurence Ball, Johns Hopkins University",
+      "publication_date": "July 2016",
+      "url": "https://www.nber.org/papers/w22410",
+      "citation": "Ball, Laurence. The Fed and Lehman Brothers: Introduction and Summary. NBER Working Paper No. 22410, July 2016.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "The scholarly argument that a perceived lack of legal authority was not why the Fed did not rescue Lehman, that the Fed did have the authority, that the pre-bankruptcy record shows no examination of the adequacy of Lehman's collateral, that political considerations and underestimation of the damage were important, and that the decision was made primarily by Paulson. Also the filing time (1:45 a.m., 15 September 2008) and that Lehman was the only large financial institution to file for bankruptcy in the crisis."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Financial Crisis Inquiry Commission Dissenting Statement",
+      "author_or_institution": "Peter J. Wallison, FCIC commissioner",
+      "publication_date": "January 2011",
+      "url": "https://fcic-static.law.stanford.edu/cdn_media/fcic-reports/fcic_final_report_wallison_dissent.pdf",
+      "citation": "Peter J. Wallison, Dissenting Statement, Financial Crisis Inquiry Commission, January 2011.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "The argument that the Bear Stearns rescue created moral hazard and expectations of rescue, that letting Lehman fail overturned them and turned a potential crisis into a panic, and that the Bear-then-Lehman sequence was 'one of the great policy errors of all time'."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the documents above",
+      "publication_date": "2026-10-07",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That the decision rates Weak on process, with the rating contested, scored independently of the counterfactual."
+    }
+  ]
+}
