@@ -1,0 +1,201 @@
+{
+  "case_key": "themistocles-salamis-480bce",
+  "title": "The Council Before Salamis: Hold the Strait, or Fall Back to the Isthmus",
+  "domain": "history",
+  "subdomain": "ancient naval warfare and alliance politics",
+  "actor": "Eurybiades, the Spartan admiral commanding the allied Greek fleet, deciding at a council of generals where Themistocles of Athens argued against the majority",
+  "actor_role": "Commander of the allied Greek fleet at Salamis, who had to decide whether the fleet would fight in the strait of Salamis or withdraw to the Isthmus of Corinth, where the Peloponnesian army was fortifying a wall",
+  "date_or_period": "480 BCE",
+  "era": "Persian Wars, Xerxes' invasion of Greece",
+  "location": "The island of Salamis and its strait, off the coast of Attica",
+  "t0": "480 BCE, at Salamis, after Xerxes' army has come through Boeotia into Attica and taken the Athenian acropolis. The allied Greek fleet, under the Spartan admiral Eurybiades, has gathered at Salamis, while the Peloponnesians, after the death of Leonidas and his men at Thermopylae, are building a wall across the Isthmus of Corinth. At a council of generals most commanders favoured sailing to the Isthmus to fight there for the Peloponnese, arguing that if they lost at Salamis they would be besieged on an island with no help, whereas at the Isthmus they could go ashore to their own lands. When news came that the acropolis had fallen, some Peloponnesian generals made ready to leave, and the council resolved to fight for the Isthmus. At the request of Themistocles of Athens, Eurybiades has now called the generals together again. Themistocles argues that the fleet must fight in the narrow strait where numbers count for less, and warns that if they leave, the Athenians will take their households and sail away to Italy. Eurybiades must decide whether to stay and fight at Salamis or withdraw to the Isthmus.",
+  "context_summary": "Athens has fallen and is burning. The enemy fleet is far bigger than yours. Most of your generals want to pull back to the Isthmus, where their own army is building a wall and where, if they lose at sea, they can at least escape onto home ground. The Athenian commander, whose city supplies the largest and best part of your fleet, says the only place you can win is the narrow strait you are in now, and that if you leave, Athens will leave the alliance. You are in command. Do you stay or go?",
+  "actual_decision_key": "fight_at_salamis",
+  "immediate_outcome": "According to Herodotus, Eurybiades changed his mind and resolved to stay and fight at Salamis, chiefly, Herodotus thought, out of fear that the Athenians would desert if the fleet sailed for the Isthmus. The decision did not hold easily. The generals soon argued again, and the Peloponnesians were outvoting Themistocles when, Herodotus says, he secretly sent his servant Sicinnus to the Persian commanders with a message that the Greeks were planning to flee. That night the Persian fleet moved to block the exits from the strait and landed troops on the islet of Psyttaleia. The Athenian Aristides, crossing from Aegina, reported that the Greeks were surrounded, and a deserting trireme from Tenos confirmed it. The Greeks then fought in the strait. Herodotus records that they fought in order by line while the Persian ships fell out of position, and that the majority of the Persian ships were sunk.",
+  "long_term_outcome": "After the defeat, Xerxes, fearing that the Greeks might sail to the Hellespont and destroy his bridges, resolved to withdraw, while making preparations at Salamis that suggested he meant to fight again, and sent a messenger to Persia to announce the disaster. Both Herodotus and Aeschylus' tragedy The Persians present the battle as a disaster for Xerxes' fleet.",
+  "decision_quality": "Reasonable",
+  "outcome_quality": "Good",
+  "popularity": 60,
+  "controversy_risk": 15,
+  "context_compression": 75,
+  "visualizability": 80,
+  "source_disagreement": 55,
+  "uncertainty_factors": [
+    "Whether the Persian fleet would come into the narrow strait to fight",
+    "Whether the allied contingents would hold together if they stayed, or scatter if they left",
+    "Whether the Athenians would really sail away if the fleet withdrew to the Isthmus",
+    "How large the Persian fleet actually was after its losses earlier in the campaign"
+  ],
+  "fame_score": 60,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "The size of the fleets",
+        "description": "Herodotus gives the Greek fleet at Salamis as 378 triremes (8.48), rising to 380 with two deserting ships (8.82). Aeschylus' The Persians gives 300 Greek ships plus a chosen squadron of 10. For the Persian fleet, both give 1,207 (Herodotus for the fleet at the start of the invasion, 7.89; Aeschylus as Xerxes' fleet at Salamis), while Herodotus reasons that losses to storm and battle were made up by new contingents (8.66). These are ancient figures, presented as each source gives them; the case does not assert true numbers."
+      },
+      {
+        "topic": "The secret message to Xerxes",
+        "description": "Herodotus (8.75) says Themistocles sent his servant Sicinnus to tell the Persian commanders that the Greeks were planning to flee. Aeschylus' The Persians independently has a messenger report that 'a Hellene, from the Athenian host' told Xerxes the Greeks would try to escape by night, without naming him. The two accounts support the existence of some such message but differ in detail, and both come from the Greek side; the episode is treated as reported belief, not established fact."
+      }
+    ],
+    "research_gaps": [
+      "The detailed account of the councils at Salamis comes almost entirely from Herodotus, writing decades after the battle within an Athenian-influenced tradition. The speeches he gives to Themistocles, Adeimantus and others are his reconstructions and are classed as stated rationale, not verbatim records.",
+      "Herodotus' own explanation of why Eurybiades changed his mind (8.63: chiefly fear of Athenian desertion) is his inference, not a report of Eurybiades' words.",
+      "The so-called Decree of Themistocles (the Troezen inscription), which describes an Athenian evacuation plan, is not used: it survives on a stone of much later date and its authenticity has been disputed since its publication in 1960 (see Livius, 'The Troezen Decree').",
+      "No date more precise than 480 BCE is asserted, and modern estimates of fleet sizes were not researched this run."
+    ],
+    "decision_quality_rationale": "Rated Reasonable (INFERENCE). On the information available at the council, Themistocles' case had real tactical force: a narrow strait limited the advantage of the larger fleet, while withdrawing to the Isthmus gave up Salamis, Megara and Aegina and invited the Persian army to advance alongside its fleet. The majority's case was also serious: losing at Salamis meant being trapped on an island, while the Isthmus offered a line of retreat to their own land. What decided it, by Herodotus' account, was less the tactical argument than the threat that the Athenians, with the largest contingent, would leave; once that threat was on the table, withdrawing risked losing the fleet's core. The decision was sound but not freely reached, and it did not even settle the matter: the generals wavered again, and the battle was finally forced by the Persian encirclement. The rating is scored independently of the victory."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "fight_at_salamis",
+      "sort_order": 1,
+      "label": "Stay and fight in the strait of Salamis",
+      "short_description": "Keep the allied fleet at Salamis and give battle in the narrow waters between the island and the mainland.",
+      "upside": "In the narrow strait the larger Persian fleet cannot use its numbers, while the heavier and fewer Greek ships fight where it suits them. Salamis, Megara and Aegina stay in Greek hands, along with the Athenian families sheltering on Salamis. And it keeps the Athenians, whose ships are the largest and best part of the fleet, inside the alliance.",
+      "downside": "If the battle is lost, the fleet is trapped on an island, cut off from help, with the Peloponnesian army far away behind its wall. Many of the allied commanders do not want to be here, and some have already made ready to leave.",
+      "known_tradeoffs": [
+        "The tactical advantage of narrow waters and keeping the Athenians in the alliance. versus Fighting with no line of retreat, far from the allies' own homes."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "withdraw_to_isthmus",
+      "sort_order": 2,
+      "label": "Withdraw to the Isthmus of Corinth",
+      "short_description": "Sail to the Isthmus, where the Peloponnesian army is fortifying a wall, and fight at sea there for the Peloponnese.",
+      "upside": "Places the fleet alongside the land army and the wall across the Isthmus. If the battle at sea is lost, the crews can go ashore to their own lands rather than being besieged on an island with no help. Most of the allied generals favour it.",
+      "downside": "Means fighting in more open water, where the larger Persian fleet has the advantage. Gives up Salamis, Megara and Aegina, and lets the Persian army advance with its fleet towards the Peloponnese. Risks the allied contingents scattering to defend their own cities, and the Athenians may carry out their threat to leave the alliance altogether.",
+      "known_tradeoffs": [
+        "A line of retreat and contact with the land army. versus Open water that favours the enemy, the loss of Salamis and its neighbours, and the risk of losing the Athenian fleet."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Xerxes' army had come through Boeotia, burning Thespiae and Plataea, and was devastating Attica; news reached the fleet at Salamis that the Athenian acropolis had been taken."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "After learning that Leonidas and his men had died at Thermopylae, the Peloponnesians had massed at the Isthmus of Corinth and were building a wall across it."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "The Athenians had sent their households to safety in Troezen, Aegina and Salamis."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "The allied fleet at Salamis was commanded by the Spartan Eurybiades. By Herodotus' count it numbered 378 triremes, of which the Athenian ships were by far the most numerous and the most seaworthy. The Persian fleet was much larger: Herodotus gives 1,207 triremes at the start of the invasion and judges that losses had been made good."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "At the first council most generals favoured sailing to the Isthmus, reasoning that if they were defeated at Salamis they would be besieged on an island where no help could reach them, whereas at the Isthmus they could go ashore to their own lands. When news came that the acropolis had fallen, some Peloponnesian generals made ready to sail before a decision was taken, and those remaining resolved to fight for the Isthmus."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "At the reconvened council Themistocles argued, as Herodotus reports, that fighting at the Isthmus would mean fighting in open sea, where the heavier and fewer Greek ships were at a disadvantage, and would give up Salamis, Megara and Aegina while drawing the Persian army towards the Peloponnese; whereas in the narrow strait the few could defeat the many."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "When the Corinthian general Adeimantus mocked Themistocles as a man without a city, Themistocles replied that so long as the Athenians had two hundred manned ships they had a city, and warned Eurybiades that if the fleet left, the Athenians would take their households and sail to Siris in Italy."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That even after Eurybiades decided to stay, the generals would argue again and the Peloponnesians would outvote Themistocles, and that Themistocles would secretly send a message to the Persian commanders saying the Greeks meant to flee."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That the Persian fleet would move by night to block the exits from the strait and land troops on the islet of Psyttaleia, leaving the Greeks no choice but to fight there."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That in the battle the Greeks would keep their line while the Persian ships lost their order, and that most of the Persian ships would be sunk."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 4,
+      "content": "That Xerxes, fearing for his bridges over the Hellespont, would resolve to withdraw."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Histories, Book 8, chapters 40-56 (with 7.89, 8.66, 8.71)",
+      "author_or_institution": "Herodotus, trans. A. D. Godley (Perseus Digital Library)",
+      "publication_date": "5th century BCE",
+      "url": "http://www.perseus.tufts.edu/hopper/text?doc=Hdt.+8.49",
+      "citation": "Herodotus, The Histories, Book 8, trans. A. D. Godley (Perseus Digital Library).",
+      "evidence_class": "FACT",
+      "supported_claim": "The situation at T0 as Herodotus records it: the Persian advance through Boeotia into Attica and the taking of the acropolis; the Peloponnesian wall at the Isthmus after Thermopylae; the Athenian evacuation; the composition of the fleet and its command by Eurybiades; the majority view at the first council and its resolution to fight for the Isthmus; his fleet figures (378 Greek, 1,207 Persian at the outset). Herodotus is the principal and almost sole detailed source; see research_gaps."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Histories, Book 8, chapters 57-63 (the reconvened council)",
+      "author_or_institution": "Herodotus, trans. A. D. Godley (Perseus Digital Library)",
+      "publication_date": "5th century BCE",
+      "url": "http://www.perseus.tufts.edu/hopper/text?doc=Hdt.+8.60a",
+      "citation": "Herodotus, The Histories, Book 8, trans. A. D. Godley (Perseus Digital Library).",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "The arguments as Herodotus gives them: Mnesiphilus' warning that the fleet would disband if it left Salamis; Themistocles' case for fighting in the strait; Adeimantus' attack and Themistocles' reply about the two hundred Athenian ships; the threat to sail to Siris; and Herodotus' view that Eurybiades changed his mind chiefly from fear of Athenian desertion."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Histories, Book 8, chapters 74-97 (second assembly, encirclement, battle, aftermath)",
+      "author_or_institution": "Herodotus, trans. A. D. Godley (Perseus Digital Library)",
+      "publication_date": "5th century BCE",
+      "url": "http://www.perseus.tufts.edu/hopper/text?doc=Hdt.+8.76",
+      "citation": "Herodotus, The Histories, Book 8, trans. A. D. Godley (Perseus Digital Library).",
+      "evidence_class": "FACT",
+      "supported_claim": "The renewed dispute among the generals; the Persian encirclement of the strait and landing on Psyttaleia; Aristides' report and the Tenian deserters' confirmation; the Greeks fighting in order while the Persians lost position; and Xerxes' resolve to withdraw."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Histories, Book 8, chapters 75 and 79-80 (the message to the Persians)",
+      "author_or_institution": "Herodotus, trans. A. D. Godley (Perseus Digital Library)",
+      "publication_date": "5th century BCE",
+      "url": "http://www.perseus.tufts.edu/hopper/text?doc=Hdt.+8.75",
+      "citation": "Herodotus, The Histories, Book 8, trans. A. D. Godley (Perseus Digital Library).",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Herodotus' account that Themistocles secretly sent his servant Sicinnus to tell the Persian commanders that the Greeks were about to flee, and that Themistocles told Aristides he had caused the Persian movement. Treated as reported belief, not established fact."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Persians, lines 337-383 (the messenger's report)",
+      "author_or_institution": "Aeschylus, trans. Herbert Weir Smyth (Perseus Digital Library)",
+      "publication_date": "5th century BCE",
+      "url": "http://www.perseus.tufts.edu/hopper/text?doc=Aesch.+Pers.+353",
+      "citation": "Aeschylus, The Persians, lines 337-383, trans. H. W. Smyth (Perseus Digital Library).",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "A separate Greek account from Herodotus': 300 Greek ships plus a chosen squadron of 10 against Xerxes' 1,000 plus 207 fast ships; and a report that 'a Hellene, from the Athenian host' told Xerxes the Greeks would try to escape by night, after which Xerxes ordered the exits of the strait blocked."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-09",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That Eurybiades' decision was sound but reached under coercion and not decisive on its own, scored independently of the victory."
+    }
+  ]
+}
