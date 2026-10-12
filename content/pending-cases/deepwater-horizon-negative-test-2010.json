@@ -1,0 +1,201 @@
+{
+  "case_key": "deepwater-horizon-negative-test-2010",
+  "title": "Macondo, Evening of 20 April 2010: Two Pressure Readings Disagree",
+  "domain": "crisis",
+  "subdomain": "offshore drilling safety",
+  "actor": "BP's Well Site Leaders on the Deepwater Horizon, in consultation with the Transocean rig crew",
+  "actor_role": "BP's on-rig supervisors ('company men') responsible, with the drilling contractor's crew, for running and interpreting the negative-pressure test before the Macondo well was temporarily abandoned",
+  "date_or_period": "20 April 2010",
+  "era": "Deepwater drilling boom in the Gulf of Mexico",
+  "location": "Deepwater Horizon rig, Macondo well (Mississippi Canyon Block 252), Gulf of Mexico, about 40 miles off the Louisiana coast",
+  "t0": "Evening of 20 April 2010, shortly before 8 p.m., on the Deepwater Horizon. The crew is preparing to temporarily abandon the Macondo well, and the negative-pressure test is the only test planned that would check whether the cement at the bottom of the well is holding back the reservoir. Bled to zero three times, the drill-pipe pressure has built back up each time, finally to 1,400 psi. One of the crew's toolpushers has said the reading is caused by a 'bladder effect'. The test has then been repeated on the kill line, a separate line from the rig to the blowout preventer that should read the same as the drill pipe: on the kill line there has been no flow for 30 minutes. But the drill pipe still reads 1,400 psi. The Well Site Leaders and crew must decide whether to declare the test a success and proceed with displacing mud from the riser, or to treat the unresolved reading as a sign the well may not be sealed.",
+  "context_summary": "You are the company's supervisor on a deepwater drilling rig, and the job is nearly finished. The last check before you leave the well is a test of whether the cement at the bottom is holding. Done one way, the test keeps failing: pressure comes back every time you bleed it off. An experienced member of the crew says he has seen this before and that it is a harmless 'bladder effect'. Done a second way, through another line, the test passes cleanly. The two readings should match, and they don't. There is no written procedure telling you how to interpret this. Do you call it a pass and move on, or stop until the numbers make sense?",
+  "actual_decision_key": "accept_test_and_proceed",
+  "immediate_outcome": "At about 8 p.m. the BP Well Site Leaders, in consultation with the crew, concluded that the kill-line test had confirmed the well's integrity, declared the negative-pressure test a success, and began displacing mud and spacer from the riser with seawater. Later that night hydrocarbons flowed up the well; the well blew out, and escaping gas exploded on the rig. Eleven workers died, and 16 injured crew members were evacuated. The rig sank on 22 April.",
+  "long_term_outcome": "By government estimates, more than 4 million barrels of oil spilled into the Gulf of Mexico before the well was sealed months later. The presidential commission found that the negative-pressure test had been conducted and interpreted improperly, that the pressure data were not ambiguous but showed repeatedly that formation fluids were flowing into the well, and that this failure was a major contributing factor to the blowout, alongside other failures in well design, cementing, kick detection and response.",
+  "decision_quality": "Weak",
+  "outcome_quality": "Bad",
+  "popularity": 70,
+  "controversy_risk": 35,
+  "context_compression": 70,
+  "visualizability": 70,
+  "source_disagreement": 35,
+  "uncertainty_factors": [
+    "Whether the bottom-hole cement was holding back the reservoir",
+    "Why the drill pipe and kill line, which should have read the same, did not",
+    "Whether the 'bladder effect' offered on the rig was a real phenomenon",
+    "How much time and cost re-testing or remedial work would require on a well already behind schedule"
+  ],
+  "fame_score": 70,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "naming_policy": "Field personnel are identified by role, not by name, per the candidate document's rule. The commission report names them; this case does not.",
+    "source_disagreements": [
+      {
+        "topic": "When the 'bladder effect' explanation was offered",
+        "description": "The commission report's Chapter 4 places the 'bladder effect' explanation in the crew's discussion of the 1,400 psi drill-pipe reading, before the test was repeated on the kill line, citing post-incident statements of both Well Site Leaders. Its Chapter 1 narrative places it after the kill-line test, 'according to BP witnesses'. Both versions agree that the explanation was offered by one of the toolpushers and that the anomaly was never reconciled. One witness said he did not recall anyone agreeing or disagreeing with the explanation."
+      },
+      {
+        "topic": "Why the kill line showed no flow",
+        "description": "The commission states that the spacer BP used, which had not been used before or fully tested, may have clogged the kill line. This is given as a possibility, not an established fact."
+      }
+    ],
+    "research_gaps": [
+      "The Chief Counsel's Report (February 2011) could not be retrieved this run (its archived PDF links did not resolve), and the Chemical Safety Board's report was not consulted; the commission's statement about industry experts dismissing the 'bladder effect' is taken from contemporary press coverage of the Chief Counsel's Report (Phys.org/AFP, 17 February 2011).",
+      "The extent to which the on-rig decision-makers knew of the earlier concerns about the cement job, of the schedule and budget overrun, or of a similar December 2009 North Sea near-miss on a Transocean rig is not established; the commission says cement concerns were largely not communicated to the rig crew and that Transocean failed to communicate the North Sea lessons.",
+      "The commission's January 2011 report is the sole primary source used. The positions of BP, Transocean and Halliburton on these findings, and later investigations, were not researched."
+    ],
+    "decision_quality_rationale": "Rated Weak (INFERENCE). On what was visible on the rig, the test's own success criterion had not been met on the drill pipe: pressure had built back up three times, and the drill pipe and kill line should have read the same. A day-shift toolpusher was, by one recollection, unconvinced. Against this, the kill-line test did meet the criterion, BP's permit application had specified the kill line for the test, an experienced crew member offered an explanation and said he had seen it before, there was no written procedure for interpreting the test, and stopping could cost days on a well already behind schedule. Those reasons explain why proceeding felt acceptable, but they did not resolve the contradiction. The rating is scored independently of the blowout, which also depended on other failures."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "stop_and_resolve_anomaly",
+      "sort_order": 1,
+      "label": "Treat the test as unresolved and stop",
+      "short_description": "Do not declare a pass while the drill pipe holds 1,400 psi. Keep the well shut in, seek a second opinion from shore, and re-test or investigate until the two readings agree.",
+      "upside": "Honours the test's purpose and its own criterion: pressure must stay at zero when the pipe is closed. If the cement has failed, catches it while the heavy mud is still in the riser and the well is under control.",
+      "downside": "Could take many days of diagnosis and possibly remedial cement work on a well already well behind schedule and over budget, on the strength of a reading that an experienced crew member says is harmless and that a second test seems to contradict.",
+      "known_tradeoffs": [
+        "Certainty that the well is sealed. versus Time, cost and the judgment of experienced colleagues who say the reading is explained."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "accept_test_and_proceed",
+      "sort_order": 2,
+      "label": "Accept the kill-line result and proceed",
+      "short_description": "Treat the clean kill-line test as the valid result, accept the 'bladder effect' explanation for the drill-pipe pressure, declare the test a success and move on to displacing the riser.",
+      "upside": "The kill-line test met the success criterion of no flow for a sustained period, and BP had told the regulator the test would be run on the kill line. An experienced crew member has an explanation and says he has seen it before. The earlier positive-pressure test passed. Finishes the job without further delay.",
+      "downside": "Leaves unexplained a drill-pipe pressure that kept returning, on a line that should match the kill line. If the reading means the well is flowing, the next step, replacing heavy mud with seawater, removes the remaining overbalance.",
+      "known_tradeoffs": [
+        "Finishing the well on a test that passed one way. versus Ignoring a contradiction that the test exists to catch."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "The negative-pressure test was the only test planned at Macondo that would check the integrity of the bottom-hole cement. It is passed if, after pressure is bled off, there is no flow for a sustained period and no pressure build-up when the well is closed at the surface."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "The positive-pressure test earlier that day had held, and the crew and BP's Well Site Leader considered it successful."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "On the drill pipe, the crew could not at first bleed pressure below 266 psi, and it rose to 1,262 psi when closed. After fluid was found leaking past the annular preventer and the preventer was closed more tightly, the drill pipe was bled to zero twice more; each time the pressure built back up, to at least 773 psi and then to 1,400 psi."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "In the discussion on the rig floor, one of Transocean's toolpushers said the 1,400 psi drill-pipe pressure was caused by a 'bladder effect': heavy mud in the riser pressing on the annular preventer and transmitting pressure to the drill pipe."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "A BP Well Site Leader then insisted on repeating the test on the kill line, which BP had specified in its permit application to the regulator. On the kill line, after a small amount of fluid flowed and stopped, there was no flow for 30 minutes. The drill pipe, which should have read the same, stayed at 1,400 psi."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "There was no standard procedure for running or interpreting a negative-pressure test in the regulations, in written industry protocols, or in BP's or Transocean's internal procedures, and BP's Macondo team had not given the rig specific procedures for this test."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "If the test showed hydrocarbons leaking into the well, BP would need to diagnose and fix the problem before moving on, which could take many days. The well was almost six weeks behind schedule and more than $58 million over budget."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That the bottom-hole cement had failed and hydrocarbons were already flowing into the well; the commission later found the pressure data were not ambiguous and that the 1,400 psi drill-pipe reading could only have been caused by a leak into the well."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That the unusual spacer BP had chosen, made from leftover lost-circulation materials and never used before as a spacer, may have clogged the kill line."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That four months earlier, on a Transocean rig in the North Sea, a barrier had failed during displacement with seawater after a negative-pressure test had been declared a success, a near-miss whose lessons had not been communicated to this crew."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 4,
+      "content": "That later that night the well would blow out, gas would explode on the rig, 11 workers would die, and the rig would sink two days later."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President, Chapter 4 ('The Negative-Pressure Test: Unexpected Pressure Readings')",
+      "author_or_institution": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling",
+      "publication_date": "2011-01",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-OILCOMMISSION/pdf/GPO-OILCOMMISSION.pdf",
+      "citation": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling, Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President (January 2011), Chapter 4, pp. 105-109.",
+      "evidence_class": "FACT",
+      "supported_claim": "The purpose and success criteria of the negative-pressure test; the readings of 266, 1,262, at least 773 and 1,400 psi on the drill pipe; the leak past the annular preventer; the repeat test on the kill line with no flow for 30 minutes while the drill pipe stayed at 1,400 psi; the declaration of success at 8 p.m.; and that re-work could take many days."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President, Chapter 4 (post-incident statements on the rig-floor discussion)",
+      "author_or_institution": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling",
+      "publication_date": "2011-01",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-OILCOMMISSION/pdf/GPO-OILCOMMISSION.pdf",
+      "citation": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling, Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President (January 2011), Chapter 4, pp. 107-108.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "According to post-incident statements of both Well Site Leaders, a toolpusher attributed the drill-pipe pressure to a 'bladder effect'; one witness did not recall anyone agreeing or disagreeing; a Well Site Leader insisted on the kill-line test, apparently because BP's permit application had specified the kill line."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President, Chapter 1 (narrative of 20 April 2010)",
+      "author_or_institution": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling",
+      "publication_date": "2011-01",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-OILCOMMISSION/pdf/GPO-OILCOMMISSION.pdf",
+      "citation": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling, Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President (January 2011), Chapter 1.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "A subsea supervisor's recollection that the day-shift toolpusher was 'convinced that something wasn't right' and could not believe the explanations he was hearing; that, according to BP witnesses, the toolpusher who offered the 'bladder effect' said he had seen it before; the schedule and budget overrun; and the casualties, injuries, sinking and spill estimate."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President, Chapter 4 (findings on the negative-pressure test and communication)",
+      "author_or_institution": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling",
+      "publication_date": "2011-01",
+      "url": "https://www.govinfo.gov/content/pkg/GPO-OILCOMMISSION/pdf/GPO-OILCOMMISSION.pdf",
+      "citation": "National Commission on the BP Deepwater Horizon Oil Spill and Offshore Drilling, Deep Water: The Gulf Oil Disaster and the Future of Offshore Drilling. Report to the President (January 2011), Chapter 4, pp. 119-124.",
+      "evidence_class": "FACT",
+      "supported_claim": "The commission's findings: the test was conducted and interpreted improperly; the data were not ambiguous; this was a major contributing factor to the blowout; no standard or internal procedures existed for the test; there was no enforced policy to call shore for a second opinion; the Well Site Leaders appear not to have consulted shore; the spacer may have clogged the kill line; and Transocean did not communicate lessons from a December 2009 North Sea near-miss."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "QUALITY_MEDIA",
+      "title": "BP could have prevented blowout: investigator",
+      "author_or_institution": "Phys.org (AFP)",
+      "publication_date": "2011-02-17",
+      "url": "https://phys.org/news/2011-02-bp-blowout.html",
+      "citation": "Phys.org / AFP, 17 February 2011, reporting the commission lead counsel's report.",
+      "evidence_class": "FACT",
+      "supported_claim": "That the report by the commission's lead counsel, Fred Bartlit, stated that every industry expert the investigative team met with dismissed the so-called bladder effect as a fiction that could not have accounted for the readings, and that well site leaders accepted facially implausible explanations for the test results."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-12",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That accepting the test was weak on the information visible at T0, scored independently of the blowout."
+    }
+  ]
+}
