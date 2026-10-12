@@ -44,7 +44,8 @@ Use the same file-based, write-through-CI pattern as narrative submission, so th
 3. Commit and push to `claude/decision-uncertainty-case-selection-9q6h5y`. The `import-pending-case.yml` workflow validates, calls the `import_pending_case()` Postgres function (one transaction — a mid-import failure leaves no partial case behind), reads the result back, and archives the draft on success; on any mismatch it leaves the file in place and fails the job (fail closed).
 4. The function itself refuses outright if `case_key` already exists — check `CLAUDE_PILOT_TO_DB_MAPPING.md` and/or the live queue first so you're not wasting a research pass on a case that's already in.
 5. Do not import in bulk. Land one case, confirm it actually reaches `RESEARCH_DONE` and shows up in `get-narrative-queue-status`, and only then continue with the next.
-6. Keep a backlog target, not an unbounded one — a handful of cases sitting at `RESEARCH_DONE`/awaiting review is healthy; producing far more than Codex can review is not. If `get-narrative-queue-status` already shows several cases waiting, prioritize drafting their narratives over sourcing new cases.
+6. Which case to supply: as of 2026-10-11 the product owner delegated case-selection approval to Claude. `CLAUDE_NEW_CASE_CANDIDATES.md` ("승인 현황" table + "목록 소진 이후" rules) is the single source of truth for what is eligible; a self-selected case must meet that document's selection criteria and be added to its table in the same commit as the draft. This removed the last human checkpoint in the case pipeline, so the editorial rules below are the only remaining safeguard.
+7. Keep a backlog target, not an unbounded one — a handful of cases sitting at `RESEARCH_DONE`/awaiting review is healthy; producing far more than Codex can review is not. If `get-narrative-queue-status` already shows several cases waiting, prioritize drafting their narratives over sourcing new cases.
 
 ## Writing tools
 
