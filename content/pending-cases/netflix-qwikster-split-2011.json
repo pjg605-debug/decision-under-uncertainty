@@ -1,0 +1,236 @@
+{
+  "case_key": "netflix-qwikster-split-2011",
+  "title": "September 2011: Split Netflix in Two, or Keep One Account",
+  "domain": "business",
+  "subdomain": "product strategy and customer experience",
+  "actor": "Reed Hastings, CEO of Netflix",
+  "actor_role": "Chief executive deciding, two months after an unpopular price restructuring, whether to move Netflix's DVD-by-mail service onto a separately branded website and account, or to keep DVD and streaming under one Netflix website and account",
+  "date_or_period": "September 2011",
+  "era": "The shift from DVD-by-mail to internet streaming",
+  "location": "United States",
+  "t0": "Mid-September 2011, after Netflix's 15 September letter to shareholders and before the announcement of 18 September 2011. In July Netflix split its U.S. offering into two separately priced plans, $7.99 a month for unlimited streaming and $7.99 a month for unlimited DVDs by mail, raising the price for members who used both from $9.99 to $15.98, an increase the company itself put at as much as 60%, taking effect at each member's renewal in September. It also set up a dedicated DVD division and said it had no intention of selling it. On 15 September Netflix lowered its domestic subscriber estimates for the quarter, saying it knew the split had upset many subscribers but remained convinced it was the right long-term choice. Hastings must now decide whether to go further: move the DVD service onto its own brand, website, account and billing, or keep both services under one Netflix website and account with the separate prices already in place.",
+  "context_summary": "Your customers are angry. Two months ago you split DVD-by-mail and streaming into two separately priced plans, and people who use both are about to pay up to 60% more. You have just warned investors that subscriber numbers will come in lower. You believe the future is streaming and that DVD is a business in slow decline, and your greatest fear is being a company that was great at one thing and never made the leap to the next. Do you finish the separation and give DVD its own name, website and account, so streaming can move faster on its own? Or do you leave customers with one Netflix account while the price change settles in?",
+  "actual_decision_key": "split_into_qwikster",
+  "immediate_outcome": "On 18 September 2011 Hastings published a blog post that apologised for the way the separation of DVD and streaming had been announced and then said the DVD service would be renamed Qwikster and moved to its own website, with its own queue and a separate charge, and would add video game rentals. Contemporary reports quoted the post as saying the Qwikster.com and Netflix.com websites would not be integrated. The reaction was strongly negative; Netflix later described a 'PR storm that engulfed our brand'. On 10 October 2011 Netflix reversed course: as reported at the time, Hastings wrote that two websites would make things more difficult for members and that Netflix would keep 'one website, one account, one password… in other words, no Qwikster'. The separate prices stayed. In its 24 October letter, Netflix reported that unique U.S. subscribers fell from 24.59 million to 23.79 million in the third quarter. It attributed the decline mainly to the price change, and said the announced-and-retracted DVD brand had further dented its reputation and caused a temporary cancellation surge, but that its impact was relatively minor compared with the price change.",
+  "long_term_outcome": "Netflix kept the two separately priced plans under one website. In the fourth quarter of 2011, by its January 2012 letter, domestic DVD subscriptions fell by 2.76 million to 11.17 million, while domestic streaming subscriptions rose by 220,000 to 21.67 million, and the company said December streaming additions had exceeded its forecast. The company continued to concentrate on streaming. Whether the Qwikster episode itself had any lasting effect, separate from the price change, is not established by these sources.",
+  "decision_quality": "Weak",
+  "outcome_quality": "Bad",
+  "popularity": 65,
+  "controversy_risk": 10,
+  "context_compression": 80,
+  "visualizability": 60,
+  "source_disagreement": 45,
+  "uncertainty_factors": [
+    "How members who used both services would react to a second website, account and bill",
+    "How much of the subscriber loss already under way came from the price change rather than anything done next",
+    "How fast DVD-by-mail would decline and how fast streaming would grow",
+    "Whether a separate DVD brand would let the streaming business move faster in practice"
+  ],
+  "fame_score": 65,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "How many subscribers Netflix lost, and why",
+        "description": "Netflix's 24 October 2011 letter to shareholders (SEC Form 8-K, Exhibit 99.1) reports unique U.S. subscribers of 24.59 million at the end of Q2 2011 and 23.79 million at the end of Q3, a net change of -0.81 million. Some secondary accounts give a figure of about one million; this case uses only the filed figure. On cause, the same letter attributes the decline mainly to the July price change and calls the impact of the announced-and-retracted DVD brand relatively minor by comparison, while much popular retelling treats Qwikster as the main cause. Netflix's own account is the company's statement, not an independent measurement, and the two effects overlapped in time."
+      },
+      {
+        "topic": "The wording of the 18 September 2011 post",
+        "description": "The original post is not available at its 2011 address, and secondary sources quote its opening differently ('I owe everyone an explanation' in one, 'I owe you an explanation' in another). Only the phrase 'I messed up', on which they agree, is used here, and other passages are given as paraphrase or as quoted in a named contemporary report."
+      }
+    ],
+    "research_gaps": [
+      "The original texts of the 18 September and 10 October 2011 posts on Netflix's blog could not be retrieved this run (the 2011 URLs no longer resolve and the web archive was not reachable). Their content is taken from contemporary reports that quote them: The Fiscal Times (19 September 2011), Engadget (19 September 2011), Fueled (September 2011) and PCWorld (10 October 2011).",
+      "The revised subscriber estimates in the 15 September 2011 letter appear in a graphic that was not extracted, so no revised figure from that letter is used.",
+      "Share price movements around these dates were not researched and are not asserted.",
+      "Who else inside Netflix argued for or against the separate brand was not researched; the decision is attributed to Hastings as CEO and author of the announcement.",
+      "Overlap with the live case netflix-2007 (the 2007 launch of streaming) is in actor only; the T0 here is a different decision four years later."
+    ],
+    "decision_quality_rationale": "Rated Weak (INFERENCE), and contestable. The strategic premise had real support at the time: Netflix said DVD shipments had likely peaked, it was already treating DVD as a separate division, and Hastings' stated fear of failing to make the leap to streaming was a reasonable concern for a company whose main business was in decline. But what was known at T0 pointed against adding a second site and account now. Members were already angry about the price change, which was only then reaching their bills; the company had just lowered its subscriber estimates; and by its own July estimate about 12 million people subscribed to both services and would bear the extra friction. The organisational separation the strategy needed already existed in the DVD division, and Netflix had said in July that it could best run DVD as a division. The rating is scored independently of the reversal and the subscriber loss, much of which the company attributes to the price change rather than to this decision."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "split_into_qwikster",
+      "sort_order": 1,
+      "label": "Split DVD into a separate brand and website",
+      "short_description": "Rename the DVD-by-mail service, run it on its own website with its own account, queue and billing, and leave Netflix as a streaming-only service.",
+      "upside": "Lets Netflix concentrate fully on streaming, the business it believes is the future, without the DVD service shaping its website, marketing and priorities. Gives the DVD business a clear identity and room to add things of its own, such as video game rentals. Finishes the separation in one move instead of dragging it out.",
+      "downside": "Members who use both services would have to manage two websites, two queues and two charges, just as they are reacting to a price increase. Adds a second disruption in the same quarter, and risks being read as one more change made for the company's benefit rather than the customer's.",
+      "known_tradeoffs": [
+        "Speed and focus for streaming. versus More friction for millions of members who use both services, at a moment of customer anger."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "keep_one_netflix_site",
+      "sort_order": 2,
+      "label": "Keep one Netflix website and account",
+      "short_description": "Keep the separate streaming and DVD prices and the dedicated DVD division already in place, but leave both services under one Netflix website, account and bill.",
+      "upside": "Avoids a second change while the price increase is still landing on members' bills, and gives the company time to rebuild trust. Keeps the organisational separation it already has in the DVD division, which Netflix said in July was the best way to run DVD.",
+      "downside": "Leaves the DVD service bound up with Netflix's brand and website, so the company may move more slowly in shifting its identity and attention to streaming. The finished separation the strategy points towards is postponed rather than settled.",
+      "known_tradeoffs": [
+        "Stability and customer goodwill in a bad quarter. versus A slower, less complete separation of a declining business from the growing one."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "In July 2011 Netflix separated U.S. streaming and DVD-by-mail into two plans at $7.99 a month each. For members using both, the price rose from $9.99 to $15.98, which the company said could be as much as a 60% increase, taking effect at each member's renewal in September (15 September on average)."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "In July Netflix also set up a dedicated DVD division under a long-serving executive, said it believed it could best run DVD by mail as a division, and said it had no intention of selling it."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "Netflix's July estimate for the end of September was about 22 million U.S. streaming subscribers, about 15 million DVD subscribers, and about 25 million total U.S. subscribers, of whom about 12 million would subscribe to both."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "Netflix had said that with the rapid adoption of streaming, its DVD shipments had likely peaked."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "On 15 September 2011 Netflix lowered its domestic subscriber estimates for the quarter. Its letter said the company knew the split of its services had upset many subscribers, but remained convinced it was the right long-term choice, in order to create a dedicated DVD division, improve the global streaming service faster, license more streaming content, and keep prices low."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "Hastings' stated worry, as reported from his 18 September post, was that most companies that are great at something, such as AOL dial-up or Borders bookstores, do not become great at the new things people want; for Netflix, that meant streaming."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That the announcement of a separate DVD brand and website would be met with strong criticism, and that Netflix would cancel it on 10 October 2011, keeping one website and one account while leaving the separate prices in place."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That unique U.S. subscribers would fall from 24.59 million to 23.79 million in the third quarter, and that Netflix would attribute this mainly to the price change, calling the impact of the DVD brand episode relatively minor though it caused a temporary cancellation surge."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That in the fourth quarter domestic DVD subscriptions would fall by 2.76 million to 11.17 million while domestic streaming subscriptions rose by 220,000 to 21.67 million."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "CORPORATE_FILING",
+      "title": "Letter to Shareholders, 25 July 2011 (Form 8-K, Exhibit 99.1)",
+      "author_or_institution": "Netflix, Inc. (Reed Hastings, CEO; David Wells, CFO)",
+      "publication_date": "2011-07-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312511196126/dex991.htm",
+      "citation": "Netflix, Inc., Form 8-K filed 25 July 2011, Exhibit 99.1, SEC EDGAR.",
+      "evidence_class": "FACT",
+      "supported_claim": "The July 2011 separation into $7.99 streaming and $7.99 DVD plans; the increase from $9.99 to $15.98, 'as much as a 60% increase', effective at renewal in September; the dedicated DVD division and 'no intention of selling it'; the end-of-Q3 estimates of about 22 million streaming, 15 million DVD, 25 million total and 12 million dual subscribers; and that DVD shipments had likely peaked."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "CORPORATE_FILING",
+      "title": "Letter to Shareholders, 15 September 2011 (Form 8-K, Exhibit 99.1)",
+      "author_or_institution": "Netflix, Inc. (Reed Hastings, CEO; David Wells, CFO)",
+      "publication_date": "2011-09-15",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312511248698/d231910dex991.htm",
+      "citation": "Netflix, Inc., Form 8-K filed 15 September 2011, Exhibit 99.1, SEC EDGAR.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Netflix lowered its domestic subscriber estimates, acknowledged that the split had upset many subscribers, and set out its four-fold rationale for separating the services."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Netflix, Qwikster: Two Sites, Two Queues",
+      "author_or_institution": "The Fiscal Times",
+      "publication_date": "2011-09-19",
+      "url": "https://www.thefiscaltimes.com/2011/09/19/Netflix-Qwikster-Two-Sites-Two-Queues",
+      "citation": "The Fiscal Times, 19 September 2011.",
+      "evidence_class": "FACT",
+      "supported_claim": "What the 18 September announcement said, as quoted from Hastings' post: that 'the Qwikster.com and Netflix.com Web sites will not be integrated' and that account changes would have to be made in two places; and, in his reply to readers' comments, that separate websites would let the company improve both faster."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Netflix spins DVD-by-mail service off into Qwikster, says it's 'done' with price changes",
+      "author_or_institution": "Engadget",
+      "publication_date": "2011-09-19",
+      "url": "https://www.engadget.com/2011/09/19/netflix-spins-dvd-by-mail-service-off-into-qwikster-says-its/",
+      "citation": "Engadget, 19 September 2011.",
+      "evidence_class": "FACT",
+      "supported_claim": "Contemporary description of the Qwikster plan: a separate website with its own ratings and queue, a separate charge, and video game rentals for an extra fee."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Netflix Apologizes for Price Hikes, Introduces Qwikster",
+      "author_or_institution": "Fueled",
+      "publication_date": "2011-09",
+      "url": "https://fueled.com/blog/netflix-apologizes-for-price-hikes-introduces-qwikster/",
+      "citation": "Fueled, September 2011.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Passages quoted from Hastings' 18 September post: the apology for how the separation was announced, and his worry that most companies great at something, like AOL dial-up or Borders, do not become great at new things people want (streaming, for Netflix)."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Netflix kills Qwikster DVD plan",
+      "author_or_institution": "PCWorld",
+      "publication_date": "2011-10-10",
+      "url": "https://www.pcworld.com/article/477221/netflix_kills_qwikster_dvd_plan.html",
+      "citation": "PCWorld, 10 October 2011.",
+      "evidence_class": "FACT",
+      "supported_claim": "The 10 October 2011 reversal, quoting Hastings that two websites would make things more difficult, 'one website, one account, one password… in other words, no Qwikster', and that the company was 'now done with price changes'."
+    },
+    {
+      "evidence_key": "src-07",
+      "source_type": "CORPORATE_FILING",
+      "title": "Letter to Shareholders, 24 October 2011 (Form 8-K, Exhibit 99.1)",
+      "author_or_institution": "Netflix, Inc. (Reed Hastings, CEO; David Wells, CFO)",
+      "publication_date": "2011-10-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312511278716/d246709dex991.htm",
+      "citation": "Netflix, Inc., Form 8-K filed 24 October 2011, Exhibit 99.1, SEC EDGAR.",
+      "evidence_class": "FACT",
+      "supported_claim": "Unique U.S. subscribers of 24.59 million (Q2 2011) and 23.79 million (Q3 2011), net subscriber additions of -0.81 million; 21.4 million streaming and 13.9 million DVD subscriptions at the end of Q3. Also the letter's description of 'the PR storm that engulfed our brand'."
+    },
+    {
+      "evidence_key": "src-08",
+      "source_type": "CORPORATE_FILING",
+      "title": "Letter to Shareholders, 24 October 2011: the company's own assessment",
+      "author_or_institution": "Netflix, Inc. (Reed Hastings, CEO; David Wells, CFO)",
+      "publication_date": "2011-10-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312511278716/d246709dex991.htm",
+      "citation": "Netflix, Inc., Form 8-K filed 24 October 2011, Exhibit 99.1, SEC EDGAR.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Netflix's account that it greatly upset members with its DVD-related pricing changes and, to a lesser degree, with the proposed-and-now-cancelled rebranding of its DVD service; that what it misjudged was how quickly to move; and that the branding incident caused a temporary cancellation surge but its impact was relatively minor compared to the price change."
+    },
+    {
+      "evidence_key": "src-09",
+      "source_type": "CORPORATE_FILING",
+      "title": "Letter to Shareholders, 25 January 2012 (Form 8-K, Exhibit 99.1)",
+      "author_or_institution": "Netflix, Inc.",
+      "publication_date": "2012-01-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1065280/000119312512023436/d290258dex991.htm",
+      "citation": "Netflix, Inc., Form 8-K filed 25 January 2012, Exhibit 99.1, SEC EDGAR.",
+      "evidence_class": "FACT",
+      "supported_claim": "Q4 2011 domestic DVD net subscription change of -2.76 million to 11.17 million, and domestic streaming net additions of 0.22 million to 21.67 million, with December streaming additions above forecast."
+    },
+    {
+      "evidence_key": "src-10",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-12",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That the decision to split DVD into a separate brand and website was weak on the information available at T0, scored independently of the reversal and the subscriber loss."
+    }
+  ]
+}
