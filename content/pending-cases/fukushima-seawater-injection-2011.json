@@ -1,0 +1,191 @@
+{
+  "case_key": "fukushima-seawater-injection-2011",
+  "title": "Fukushima Daiichi, 12 March 2011: Head Office Says Stop the Seawater",
+  "domain": "crisis",
+  "subdomain": "nuclear accident response and chain of command",
+  "actor": "Masao Yoshida, site superintendent (general manager) of TEPCO's Fukushima Daiichi Nuclear Power Station",
+  "actor_role": "Head of the on-site emergency response at Fukushima Daiichi, directing the effort to keep water flowing into the Unit 1 reactor, who received an instruction from TEPCO's head office to suspend seawater injection",
+  "date_or_period": "12 March 2011",
+  "era": "Great East Japan Earthquake and the Fukushima Daiichi nuclear accident",
+  "location": "Fukushima Daiichi Nuclear Power Station, Fukushima Prefecture, Japan",
+  "t0": "About 19:25 on 12 March 2011, the day after the earthquake and tsunami. Unit 1 at Fukushima Daiichi has had no power since the tsunami. Freshwater from the fire-protection system had been injected since early morning, but by mid-afternoon the tank was running out and the site superintendent had directed that seawater be used. At 15:36 a hydrogen explosion tore through the Unit 1 reactor building, injuring workers, damaging the hoses and fire engines staged for seawater injection, and stopping all injection into the core. By 18:25 the government had widened the evacuation zone to 20 km. At 19:04 workers finally began injecting seawater with a fire engine. Then, according to TEPCO's own accounts, the company decided to suspend the injection; TEPCO later said this was because the government's approval had not yet been obtained, and the risk of re-criticality from seawater was being discussed in Tokyo. The site superintendent must decide whether to stop the injection as instructed or keep it going.",
+  "context_summary": "A reactor in your plant has had no power for more than a day. Your workers have just restarted cooling with seawater pumped by a fire engine, hours after an explosion wrecked the reactor building and the hoses they had laid. Now head office in Tokyo tells you to stop: the government has not yet approved seawater, and people there are worried it could restart a chain reaction. You are the plant's general manager. Stopping means the core gets no water until someone in Tokyo says yes. Continuing means defying the company's order. What do you do?",
+  "actual_decision_key": "continue_injection",
+  "immediate_outcome": "Seawater injection into Unit 1 continued without interruption. TEPCO's head office did not learn this until it held hearings with workers at the plant in May. On 21 May 2011 TEPCO publicly said the injection had been suspended for close to an hour, from 19:25. On 26 May, after hearings with workers at the plant, TEPCO vice president Sakae Muto said that the plant director had judged water injection to be the most important measure for preventing the accident from spreading, and that the injection had in fact continued without a temporary suspension. The government's chief cabinet secretary criticised TEPCO for the reversal.",
+  "long_term_outcome": "Seawater injection into Unit 1, with boron added to address criticality concerns, continued in the following days; off-site power was restored to Unit 1 on 20 March. TEPCO's later analysis indicated that core damage in Unit 1 had begun at about 18:50 on 11 March, the day before. Who originated the instruction to stop became a matter of public dispute: early media reports said the Prime Minister had ordered it; Prime Minister Naoto Kan denied that he or the government gave such an order; TEPCO said it had decided on its own because government approval had not yet been obtained. The Diet's independent investigation commission later found that the Prime Minister's Office, unaware of what TEPCO and the regulators had agreed on venting and seawater injection, had intervened, adding to confusion.",
+  "decision_quality": "Reasonable",
+  "outcome_quality": "Mixed",
+  "popularity": 70,
+  "controversy_risk": 40,
+  "context_compression": 70,
+  "visualizability": 65,
+  "source_disagreement": 70,
+  "uncertainty_factors": [
+    "How much damage the Unit 1 core had already suffered",
+    "Whether seawater injection could cause re-criticality",
+    "How long the core could go without water if injection were stopped",
+    "How long it would take to obtain government approval and restart injection"
+  ],
+  "fame_score": 70,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "Who originated the instruction to stop",
+        "description": "This is a disputed and politically contested point in Japan, and the case does not resolve it. Early media reports, as summarised by The Japan Times (27 May 2011), said Prime Minister Kan had ordered TEPCO to stop because of the risk of re-criticality; Kan denied that he or the government gave any such order. TEPCO vice president Sakae Muto said the utility decided on its own to suspend the injection because it had not yet obtained the government's approval. In his hearing before the Diet's investigation commission, Kan said that although it had been reported that the decision came from the Prime Minister's Office, it could have been a statement made by TEPCO personnel who were then at the Prime Minister's Office. The commission found more generally that the Prime Minister's Office intervened on venting and seawater injection without knowing what TEPCO and the regulators had agreed."
+      },
+      {
+        "topic": "Whether the injection was ever halted",
+        "description": "TEPCO first announced (21 May 2011) that seawater injection into Unit 1 had stopped at 19:25 on 12 March and resumed about 55 minutes later, based on notes and statements of officials in Tokyo. On 26 May, after hearings with plant workers, it said the injection had continued without interruption. The case follows the later account."
+      }
+    ],
+    "research_gaps": [
+      "TEPCO's 26 May 2011 press release and the government Investigation Committee (ICANPS) reports could not be retrieved this run (the TEPCO site returned 403 and the ICANPS English pages returned 404); TEPCO's revised account is taken from contemporary reporting of Sakae Muto's news conference (The Japan Times, 27 May 2011).",
+      "The site superintendent's own testimony (the hearing records released by the Japanese government) was not consulted. How he kept the injection going, and exactly what he was told and by whom at about 19:25, are not described here beyond TEPCO's account.",
+      "The exact time boron was first added to the seawater was not established; INPO states only that boron was then added to address criticality concerns.",
+      "No claim is made about whether continuing the injection changed the eventual extent of Unit 1's damage or releases."
+    ],
+    "decision_quality_rationale": "Rated Reasonable (INFERENCE). On what the site superintendent could see, the case for continuing was strong: Unit 1 had been without cooling since the explosion, injection had only just been restored after hours of work, and stopping would leave the core without water for an unknown time while approval was sought. The concern about re-criticality was real enough to be discussed, but by the Diet commission's later account the safety commission chair had described the possibility only as not zero. The case for complying was also serious: chain of command matters in a nuclear emergency, and a site that overrides head office and government cannot be coordinated. Continuing without telling head office also left the company and government with a false picture of the plant for more than two months. The rating reflects a sound technical judgment taken in a way that broke the reporting chain, and is scored independently of the outcome."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "suspend_as_instructed",
+      "sort_order": 1,
+      "label": "Suspend the injection as instructed",
+      "short_description": "Follow head office's instruction and stop seawater injection into Unit 1 until approval is given, then restart.",
+      "upside": "Keeps the chain of command intact in an emergency involving the company, the regulators and the government. Respects a concern, raised in Tokyo, that seawater might cause re-criticality. Avoids the site acting on its own in a way head office and government cannot see or coordinate.",
+      "downside": "Leaves a reactor that has already been without cooling for hours with no water again, for as long as it takes Tokyo to decide. Restarting after a stop may not be quick, given how hard it was to start in the first place.",
+      "known_tradeoffs": [
+        "Following the chain of command and the government's decision. versus Another gap in cooling for a reactor in serious trouble."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "continue_injection",
+      "sort_order": 2,
+      "label": "Keep injecting seawater",
+      "short_description": "Keep seawater flowing into Unit 1 despite head office's instruction, judging that continuous cooling matters most.",
+      "upside": "Keeps water reaching the core without interruption, which the site judges to be the single most important measure to stop the accident getting worse. Avoids the risk of being unable to restart quickly.",
+      "downside": "Defies head office during a national emergency. If done quietly, leaves head office and government believing the injection has stopped, so their picture of the plant is wrong. If the concern about re-criticality were well-founded, the site would carry that risk on its own judgment.",
+      "known_tradeoffs": [
+        "Uninterrupted cooling on the site's judgment. versus Breaking the chain of command and the shared picture of the accident."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Unit 1 had lost all electricity after the tsunami of 11 March. Freshwater injection began at 5:46 on 12 March, and containment venting at about 14:30."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "By 14:53 the Unit 1 fire-protection water tank was running out, and the site superintendent directed that seawater be injected into the reactor; workers began staging hoses."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "At 15:36 a hydrogen explosion breached the Unit 1 reactor building, injured five workers, damaged the cables, generators, fire engines and hoses staged for seawater injection, spread highly radioactive debris, and stopped all injection into the core."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "By 18:25 the Prime Minister had widened the evacuation zone to 20 km."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "At 19:04 workers began injecting seawater into the reactor through the core spray system using a fire engine."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "Head office then decided to suspend the injection. According to later accounts, TEPCO did so because the government's approval had not yet been obtained, and the possibility that seawater injection could cause re-criticality was being discussed in Tokyo."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That, by TEPCO's later analysis, core damage in Unit 1 had begun at about 18:50 on 11 March, the day before."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That TEPCO would announce in May that the injection had been halted for about 55 minutes, then reverse itself after hearings at the plant, prompting public criticism from the government."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That who ordered the stop would become a matter of public and political dispute, with the Prime Minister denying he had given such an order."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Special Report on the Nuclear Accident at the Fukushima Daiichi Nuclear Power Station (INPO 11-005), Section 4.1 Unit 1 Narrative",
+      "author_or_institution": "Institute of Nuclear Power Operations (INPO)",
+      "publication_date": "2011-11",
+      "url": "https://cryptome.org/0005/daiichi-inpo.pdf",
+      "citation": "INPO 11-005, Revision 0, November 2011, pp. 20-21.",
+      "evidence_class": "FACT",
+      "supported_claim": "The Unit 1 sequence on 12 March: venting at 14:30; the fire-protection tank running out by 14:53 and the site superintendent directing seawater injection; the 15:36 hydrogen explosion, five injured, damage to staged equipment and loss of all injection; the 20 km evacuation zone by 18:25; seawater injection beginning at 19:04; boron then added to address criticality concerns. Off-site power restored to Unit 1 on 20 March."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "The official report of the Fukushima Nuclear Accident Independent Investigation Commission: Executive summary",
+      "author_or_institution": "The National Diet of Japan, Fukushima Nuclear Accident Independent Investigation Commission (NAIIC)",
+      "publication_date": "2012",
+      "url": "https://www.nirs.org/wp-content/uploads/fukushima/naiic_report.pdf",
+      "citation": "NAIIC, Executive summary (2012), timeline p. 13 and findings on the Prime Minister's Office.",
+      "evidence_class": "FACT",
+      "supported_claim": "The timeline for Unit 1 (freshwater injection 5:46, venting about 14:30, hydrogen explosion 15:36, seawater injection 19:04 on 12 March; start of core damage about 18:50 on 11 March per TEPCO's MAAP analysis), and the finding that the Prime Minister's Office, unaware of what TEPCO and regulators had agreed on venting and seawater injection, intervened."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "NAIIC Executive summary: summary of former Prime Minister Kan's hearing",
+      "author_or_institution": "The National Diet of Japan, Fukushima Nuclear Accident Independent Investigation Commission (NAIIC)",
+      "publication_date": "2012",
+      "url": "https://www.nirs.org/wp-content/uploads/fukushima/naiic_report.pdf",
+      "citation": "NAIIC, Executive summary (2012), summary of hearing with Naoto Kan.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Kan's account that there was no awareness that seawater injection would lead to re-criticality, although the NSC chairman had indicated the possibility was not zero, and that although it was reported that the decision to suspend came from the Prime Minister's Office, it could have been a statement by TEPCO personnel then at the Office."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Tepco now says reactor seawater injection wasn't halted",
+      "author_or_institution": "The Japan Times (Masami Ito)",
+      "publication_date": "2011-05-27",
+      "url": "https://www.japantimes.co.jp/news/2011/05/27/national/tepco-now-says-reactor-seawater-injection-wasnt-halted/",
+      "citation": "The Japan Times, 27 May 2011.",
+      "evidence_class": "FACT",
+      "supported_claim": "TEPCO's initial account of a halt from 19:25 for about 55 minutes; its 26 May reversal after hearings at the plant; that media had reported the Prime Minister ordered the stop and that Kan denied it; and the chief cabinet secretary's criticism."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "QUALITY_MEDIA",
+      "title": "Tepco now says reactor seawater injection wasn't halted: TEPCO vice president's statement",
+      "author_or_institution": "The Japan Times (Masami Ito), reporting Sakae Muto, TEPCO",
+      "publication_date": "2011-05-27",
+      "url": "https://www.japantimes.co.jp/news/2011/05/27/national/tepco-now-says-reactor-seawater-injection-wasnt-halted/",
+      "citation": "The Japan Times, 27 May 2011.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Muto's statement that the utility decided on its own to halt the injection because it had not yet obtained the government's approval, and that the plant director judged water injection to be the most important measure for preventing the accident from spreading and continued it."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-13",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That continuing the injection was a reasonable technical judgment taken in a way that broke the reporting chain, scored independently of the outcome."
+    }
+  ]
+}
