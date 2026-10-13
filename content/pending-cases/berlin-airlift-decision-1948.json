@@ -1,0 +1,208 @@
+{
+  "case_key": "berlin-airlift-decision-1948",
+  "title": "July 1948: Force the Road to Berlin, or Fly",
+  "domain": "history",
+  "subdomain": "early Cold War crisis diplomacy",
+  "actor": "President Harry S. Truman and the National Security Council",
+  "actor_role": "The President and his senior national security officials, deciding at the National Security Council on 22 July 1948 how the United States would respond to the Soviet blockade of the western sectors of Berlin, after General Lucius D. Clay, the U.S. Military Governor in Germany, had proposed sending an armed convoy",
+  "date_or_period": "22 July 1948",
+  "era": "Early Cold War",
+  "location": "Washington, D.C. (decision); Berlin (crisis)",
+  "t0": "22 July 1948, at the National Security Council meeting presided over by President Truman. Since 24 June, Soviet forces have blocked rail, road and water access to the western sectors of Berlin, which lie deep inside the Soviet zone. The United States began supplying the city by air on 26 June and the British two days later. On 10 July General Clay, the U.S. Military Governor, urged that if the blockade continued the Soviets be told that on a specific date a convoy, with bridging equipment, would open the road to Berlin; he was convinced the Soviets did not want war and that the convoy would get through. The U.S. political adviser in Berlin, Murphy, backed guarded convoys. A Soviet note of 14 July was read in Washington as a total rejection of the Western position, and the U.S. ambassador in Moscow warned that an armed convoy would run a serious risk of precipitating war. Clay and Murphy have been called to Washington to report. The Council must decide whether to force a land route with an armed convoy or to commit to supplying the city by air.",
+  "context_summary": "Half of a great city is cut off. The only way in that the other side has not closed is through the air, and your planes are already flying, but nobody knows whether they can feed and heat the city through a winter. Your commander on the spot says the other side is bluffing: send an armed convoy down the road and they will let it through. Your ambassador in their capital says a convoy could start a war. Three years after the last war ended, the other side's army around the city vastly outnumbers yours. Do you force the road, or bet on the air?",
+  "actual_decision_key": "expand_airlift",
+  "immediate_outcome": "At its meeting of 22 July 1948 the National Security Council agreed to add 75 C-54 transport aircraft to the airlift, reiterated the determination of the United States to remain in Berlin, and agreed to build a new airfield in the city. An armed convoy was not ordered. On 28 July the Secretary of Defense, passing on the Joint Chiefs of Staff's recommendations, asked the State Department to seek maximum British and French air support and to begin only preliminary planning for combined armed convoys; the Joint Chiefs did not recommend supply by armed convoy because of the risk of war and the inadequacy of U.S. preparation for global conflict.",
+  "long_term_outcome": "The airlift grew steadily more efficient; at its height a plane landed at Tempelhof every 45 seconds. In September 1948, after the Communist-led SED forced the Berlin city council to adjourn, some 300,000 West Berliners rallied at the Reichstag against Soviet domination. By spring 1949 the Western Allies had shown they could sustain the operation indefinitely, while their counter-blockade was causing shortages in eastern Germany. The Soviets lifted the blockade in May 1949. Shortly before, the Western Allies had created NATO, and the West German state was established two weeks after the blockade ended.",
+  "decision_quality": "Reasonable",
+  "outcome_quality": "Good",
+  "popularity": 65,
+  "controversy_risk": 15,
+  "context_compression": 70,
+  "visualizability": 80,
+  "source_disagreement": 30,
+  "uncertainty_factors": [
+    "Whether the Soviets would fire on an armed convoy or let it through",
+    "Whether an airlift could supply the city through the winter",
+    "Whether the Soviets would interfere with the air corridors",
+    "How long Britain and France would hold firm"
+  ],
+  "fame_score": 70,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "t0_resolution": "The candidate entry asked whether Clay's armed-convoy proposal belonged to late June or to the July Washington consultations. FRUS 1948 vol. II, doc. 577 shows Clay's written proposal on 10 July 1948; the decision on it was taken at the 16th NSC meeting on 22 July (doc. 586, note 3), after Clay and Murphy were summoned to Washington on 19 July. The case is set at 22 July.",
+    "excluded_option": "Withdrawal from Berlin was also discussed in the period but is not modelled as an option; the NSC reiterated the determination to remain in Berlin at the same meeting.",
+    "source_disagreements": [
+      {
+        "topic": "Whether the Soviets would risk war over a convoy",
+        "description": "Clay (10 July) was convinced the Soviets did not want war and that a convoy would get through; Murphy (11 July) thought guarded convoys ran no greater risk than staying. Ambassador Smith in Moscow (15 July) judged that sending an armed convoy would run serious risk of precipitating war. These are contemporary assessments, not established facts, and the case does not decide between them."
+      },
+      {
+        "topic": "The date the blockade ended",
+        "description": "The Office of the Historian's milestone page gives both 12 May 1949 and 11 May 1949 in different paragraphs. The case says May 1949."
+      }
+    ],
+    "research_gaps": [
+      "The NSC meeting record itself (NSC Action 84) is cited from the FRUS editors' footnote, not read directly.",
+      "Truman's often-quoted remark 'We stay in Berlin' was not traced to a primary source this run and is not used.",
+      "Figures for Berlin's daily food and coal needs and the airlift's tonnage at T0 were not verified this run and are not asserted.",
+      "Clay's, Forrestal's and Truman's own published accounts of the 19-22 July discussions (cited in FRUS) were not consulted."
+    ],
+    "decision_quality_rationale": "Rated Reasonable (INFERENCE). The airlift was a way to stay in Berlin without being the first to use force: the air corridors rested on written agreements, and opposing an unarmed supply flight would put the onus of starting a conflict on the Soviets. A convoy, by Clay's own account, carried an inherent risk because once across the border it was committed, and the Western forces around Berlin were far smaller than the Red Army's. The cost of the choice was uncertainty about whether air supply could carry the city through the winter, which Clay himself had warned could make the situation deteriorate. The decision chose a slower, less certain path to avoid a step that could not be taken back. It is scored independently of the airlift's eventual success."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "send_armed_convoy",
+      "sort_order": 1,
+      "label": "Send an armed convoy down the road",
+      "short_description": "Tell the Soviets that on a set date an armed convoy with engineers and bridging equipment will reopen the road to Berlin, and send it.",
+      "upside": "Asserts the Western right of access directly instead of accepting the blockade's terms. If, as Clay believed, the Soviets do not want war, it could end the blockade quickly and avoid a long, uncertain struggle through the winter. Has strong support among those in Berlin itself.",
+      "downside": "Once the convoy crosses into the Soviet zone it is committed; if it is stopped by force, the choice is between a humiliating retreat and a shooting war, three years after the last one, with Western forces around Berlin far outnumbered. The ambassador in Moscow warns of a serious risk of precipitating war.",
+      "known_tradeoffs": [
+        "A fast, direct test of Soviet resolve. versus A step that may not be reversible and could start a war."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "expand_airlift",
+      "sort_order": 2,
+      "label": "Expand the airlift",
+      "short_description": "Commit more transport aircraft and build a new airfield to supply the city by air, staying in Berlin without forcing the land route.",
+      "upside": "Keeps the West in Berlin without firing the first shot. The air corridors rest on written agreements, so interfering with them would put the burden of aggression on the Soviets. Buys time for diplomacy and for building strength.",
+      "downside": "No one knows whether aircraft can feed and heat a large city through a winter. Ties up scarce transport planes, and leaves the initiative with the Soviets, who could keep the blockade going indefinitely or escalate in the air.",
+      "known_tradeoffs": [
+        "Avoiding the first use of force. versus An uncertain, costly, open-ended supply effort."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "On 24 June 1948 Soviet forces blockaded rail, road and water access to the Allied-controlled sectors of Berlin, which lay far inside the Soviet zone. The only connections left to the Western Allies under written agreements were the air corridors."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "The United States began supplying Berlin by air on 26 June ('Operation Vittles'), and the United Kingdom two days later. Because of postwar drawdowns, the Red Army in and around Berlin dwarfed the Western military presence."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "On 13 June General Clay had reported that remaining in Berlin was essential to American prestige in Germany and Europe and had become a symbol of American intent."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "On 10 July Clay urged that, if the blockade continued, the Soviets be told that a convoy with bridging equipment would on a specific date open the route to Berlin. Clay acknowledged an inherent risk, since once across the border the convoy was committed, but was convinced the Soviets did not want war and that it would get through. Clay also warned that the Berlin situation could deteriorate materially if it continued into the winter."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "On 11 July the U.S. political adviser in Berlin, Murphy, supported sending guarded convoys with troops and engineers, arguing that this ran no greater risk of war than remaining in the city."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "President Truman regarded the Soviet note of 14 July as a total rejection of everything the West had asked. On 15 July the U.S. ambassador in Moscow judged that the danger of armed conflict had grown and that sending an armed convoy to break the blockade would run serious risk of precipitating war."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "Clay and Murphy were summoned to Washington on 19 July to report to the National Security Council and the President."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That on 28 July the Joint Chiefs of Staff would recommend against supply by armed convoy because of the risk of war and the inadequacy of U.S. preparation, while advising preliminary planning for one only as a last resort."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That the airlift would grow until a plane landed at Tempelhof every 45 seconds, and that by spring 1949 the Allies would show they could sustain it indefinitely."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That the Soviets would lift the blockade in May 1949, shortly after the creation of NATO."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "The United States Military Governor for Germany (Clay) to the Department of the Army, 10 July 1948",
+      "author_or_institution": "U.S. Department of State, Office of the Historian (Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 577)",
+      "publication_date": "1948-07-10",
+      "url": "https://history.state.gov/historicaldocuments/frus1948v02/d577",
+      "citation": "Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 577.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Clay's proposal to send a convoy with bridging equipment on a specific date, his conviction that the Soviets did not want war and that the convoy would get through, his acknowledgement of the inherent risk, and his warning about deterioration in winter; with the editors' note summarising Murphy's 11 July support for guarded convoys."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "The Ambassador in the United Kingdom (Douglas) to the Secretary of State, 17 July 1948 (with editors' notes)",
+      "author_or_institution": "U.S. Department of State, Office of the Historian (Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 582)",
+      "publication_date": "1948-07-17",
+      "url": "https://history.state.gov/historicaldocuments/frus1948v02/d582",
+      "citation": "Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 582.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "The editors' summary of Ambassador Smith's telegram of 15 July from Moscow: the danger of armed conflict had become greater and an armed convoy would run serious risk of precipitating war."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Memorandum by the Counselor of the Department of State (Bohlen) to the Secretary of State, 14 July 1948",
+      "author_or_institution": "U.S. Department of State, Office of the Historian (Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 581)",
+      "publication_date": "1948-07-14",
+      "url": "https://history.state.gov/historicaldocuments/frus1948v02/d581",
+      "citation": "Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 581.",
+      "evidence_class": "FACT",
+      "supported_claim": "That President Truman considered the Soviet note of 14 July a total rejection of everything the West had asked for."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Record of Teletype Conference Between the Department of State and the Embassy in the United Kingdom, 22 July 1948 (with editors' notes)",
+      "author_or_institution": "U.S. Department of State, Office of the Historian (Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 586)",
+      "publication_date": "1948-07-22",
+      "url": "https://history.state.gov/historicaldocuments/frus1948v02/d586",
+      "citation": "Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 586 and notes 2-3.",
+      "evidence_class": "FACT",
+      "supported_claim": "That at the NSC meeting of 22 July, presided over by the President, it was decided to increase the airlift by adding C-54s; that the NSC's 16th meeting agreed to add 75 C-54s, reiterated the determination to remain in Berlin and agreed to build a new airfield (NSC Action 84); and that Clay and Murphy had been summoned to Washington on 19 July."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "The Secretary of Defense (Forrestal) to the Secretary of State, 28 July 1948",
+      "author_or_institution": "U.S. Department of State, Office of the Historian (Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 591)",
+      "publication_date": "1948-07-28",
+      "url": "https://history.state.gov/historicaldocuments/frus1948v02/d591",
+      "citation": "Foreign Relations of the United States, 1948, Germany and Austria, Volume II, Document 591.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "The Joint Chiefs of Staff did not recommend supply to Berlin by armed convoy in view of the risk of war and the inadequacy of U.S. preparation for global conflict, but thought it prudent to plan for one only under stated conditions."
+    },
+    {
+      "evidence_key": "src-06",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "The Berlin Airlift, 1948-1949 (Milestones in the History of U.S. Foreign Relations)",
+      "author_or_institution": "U.S. Department of State, Office of the Historian",
+      "url": "https://history.state.gov/milestones/1945-1952/berlin-airlift",
+      "citation": "Office of the Historian, 'The Berlin Airlift, 1948-1949' (retired Milestones series).",
+      "evidence_class": "FACT",
+      "supported_claim": "The blockade from 24 June 1948; Operation Vittles from 26 June and the British operation two days later; Clay's 13 June report; the imbalance of forces; the reasoning that opposing the airlift would put the onus on the Soviets; the September 1948 rally; one plane every 45 seconds at Tempelhof; the lifting of the blockade in May 1949; and the creation of NATO and West Germany."
+    },
+    {
+      "evidence_key": "src-07",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-14",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That choosing the airlift over an armed convoy was a reasonable decision on the information available on 22 July 1948, scored independently of the outcome."
+    }
+  ]
+}
