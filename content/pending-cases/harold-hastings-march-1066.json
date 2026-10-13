@@ -1,0 +1,168 @@
+{
+  "case_key": "harold-hastings-march-1066",
+  "title": "October 1066: March on William Now, or Wait for the Full Host",
+  "domain": "history",
+  "subdomain": "medieval warfare and kingship",
+  "actor": "Harold II (Harold Godwinson), King of England",
+  "actor_role": "King of England for less than a year, who had just defeated a Norwegian invasion in the north and had to decide how soon to confront William of Normandy's army on the Sussex coast",
+  "date_or_period": "October 1066",
+  "era": "The Norman Conquest of England",
+  "location": "London, and the road south to Sussex, England",
+  "t0": "Early to mid October 1066, in London. Harold has just destroyed the Norwegian invasion at Stamford Bridge near York on 25 September. Three days later William of Normandy landed at Pevensey on the Sussex coast and built a castle at Hastings. The earliest Harold could have heard the news was around 2 October; he is now back in London raising fresh forces from the southern counties. Earlier in the year, his great summer army and fleet had to be sent home in early September when their provisions ran out. The northern earls' forces were beaten at Fulford on 20 September, and Harold's own men have fought a hard battle and travelled the length of the country. He must decide whether to march south at once against William with the forces he has, or to wait in London for more of the kingdom's strength to assemble.",
+  "context_summary": "You have just won a great victory in the north, catching a Norwegian king off guard. Now a second invader has landed on the south coast, in the county where your own family's lands lie, and has built a castle. Your men are tired and some of your best are dead. More troops are coming in, but gathering an army takes time, and this summer you watched your last one melt away when the food ran out. Do you strike now, as you did at Stamford Bridge, or wait until you have the whole kingdom behind you?",
+  "actual_decision_key": "march_south_now",
+  "immediate_outcome": "Harold left London and moved south before his full strength had gathered. On 14 October 1066 he fought William near Hastings. The Anglo-Saxon Chronicle says that William came upon him before his army was collected, and that the king fought him with the men who would support him; there was great slaughter on both sides. Harold was killed, with his brothers Leofwine and Gyrth, and the Normans held the field.",
+  "long_term_outcome": "After the battle, Archbishop Ealdred and the citizens of London wanted Edgar the Ætheling as king, and the earls Edwin and Morcar promised to fight for them, but nothing was done in time. William ravaged the country as he advanced, and at Berkhamsted the archbishop, Edgar, the earls and the leading men of London submitted to him. William was consecrated king at Westminster on Christmas Day 1066. The Norman Conquest of England followed.",
+  "decision_quality": "Unclear",
+  "outcome_quality": "Bad",
+  "popularity": 75,
+  "controversy_risk": 10,
+  "context_compression": 75,
+  "visualizability": 80,
+  "source_disagreement": 50,
+  "uncertainty_factors": [
+    "How many more troops Harold could gather, and how quickly, if he waited",
+    "How tired and depleted the men from the north really were",
+    "What William would do if left alone on the Sussex coast",
+    "Whether a fast advance could catch William off guard as it had caught the Norwegians"
+  ],
+  "fame_score": 75,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "source_disagreements": [
+      {
+        "topic": "Advice from Harold's family",
+        "description": "According to 12th-century chroniclers, as summarised by English Heritage, Harold's mother Gytha and his brother Gyrth tried to dissuade him from confronting William, and he angrily rejected them. This is not in the Anglo-Saxon Chronicle and comes from writers working generations later. It is not used as fact in this case, and is excluded from the information given at T0."
+      },
+      {
+        "topic": "The 'long march' and the time spent in London",
+        "description": "The traditional picture of Harold force-marching his exhausted army about 200 miles from Yorkshire is not mentioned in any contemporary source (English Heritage). Some chroniclers say he spent time in London, up to six days in one account. The historian Tom Licence has suggested that Harold may have moved men south by ship. No march speeds or distances are asserted in this case."
+      }
+    ],
+    "research_gaps": [
+      "The Anglo-Saxon Chronicle is used in J. Ingram's 19th-century composite translation (Project Gutenberg), which blends the manuscript versions; differences between the C, D and E versions were not checked against a modern edition. Ingram renders the place where Harold came to meet William as 'the estuary of Appledore', a reading modern translators treat differently; it is not used.",
+      "Norman sources (William of Poitiers' Gesta Guillelmi, the Carmen de Hastingae Proelio) and the Bayeux Tapestry were not consulted this run; nothing in the case depends on them.",
+      "No contemporary source records Harold's own reasons for moving quickly. The rationales given for both options are reconstructions from the situation the Chronicle describes, not his stated reasons.",
+      "The size of either army is not asserted."
+    ],
+    "decision_quality_rationale": "Rated Unclear (INFERENCE). The sources do not record Harold's reasoning or the size of the forces available to him, and recent historians question the traditional story of a rash forced march. There were serious reasons to move fast: an invader was established on the coast of Harold's own family county, the speed and surprise that had won Stamford Bridge were fresh, and the summer had shown that an assembled army could not be kept in the field indefinitely. There were also serious reasons to wait: his men had fought two campaigns in weeks, the northern earls' forces had been defeated at Fulford, and the Chronicle itself says he fought before his army was collected. With so little known about what waiting would have produced, the choice cannot fairly be called either sound or reckless. The rating is scored independently of the defeat."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "march_south_now",
+      "sort_order": 1,
+      "label": "March south now with the forces at hand",
+      "short_description": "Leave London quickly and confront William in Sussex before he can strengthen his position, taking the troops already gathered.",
+      "upside": "Keeps William penned near his landing place on the coast before he can move inland. Defends the king's own family lands in Sussex rather than leaving them to an invader. Repeats the approach that had just worked at Stamford Bridge, where Harold caught the enemy unawares. Avoids relying on an army that, as the summer showed, cannot be held together for long.",
+      "downside": "Fights with tired men and without the full strength of the kingdom. Forces from the north, already bloodied at Fulford, and from more distant shires may not arrive in time. If the battle is lost, there may be no second army ready.",
+      "known_tradeoffs": [
+        "Speed and the chance of surprise. versus Fighting before the full host has gathered."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "wait_for_full_host",
+      "sort_order": 2,
+      "label": "Wait in London for the full host",
+      "short_description": "Hold in London until more forces from the shires, and from the north, have assembled, and only then move against William.",
+      "upside": "Gives tired men time to recover and lets the kingdom's strength gather, so that Harold meets William with the largest army he can raise. A defeat with the full host behind him is less likely; a delay costs William time too, far from home.",
+      "downside": "Leaves an invader free to entrench and act on the south coast and in the king's own county. Gathering an army had been slow in the summer, and holding it together had proved impossible once provisions ran out. Gives up the advantage of speed that had just won Stamford Bridge.",
+      "known_tradeoffs": [
+        "A bigger, more rested army. versus Time for the invader, and the risk that the army never fully assembles."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Through the summer of 1066 Harold kept a great army along the south coast and a fleet off the Isle of Wight, expecting William. Gathering the fleet had taken a long time. By the Nativity of St Mary (8 September) the provisions were gone and no one could keep the men there any longer, so they were sent home; many ships were lost on the way to London."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "Harald Hardrada of Norway and Harold's brother Tostig landed in the north. The earls Edwin and Morcar fought them near York on 20 September; there was great slaughter, and the Norwegians held the field."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "Harold went north day and night, gathering his army, and on 25 September came upon the invaders unawares at Stamford Bridge. Harald Hardrada and Tostig were killed after long, hard fighting in which many English were also slain."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "William of Normandy landed at Pevensey on the eve of Michaelmas (28 September) and soon built a castle at Hastings. Harold's family lands lay in Sussex."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "The earliest Harold could have heard of William's landing was around 2 October. Back in London, he was raising new forces from the southern counties."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That William would come upon Harold before his army was collected, and that on 14 October Harold, with his brothers Leofwine and Gyrth, would be killed and the Normans would hold the field."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That after the battle the English leaders would fail to organise further resistance in time, would submit to William at Berkhamsted, and that William would be crowned at Westminster on Christmas Day 1066."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Anglo-Saxon Chronicle, entries for 1066",
+      "author_or_institution": "Anglo-Saxon Chronicle, trans. J. Ingram (Project Gutenberg)",
+      "publication_date": "11th century",
+      "url": "https://www.gutenberg.org/cache/epub/657/pg657.txt",
+      "citation": "The Anglo-Saxon Chronicle, trans. J. Ingram, Project Gutenberg eBook #657, entries for A.D. 1066.",
+      "evidence_class": "FACT",
+      "supported_claim": "The summer army and fleet stood down at the Nativity of St Mary when provisions ran out; the defeat of Edwin and Morcar on the vigil of St Matthew; Stamford Bridge and the deaths of Harald Hardrada and Tostig; William's landing at Pevensey on the eve of Michaelmas and castle at Hastings; the battle on the day of Pope Calixtus, fought 'ere his army was collected' / 'before all his army had come up'; the deaths of Harold, Leofwine and Gyrth; the submission at Berkhamsted and William's consecration at Westminster on midwinter's day. An English, monastic source written close to the events."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "ANCIENT_TEXT",
+      "title": "The Anglo-Saxon Chronicle, 1066: the chronicler's judgements",
+      "author_or_institution": "Anglo-Saxon Chronicle, trans. J. Ingram (Project Gutenberg)",
+      "publication_date": "11th century",
+      "url": "https://www.gutenberg.org/cache/epub/657/pg657.txt",
+      "citation": "The Anglo-Saxon Chronicle, trans. J. Ingram, Project Gutenberg eBook #657, entries for A.D. 1066.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "The chronicler's view that the Normans won 'as God granted them for the sins of the nation', and that English resistance after the battle came 'from day to day the later and worse'."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "HERITAGE_BODY",
+      "title": "King Harold II: the road to Hastings",
+      "author_or_institution": "English Heritage",
+      "url": "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/king-harold/",
+      "citation": "English Heritage, 1066 Battle of Hastings, Abbey and Battlefield: History and stories, 'King Harold'.",
+      "evidence_class": "FACT",
+      "supported_claim": "That the earliest Harold could have heard of William's landing was around 2 October; that he raised new forces from the southern counties in London; that his ancestral lands lay in Sussex; that the 'long march' is not mentioned in any contemporary source and that some chroniclers have him spend time in London, up to six days in one account; Tom Licence's suggestion that men were moved by ship; and that English sources say Harold moved on from London before gathering his full strength."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "HERITAGE_BODY",
+      "title": "King Harold II: the road to Hastings (later traditions)",
+      "author_or_institution": "English Heritage, summarising 12th-century chroniclers",
+      "url": "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/king-harold/",
+      "citation": "English Heritage, 'King Harold'.",
+      "evidence_class": "CONTEMPORARY_BELIEF",
+      "supported_claim": "Later (12th-century) tradition, not contemporary record, that Harold's mother Gytha and brother Gyrth tried to dissuade him from confronting William. Recorded for completeness and not used as information available at T0."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-13",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That the quality of Harold's decision to move quickly cannot be fairly judged sound or reckless on the surviving evidence, scored independently of the defeat."
+    }
+  ]
+}
