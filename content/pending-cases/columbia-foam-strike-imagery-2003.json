@@ -1,0 +1,180 @@
+{
+  "case_key": "columbia-foam-strike-imagery-2003",
+  "title": "Columbia, Flight Day Seven: Ask the Military for Pictures, or Trust the Analysis",
+  "domain": "crisis",
+  "subdomain": "spaceflight safety and engineering management",
+  "actor": "Linda Ham, Chair of the STS-107 Mission Management Team, NASA",
+  "actor_role": "Senior Space Shuttle Program manager chairing the Mission Management Team for the Columbia STS-107 mission, who learned on Flight Day Seven that Department of Defense help had been sought to image Columbia's left wing in orbit, outside the official chain of command",
+  "date_or_period": "22 January 2003",
+  "era": "Space Shuttle Program",
+  "location": "Johnson Space Center, Houston, Texas, United States (Columbia in Earth orbit)",
+  "t0": "Morning of Wednesday 22 January 2003, Flight Day Seven of Columbia's 16-day STS-107 science mission. On Flight Day Two, engineers reviewing launch film found that a large piece of insulating foam from the External Tank's left bipod area had struck Columbia's left wing 81.9 seconds after liftoff. Managers have been treating the strike as close to an 'in-family' event, similar in size to foam lost on STS-112, which had not been a safety problem. Engineers' analysis using the Crater tool predicted possible damage, but they discounted it on the grounds that the tool is conservative. The engineering Debris Assessment Team wants on-orbit images of the wing, and that morning two managers have contacted Department of Defense representatives about imaging Columbia, without the Mission Management Team Chair's authorization and not through the designated liaison. Columbia carries no robotic arm. The Chair must decide whether to pursue Department of Defense imagery of the wing or to call off the request.",
+  "context_summary": "A week into a space mission, you learn that colleagues have quietly asked the military to photograph your spacecraft in orbit. The reason is a chunk of foam that hit the wing at launch. Foam has hit shuttles before without disaster, and your engineers' analysis, though uncertain, suggests the damage is probably not serious. Nobody in your chain of command says they need the pictures. Turning the spacecraft for the cameras would disrupt the science, past images have been blurry, and some on your team say that even if they saw damage there would be nothing they could do. Do you pursue the pictures, or call the request off?",
+  "actual_decision_key": "cancel_imagery_request",
+  "immediate_outcome": "Within 90 minutes of the request being made, it was rescinded. At 8:30 a.m. the NASA Department of Defense liaison officer called U.S. Strategic Command and cancelled the request, saying NASA had identified its own in-house resources and no longer needed the military's help. Before that, the Chair had asked managers and the flight director whether they had a 'requirement' for imagery; none did, and the Chair later told several people that nobody had a requirement for imagery. The Chair never asked the Debris Assessment Team directly whether the request was theirs. The engineers interpreted the halt as a final denial of their request. According to personal notes obtained by the Board, the Chair said the request was no longer being pursued since even if they saw something, they could not do anything about it.",
+  "long_term_outcome": "On 1 February 2003 Columbia broke up during re-entry and all seven crew members were killed. The Columbia Accident Investigation Board found that the physical cause was a breach in the leading edge of the left wing, near Reinforced Carbon-Carbon panel 8, caused by the foam strike. The Board also found that if Program managers had understood the threat and determined before Flight Day Seven that there was potentially catastrophic damage, a rescue by the shuttle Atlantis, which NASA later judged 'challenging but feasible', would have been conceivable; an on-orbit repair was rated high risk. The Board placed as much weight on organisational and cultural causes as on the physical cause.",
+  "decision_quality": "Weak",
+  "outcome_quality": "Bad",
+  "popularity": 70,
+  "controversy_risk": 35,
+  "context_compression": 70,
+  "visualizability": 75,
+  "source_disagreement": 30,
+  "uncertainty_factors": [
+    "Whether the foam strike had damaged the wing, and where",
+    "Whether military imaging could resolve damage of the relevant size",
+    "Whether anything could be done in orbit if damage were found",
+    "How much the Crater analysis could be trusted for a debris strike this large"
+  ],
+  "fame_score": 70,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "overlap_note": "Overlaps in theme with the live case challenger-1986 (NASA decision culture). The T0 is different in kind: an in-orbit decision about whether to obtain information, not a pre-launch go/no-go.",
+    "source_disagreements": [
+      {
+        "topic": "What the Mission Management Team Chair knew about the engineers' request",
+        "description": "The Board notes that the Chair has publicly stated not knowing of the Debris Assessment Team members' desire for imagery, while also finding that the Chair never asked the team directly whether the request was theirs. The Board's reconstruction of the 90 minutes before cancellation is described by the Board itself as what 'likely occurred'."
+      },
+      {
+        "topic": "Whether imagery would have helped",
+        "description": "Shuttle managers said past imagery resolution was poor and that they were looking for very small areas; the Board notes that no one in the STS-107 operational chain of command had the security clearance to know about national imaging capabilities, and that no one sought to determine the expected quality or cost of Department of Defense imaging. Whether images would have revealed the breach is not established."
+      }
+    ],
+    "research_gaps": [
+      "Only Volume I of the CAIB report was used; Appendix D.13 (rescue and repair options) and Volume II onward were not read this run.",
+      "Personnel or administrative actions taken after the accident were not researched and are not asserted.",
+      "Exact clock times for the requests other than the 8:30 a.m. cancellation, and the full chronology of the three earlier imagery requests, are summarised from the Board's narrative rather than from primary logs."
+    ],
+    "decision_quality_rationale": "Rated Weak (INFERENCE). The reasons for cancelling were real at the time: foam strikes had a long history without loss, the engineers' preliminary analysis did not show penetration, the request had bypassed the proper channels, imaging would disrupt a science mission, and managers believed little could be done in orbit. But the request was for information, not action, and its cost was small compared with the stakes. The engineering analysis itself rested on a tool used outside its validated range, whose raw results had predicted possible damage. The Chair established that no manager had a 'requirement' for imagery without asking the engineers analysing the strike. And the belief that nothing could be done was never tested. Cancelling closed off the one step that could have reduced the uncertainty. The rating is scored independently of the loss of the vehicle and crew."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "pursue_dod_imagery",
+      "sort_order": 1,
+      "label": "Pursue Department of Defense imagery",
+      "short_description": "Put the request through official channels and ask the military to try to image Columbia's left wing in orbit.",
+      "upside": "The analysis is uncertain, and the engineers themselves say that without better images they cannot even bound the problem. Information is cheap compared with the stakes: a few hours of maneuvering and some inter-agency effort. If damage were found, it would at least give time to think about options.",
+      "downside": "Disrupts a tightly scheduled science mission, since the shuttle would have to be maneuvered and experiments paused. Past imagery has not resolved small areas well. Rewards a request that went around the chain of command. Managers believe that even if damage were seen, nothing could be done about it in orbit.",
+      "known_tradeoffs": [
+        "Reducing a dangerous uncertainty. versus Mission time, procedure and a doubtful payoff."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "cancel_imagery_request",
+      "sort_order": 2,
+      "label": "Call off the request and rely on the analysis",
+      "short_description": "Cancel the informal request to the Department of Defense and rely on the engineering assessment and past experience with foam strikes.",
+      "upside": "Foam had struck shuttles many times without catastrophe, and a strike of similar size on STS-112 had not been a safety problem. The engineers' analysis did not conclude that the tile or leading edge had been penetrated. Keeps the mission on schedule and keeps requests to other agencies going through proper channels.",
+      "downside": "Relies on an analysis made with a tool designed for much smaller debris, whose raw results predicted possible damage. Closes off the main way of reducing the uncertainty. If the engineers are worried, cancelling may tell them their concerns are not wanted.",
+      "known_tradeoffs": [
+        "Confidence in experience and procedure. versus Leaving a possibly fatal uncertainty unresolved."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Columbia launched on 16 January 2003. At 81.7 seconds a large piece of foam separated from the External Tank's left bipod area and struck the left wing at 81.9 seconds. The strike was noticed on Flight Day Two by Intercenter Photo Working Group engineers reviewing launch imagery."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "Managers' early assessment compared the debris to foam lost on STS-112, which had hit a Solid Rocket Booster rather than the wing, and treated the strike as close to 'in-family', not necessarily a safety concern."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "Using the Crater tool, which was designed for much smaller debris, engineers obtained a prediction of tile damage deeper than the tile thickness and possible penetration of the wing leading edge; they discounted these results on the grounds that Crater is conservative. The Debris Assessment Team's lead wrote that without better images it would be very difficult to even bound the problem."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "On Flight Day Seven, two managers contacted Department of Defense representatives about imaging Columbia, without the Mission Management Team Chair's authorization and not through the designated liaison. When asked, other managers and the flight director said they had not requested imagery and could not identify a 'requirement' for it."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "Imaging would require maneuvering Columbia and pausing science experiments. Managers said past imagery resolution had not been good. No one in the STS-107 operational chain of command had the security clearance to know about national imaging capabilities."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "Columbia had no robotic arm on STS-107; inspecting the inboard leading edge directly would have required a spacewalk."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That the foam had breached the leading edge of the left wing near Reinforced Carbon-Carbon panel 8, and that superheated air would enter the wing during re-entry."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That on 1 February 2003 Columbia would break up during re-entry, killing all seven crew members."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That a later NASA study would judge a rescue by Atlantis 'challenging but feasible' if potentially catastrophic damage had been identified before Flight Day Seven, while rating an on-orbit repair high risk."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Columbia Accident Investigation Board Report, Volume I, Chapter 6.3 (imagery requests and their cancellation)",
+      "author_or_institution": "Columbia Accident Investigation Board",
+      "publication_date": "2003-08",
+      "url": "https://s3.amazonaws.com/akamai.netstorage/anon.nasa-global/CAIB/CAIB_lowres_full.pdf",
+      "citation": "Columbia Accident Investigation Board, Columbia Accident Investigation Board Report, Volume I (August 2003), Section 6.3, pp. 150-154.",
+      "evidence_class": "FACT",
+      "supported_claim": "The three imagery requests; the Flight Day Seven calls to Department of Defense representatives without the Chair's authorization; the Chair's questions about a 'requirement'; the cancellation at 8:30 a.m. within 90 minutes; the stated reason given to USSTRATCOM; the engineers' interpretation of the halt as a final denial; and the Board's note on security clearances."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Columbia Accident Investigation Board Report, Volume I: personal notes quoted by the Board",
+      "author_or_institution": "Columbia Accident Investigation Board",
+      "publication_date": "2003-08",
+      "url": "https://s3.amazonaws.com/akamai.netstorage/anon.nasa-global/CAIB/CAIB_lowres_full.pdf",
+      "citation": "Columbia Accident Investigation Board, Columbia Accident Investigation Board Report, Volume I, p. 154.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Notes obtained by the Board: the Chair 'said it was no longer being pursued since even if we saw something, we couldn't do anything about it. The Program didn't want to spend the resources'; and managers' statements about schedule impact and poor past image resolution."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Columbia Accident Investigation Board Report, Volume I, Sections 6.2-6.3 (Crater analysis and in-family classification)",
+      "author_or_institution": "Columbia Accident Investigation Board",
+      "publication_date": "2003-08",
+      "url": "https://s3.amazonaws.com/akamai.netstorage/anon.nasa-global/CAIB/CAIB_lowres_full.pdf",
+      "citation": "Columbia Accident Investigation Board, Columbia Accident Investigation Board Report, Volume I, pp. 140-152 and 168.",
+      "evidence_class": "FACT",
+      "supported_claim": "The discovery of the strike on Flight Day Two; the comparison with STS-112 and the near 'in-family' classification; the Crater predictions and why engineers discounted them; Rodney Rocha's e-mail that without better images it would be very difficult to bound the problem; and the absence of a robotic arm."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "GOVERNMENT_REPORT",
+      "title": "Columbia Accident Investigation Board Report, Volume I, Synopsis and Section 6.4 (physical cause; rescue and repair options)",
+      "author_or_institution": "Columbia Accident Investigation Board",
+      "publication_date": "2003-08",
+      "url": "https://s3.amazonaws.com/akamai.netstorage/anon.nasa-global/CAIB/CAIB_lowres_full.pdf",
+      "citation": "Columbia Accident Investigation Board, Columbia Accident Investigation Board Report, Volume I, Report Synopsis and Section 6.4, pp. 173-174.",
+      "evidence_class": "FACT",
+      "supported_claim": "The physical cause of the loss near RCC panel 8; the break-up on 1 February 2003 with the loss of all seven crew; and NASA's later assessment that a rescue by Atlantis was 'challenging but feasible' while repair was 'high risk'."
+    },
+    {
+      "evidence_key": "src-05",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-15",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That cancelling the imagery request was a weak decision on the information available on Flight Day Seven, scored independently of the loss of Columbia."
+    }
+  ]
+}
