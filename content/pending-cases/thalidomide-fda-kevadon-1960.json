@@ -1,0 +1,172 @@
+{
+  "case_key": "thalidomide-fda-kevadon-1960",
+  "title": "Kevadon at the FDA, 1961: Approve a Drug Europe Already Uses, or Keep Asking for Proof",
+  "domain": "science",
+  "subdomain": "drug regulation",
+  "actor": "Frances Oldham Kelsey, medical officer at the U.S. Food and Drug Administration",
+  "actor_role": "Newly hired FDA medical officer assigned to review the William S. Merrell Company's new drug application for Kevadon (thalidomide), a sedative and sleeping pill, with authority to declare the application incomplete and stop it from becoming effective",
+  "date_or_period": "Spring 1961",
+  "era": "Before the 1962 Drug Amendments",
+  "location": "Food and Drug Administration, Washington, D.C., United States",
+  "t0": "Spring 1961, around May. Since early September 1960, FDA medical officer Frances Kelsey has been reviewing Merrell's new drug application for Kevadon, the company's brand of thalidomide, a sleeping pill already widely sold in Europe since about 1957. Under the law, an application became effective automatically 60 days after receipt unless the FDA declared it incomplete and detailed the deficiencies. Kelsey, the chemist and the pharmacologist have all found problems; Merrell has resubmitted, and the company is pressing hard. In late January or early February 1961 Kelsey read a letter in the British Medical Journal reporting peripheral neuritis, a painful and possibly irreversible nerve damage, in patients taking thalidomide for long periods, which Merrell had not raised with the FDA. In April Merrell argued the drug's value by comparing its safety with that of barbiturates. Kelsey must decide whether to let the application go forward, with warnings, or to keep declaring it incomplete and ask for more evidence of safety.",
+  "context_summary": "You are a new reviewer at the FDA. A company wants to sell a sleeping pill in America that has been used across Europe for years. Its supporters say it is almost impossible to kill yourself with it, unlike the barbiturates people take now. But the clinical reports in the application read like testimonials, and you have just found a published report that the drug can damage nerves, something the company did not tell you. The law gives you 60 days each time; if you do nothing, the drug is approved. The company calls often and is getting frustrated. Do you let it through with warnings, or keep saying the evidence is not good enough?",
+  "actual_decision_key": "keep_requesting_data",
+  "immediate_outcome": "Kelsey continued to treat the application as incomplete. On 25 May 1961 Kelsey wrote to Merrell's contact, expressing concern that evidence of neurological toxicity had apparently been known to the company without being forthrightly disclosed in the application. The FDA asked Merrell to question its U.S. investigators about peripheral neuritis and, because of the neuritis and a growing concern at the FDA about drugs given in pregnancy, asked about the drug's effects in pregnancy; Merrell had no study of use throughout pregnancy. At a conference Merrell held with its clinical investigators in early September 1961, according to Kelsey, the question of safety in pregnancy could not be answered. The application never became effective.",
+  "long_term_outcome": "In late 1961 researchers in Germany and Australia linked thalidomide to clusters of rare, severe birth defects, eventually shown to involve thousands of babies. On 30 November 1961 Merrell told the FDA that the German firm was withdrawing the drug from the market, and Merrell suspended its U.S. trials. Kevadon was never marketed in the United States, but Merrell had distributed over two million tablets for investigational use, and the FDA moved to recover them. According to Kelsey, Merrell formally withdrew the application on 8 March 1962. The near-disaster helped pass the Drug Amendments of 1962 (Kefauver-Harris), signed on 10 October 1962, which required manufacturers to prove that drugs were both safe and effective before marketing. Kelsey received the President's Award for Distinguished Federal Civilian Service in 1962.",
+  "decision_quality": "Strong",
+  "outcome_quality": "Good",
+  "popularity": 70,
+  "controversy_risk": 15,
+  "context_compression": 70,
+  "visualizability": 60,
+  "source_disagreement": 25,
+  "uncertainty_factors": [
+    "Whether thalidomide was as safe as its European record suggested",
+    "How serious and how common the reported nerve damage was",
+    "What the drug might do to a fetus with long use in pregnancy",
+    "Whether the FDA could legally keep refusing an application without positive evidence of harm"
+  ],
+  "fame_score": 70,
+  "research_priority": 50,
+  "status": "RESEARCH_DONE",
+  "metadata": {
+    "t0_note": "The candidate entry framed T0 as the recurring 60-day deadlines from autumn 1960 to 1961. This case sets T0 in spring 1961 (around Kelsey's 25 May 1961 letter), after the peripheral neuritis report and Merrell's April 1961 push, when the strongest arguments on both sides were on the table. Birth defects were not suspected at that point.",
+    "source_disagreements": [
+      {
+        "topic": "How many physicians received the drug in the United States",
+        "description": "FDA history pages say Merrell distributed over two million tablets for investigational use; secondary accounts give differing numbers of physicians (about 1,000 or 1,200). Kelsey's own account says the application listed some thirty or forty investigators and that the FDA learned of wider distribution only after the drug was withdrawn. The case uses only the FDA's tablet figure."
+      },
+      {
+        "topic": "What Merrell knew about neuritis, and when",
+        "description": "Kelsey's account says Merrell's contact had seen the BMJ report but did not volunteer it, and that Kelsey suspected the company knew earlier; it also says the FDA investigated whether Merrell had been negligent and could not establish it. This is Kelsey's retrospective account and is treated as stated rationale."
+      }
+    ],
+    "research_gaps": [
+      "Kelsey's 'Autobiographical Reflections' (published by the FDA) is a retrospective account; its dates are used but treated as the reviewer's own recollection. FDA correspondence files and the Kefauver hearings record were not consulted this run.",
+      "The exact dates and number of Merrell's resubmissions were not verified, so no count is given.",
+      "The 60-day rule is described from Kelsey's account; the statutory text of the 1938 Act as then in force was not checked.",
+      "The exact date the NDA was received is given as early September 1960 (Kelsey); a secondary search summary gave 12 September 1960 but this was not confirmed against an FDA page."
+    ],
+    "decision_quality_rationale": "Rated Strong (INFERENCE), scored independently of the birth-defect disaster that was not suspected at T0. On what Kelsey knew, the application had concrete, documented deficiencies: clinical reports that were more testimonials than studies, unsettled chemistry, and a serious side effect reported in the literature that the company had not disclosed. The law allowed an incomplete application to be held, and an approved drug was hard to withdraw. The case for approval was real: years of European use, low acute toxicity, and a plausible safety advantage over barbiturates in overdose. But those arguments did not answer the specific gaps in the evidence. The concern about pregnancy rested on general caution, not on knowledge of the actual harm, which Kelsey later called 'theoretical grounds'."
+  },
+  "options": [
+    {
+      "option_key": "A",
+      "decision_key": "let_application_proceed",
+      "sort_order": 1,
+      "label": "Let the application go forward with warnings",
+      "short_description": "Accept the application, or let the 60-day clock run, with labeling that warns about peripheral neuritis and use in pregnancy.",
+      "upside": "Thalidomide had been widely sold in Europe since about 1957. It was relatively non-toxic in animals, and its supporters argued that, unlike barbiturates, it was very hard to take a fatal overdose. Labeling could warn about neuritis and pregnancy. An FDA that kept blocking a drug established abroad, without positive evidence of harm, risked being seen as obstructive, and reviewers were expected to be fair to applicants.",
+      "downside": "The clinical evidence in the application was weak, and a serious side effect had come to light from the literature rather than from the company. Once approved, a drug was hard to pull back. Nothing in the file showed what months of use during pregnancy would do to a fetus.",
+      "known_tradeoffs": [
+        "A drug with a European track record and a possible safety advantage over barbiturates. versus Approving on weak evidence after an undisclosed side effect."
+      ]
+    },
+    {
+      "option_key": "B",
+      "decision_key": "keep_requesting_data",
+      "sort_order": 2,
+      "label": "Keep declaring the application incomplete",
+      "short_description": "Continue to hold the application as incomplete and ask Merrell for better clinical studies, full information on the nerve damage, and evidence on use in pregnancy.",
+      "upside": "Requires the company to prove safety rather than asking the FDA to prove harm. Addresses specific gaps: testimonial-style clinical reports, unsettled chemistry, an undisclosed nerve side effect, and no data on long use in pregnancy. Avoids approving a drug that would be difficult to withdraw.",
+      "downside": "Keeps from American patients a drug used widely abroad, on mainly precautionary grounds. Invites accusations that the FDA is obstructive, and repeated pressure from the company. If the European experience was a fair guide, the delay protected no one.",
+      "known_tradeoffs": [
+        "Insisting on evidence before approval. versus Withholding a widely used drug without proof that it causes harm."
+      ]
+    }
+  ],
+  "case_information": [
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 1,
+      "content": "Thalidomide had been marketed and very widely distributed in Europe since about 1957, and was available in dozens of countries."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 2,
+      "content": "Under the procedure then in force, a new drug application became effective automatically 60 days after receipt unless the FDA found it incomplete and detailed the deficiencies; any one of the three reviewers (chemist, pharmacologist, medical officer) could hold it."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 3,
+      "content": "All three reviewers had found deficiencies. The chemistry was still not settled in January 1961; the pharmacologist noted a question about absorption; and the clinical reports, about thirty, were more testimonials than scientific studies. Merrell had resubmitted."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 4,
+      "content": "In late January or early February 1961, Kelsey read a letter in the British Medical Journal of 31 December 1960 reporting peripheral neuritis, sometimes severe and possibly irreversible, in patients taking thalidomide for long periods. Merrell's contact had seen the report but had not raised it with the FDA."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 5,
+      "content": "In April 1961 Merrell argued the drug's value by comparing its safety favourably with barbiturates; it was said that one could not commit suicide with thalidomide."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 6,
+      "content": "At the FDA there was growing concern that drugs given in pregnancy also expose the fetus, following problems with drugs in newborns. Merrell had no study of thalidomide used throughout pregnancy."
+    },
+    {
+      "information_type": "KNOWN_AT_T0",
+      "sequence": 7,
+      "content": "Merrell was pressing for approval and had hoped to have the drug on the market for the Christmas season, when sedatives sold well."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 1,
+      "content": "That thalidomide taken in pregnancy caused severe limb defects, which researchers in Germany and Australia would link to the drug in late 1961, eventually affecting thousands of babies."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 2,
+      "content": "That Merrell had distributed over two million tablets in the United States for investigational use, far beyond the thirty or forty investigators listed in the application."
+    },
+    {
+      "information_type": "UNKNOWN_AT_T0",
+      "sequence": 3,
+      "content": "That the near-disaster would help pass the Drug Amendments of 1962, requiring proof of safety and effectiveness before marketing."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_key": "src-01",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Autobiographical Reflections, chapter 'Thalidomide'",
+      "author_or_institution": "Frances Oldham Kelsey (published by the U.S. Food and Drug Administration)",
+      "url": "https://www.fda.gov/media/89162/download",
+      "citation": "Frances O. Kelsey, 'Autobiographical Reflections', FDA, pp. 49-67.",
+      "evidence_class": "STATED_RATIONALE",
+      "supported_claim": "Kelsey's account of the review: receipt in early September 1960; the 60-day procedure; the three reviewers' deficiencies (chemistry unsettled on 6 January 1961, absorption question, testimonial-style clinical reports); the BMJ letter of 31 December 1960 on peripheral neuritis, read in late January or early February 1961; Merrell's April 1961 comparison with barbiturates; the 25 May 1961 letter on non-disclosure; the concern about pregnancy; the September 1961 investigators' conference; Merrell's notice of 30 November 1961; and the withdrawal of the application on 8 March 1962. Also Kelsey's description of the objections as 'theoretical grounds'."
+    },
+    {
+      "evidence_key": "src-02",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "Frances Oldham Kelsey: Medical reviewer famous for averting a public health tragedy",
+      "author_or_institution": "U.S. Food and Drug Administration, FDA History",
+      "url": "https://www.fda.gov/about-fda/fda-history-exhibits/frances-oldham-kelsey-medical-reviewer-famous-averting-public-health-tragedy",
+      "citation": "FDA History exhibit, 'Frances Oldham Kelsey'.",
+      "evidence_class": "FACT",
+      "supported_claim": "That thalidomide was already available in dozens of countries; that Kelsey, despite constant pressure from the company, refused to approve the application for inadequate evidence; that about a year later researchers in Germany and Australia linked it to birth defects eventually involving thousands of babies; that it was never marketed in the U.S.; that the near-disaster helped pass the 1962 Drug Amendments; and Kelsey's 1962 award."
+    },
+    {
+      "evidence_key": "src-03",
+      "source_type": "GOVERNMENT_ARCHIVE",
+      "title": "A Brief History of the Center for Drug Evaluation and Research",
+      "author_or_institution": "U.S. Food and Drug Administration, FDA History",
+      "url": "https://www.fda.gov/about-fda/fda-history-exhibits/brief-history-center-drug-evaluation-and-research",
+      "citation": "FDA History, 'A Brief History of the Center for Drug Evaluation and Research'.",
+      "evidence_class": "FACT",
+      "supported_claim": "That Kelsey refused to allow the Kevadon NDA to become effective because of insufficient safety data despite ongoing pressure; that Merrell distributed over two million tablets for investigational use and the FDA moved to recover them; and that President Kennedy signed the Drug Amendments of 1962 on 10 October, requiring proof of safety and effectiveness before marketing."
+    },
+    {
+      "evidence_key": "src-04",
+      "source_type": "ANALYSIS",
+      "title": "Decision-quality assessment for this case",
+      "author_or_institution": "Claude (this draft), from the sources above",
+      "publication_date": "2026-10-14",
+      "citation": "See metadata.decision_quality_rationale in this case draft.",
+      "evidence_class": "INFERENCE",
+      "supported_claim": "That continuing to hold the application was a strong decision on the evidence available in spring 1961, scored independently of the later disaster."
+    }
+  ]
+}
