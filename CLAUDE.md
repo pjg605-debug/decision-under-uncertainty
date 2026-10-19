@@ -62,6 +62,8 @@ Use the same file-based, write-through-CI pattern as narrative submission, so th
 
 ## Editorial rules that always apply
 
+- **Korean is mandatory (user decision, 2026-10-19)**: retain the EN/한국어 selector. Every case needs independently authored `en` and `ko` narratives, each with all nine prose fields. Submit both together for new cases. An English-only case must remain unpublished until its Korean narrative is approved/current. Revisions to one language must preserve the sibling language. `autoApproveAndPublish` enforces this against live approved/current rows, not archived filenames. Existing automatic schedules remain in their current state; this rule does not authorize restarting a paused task.
+
 - **T0 discipline**: only information genuinely available at the decision point may inform the player's choice. Never leak outcome knowledge into `known_at_t0` / option rationale.
 - **Decision quality ≠ outcome quality**: the actual historical choice is not "the correct answer." Score both independently.
 - **Player fairness**: the viewer needs enough information for a meaningful choice. Don't manufacture difficulty by withholding what the actor actually had.

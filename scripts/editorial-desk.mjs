@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { missingNarrativeLanguages, narrativeProseFields } from '../core/narrative-readiness.mjs';
+
 const baseUrl = process.env.SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 if (!baseUrl || !serviceKey) {
@@ -152,6 +154,17 @@ export async function autoApproveAndPublish({ case_id, case_key, narrative_id, l
   const [caseRow] = await request(
     `decision_cases?case_key=eq.${encodeURIComponent(case_key)}&select=status,title`,
   );
+  // User decision, 2026-10-19: retain the language selector, but require
+  // complete English AND Korean narratives before a new case goes public.
+  // The first language can be approved while the case stays unpublished;
+  // approving the second language resumes the normal forward workflow.
+  const approvedCurrent = await request(
+    `narratives?case_id=eq.${encodeURIComponent(case_id)}&status=eq.APPROVED&is_current=eq.true&select=language,${narrativeProseFields.join(',')}`,
+  );
+  const awaiting_languages = missingNarrativeLanguages(approvedCurrent || []);
+  if (awaiting_languages.length) {
+    return { case_key, status: caseRow?.status, awaiting_languages };
+  }
   const forward = ['CODEX_REVIEW', 'APPROVED', 'PROTOTYPE_READY', 'PUBLISHED'];
   const startIndex = Math.max(0, forward.indexOf(caseRow?.status) + 1);
   let current = caseRow?.status;

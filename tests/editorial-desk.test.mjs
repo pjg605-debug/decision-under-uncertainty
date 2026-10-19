@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { narrativeProseFields } from '../core/narrative-readiness.mjs';
 
 process.env.SUPABASE_URL ||= 'https://example.invalid';
 process.env.SUPABASE_SERVICE_ROLE_KEY ||= 'test-placeholder-not-a-real-key';
@@ -11,6 +12,12 @@ function mockFetch(handler) {
   const original = globalThis.fetch;
   globalThis.fetch = async (url, init = {}) => {
     calls.push({ url, init });
+    if (url.includes('status=eq.APPROVED&is_current=eq.true')) {
+      return jsonResponse(['en', 'ko'].map((language) => ({
+        language,
+        ...Object.fromEntries(narrativeProseFields.map((field) => [field, language === 'ko' ? '검증된 한국어 서사' : 'Verified English prose'])),
+      })));
+    }
     return handler(url, init, calls.length - 1);
   };
   return { calls, restore: () => (globalThis.fetch = original) };

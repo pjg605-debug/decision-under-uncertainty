@@ -52,8 +52,8 @@ function validDraft(overrides = {}) {
       language: 'ko',
       hook: '훅',
       short_setup: '설정',
-      why_option_a_made_sense: 'A',
-      why_option_b_made_sense: 'B',
+      why_option_a_made_sense: '선택 가의 근거',
+      why_option_b_made_sense: '선택 나의 근거',
       actual_decision_explanation: '실제 결정',
       outcome_story: '결과',
       hindsight_analysis: '분석',
@@ -136,6 +136,8 @@ test('submitOne auto-approves and publishes a freshly submitted narrative -- pro
       return jsonResponse([]);
     if (u.includes('narratives?id=eq.narr-1') && init.method === 'PATCH')
       return jsonResponse([{ id: 'narr-1' }]);
+    if (u.includes('narratives?case_id=eq.case-1&status=eq.APPROVED&is_current=eq.true'))
+      return jsonResponse([{ ...draft.narrative, language: 'en' }, draft.narrative]);
     if (u.includes('/rest/v1/rpc/transition_case_status')) {
       const toStatus = JSON.parse(init.body).p_to_status;
       if (toStatus === 'NARRATIVE_DRAFTED') return jsonResponse({}); // the submitNarrativeVersion transition, not part of the auto-publish chain

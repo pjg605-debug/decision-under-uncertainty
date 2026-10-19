@@ -6,10 +6,10 @@ const workflow = await readFile(
   new URL('../.github/workflows/publish-judgment-article.yml', import.meta.url),
   'utf8',
 );
-const reviewRoute = await readFile(
+const reviewRoute = (await readFile(
   new URL('../app/api/review/route.ts', import.meta.url),
   'utf8',
-);
+)).replace(/\r\n/g, '\n');
 
 test('the article-publish workflow notifies #insight only on a real publish, and never fails the job', () => {
   assert.match(workflow, /secrets\.SLACK_INSIGHT_WEBHOOK_URL/);

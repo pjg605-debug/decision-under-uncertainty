@@ -17,6 +17,7 @@ import { readdir, readFile, rename } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { request, submitNarrativeVersion, autoApproveAndPublish } from './editorial-desk.mjs';
+import { isCompleteNarrative } from '../core/narrative-readiness.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pendingDir = path.join(__dirname, '..', 'content', 'pending-narratives');
@@ -46,6 +47,10 @@ export function validateDraft(draft, filename) {
     throw new Error(
       `${filename}: narrative missing required field(s): ${missing.join(', ')}`,
     );
+  if (!isCompleteNarrative(draft.narrative))
+    throw new Error(`${filename}: incomplete narrative; all nine prose fields must use the declared language (Korean prose for ko).`);
+  if (draft.author_agent && !['claude', 'codex'].includes(draft.author_agent))
+    throw new Error(`${filename}: unsupported author_agent`);
 }
 
 // Deep-compares only the content fields actually sent -- ignores
@@ -90,7 +95,7 @@ export async function submitOne(filename) {
   const payload = {
     case_id: caseRow.id,
     case_key: draft.case_key,
-    author_agent: 'claude',
+    author_agent: draft.author_agent || 'claude',
     summary: draft.summary || `${draft.narrative.language} narrative submitted.`,
     triggered_by_review_id: draft.triggered_by_review_id || undefined,
     changes: draft.changes || [],
@@ -127,7 +132,7 @@ export async function submitOne(filename) {
       case_key: draft.case_key,
       narrative_id: row.id,
       language: draft.narrative.language,
-      author_agent: 'claude',
+      author_agent: payload.author_agent,
     });
     publishedStatus = result.status;
   } catch (error) {
@@ -155,6 +160,10 @@ async function main() {
 
   const results = [];
   const errors = [];
+  // Reject malformed bilingual batches before any database writes.
+  for (const filename of files) {
+    validateDraft(JSON.parse(await readFile(path.join(pendingDir, filename), 'utf8')), filename);
+  }
   for (const filename of files) {
     try {
       results.push(await submitOne(filename));
