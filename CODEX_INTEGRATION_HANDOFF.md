@@ -1,5 +1,27 @@
 # Codex Integration Handoff
 
+## Required Korean coverage — user decision, 2026-10-19
+
+Keep the existing EN/한국어 language selector. Every case must have complete,
+independently authored English and Korean narratives, including all nine prose
+fields. Do not publish English-only new cases. Preserve the current narrative
+in the sibling language when appending a revision.
+
+The active case submission pipeline is on
+`claude/decision-uncertainty-case-selection-9q6h5y`, in
+`scripts/submit-pending-narratives.mjs` and `scripts/editorial-desk.mjs`.
+Its publication gate checks live APPROVED/current en+ko rows before moving a
+new case into any public status. Archived source files alone are insufficient.
+The 2026-10-19 backfill supplies Korean narratives for the five initial cases
+Apollo 13, Challenger, New Coke, Austerlitz, and Netflix streaming. Existing
+editorial caveats below still apply; Korean coverage does not change their
+underlying actor/T0 or dilemma-quality limitations.
+
+The language-aware production build was published on 2026-10-19. Future
+frontend changes still require an explicit Sites deployment; pushing to GitHub
+alone does not update the hosted frontend. Do not restart paused schedules
+without a user request.
+
 ## Production-ready content
 
 | Status | Case | Narrative file | Evidence file | Integration note |
